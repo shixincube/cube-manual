@@ -1,11 +1,11 @@
-# Cube 3
+# Cube - 时信魔方
 
 **Cube** 是面向开发者的实时协作开发框架。
 
-* <span style="font-size:21px;display:inline;">C</span> - <b>Cooperative</b> 时信魔方是为在线协同提供快速能力整合的框架。
-* <span style="font-size:21px;display:inline;">U</span> - <b>Ultrafast</b> 时信魔方为客户打造极速解决方案，极速开发、极速运行和极速服务响应。
-* <span style="font-size:21px;display:inline;">B</span> - <b>Best-practice</b> 时信魔方提供实时在线协作的最佳实践方式，优秀的用户体验。
-* <span style="font-size:21px;display:inline;">E</span> - <b>Efficient</b> 时信魔方积累多年行业场景方案，直击痛点，有效、高效。
+* <span style="font-size:27px;display:inline;"><b>C</b></span> - <b>Cooperative</b> 时信魔方是为在线协同提供快速能力整合的框架。
+* <span style="font-size:27px;display:inline;"><b>U</b></span> - <b>Ultrafast</b> 时信魔方为客户打造极速解决方案，极速开发、极速运行和极速服务响应。
+* <span style="font-size:27px;display:inline;"><b>B</b></span> - <b>Best-practice</b> 时信魔方提供实时在线协作的最佳实践方式，优秀的用户体验。
+* <span style="font-size:27px;display:inline;"><b>E</b></span> - <b>Efficient</b> 时信魔方积累多年行业场景方案，直击痛点，有效、高效。
 
 
 ## 项目介绍
