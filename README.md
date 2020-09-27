@@ -31,9 +31,11 @@ Cube 提供的协作功能包括：
 * 风控管理（Risk Management）。对系统内所有文本、图片、视频、文件等内容进行包括 NLP、OCR、IR 等技术手段的风险控制和预警等。
 
 
-## 功能演示
+## 功能展示
 
-
+| 即时消息 |
+|:----:|
+|![IM](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/showcase/im.gif)|
 
 
 ## 视觉设计
