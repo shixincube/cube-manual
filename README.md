@@ -37,6 +37,11 @@ Cube 提供的协作功能包括：
 |:----:|
 |![IM](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/showcase/im.gif)|
 
+| 视频聊天 | 视频聊天 |
+|:----:|:----:|
+|![VideoChat1](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/showcase/videochat_1.gif)|![VideoChat2](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/showcase/videochat_2.gif)|
+
+
 
 ## 视觉设计
 
