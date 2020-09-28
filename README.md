@@ -35,12 +35,45 @@ Cube 提供的协作功能包括：
 
 | 即时消息 |
 |:----:|
-|![IM](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/showcase/im.gif)|
+|![IM](https://static.shixincube.com/cube/assets/showcase/im.gif)|
 
-| 视频聊天 | 视频聊天 |
+| 视频聊天(1) | 视频聊天(2) |
 |:----:|:----:|
-|![VideoChat1](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/showcase/videochat_1.gif)|![VideoChat2](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/showcase/videochat_2.gif)|
+|![VideoChat1](https://static.shixincube.com/cube/assets/showcase/videochat_1.gif)|![VideoChat2](https://static.shixincube.com/cube/assets/showcase/videochat_2.gif)|
 
+| 多人视频聊天(1) | 多人视频聊天(2) |
+|:----:|:----:|
+|![VideoChat3](https://static.shixincube.com/cube/assets/showcase/videochat_3.gif)|![VideoChat4](https://static.shixincube.com/cube/assets/showcase/videochat_4.gif)|
+
+| 会议 |
+|:----:|
+|![Conf100](https://static.shixincube.com/cube/assets/showcase/screen_conference.jpg)|
+|![ConfTile](https://static.shixincube.com/cube/assets/showcase/screen_conference_tile.jpg)|
+|![StartConf](https://static.shixincube.com/cube/assets/showcase/start_conference.gif)|
+
+| 共享桌面 |
+|:----:|
+|![ScreenSharing](https://static.shixincube.com/cube/assets/showcase/screen_sharing.gif)|
+
+| 云端文件存储 |
+|:----:|
+|![CFS](https://static.shixincube.com/cube/assets/showcase/cloud_file.gif)|
+
+| 白板 |
+|:----:|
+|![Whiteboard](https://static.shixincube.com/cube/assets/showcase/whiteboard.gif)|
+
+| 直播 |
+|:----:|
+|![Live](https://static.shixincube.com/cube/assets/showcase/live.gif)|
+
+| 在线课堂 |
+|:----:|
+|![OnlineClassroom](https://static.shixincube.com/cube/assets/showcase/online_classroom.gif)|
+
+| 文档协作 |
+|:----:|
+|![DocCollaboration](https://static.shixincube.com/cube/assets/showcase/doc_collaboration.gif)|
 
 
 ## 视觉设计
@@ -49,8 +82,8 @@ Cube 的官方 Logo 如下表所示：
 
 | 规格 | 默认效果 | 单色效果 | 反色效果 |
 | ---- | ---- | ---- | ---- |
-| 256x256 | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/logo/cube_256.png) | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/logo/cube_mono_256.png) | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/logo/cube_inverse_256.png)
-| 512x512 | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/logo/cube_512.png) | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/logo/cube_mono_512.png) | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/logo/cube_inverse_512.png)
+| 256x256 | ![Cube](https://static.shixincube.com/cube/assets/images/logo/cube_256.png) | ![Cube](https://static.shixincube.com/cube/assets/images/logo/cube_mono_256.png) | ![Cube](https://static.shixincube.com/cube/assets/images/logo/cube_inverse_256.png)
+| 512x512 | ![Cube](https://static.shixincube.com/cube/assets/images/logo/cube_512.png) | ![Cube](https://static.shixincube.com/cube/assets/images/logo/cube_mono_512.png) | ![Cube](https://static.shixincube.com/cube/assets/images/logo/cube_inverse_512.png)
 
 ****
 
@@ -58,6 +91,6 @@ Cube 应用程序图标如下表所示：
 
 | 分类 | 图标 32x32 | 图标 48x48 | 图标 256x256 | 图标 1024x1024 |
 | ---- | ---- | ---- | ---- | ---- |
-| 安装包 | / | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/icon/cube_install_48.png) | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/icon/cube_install_256.png) | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/icon/cube_install_1024.png) |
-| 卸载包 | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/icon/cube_uninstall_32.png) | / | / | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/icon/cube_uninstall_1024.png) |
-| 托盘 | ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/icon/cube_tray_32.png) ![Cube](https://code.workinggo.com/Cube3/cube-manual/raw/master/assets/images/icon/cube_tray_active_32.png) | / | / | / |
+| 安装包 | / | ![Cube](https://static.shixincube.com/cube/assets/images/icon/cube_install_48.png) | ![Cube](https://static.shixincube.com/cube/assets/images/icon/cube_install_256.png) | ![Cube](https://static.shixincube.com/cube/assets/images/icon/cube_install_1024.png) |
+| 卸载包 | ![Cube](https://static.shixincube.com/cube/assets/images/icon/cube_uninstall_32.png) | / | / | ![Cube](https://static.shixincube.com/cube/assets/images/icon/cube_uninstall_1024.png) |
+| 托盘 | ![Cube](https://static.shixincube.com/cube/assets/images/icon/cube_tray_32.png) ![Cube](https://static.shixincube.com/cube/assets/images/icon/cube_tray_active_32.png) | / | / | / |
