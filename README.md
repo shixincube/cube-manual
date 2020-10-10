@@ -73,6 +73,7 @@ Cube 提供的协作功能包括：
 
 | 文档协作 |
 |:----:|
+|![DocCollaboration](https://static.shixincube.com/cube/assets/showcase/doc_collaboration_excel.gif)|
 |![DocCollaboration](https://static.shixincube.com/cube/assets/showcase/doc_collaboration.gif)|
 
 
@@ -98,7 +99,7 @@ Cube 应用程序图标如下表所示：
 
 ## 获得帮助
 
-您可以访问 [时信魔方官网](https://www.shixincube.com/) 获得更多信息。
+您可以访问 [时信魔方官网](https://www.shixincube.com/) 获得更多信息。如果您在使用 Cube 的过程中需要帮助可以发送邮件到 [cube@spap.com](mailto:cube@spap.com) 。
 
 ## 谁在使用 Cube
 
