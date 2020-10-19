@@ -1,20 +1,12 @@
 # Cube - 时信魔方
 
-**Cube** 是面向开发者的实时协作开发框架。
+**Cube** **时信魔方** 是面向开发者的实时协作开发框架。帮助开发者快速、高效的在项目中集成实时协作能力。
 
-* <span style="font-size:27px;display:inline;"><b>C</b></span> - <b>Cooperative</b> 时信魔方是为在线协同提供快速能力整合的框架。
-* <span style="font-size:27px;display:inline;"><b>U</b></span> - <b>Ultrafast</b> 时信魔方为客户打造极速解决方案，极速开发、极速运行和极速服务响应。
-* <span style="font-size:27px;display:inline;"><b>B</b></span> - <b>Best-practice</b> 时信魔方提供实时在线协作的最佳实践方式，优秀的用户体验。
-* <span style="font-size:27px;display:inline;"><b>E</b></span> - <b>Efficient</b> 时信魔方积累多年行业场景方案，直击痛点，有效、高效。
-
+支持的操作系统及软件包括：Windows、Linux 、macOS 、Android、iOS、Chrome、Firefox 等。
 
 ## 项目介绍
 
-**Cube** “时信魔方”是面向开发者的实时协作开发框架，其是 **Cooperative** ，**Ultrafast** ，**Best-practice** 和 **Efficient** 的首字母缩写。意在为开发者和用户提供专业、可靠的协作产品和技术支持，帮助客户快速部署和构建在线协作场景。
-
-支持的操作系统和软件包括：Windows、Linux 、macOS 、Android、iOS、Chrome、Firefox 等。
-
-Cube 提供的协作功能包括：
+Cube 包含以下协作功能：
 
 * 即时消息（Instant Messaging / IM）。支持卡片消息、通知消息、文件消息和自定义消息等。
 * 实时多人语音/多人视频（Multi-party RTC）。支持自适应码率、超低延迟等，支持实时图像识别等。
@@ -29,6 +21,14 @@ Cube 提供的协作功能包括：
 * 在线文档协作（Online Document Collaboration）。支持 Word、PowerPoint、Excel 等主流格式文多人在写协作。
 * 安全与运维管理（Operation and Maintenance management）。所有数据通道支持加密，可支持国密算法等。
 * 风控管理（Risk Management）。对系统内所有文本、图片、视频、文件等内容进行包括 NLP、OCR、IR 等技术手段的风险控制和预警等。
+
+
+“**Cube**” 是 **Cooperative** ，**Ultrafast** ，**Best-practice** 和 **Efficient** 的首字母缩写，意在为开发者和用户提供专业、可靠的协作产品和技术支持，帮助客户快速部署和构建在线协作场景。
+
+* <span style="font-size:27px;display:inline;"><b>C</b></span> - <b>Cooperative</b> 时信魔方是为在线协同提供快速能力整合的框架。
+* <span style="font-size:27px;display:inline;"><b>U</b></span> - <b>Ultrafast</b> 时信魔方为客户打造极速解决方案，极速开发、极速运行和极速服务响应。
+* <span style="font-size:27px;display:inline;"><b>B</b></span> - <b>Best-practice</b> 时信魔方提供实时在线协作的最佳实践方式，优秀的用户体验。
+* <span style="font-size:27px;display:inline;"><b>E</b></span> - <b>Efficient</b> 时信魔方积累多年行业场景方案，直击痛点，有效、高效。
 
 
 ## 功能展示
