@@ -75,7 +75,7 @@ Cube 包含以下协作功能：
 * 信令、数据和流媒体传输均采用加密方式。长连接信令支持全信道压缩（采用 ZIP 算法）。
 * 兼容行业内主流协议，例如：SIP（RFC 3261）、WebRTC（RFC 7742、RFC 7874、RFC 7875）等。
 * 支持 MCU （Multipoint Control Unit） 与 SFU （Selective Forwarding Unit） 模式。
-* 支持文本内容、文件内容、音视频内容的识别，也可对接第三方机器学习平台，进行 NLP、Face Recognition、
+* 支持文本内容、文件内容、音视频内容的识别，可对接第三方机器学习平台，进行 NLP、Face Recognition、
 Super Resolution 等实时处理。
 * 采用针对实时协作场景的集群控制策略和时序存储，兼容 Kafka、RabbitMQ、MongoDB 等第三方软件。
 * 支持插件式开发，客户端与服务器端均支持插件热部署。
