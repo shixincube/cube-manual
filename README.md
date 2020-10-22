@@ -4,7 +4,7 @@
 
 支持的操作系统有：Windows、Linux 、macOS 、Android、iOS 等，支持的浏览器有：Chrome、Firefox、Safari 等。
 
-## 功能介绍
+## 功能列表
 
 Cube 包含以下协作功能：
 
@@ -72,16 +72,17 @@ Cube 包含以下协作功能：
 ## 技术特征
 
 * 采用 SHM（Simple Hyper-Messaging，简单混合消息传送）机制。
-* 信令、数据和流媒体传输均采用加密方式。长连接信令支持全信道压缩（采用 ZIP 算法）。
+* 信令、负载和流媒体传输均采用加密方式。长连接信令支持全信道压缩（采用 ZIP 算法）。
 * 兼容行业内主流协议，例如：SIP（RFC 3261）、WebRTC（RFC 7742、RFC 7874、RFC 7875）等。
+* 支持 H.264，VP8，VP9 等视频编解码器，支持 G711、G722、iLBC、ISAC、OPUS 等音频编解码器。
 * 支持 MCU （Multipoint Control Unit） 与 SFU （Selective Forwarding Unit） 模式。
-* 支持文本内容、文件内容、音视频内容的识别，可对接第三方机器学习平台，进行 NLP、Face Recognition、
-Super Resolution 等实时处理。
+* 采用矢量图元传输与渲染。
+* 支持文本内容、文件内容、图片内容、图像内容的识别，内置 NLP、Face Recognition、Super Resolution 等数据处理技术，提供对接第三方机器学习平台方式。
+* 支持的文档格式有：doc、docm、docx、dotm、dotx、ett、xls、xlsm、xlsx、xlt、dpt、ppsm、ppsx、pot、potm、potx、pps、ppt、pptm、pptx、pdf 等。
 * 采用针对实时协作场景的集群控制策略和时序存储，兼容 Kafka、RabbitMQ、MongoDB 等第三方软件。
 * 支持插件式开发，客户端与服务器端均支持插件热部署。
 * 支持按域管理与数据隔离，支持服务内混合域。
 * 核心协议自研，可用于对“自主可控”有严格要求的项目。
-* 所有功能都经过商业项目的验证。
 
 
 ## 项目目标
@@ -93,7 +94,7 @@ Super Resolution 等实时处理。
 * <span style="font-size:27px;display:inline;"><b>B</b></span> - <b>Best-practice</b> 时信魔方提供实时在线协作的最佳实践方式，优秀的用户体验。
 * <span style="font-size:27px;display:inline;"><b>E</b></span> - <b>Efficient</b> 时信魔方积累多年行业场景方案，直击痛点，有效、高效。
 
-时信魔方以开发者为核心，以技术驱动开发，以创新驱动开源，回馈开源社区，提供优质的协作开源产品。
+时信魔方以开发者为核心，以技术驱动开发，以创新驱动开源，回馈开源社区，提供优质的协作开源产品，时信魔方的所有功能都经过商业项目的验证。
 
 ## 视觉设计
 
