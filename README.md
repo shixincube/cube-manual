@@ -71,7 +71,7 @@ Cube 包含以下协作功能：
 
 ## 技术特征
 
-* 采用 SHM（Simple Hyper-Messaging，简单混合消息传送）机制。
+* 采用 SHM（Simple Hybrid Message，简单混合消息传送）机制。
 * 信令、负载和流媒体传输均采用加密方式。长连接信令支持全信道压缩（采用 ZIP 算法）。
 * 兼容行业内主流协议，例如：SIP（RFC 3261）、WebRTC（RFC 7742、RFC 7874、RFC 7875）等。
 * 支持 H.264，VP8，VP9 等视频编解码器，支持 G711、G722、iLBC、ISAC、OPUS 等音频编解码器。
