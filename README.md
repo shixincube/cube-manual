@@ -10,7 +10,7 @@ Cube 包含以下协作功能：
 
 * 即时消息（Instant Messaging / IM）。支持卡片消息、通知消息、文件消息和自定义消息等。
 * 实时多人语音/多人视频（Multipoint RTC）。支持自适应码率、超低延迟等，支持实时图像识别等。
-* 超大规模(100+)会议 （Video Conference）。支持会议控制、演讲模式，自定义 MCU 和 SFU 布局等。
+* 超大规模(100+)视频会议 （Video Conference）。支持会议控制、演讲模式，自定义 MCU 和 SFU 布局等。
 * 群组管理（Group management）。支持集成式管理和扩展组织架构等。
 * 共享桌面（Remote Desktop Sharing）。支持无缝集成白板等。
 * 云端文件存储（Cloud File Storage）。支持无缝集成文档在线协作等。
@@ -71,16 +71,17 @@ Cube 包含以下协作功能：
 
 ## 技术特征
 
-* 采用 SHM（Simple Hybrid Message，简单混合消息传送）机制。
+* 网络层、逻辑层、缓存层、存储层采用分层设计。服务器端使用“**单元隔离**”原则，各个功能单元可以实现 **“微服务”方式部署** ，**“宏服务”方式管理** 。
+* 采用 **SHM（Simple Hybrid Message，简单混合消息传送）** 协议。可在同一条链路上混合传输封包和流数据，且都能进行压缩和加密。
 * 信令、负载和流媒体传输均采用加密方式。长连接信令支持全信道压缩（采用 ZIP 算法）。
-* 兼容行业内主流协议，例如：SIP（RFC 3261）、WebRTC（RFC 7742、RFC 7874、RFC 7875）等。
+* 兼容行业内主流协议，例如：**SIP**（RFC 3261）、**WebRTC**（RFC 7742、RFC 7874、RFC 7875）等。
 * 支持 H.264，VP8，VP9 等视频编解码器，支持 G711、G722、iLBC、ISAC、OPUS 等音频编解码器。
-* 支持 MCU （Multipoint Control Unit） 与 SFU （Selective Forwarding Unit） 模式。
+* 支持 **MCU （Multipoint Control Unit）** 与 **SFU （Selective Forwarding Unit）** 模式。
 * 采用矢量图元传输与渲染。
-* 支持文本内容、文件内容、图片内容、图像内容的识别，内置 NLP、Face Recognition、Super Resolution 等数据处理技术，提供对接第三方机器学习平台方式。
-* 支持的文档格式有：doc、docm、docx、dotm、dotx、ett、xls、xlsm、xlsx、xlt、dpt、ppsm、ppsx、pot、potm、potx、pps、ppt、pptm、pptx、pdf 等。
+* 支持文本内容、文件内容、图片内容、图像内容的识别，内置 NLP、Face Recognition、Super Resolution 等数据处理技术，**提供对接第三方机器学习平台接口**。
+* 支持的文档格式有：**pdf**、**doc**、docm、**docx**、dotm、dotx、ett、**xls**、xlsm、**xlsx**、xlt、dpt、ppsm、ppsx、pot、potm、potx、pps、**ppt**、pptm、**pptx** 等。
 * 采用针对实时协作场景的集群控制策略和时序存储，兼容 Kafka、RabbitMQ、MongoDB 等第三方软件。
-* 支持插件式开发，客户端与服务器端均支持插件热部署。
+* 支持**插件式开发**，客户端与服务器端均支持插件热部署。
 * 支持按域管理与数据隔离，支持服务内混合域。
 * 核心协议自研，可用于对“自主可控”有严格要求的项目。
 
