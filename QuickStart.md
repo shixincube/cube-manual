@@ -32,11 +32,13 @@ cd cube-server
 ant build
 ```
 
-如果需要可以编译 Debug 版：
-
-```bash
-ant build-debug
-```
+>
+>如果需要可以编译 Debug 版：
+>
+>```bash
+>ant build-debug
+>```
+>
 
 执行部署命令：
 
