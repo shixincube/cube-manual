@@ -1,8 +1,17 @@
 # 快速开始
 
-## 使用魔方控制台
+## 安装服务器
 
 推荐使用魔方控制台进行魔方服务器部署、配置和管理。
+
+您需要在您的开发环境中正确安装以下工具：
+
+1. 安装 [Java SE](https://www.oracle.com/java/technologies/javase-downloads.html) 。建议从 Oracle 官网下载安装包后，按照安装程序引导进行安装。Cube Server 需要的最低版本为 Java SE 8 。
+
+2. 安装 [Apache Ant](http://ant.apache.org/) 。
+  适用 Ubuntu 的安装命令：`sudo apt-get install ant`
+  适用 CentOS 的安装命令：`yum -y install ant`
+
 
 ### 1、获取代码
 
@@ -48,20 +57,25 @@ ant deploy
 
 ### 3、配置控制台
 
-对控制台连接的数据库进行配置。
+配置控制台的数据库。
 
 进入 `console` 目录：
 ```bash
 cd console
 ```
 
-编辑配置文件 `console.properties` 里的相关数据库配置项：
+编辑配置文件 `console.properties` ：
+```bash
+vi console.properties
+```
+
+配置文件的相关数据库配置项说明如下：
 
 ```
 # DB
 db=mysql
 
-# MySQL config
+# MySQL Config
 # 数据库服务器地址
 mysql.host=192.168.100.122
 # 数据库服务器端口
@@ -74,7 +88,8 @@ mysql.user=cube
 mysql.password=shixincube
 ```
 
-默认使用 MySQL 数据库。
+> 控制台目前仅支持 MySQL 数据库。
+
 
 ### 4、启动控制台
 
@@ -103,3 +118,93 @@ chmod +x ./start.sh
 chmod +x ./stop.sh
 ./stop.sh
 ```
+
+----
+
+## 安装 Web 客户端
+
+时信魔方 3.0 的 Web App 使用纯静态页面编写，以便于开发者进行二次开发，因此没有使用前端模板技术。您可以根据项目需要整合到任何前端模板技术框架下。
+
+这里介绍使用 [node](https://nodejs.org/zh-cn/) 作为 Web 容器安装客户端程序，您也可以到我们的代码库里找到使用 Spring 框架的客户端程序。
+
+您需要在您的开发环境中正确安装以下工具：
+
+* [node](https://nodejs.org/zh-cn/) (需要 11.0 及以上版本。)
+* [npm](https://www.npmjs.com/)
+
+
+### 1、获取代码
+
+```bash
+git clone https://gitee.com/shixinhulian/cube-javascript
+```
+
+或者
+
+```bash
+git clone https://github.com/shixincube/cube-javascript
+```
+
+### 2、安装依赖库
+
+进入 `cube-javascript` 目录：
+
+```bash
+cd cube-javascript
+```
+
+执行依赖安装：
+
+```bash
+npm install
+```
+
+### 3、配置数据库
+
+目前 Web App 仅支持 MySQL 数据库。
+
+进入 `web` 目录并编辑 `config.js` 文件：
+
+```bash
+cd web
+vi config.js
+```
+
+修改对应的数据库配置：
+
+```javascript
+const config = {
+    db: {
+        host     : '192.168.100.122',  // 数据库服务器地址
+        port     : '3307',             // 数据库服务器端口
+        user     : 'cube',             // 数据库访问用户
+        password : 'shixincube',       // 数据库访问密码
+        database : 'cube_3_app',       // 数据库 Schema
+        charset  : 'UTF8',
+        supportBigNumbers : true
+    }
+};
+```
+
+### 4、启动程序
+
+通过 node 或者 npm 命令启动容器：
+
+```bash
+node ./bin/www
+```
+
+或者
+
+```bash
+npm run start
+```
+
+### 5、开始使用
+
+在浏览器里输入：`http://127.0.0.1:8080` 即可开始使用 Web 客户端程序。
+
+
+&nbsp;
+&nbsp;
+&nbsp;
