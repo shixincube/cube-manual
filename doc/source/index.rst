@@ -1,0 +1,28 @@
+欢迎来到《时信魔方》
+====================================
+
+:term:`时信魔方` 是面向开发者的实时协作开发框架。帮助开发者快速、高效的在项目中集成实时协作能力。
+
+- :ref:`user-docs`
+
+.. _user-docs:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 用户文档
+
+
+.. _knowledge-docs:
+
+.. toctree::
+    :maxdepth: 2
+    :caption: 知识库
+
+    /glossary
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`
