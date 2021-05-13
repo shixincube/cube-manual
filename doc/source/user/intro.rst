@@ -52,6 +52,12 @@
 
 时信魔方没有采用通用的通信协议方案，而是针对性的开发了 :term:`Simple Hybrid Messaging` 简单混合消息传输协议，简称： **SHM** 。
 
+.. figure:: /images/cell-struct.png
+   :align: center
+   :alt: Cell 通信结构
+
+   *Cell 通信结构*
+
 在时信魔方里实现该协议的工程是 :term:`Cell` ，Cell 支持直连 :term:`TCP` 和 :term:`WebSocket` 两种连接方式。 SHM 链路支持快速加密和数据压缩，同时 SHM 链路上允许同一连接同时投送报文数据和流数据，从而减少客户端设备对于链路的管理（不需要像 HTTP/HTTPS 协议那样需要连接池同时管理数个 TCP 连接）。
 
 
