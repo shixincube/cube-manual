@@ -11,6 +11,10 @@
 
     Cell
         实现 SHM 协议的工程。
+
+    
+    SDK
+        SDK 是  Software Development Kit 的首字母缩写，即软件开发包。
     
     Simple Hybrid Messaging
         简单混合消息传输协议。
