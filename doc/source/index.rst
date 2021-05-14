@@ -12,6 +12,12 @@
    :caption: 用户文档
 
    /user/intro
+   /user/quickstart
+   /user/installation
+   /user/configuration
+   /user/application
+   /user/client_sdk
+   /user/tutorials
 
 .. _knowledge-docs:
 
