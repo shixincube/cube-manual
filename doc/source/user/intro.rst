@@ -232,18 +232,12 @@ MCU & SFU 会议
 * 基于路由表定义的事件通知
 * 兼容 SIP 协议（RFC3261）
 * RTP/RTCP 音视频传输
-* RTSP 音视频传输及多速率、多分辨率匹配
 * STUN NAT 穿透
 * TURN 媒体流转发
-* SRTP 媒体加密
-* FEC (Forward Error Correction) 前向纠错
-* 兼容 WebRTC 技术
-* AEC/AECM 声学回音消除器
-* AGC 自动增益控制
+* 支持 WebRTC 技术
 * 支持 iSAC，iLBC，G711 等音频编解码
 * 支持 H.264，VP8，VP9 等视频编解码
 * 屏幕纵横比自适应
 * 自适应码率控制
-* 色彩校正技术
 * 频文件数据格式支持：MP4（H.264、MPEG4）、WebM、OGG 等
 * 音频文件数据格式支持：OGG、WAV、AMR、MP3 等
