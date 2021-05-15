@@ -4,22 +4,48 @@
 :term:`时信魔方` 是面向开发者的实时协作开发框架。帮助开发者快速、高效的在项目中集成实时协作能力。
 
 - :ref:`user-docs`
+- :ref:`feature-docs`
 
 .. _user-docs:
 
 .. toctree::
-   :maxdepth: 2
-   :caption: 用户文档
+    :maxdepth: 2
+    :caption: 用户文档
 
-   /user/intro
-   /user/quickstart
-   /user/installation
-   /user/configuration
-   /user/application
-   /user/tutorials
-   /user/client_sdk
-   /user/server_sdk
-   /user/faq
+    /user/intro
+    /user/quickstart
+    /user/installation
+    /user/configuration
+    /user/application
+    /user/tutorials
+    /user/client_sdk
+    /user/server_sdk
+    /user/faq
+
+
+.. _feature-docs:
+
+.. toctree::
+    :maxdepth: 2
+    :caption: 功能文档
+ 
+    /features/client_javascript
+    /features/client_android
+    /features/client_ios
+    /features/server_console
+    /features/server_java
+
+
+.. _project-docs:
+
+.. toctree::
+    :maxdepth: 2
+    :caption: 项目文档
+
+    /project/team
+    /project/contribution
+    /project/conduct
+
 
 .. _knowledge-docs:
 
