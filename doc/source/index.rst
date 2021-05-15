@@ -16,8 +16,10 @@
    /user/installation
    /user/configuration
    /user/application
-   /user/client_sdk
    /user/tutorials
+   /user/client_sdk
+   /user/server_sdk
+   /user/faq
 
 .. _knowledge-docs:
 
