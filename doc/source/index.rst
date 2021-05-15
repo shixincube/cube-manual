@@ -21,6 +21,7 @@
     /user/client_sdk
     /user/server_sdk
     /user/faq
+    /user/support
 
 
 .. _feature-docs:
