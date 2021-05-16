@@ -31,20 +31,70 @@
         tar -xzf cube-server-3.0.tar.gz
 
 
-2. 配置并启动控制台
+2. 配置服务器管理控制台。
+
+    时信魔方控制台默认使用 MySQL 数据库，编辑 ``cube-server-3.0/console/console.properties`` 配置文件：
+
+    .. code-block::
+
+        # console.properties
+
+        # DB
+        db=mysql
+        
+        # MySQL config
+        # 数据库服务器地址
+        mysql.host=127.0.0.1
+        # 数据库服务器端口
+        mysql.port=3306
+        # 数据库 Schema
+        mysql.schema=cube_3_console
+        # 访问用户名
+        mysql.user=cube
+        # 访问密码
+        mysql.password=shixin_cube_2021
+
+    在配置文件里填写您的 MySQL 配置信息。
+
+
+3. 启动服务器管理控制台。
+
+    按照以下步骤启动控制器台程序。
 
     .. code-block:: shell
 
         cd cube-server-3.0/console
         chmod +x ./start.sh
+        ./start.sh
+    
+    当您看到终端打印以下内容时，说明控制台已经启动：
+
+    .. code-block:: shell
+
+        Enter "http://Your-Server-IP:7080" in your browser to login Cube Console.
+        
+        在浏览器中输入 "http://您的服务器IP:7080" 登录 Cube Console 。
 
 
-3. 登录控制台
+4. 登录控制台，在控制台里启动并配置服务器。
 
-    登录控制台，在控制台里启动并配置服务器。在浏览器里输入：``http://127.0.0.1:7080`` 登录控制台。
+    在浏览器里输入：``http://127.0.0.1:7080`` 登录控制台。
 
     * 默认用户名：``cube``
     * 默认密码：``shixincube``
+
+    |
+
+    .. figure:: /images/snapshoot_cube_console_index.png
+        :align: center
+        :alt: 时信魔方控制台首页截图
+
+    *时信魔方控制台首页截图*
+
+    您可以查看 :doc:`时信魔方控制台使用文档 </features/server_console>` 了解如何使用控制台来管理各个服务器节点。
+
+
+我们建议您在控制台里启动或停止时信魔方的服务器，当然，如果您需要进一步了解服务器的架构和集群结构可以查看 :doc:`时信魔方服务器架构 </features/server_java>` 文档。
 
 
 |
@@ -59,7 +109,24 @@
 
     时信魔方代码同时托管在 `Gitee <https://gitee.com/shixinhulian>`__ 和 `GitHub <https://github.com/shixincube>`__ 两个站点，因此您可以选择其中一个站点来获得数据。
 
-1. 获取源代码
+0. 前期准备
+
+    您需要在您的开发环境中正确安装以下工具，如果您已经配置好了请跳过该步骤：
+
+    1. 安装 `Java SE <https://www.oracle.com/java/technologies/javase-downloads.html>`__ 。建议从 Oracle 官网下载安装包后，按照安装程序引导进行安装。时信魔方需要的最低版本为 **Java SE 8** 。
+
+    2. 安装 `Apache Ant <http://ant.apache.org/>`__ 。
+
+        * 适用 Ubuntu 的安装命令：``sudo apt-get install ant``
+        * 适用 CentOS 的安装命令：``sudo yum -y install ant``
+
+    3. 安装开发与构建工具。
+
+        * 适用 Ubuntu 的安装命令：``sudo apt-get install build-essential``
+        * 适用 CentOS 的安装命令：``sudo yum groupinstall "Development Tools"``
+
+
+1. 获取源代码。
 
     准备目录结构：
 
@@ -68,7 +135,7 @@
         mkdir cube
         cd cube
 
-    从代码库检出构建版本和依赖库：
+    从代码库检出源代码和依赖库：
 
     .. code-block:: shell
 
@@ -83,11 +150,40 @@
         git clone https://github.com/shixincube/cube-server-dependencies
 
 
-2. 编译
+2. 编译服务器工程。
+
+    进入 `cube-server` 目录：
+
+    .. code-block:: shell
+
+        cd cube-server
+
+    编译 Release 版：
+
+    .. code-block:: shell
+
+        ant build
+
+    或者编译 Debug 版：
+
+    .. code-block:: shell
+
+        ant build-debug
+
+    执行部署命令：
+
+    .. code-block:: shell
+
+        ant deploy
+
+    成功执行部署之后，时信魔方的工程文件将全部部署到 ``cube-server/deploy`` 目录下。  
+
+
+3. 配置控制台
 
 
 
-3. 启动控制台
+4. 启动控制台
 
     .. code-block:: shell
 
