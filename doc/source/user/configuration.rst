@@ -188,13 +188,76 @@ director. *X* .weight       配置连接此服务单元的权重，取值范围 
 
 .. note:: *X* 是从 1 到 N 的自编序号。
 
+当需要连接多个服务单元时，可以增加 *director* 配置参数项，例如配置调度服务器连接 3 个服务单元节点：
+
+.. code-block:: properties
+
+    # Director 1 config
+    director.1.address=192.168.20.11
+    director.1.port=6000
+    director.1.cellets=Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference
+    director.1.weight=5
+
+    # Director 2 config
+    director.2.address=192.168.20.12
+    director.2.port=6000
+    director.2.cellets=Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference
+    director.2.weight=5
+
+    # Director 3 config
+    director.3.address=192.168.20.13
+    director.3.port=6000
+    director.3.cellets=Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference
+    director.3.weight=2
+
+
 
 |
+
 
 .. _configuration-service:
 
 服务单元服务器 (Service) 配置
 ===============================
+
+与服务单元服务器相关的配置文件有：
+
+#. 服务器配置相关：
+    * ``service.xml`` - Cell 容器配置文件。
+    * ``storage.json``
+
+#. 缓存配置相关：
+    * ``token-pool.properties``
+    * ``general-cache.properties``
+    * ``contact-cache.properties``
+    * ``group-cache.properties``
+    * ``filelabel-cache.properties``
+    * ``messaging-series-memory.properties``
+
+#. 模块配置相关：
+    * ``file-storage.properties``
+    * ``multipoint-comm.properties``
+
+
+
+服务器配置
+-------------------------------
+
+
+
+缓存配置
+-------------------------------
+
+
+
+模块配置
+-------------------------------
+
+
+
+
+
+|
 
 
 .. _configuration-media-unit:
