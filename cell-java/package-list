@@ -18,6 +18,5 @@ cell.core.talk
 cell.core.talk.dialect
 cell.util
 cell.util.collection
-cell.util.json
 cell.util.log
 cell.util.quota
