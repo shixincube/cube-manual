@@ -116,6 +116,80 @@
             <level>DEBUG</level>
         </log>
 
+5. 配置 Cellet 服务单元
+
+    .. code-block:: xml
+
+        <cellets>
+            <cellet port="7000,7070,7077">
+                <class>cube.dispatcher.auth.AuthCellet</class>
+                <class>cube.dispatcher.contact.ContactCellet</class>
+                <class>cube.dispatcher.filestorage.FileStorageCellet</class>
+                <class>cube.dispatcher.fileprocessor.FileProcessorCellet</class>
+                <class>cube.dispatcher.messaging.MessagingCellet</class>
+                <class>cube.dispatcher.multipointcomm.MultipointCommCellet</class>
+                <class>cube.dispatcher.conference.ConferenceCellet</class>
+            </cellet>
+        </cellets>
+
+    这里可以为不同的服务单元指定端口。如果您的服务器修改了端口需要修改 ``port`` 属性对应的端口号。
+
+
+:term:`HTTP`/:term:`HTTPS` 配置
+-----------------------------------
+
+时信魔方的 Web/HTML5 客户端需要使用 HTTP/HTTPS 协议进行文件数据的传输。在 ``dispatcher.properties`` 文件里进行配置。
+
+.. code-block:: properties
+
+    # HTTP 监听地址
+    http.host=0.0.0.0
+    # HTTP 监听端口
+    http.port=7010
+    # HTTPS 监听地址
+    https.host=0.0.0.0
+    # HTTPS 监听端口
+    https.port=7017
+    # JKS 文件
+    keystore=server.jks
+    storePassword=shixincube.com
+    managerPassword=shixincube.com
+
+
+
+
+主/从连接配置
+-------------------------------
+
+在 ``dispatcher.properties`` 文件里配置调度服务器后连的服务单元服务器。
+
+.. code-block:: properties
+
+    # Cellet list
+    cellets=Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference
+
+    # Director 1 config
+    director.1.address=127.0.0.1
+    director.1.port=6000
+    director.1.cellets=Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference
+    director.1.weight=5
+
+各参数说明如下：
+
+=========================== =============================================================
+参数名                       说明
+=========================== =============================================================
+cellets                     配置此调度服务器可以连接的 Cellet 服务单元
+director. *X* .address      被连接服务单元的访问地址
+director. *X* .port         被连接服务单元的访问端口
+director. *X* .cellets      配置连接哪些 Cellet 服务，使用半角逗号分隔
+director. *X* .weight       配置连接此服务单元的权重，取值范围 1 到 10，数值越大权重越大
+=========================== =============================================================
+
+.. note:: *X* 是从 1 到 N 的自编序号。
+
+
+|
 
 .. _configuration-service:
 

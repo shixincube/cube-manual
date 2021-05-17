@@ -46,6 +46,7 @@
     /project/team
     /project/contribution
     /project/conduct
+    /project/showcase
 
 
 .. _knowledge-docs:

@@ -72,11 +72,11 @@ Cube 包含以下协作功能：
 ## 技术特征
 
 * 网络层、逻辑层、缓存层、存储层采用分层设计。服务器端使用“**单元隔离**”原则，各个功能单元可以实现 **“微服务”方式部署** ，**“宏服务”方式管理** 。
-* 采用 **SHM（Simple Hybrid Message，简单混合消息传送）** 协议。可在同一条链路上混合传输封包和流数据，且都能进行压缩和加密。
+* 采用 **SHM（Simple Hybrid Messaging，简单混合消息传送）** 协议。可在同一条链路上混合传输封包和流数据，且都能进行压缩和加密。
 * 信令、负载和流媒体传输均采用加密方式。长连接信令支持全信道压缩（采用 ZIP 算法）。
 * 兼容行业内主流协议，例如：**SIP**（RFC 3261）、**WebRTC**（RFC 7742、RFC 7874、RFC 7875）等。
 * 支持 H.264，VP8，VP9 等视频编解码器，支持 G711、G722、iLBC、ISAC、OPUS 等音频编解码器。
-* 支持 **MCU （Multipoint Control Unit）** 与 **SFU （Selective Forwarding Unit）** 模式。
+* 支持 **MCU （Multipoint Conferencing Unit）** 与 **SFU （Selective Forwarding Unit）** 模式。
 * 采用矢量图元传输与渲染。
 * 支持文本内容、文件内容、图片内容、图像内容的识别，内置 NLP、Face Recognition、Super Resolution 等数据处理技术，**提供对接第三方机器学习平台接口**。
 * 支持的文档格式有：**pdf**、**doc**、docm、**docx**、dotm、dotx、ett、**xls**、xlsm、**xlsx**、xlt、dpt、ppsm、ppsx、pot、potm、potx、pps、**ppt**、pptm、**pptx** 等。

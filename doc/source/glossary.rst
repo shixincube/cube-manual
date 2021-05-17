@@ -12,6 +12,12 @@
     Cell
         实现 SHM 协议的工程。
 
+    HTTP
+        超文本传输协议。
+
+    HTTPS
+        安全的超文本传输协议。
+
     JKS
         Java Key Store
     
