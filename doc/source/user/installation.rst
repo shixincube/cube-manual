@@ -245,4 +245,69 @@
 Docker 镜像
 ===============================
 
-[TODO]
+[TODO - hidden]
+
+
+|
+
+
+.. _check_installation:
+
+检查安装
+===============================
+
+通过以下命令验证服务器控制台是否正在运行：
+
+.. code-block:: shell-session
+
+    $ ps -ef | grep cube.console.container.Main | grep -v 'grep' | awk '{print $2}'
+    8722
+
+该命令将回显控制台进程的 PID 信息。
+
+如果您没有修改调度服务器、服务单元服务器和媒体单元服务器的端口，可以通过 ``netstat`` 命令来检测对应的端口是否已就绪。
+
+调度服务器默认使用 7000 端口，7070 端口和 7077 端口等：
+
+.. code-block:: shell-session
+
+    $ netstat -al -p tcp | grep 7000
+    tcp6       0      0 [::]:7000               [::]:*                  LISTEN      -
+
+服务单元服务器默认使用 6000 端口：
+
+.. code-block:: shell-session
+
+    $ netstat -al -p tcp | grep 6000
+    tcp6       0      0 [::]:6000               [::]:*                  LISTEN      -
+
+媒体单元服务器默认使用 8888 端口等：
+
+.. code-block:: shell-session
+
+    $ netstat -al -p tcp | grep 8888
+    tcp6       0      0 [::]:8888               [::]:*                  LISTEN      -
+
+|
+
+我们也可以使用下面的命令来检测服务器的监听端口是否可用。
+
+检查调度服务器的监听端口是否可用：
+
+.. code-block:: shell-session
+
+    $ telnet 127.0.0.1 7000
+    Trying 127.0.0.1...
+    Connected to 127.0.0.1.
+    Escape character is '^]'.
+
+
+检查服务单元服务器的监听端口是否可用：
+
+.. code-block:: shell-session
+
+    $ telnet 127.0.0.1 6000
+    Trying 127.0.0.1...
+    Connected to 127.0.0.1.
+    Escape character is '^]'.
+

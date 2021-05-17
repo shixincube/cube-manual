@@ -48,10 +48,22 @@ templates_path = ['_templates']
 # Usually you set "language" from the command line for these cases.
 language = 'zh_cn'
 
+# The master toctree document.
+master_doc = 'index'
+
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
+
+# The name of the Pygments (syntax highlighting) style to use.
+# pygments_style = 'abap'
+# pygments_style = 'default'
+# pygments_style = 'manni'
+# pygments_style = 'monokai'
+pygments_style = 'tango'
+# pygments_style = 'trac'
+# pygments_style = 'xcode'
 
 
 # -- Options for HTML output -------------------------------------------------
