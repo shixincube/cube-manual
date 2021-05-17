@@ -150,7 +150,7 @@
         git clone https://github.com/shixincube/cube-server-dependencies
 
 
-2. 编译服务器工程。
+2. 编译服务器。
 
     进入 `cube-server` 目录：
 
@@ -181,14 +181,61 @@
 
 3. 配置控制台
 
+    配置控制台的数据库。进入 ``console`` 目录：
+
+    .. code-block:: shell
+
+        cd console
+
+    编辑配置文件 `console.properties` ：
+
+    .. code-block:: shell
+
+        vi console.properties
+
+    配置文件的相关数据库配置项说明如下：
+
+    .. code-block::
+
+        # DB
+        db=mysql
+        
+        # MySQL Config
+        # 数据库服务器地址
+        mysql.host=192.168.100.122
+        # 数据库服务器端口
+        mysql.port=3307
+        # 数据库 Schema
+        mysql.schema=cube_console
+        # 访问用户名
+        mysql.user=cube
+        # 访问密码
+        mysql.password=shixincube
 
 
 4. 启动控制台
 
     .. code-block:: shell
 
-        cd cube-server/console
         chmod +x ./start.sh
+        ./start.sh
+
+    在浏览器里输入：``http://127.0.0.1:7080`` 登录控制台。
+
+    * 默认用户名：``cube``
+    * 默认密码：``shixincube``
+
+    |
+
+    之后即可在控制台操作服务器程序。
+
+    .. figure:: /images/snapshoot_cube_console_index.png
+        :align: center
+        :alt: 时信魔方控制台首页截图
+
+    *时信魔方控制台首页截图*
+
+    您可以查看 :doc:`时信魔方控制台使用文档 </features/server_console>` 了解如何使用控制台来管理各个服务器节点。
 
 |
 
@@ -199,4 +246,3 @@ Docker 镜像
 ===============================
 
 [TODO]
-

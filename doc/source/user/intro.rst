@@ -231,9 +231,8 @@ MCU & SFU 会议
 * 无服务端缓存系统
 * 基于路由表定义的事件通知
 * 兼容 SIP 协议（RFC3261）
-* RTP/RTCP 音视频传输
-* STUN NAT 穿透
-* TURN 媒体流转发
+* RTP/RTCP 实时音视频传输
+* RTMP/RTSP 音视频流
 * 支持 WebRTC 技术
 * 支持 iSAC，iLBC，G711 等音频编解码
 * 支持 H.264，VP8，VP9 等视频编解码
