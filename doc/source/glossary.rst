@@ -7,7 +7,7 @@
 .. glossary::
 
     AVI
-        Audio Video Interleaved, known by its initials AVI, is a multimedia container format introduced by Microsoft in November 1992 as part of its Video for Windows technology. AVI files can contain both audio and video data in a file container that allows synchronous audio-with-video playback. AVI is a derivative of the Resource Interchange File Format (RIFF).
+        AVI 是 Audio Video Interleaved 的缩写形式，是微软在1992年11月推出的一种多媒体容器格式，它是 Windows 视频技术的一部分。AVI 文件可以同时包含音频和视频数据在一个文件容器，允许同步音频与视频播放。AVI是资源交换文件格式（RIFF）的派生版本。
 
     Cell
         实现 SHM 协议的工程。

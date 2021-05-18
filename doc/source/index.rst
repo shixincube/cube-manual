@@ -49,6 +49,15 @@
     /project/showcase
 
 
+.. _dev-docs:
+
+.. toctree::
+    :maxdepth: 2
+    :caption: 开发者文档
+
+    /dev/dev_guide
+
+
 .. _knowledge-docs:
 
 .. toctree::
