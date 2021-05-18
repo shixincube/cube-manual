@@ -162,21 +162,25 @@
 
     .. code-block:: shell
 
-        ant build
+        make build
 
     或者编译 Debug 版：
 
     .. code-block:: shell
 
-        ant build-debug
+        make build-debug
 
     执行部署命令：
 
     .. code-block:: shell
 
-        ant deploy
+        make install
 
     成功执行部署之后，时信魔方的工程文件将全部部署到 ``cube-server/deploy`` 目录下。  
+
+    .. tip::
+    
+        更多的构建命令请使用 ``make help`` 查看。
 
 
 3. 配置控制台
@@ -281,12 +285,12 @@ Docker 镜像
     $ netstat -al -p tcp | grep 6000
     tcp6       0      0 [::]:6000               [::]:*                  LISTEN      -
 
-媒体单元服务器默认使用 8888 端口等：
+媒体单元服务器默认使用 6700 端口：
 
 .. code-block:: shell-session
 
-    $ netstat -al -p tcp | grep 8888
-    tcp6       0      0 [::]:8888               [::]:*                  LISTEN      -
+    $ netstat -al -p tcp | grep 6700
+    tcp6       0      0 [::]:6700               [::]:*                  LISTEN      -
 
 |
 

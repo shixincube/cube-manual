@@ -49,7 +49,7 @@
 
 调度服务器使用 Cell 容器运行，配置文件 ``dispatcher.xml`` 主要配置了服务监听端口和支持的服务单元。
 
-1. 配置 :term:`SHM` 协议的监听地址和端口，默认端口号 ``7000`` ：
+1. 配置 :term:`SHM` 协议的监听地址、端口和最大连接数，默认端口号 ``7000`` ：
 
     .. code-block:: xml
 
@@ -62,7 +62,7 @@
             <max-connection>1000</max-connection>
         </server>
 
-2. 配置 :term:`WebSocket` 协议的监听地址和端口：
+2. 配置 :term:`WebSocket` 协议的监听地址、端口和最大连接数：
 
     2.1. WebSocket 服务器配置，默认端口号 ``7070`` ：
 
@@ -224,26 +224,112 @@ director. *X* .weight       配置连接此服务单元的权重，取值范围 
 
 #. 服务器配置相关：
     * ``service.xml`` - Cell 容器配置文件。
-    * ``storage.json``
+    * ``storage.json`` - 数据库配置文件。
 
 #. 缓存配置相关：
-    * ``token-pool.properties``
-    * ``general-cache.properties``
-    * ``contact-cache.properties``
-    * ``group-cache.properties``
-    * ``filelabel-cache.properties``
-    * ``messaging-series-memory.properties``
+    * ``token-pool.properties`` - 集群的令牌缓存池配置文件。
+    * ``general-cache.properties`` - 集群的通用型缓存配置文件。
+    * ``contact-cache.properties`` - 联系人模块的集群联系人数据缓存配置文件。
+    * ``group-cache.properties`` - 联系人模块的集群群组数据缓存配置文件。
+    * ``filelabel-cache.properties`` - 文件模块的集群文件标签数据缓存配置文件。
+    * ``messaging-series-memory.properties`` - 消息模块的集群时序缓存配置文件。
 
 #. 模块配置相关：
-    * ``file-storage.properties``
-    * ``multipoint-comm.properties``
+    * ``file-storage.properties`` - 文件存储模块配置文件。
+    * ``multipoint-comm.properties`` - 多方通讯模块配置文件。
 
 
 
 服务器配置
 -------------------------------
 
+运行容器配置
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+容器配置文件是 ``service.xml`` 。配置服务器监听端口：
+
+.. code-block:: xml
+
+    <server>
+        <!-- 服务绑定的地址 -->
+        <host>0.0.0.0</host>
+        <!-- 服务绑定的端口号 -->
+        <port>6000</port>
+        <!-- 最大允许连接数 -->
+        <max-connection>1000</max-connection>
+    </server>
+
+如果修改了端口配置信息，需要同时修改 ``cellet`` 标签的 ``port`` 属性：
+
+.. code-block:: xml
+
+    <cellets>
+        <cellet port="6000">
+        ...
+        </cellet>
+    </cellets>
+
+
+配置联系人事件队列，时信魔方服务器以“联系人”为基本的数据元进行数据管理，因此主要的事件队列以联系人为主检索条件。
+
+.. code-block:: xml
+
+    <adapter name="Contacts" host="192.168.100.160" port="6860">
+        <nodes>
+            <node host="192.168.100.165" port="6860"></node>
+            <node host="192.168.100.175" port="6860"></node>
+        </nodes>
+    </adapter>
+
+``adapter`` 标签配置使用 **Contacts** 作为队列名称且 **不可修改** ，``host`` 配置为部署主机的可访问内网地址，``port`` 配置为集群端口号 6860 。
+
+``nodes`` 标签下面配置其他集群内的节点信息，同样的，``host`` 配置为节点的访问地址，``port`` 配置为节点的监听端口。
+
+上述示例里，我们配置了一个3个节点构成的对等集群网络，访问地址分别是 *192.168.100.160* 、 *192.168.100.165* 和 *192.168.100.175* 。
+
+.. tip::
+
+    Cell 的 Nucleus 适配器 (Adapter) 支持节点“传播”，当集群节点很多时，只需要填写1到2个节点即可，通过自动“传播”方式，单个节点能找到集群里其他节点，并建立通信。
+
+
+数据库/存储配置
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+数据库配置文件是 ``storage.json`` ：
+
+.. code-block:: json
+
+    {
+        "Auth": {
+            "type": "SQLite",
+            "file": "storage/AuthService.db"
+        },
+
+        "Contact": {
+            "type": "SQLite",
+            "file": "storage/ContactService.db"
+        },
+
+        "Messaging": {
+            "type": "SQLite",
+            "file": "storage/MessagingService.db"
+        },
+
+        "FileStorage": {
+            "type": "SQLite",
+            "file": "storage/FileStorageService.db"
+        },
+
+        "Conference": {
+            "type": "SQLite",
+            "file": "storage/ConferenceService.db"
+        }
+    }
+
+上述配置使用 **SQLite** 作为数据库系统进行数据存储。
+
+
+|
 
 缓存配置
 -------------------------------
