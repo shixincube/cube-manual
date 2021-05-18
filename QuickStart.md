@@ -150,7 +150,7 @@ git clone https://github.com/shixincube/cube-javascript
 进入 `cube-javascript` 目录：
 
 ```bash
-cd cube-javascript
+cd cube-javascript/cube
 ```
 
 执行依赖安装：
