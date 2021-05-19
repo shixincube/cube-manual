@@ -17,9 +17,8 @@
     /user/installation
     /user/configuration
     /user/application
-    /user/tutorials
-    /user/client_sdk
-    /user/server_sdk
+    /user/client_tutorials
+    /user/server_tutorials
     /user/faq
     /user/support
 
