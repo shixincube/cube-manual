@@ -3,8 +3,18 @@
 
 :term:`时信魔方` 是面向开发者的实时协作开发框架。帮助开发者快速、高效的在项目中集成实时协作能力。
 
+项目的主要文档是：
+
 - :ref:`user-docs`
 - :ref:`feature-docs`
+- :ref:`project-docs`
+
+开发状态文档：
+
+- :doc:`/project/relnotes/index`
+- :ref:`dev-docs`
+
+|
 
 .. _user-docs:
 

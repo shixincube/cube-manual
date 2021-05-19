@@ -13,7 +13,7 @@
     我们的客户端工程里提供的是使用 **Node.js** 技术的 `Express <https://expressjs.com/>`__ 作为 Web Application Server 。您可以使用其他 Web 应用服务器技术，例如：`Spring <https://spring.io/>`__ 、`Struts <https://struts.apache.org/>`__ 或 `Rails <https://rubyonrails.org/>`__ 等。您可以参考 :doc:`客户端说明 </features/client_javascript>` 文档来获得更多信息。
 
 
-0. 准备工作
+1. 准备工作
 
     您需要在您的开发环境中正确安装以下工具：
 
@@ -21,7 +21,7 @@
     * `npm <https://www.npmjs.com/>`__ 
 
 
-1. 编译 Web 版应用程序
+2. 编译 Web 版应用程序
 
     1.1. 获取源代码
 
@@ -55,7 +55,7 @@
         该编译脚本将编译应用程序的 Web 端 JavaScript 源代码。
 
 
-2. 配置 Web 版服务器数据库
+3. 配置 Web 版服务器数据库
    
     编辑 ``config.js`` 文件，修改数据库相关配置信息：
 
@@ -80,7 +80,7 @@
         };
 
 
-3. 运行
+4. 运行
 
     使用 npm 启动 Web 服务器：
 
@@ -97,7 +97,7 @@
         *Web 应用程序首页*
     
 
-4. 登录
+5. 登录
 
     您可以通过点击“注册新账号”来创建新账号，也可以使用我们内置的试用账号：
 

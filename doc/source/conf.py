@@ -23,7 +23,7 @@ copyright = '2021 Cube Team'
 author = 'Cube Team'
 
 # The full version, including alpha/beta/rc tags
-release = '3.0.0'
+release = '3.0'
 
 
 # -- General configuration ---------------------------------------------------
