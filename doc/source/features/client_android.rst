@@ -13,7 +13,7 @@ Android 客户端应用程序
 |
 
 
-Android 客户端 SDK
+Android SDK
 ===============================
 
 [TODO]
