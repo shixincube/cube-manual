@@ -9,7 +9,7 @@
 - :ref:`feature-docs`
 - :ref:`project-docs`
 
-开发状态文档：
+开发信息相关的文档：
 
 - :doc:`/project/relnotes/index`
 - :ref:`dev-docs`
