@@ -56,6 +56,7 @@
     /project/contribution
     /project/conduct
     /project/showcase
+    /project/relnotes/index
 
 
 .. _dev-docs:
