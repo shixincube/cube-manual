@@ -35,7 +35,7 @@
 
     时信魔方控制台默认使用 MySQL 数据库，编辑 ``cube-server-3.0/console/console.properties`` 配置文件：
 
-    .. code-block::
+    .. code-block:: properties
 
         # console.properties
 

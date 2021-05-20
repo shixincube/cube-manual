@@ -9,6 +9,28 @@
 安装与配置
 ===============================
 
+1. 从代码库检出源代码：
+
+    .. code-block:: shell
+
+        git clone https://github.com/shixincube/cube-server
+        git clone https://github.com/shixincube/cube-server-dependencies
+
+
+2. 编译并安装：
+
+    .. code-block:: shell
+
+        cd cube-server
+        make all
+
+
+3. 配置数据库：
+
+
+4. 启动/关闭控制台：
+
+
 |
 
 调度机服务器管理
