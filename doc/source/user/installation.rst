@@ -199,7 +199,7 @@
 
     配置文件的相关数据库配置项说明如下：
 
-    .. code-block::
+    .. code-block:: properties
 
         # DB
         db=mysql
