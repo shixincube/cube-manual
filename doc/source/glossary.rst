@@ -21,6 +21,10 @@
     HTTP
         Hypertext Transfer Protocol 超文本传输协议，是一种用于分布式、协作、超媒体信息系统的应用协议。HTTP 是万维网数据通信的基础。HTTP是应用层协议，同其他应用层协议一样，是为了实现某一类具体应用的协议，并由某一运行在用户空间的应用程序来实现其功能。HTTP是一种协议规范，这种规范记录在文档上，为真正通过HTTP进行通信的HTTP的实现程序。
 
+        .. seealso::
+
+            :wikipedia:`超文本传输协议`
+
     HTTPS
         使用 SSL 技术的 :term:`HTTP` 协议。
 
@@ -75,6 +79,10 @@
     
     TCP
         Transmission Control Protocol 是一种面向连接的、可靠的、基于字节流的传输层通信协议，由 IETF 的 RFC 793 定义。
+
+        .. seealso::
+
+            :wikipedia:`传输控制协议`
     
     TLS
         Transport Layer Security 传输层安全性是一种广泛采用的安全性协议，旨在促进 Internet 上通信的隐私和数据安全性。
@@ -85,8 +93,23 @@
     UDP
         User Datagram Protocol 是无连接的传输协议，UDP 为应用程序提供了一种无需建立连接就可以发送封装的 IP 数据包的方法。RFC 768 描述了 UDP。
 
+        .. seealso::
+
+            :wikipedia:`用户数据报协议`
+
+    WebRTC
+        `WebRTC <https://webrtc.org/>`__ 是一组协议、通信机制和 API 的总称，通过点对点连接为浏览器和移动应用程序提供实时通信（Real-Time Communications，RTC）功能。
+
+        .. seealso::
+
+            `WebRTC Working Draft <https://www.w3.org/TR/webrtc/>`__
+
     WebSocket
         `WebSocket <https://www.websocket.org/>`__ （作为 HTML5 规范的一部分）规范定义了一个全双工单套接字连接，通过它可以在客户端和服务器之间发送消息。
+
+        .. seealso::
+
+            :wikipedia:`WebSocket`
 
     时信魔方
         时信魔方是面向开发者的实时协作开发框架。帮助开发者快速、高效的在项目中集成实时协作能力。亦是本产品的中文名称。

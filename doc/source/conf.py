@@ -66,6 +66,18 @@ pygments_style = 'tango'
 # pygments_style = 'xcode'
 
 
+# -- Extensions configuration ---------------------------------------------
+
+# 'svg' would be preferred, but then graphs appear too big and don't adjust
+# their width to the available space (overflows the paragraph size).
+graphviz_output_format = 'png'
+
+# Add English Wikipedia as an external site role.
+extlinks = {
+    'wikipedia': ('https://zh.wikipedia.org/wiki/%s', '维基百科：')
+}
+
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
