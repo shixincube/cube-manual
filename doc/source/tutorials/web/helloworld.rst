@@ -12,6 +12,20 @@ Web/HTML5 - Hello World
 快速开始
 ===============================
 
+按照以下步骤运行演示程序：
+
+1. 安装时信魔方服务器：:doc:`/user/installation` 。
+
+2. 执行以下命令运行演示程序：
+
+    .. code-block:: shell
+
+        git clone https://gitee.com/shixinhulian/cube-javascript
+        cd cube-javascript/cube
+        npm run example
+
+3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/ <http://localhost:8000/>`__
+
 
 .. figure:: /images/tutorials/web_hello_world.png
     :align: center
