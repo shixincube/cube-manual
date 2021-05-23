@@ -24,8 +24,13 @@ Web/HTML5 - Hello World
         cd cube-javascript/cube
         npm run example
 
-3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/ <http://localhost:8000/>`__
+3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/ <http://localhost:8000/>`__ 进入演示程序界面。
 
+4. 点击“启动”按钮启动魔方引擎。
+
+5. 输入账号ID（至少6位数字），点击“签入”即可签入账号。
+
+6. 点击“签出”按钮将账号签出，点击“停止”按钮即停止魔方引擎。
 
 .. figure:: /images/tutorials/web_hello_world.png
     :align: center
