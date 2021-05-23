@@ -22,6 +22,7 @@ Web/HTML5 - Hello World
 
         git clone https://gitee.com/shixinhulian/cube-javascript
         cd cube-javascript/cube
+        npm install
         npm run example
 
 3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/ <http://localhost:8000/>`__ 进入演示程序界面。
