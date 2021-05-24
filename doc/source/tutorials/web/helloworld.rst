@@ -25,7 +25,7 @@ Web/HTML5 - Hello World
         npm install
         npm run example
 
-3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/ <http://localhost:8000/>`__ 或 `https://localhost:8443/ <https://localhost:8443/>`__ 进入演示程序界面。
+3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/examples/hello-world/ <http://localhost:8000/examples/hello-world/>`__ 或 `https://localhost:8443/examples/hello-world/ <https://localhost:8443/examples/hello-world/>`__ 进入演示程序界面。
 
 4. 点击“启动”按钮启动魔方引擎。
 
