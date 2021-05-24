@@ -19,6 +19,21 @@ Hello World
 
 |
 
+事件回调机制
+===============================
+
+时信魔方利用事件回调机制向应用程序传统事件和数据，例如，当收到其他联系人发送的消息时，魔方客户端会通过事件回调机制通知应用程序，因此了解事件回调机制是很有必要的。
+
+.. toctree::
+    :maxdepth: 1
+
+    Web/HTML5 </tutorials/web/event_callback>
+    Android </tutorials/android/event_callback>
+    iOS </tutorials/ios/event_callback>
+    Electron </tutorials/electron/event_callback>
+
+|
+
 即时消息的发送与接收
 ===============================
 
