@@ -45,9 +45,126 @@ Web/HTML5 - 发送/接收即时消息
 
 |
 
-理解示例运行逻辑
+理解示例程序逻辑
 ===============================
 
+这里我们将专注讲解消息的收发逻辑，关于如何启动魔方引擎您可以查询 :doc:`helloworld` 示例。
+
+#. 如前所述，我们需要给指定的联系人发送信息需要使用 `MessagingService <../../_static/cube-javascript-api/MessagingService.html>`__ 模块，因此，在魔方引擎启动之后，我们需要启动消息服务模块：
+
+    .. code-block:: javascript
+
+        cube.messaging.start();
+
+
+#. 为了第一时间通知用户有新消息送达，我们需要监听消息服务模块的 ``MessagingEvent.Notify`` 事件，当我们的账号收到消息时，引擎将回调该事件的监听器方法：
+
+    .. code-block:: javascript
+    
+        cube.messaging.on(MessagingEvent.Notify, onNotify);
+
+    函数 ``onNotify()`` 会在收到消息时被调用，我们可以在 ``onNotify()`` 里编写自己的代码来处理接收到的消息，在示例里我们将接收到的消息内容显示到页面的 *textarea* 标签里。
+
+
+#. 现在可以使用 ``sendToContact()`` 方法来发送消息了。我们创建 `Message <../../_static/cube-javascript-api/Message.html>`__ 消息对象实例，消息数据格式使用 :term:`JSON` 格式：
+
+    .. code-block:: javascript
+
+        // 创建 Message 实例
+        var message = new Message({ content: content });
+        // 发送消息给目标联系人
+        cube.messaging.sendToContact(target, message);
+
+
+|
 
 代码详解
 ===============================
+
+示例里我们使用的文件有：
+
+* **index.html**：主页面文件。
+* **main.css**：页面样式表文件。
+* **main.js**：示例的程序主文件。包括程序逻辑流程和页面事件处理。
+* **cube.js**：时信魔方的 JavaScript 客户端库文件。
+
+这里重点讲解 **main.js** 文件里的逻辑：
+
+#. 绑定事件监听器。
+
+    当页面装载 ``main.js`` 文件后就绑定事件：
+
+    .. code-block:: javascript
+
+        // 监听消息已发送事件
+        cube.messaging.on(MessagingEvent.Sent, onSent);
+        // 监听接收到消息事件
+        cube.messaging.on(MessagingEvent.Notify, onNotify);
+
+    ``onSent()`` 和 ``onNotify()`` 是事件回调函数。
+
+
+#. 启动引擎和消息服务模块，完成用户签入。
+
+    .. code-block:: javascript
+
+        // 启动魔方引擎
+        cube.start(config, function() {
+            [...]
+
+            // 启动消息模块
+            cube.messaging.start();
+
+            // 签入账号
+            cube.signIn(contactIdInput.value, contactNameInput.value);
+        }, function() {
+            [...]
+        });
+
+
+#. 发送消息。
+
+    .. code-block:: javascript
+
+        function sendMessage() {
+            [...]
+
+            // 创建 Message 实例
+            var message = new Message({ content: content });
+            // 发送消息给目标联系人
+            cube.messaging.sendToContact(target, message);
+
+            [...]
+        }
+
+#. 处理接收到的消息。
+
+    .. code-block:: javascript
+
+        function onNotify(event) {
+            // 从事件中得到接收到的消息实例
+            var message = event.getData();
+
+            var text = [message.from, ' -> ', message.to,
+                ' (', formatDate(message.getRemoteTimestamp()), '): ',
+                    message.getPayload().content, '\n'];
+
+            [...]
+        }
+
+#. 处理已发送的消息。
+
+    .. code-block:: javascript
+
+        function onSent(event) {
+            // 从事件中得到已发送的消息实例
+            var message = event.getData();
+
+            var text = [message.from, ' -> ', message.to,
+                ' (', formatDate(message.getRemoteTimestamp()), '): ',
+                    message.getPayload().content, '\n'];
+
+            [...]
+        }
+
+示例程序会将已经发送的消息和已经接收的消息显示在页面的 ``textarea`` 标签里以便我们直观的看到消息。

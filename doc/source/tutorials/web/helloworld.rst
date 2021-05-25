@@ -70,6 +70,14 @@ Web/HTML5 - Hello World
 代码详解
 ===============================
 
+示例里我们使用的文件有：
+
+* **index.html**：主页面文件。
+* **main.css**：页面样式表文件。
+* **main.js**：示例的程序主文件。包括程序逻辑流程和页面事件处理。
+* **cube.js**：时信魔方的 JavaScript 客户端库文件。
+
+
 接下来我们详细说明一下代码。
 
 #. 在 ``index.html`` 页面里，我们载入时信魔方的 JavaScript 客户端文件 ``cube.js``：
@@ -93,7 +101,7 @@ Web/HTML5 - Hello World
             println('启动引擎...');
 
             // 填写引擎需要的参数
-            let config = {
+            var config = {
                 "address": "127.0.0.1",
                 "domain": "shixincube.com",
                 "appKey": "shixin-cubeteam-opensource-appkey"
