@@ -109,18 +109,33 @@ Hello World
 
 |
 
-社交关系管理
+联系人管理
 ===============================
 
-社交关系可以说是多人协作的基础能力，无论是聊天、通话还是会议都离不开社交关系作为底层的数据关系进行数据流的串连，这个示例将介绍在时信魔方里管理联系人的分组、群组和阻止清单等。
+社交关系可以说是多人协作的基础能力，无论是聊天、通话还是会议都离不开社交关系作为底层的数据关系进行数据流的串连，联系人管理是基础的社交关系管理，这个示例将介绍在时信魔方里管理联系人的分组、阻止清单、待处理清单等。
 
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 </tutorials/web/social_mgmt>
-    Android </tutorials/android/social_mgmt>
-    iOS </tutorials/ios/social_mgmt>
-    Electron </tutorials/electron/social_mgmt>
+    Web/HTML5 </tutorials/web/contacts_mgmt>
+    Android </tutorials/android/contacts_mgmt>
+    iOS </tutorials/ios/contacts_mgmt>
+    Electron </tutorials/electron/contacts_mgmt>
+
+|
+
+群组管理
+===============================
+
+社交关系可以说是多人协作的基础能力，无论是聊天、通话还是会议都离不开社交关系作为底层的数据关系进行数据流的串连，这个示例将介绍在时信魔方里创建群组、管理群组成员以及通过群组进行多人协作等。
+
+.. toctree::
+    :maxdepth: 1
+
+    Web/HTML5 </tutorials/web/groups_mgmt>
+    Android </tutorials/android/groups_mgmt>
+    iOS </tutorials/ios/groups_mgmt>
+    Electron </tutorials/electron/groups_mgmt>
 
 |
 
