@@ -13,9 +13,9 @@ Hello World
     :maxdepth: 1
 
     Web/HTML5 </tutorials/web/helloworld>
-    Android </tutorials/android/helloworld>
-    iOS </tutorials/ios/helloworld>
-    Electron </tutorials/electron/helloworld>
+    Android [TODO] </tutorials/android/helloworld>
+    iOS [TODO] </tutorials/ios/helloworld>
+    Electron [TODO] </tutorials/electron/helloworld>
 
 |
 
@@ -28,9 +28,9 @@ Hello World
     :maxdepth: 1
 
     Web/HTML5 </tutorials/web/event_callback>
-    Android </tutorials/android/event_callback>
-    iOS </tutorials/ios/event_callback>
-    Electron </tutorials/electron/event_callback>
+    Android [TODO] </tutorials/android/event_callback>
+    iOS [TODO] </tutorials/ios/event_callback>
+    Electron [TODO] </tutorials/electron/event_callback>
 
 |
 
@@ -43,9 +43,9 @@ Hello World
     :maxdepth: 1
 
     Web/HTML5 </tutorials/web/sendrecv_message>
-    Android </tutorials/android/sendrecv_message>
-    iOS </tutorials/ios/sendrecv_message>
-    Electron </tutorials/electron/sendrecv_message>
+    Android [TODO] </tutorials/android/sendrecv_message>
+    iOS [TODO] </tutorials/ios/sendrecv_message>
+    Electron [TODO] </tutorials/electron/sendrecv_message>
 
 |
 
@@ -58,9 +58,9 @@ Hello World
     :maxdepth: 1
 
     Web/HTML5 </tutorials/web/contact_video_call>
-    Android </tutorials/android/contact_video_call>
-    iOS </tutorials/ios/contact_video_call>
-    Electron </tutorials/electron/contact_video_call>
+    Android [TODO] </tutorials/android/contact_video_call>
+    iOS [TODO] </tutorials/ios/contact_video_call>
+    Electron [TODO] </tutorials/electron/contact_video_call>
 
 |
 
@@ -72,10 +72,10 @@ Hello World
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 </tutorials/web/group_audio>
-    Android </tutorials/android/group_audio>
-    iOS </tutorials/ios/group_audio>
-    Electron </tutorials/electron/group_audio>
+    Web/HTML5 [TODO] </tutorials/web/group_audio>
+    Android [TODO] </tutorials/android/group_audio>
+    iOS [TODO] </tutorials/ios/group_audio>
+    Electron [TODO] </tutorials/electron/group_audio>
 
 |
 
@@ -87,10 +87,10 @@ Hello World
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 </tutorials/web/group_video>
-    Android </tutorials/android/group_video>
-    iOS </tutorials/ios/group_video>
-    Electron </tutorials/electron/group_video>
+    Web/HTML5 [TODO] </tutorials/web/group_video>
+    Android [TODO] </tutorials/android/group_video>
+    iOS [TODO] </tutorials/ios/group_video>
+    Electron [TODO] </tutorials/electron/group_video>
 
 |
 
@@ -102,10 +102,10 @@ Hello World
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 </tutorials/web/file_basics>
-    Android </tutorials/android/file_basics>
-    iOS </tutorials/ios/file_basics>
-    Electron </tutorials/electron/file_basics>
+    Web/HTML5 [TODO] </tutorials/web/file_basics>
+    Android [TODO] </tutorials/android/file_basics>
+    iOS [TODO] </tutorials/ios/file_basics>
+    Electron [TODO] </tutorials/electron/file_basics>
 
 |
 
@@ -118,9 +118,9 @@ Hello World
     :maxdepth: 1
 
     Web/HTML5 </tutorials/web/contacts_mgmt>
-    Android </tutorials/android/contacts_mgmt>
-    iOS </tutorials/ios/contacts_mgmt>
-    Electron </tutorials/electron/contacts_mgmt>
+    Android [TODO] </tutorials/android/contacts_mgmt>
+    iOS [TODO] </tutorials/ios/contacts_mgmt>
+    Electron [TODO] </tutorials/electron/contacts_mgmt>
 
 |
 
@@ -133,9 +133,9 @@ Hello World
     :maxdepth: 1
 
     Web/HTML5 </tutorials/web/groups_mgmt>
-    Android </tutorials/android/groups_mgmt>
-    iOS </tutorials/ios/groups_mgmt>
-    Electron </tutorials/electron/groups_mgmt>
+    Android [TODO] </tutorials/android/groups_mgmt>
+    iOS [TODO] </tutorials/ios/groups_mgmt>
+    Electron [TODO] </tutorials/electron/groups_mgmt>
 
 |
 
@@ -147,10 +147,10 @@ Hello World
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 </tutorials/web/custom_message>
-    Android </tutorials/android/custom_message>
-    iOS </tutorials/ios/custom_message>
-    Electron </tutorials/electron/custom_message>
+    Web/HTML5 [TODO] </tutorials/web/custom_message>
+    Android [TODO] </tutorials/android/custom_message>
+    iOS [TODO] </tutorials/ios/custom_message>
+    Electron [TODO] </tutorials/electron/custom_message>
 
 |
 
@@ -162,10 +162,10 @@ Hello World
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 </tutorials/web/face_monitor>
-    Android </tutorials/android/face_monitor>
-    iOS </tutorials/ios/face_monitor>
-    Electron </tutorials/electron/face_monitor>
+    Web/HTML5 [TODO] </tutorials/web/face_monitor>
+    Android [TODO] </tutorials/android/face_monitor>
+    iOS [TODO] </tutorials/ios/face_monitor>
+    Electron [TODO] </tutorials/electron/face_monitor>
 
 |
 
