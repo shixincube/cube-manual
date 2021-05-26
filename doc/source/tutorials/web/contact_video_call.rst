@@ -138,14 +138,167 @@ WebRTC 通过 :term:`SDP` 进行媒体数据通道的协商，因此信令服务
 
 |
 
-理解示例程序逻辑
+理解示例程序
 ===============================
 
+#. 准备工作
+
+    在进行通话前，我们需要启动 `MultipointComm <../../_static/cube-javascript-api/MultipointComm.html>`__ 模块，并监听相关的通讯事件，接收到来自其他终端的通话邀请。
+
+    启动 `MultipointComm <../../_static/cube-javascript-api/MultipointComm.html>`__ 模块，模块短名：``mpComm`` ：
+
+    .. code-block:: javascript
+
+        cube.mpComm.start();
+
+    监听事件：
+
+    .. code-block:: javascript
+
+        // 事件：当前通话正在处理中
+        cube.mpComm.on(CallEvent.InProgress, onInProgress);
+        // 事件：对方已振铃
+        cube.mpComm.on(CallEvent.Ringing, onRinging);
+        // 事件：通话已经被接通
+        cube.mpComm.on(CallEvent.Connected, onConnected);
+        // 事件：通话已结束
+        cube.mpComm.on(CallEvent.Bye, onBye);
+        // 事件：有新通话邀请
+        cube.mpComm.on(CallEvent.NewCall, onNewCall);
+        // 事件：对端忙
+        cube.mpComm.on(CallEvent.Busy, onBusy);
+        // 事件：通话邀请或通话应答超时
+        cube.mpComm.on(CallEvent.Timeout, onTimeout);
+        // 事件：通话时发送错误
+        cube.mpComm.on(CallEvent.Failed, onFailed);
+
+
+#. 发起通话邀请
+
+    通过联系人模块获取被叫方的联系人数据：
+
+    .. code-block:: javascript
+
+        cube.contact.getContact(peerIdInput.value, function(contact) {
+            [...]
+        });
+
+    调用 `makeCall() <../../_static/cube-javascript-api/MultipointComm.html#makeCall>`__ 发起对该联系人的呼叫邀请：
+
+    .. code-block:: javascript
+
+        // 告诉引擎同时使用视频和音频通话
+        var mediaConstraint = new MediaConstraint(true, true);
+
+        // 调用 makeCall 发起邀请
+        cube.mpComm.makeCall(contact, mediaConstraint, function() {
+            [...]
+        }, function(error) {
+            [...]
+        });
+
+
+#. 应答邀请
+
+    当收到其他终端的通话邀请时，点击“应答”来接通通话，调用 `answerCall() <../../_static/cube-javascript-api/MultipointComm.html#answerCall>`__ 方法：
+
+    .. code-block:: javascript
+
+        var mediaConstraint = new MediaConstraint(true, true);
+
+        // 调用 answerCall 发起邀请
+        cube.mpComm.answerCall(mediaConstraint, function(record) {
+            [...]
+        }, function(error) {
+            [...]
+        });
+
+
+#. 结束通话
+
+    通话结束时，点击“挂断”按钮来停止通话，关闭摄像机和麦克风。
+
+    .. code-block:: javascript
+
+        // 调用 hangupCall 结束通话
+        cube.mpComm.hangupCall();
+
+
+#. 事件处理
+
+    这里我们主要讲解一下 ``NewCall`` 事件，``NewCall`` 事件的回调函数代码如下：
+
+    .. code-block:: javascript
+
+        function onNewCall(event) {
+            // 当前的通话记录
+            var record = event.getData();
+            stateLabel.innerHTML = '收到来自 ' + record.getCaller().getId() + ' 通话邀请';
+
+            [...]
+
+            setTimeout(function() {
+                if (confirm('是否接听来自 ' + record.getCaller().getId() + ' 的通话？')) {
+                    answerCall();
+                }
+            }, 100);
+        }
+
+    **NewCall** 事件回调函数是当前签入的联系人收到主叫端的邀请时被回调，这时需要用户选择是否应答对方的通话邀请。函数的回调参数是当前的通话记录对象 `CallRecord <../../_static/cube-javascript-api/CallRecord.html>`__ 。
 
 
 |
 
 代码详解
 ===============================
+
+示例里我们使用的文件有：
+
+* **index.html**：主页面文件。
+* **main.css**：页面样式表文件。
+* **main.js**：示例的程序主文件。包括程序逻辑流程和页面事件处理。
+* **cube.js**：时信魔方的 JavaScript 客户端库文件。
+
+#. 使用 **video** 标签显示视频画面。我们需要在 *index.html* 加入两个 **video** 标签分别加载对方摄像机的画面和本地摄像机的画面。
+
+    .. code-block:: html
+
+        <video id="peerVideo" autoplay></video>
+
+    .. code-block:: html
+
+        <video id="myVideo" autoplay></video>
+
+
+#. 在 *main.js* 里我们先为界面上的各个按钮绑定上处理事件：
+
+    * “登录”按钮的事件处理函数是 ``start()``
+    * “退出”按钮的事件处理函数是 ``stop()``
+    * “呼叫”按钮的事件处理函数是 ``makeCall()``
+    * “应答”按钮的事件处理函数是 ``answerCall()``
+    * “挂断”按钮的事件处理函数是 ``hangupCall()``
+
+
+#. 在发起和应答通话时将 **video** 标签的 :term:`DOM` 对象实例赋值到引擎，以便引擎自动加载画面：
+
+    .. code-block:: javascript
+
+        function makeCall() {
+            // 设置视频标签元素
+            cube.mpComm.setRemoteVideoElement(peerVideo);
+            cube.mpComm.setLocalVideoElement(myVideo);
+
+            [...]
+        }
+
+    .. code-block:: javascript
+
+        function answerCall() {
+            // 设置视频标签元素
+            cube.mpComm.setRemoteVideoElement(peerVideo);
+            cube.mpComm.setLocalVideoElement(myVideo);
+
+            [...]
+        }
 
 |

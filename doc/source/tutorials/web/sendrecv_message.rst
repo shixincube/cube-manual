@@ -45,12 +45,12 @@ Web/HTML5 - 发送/接收即时消息
 
 |
 
-理解示例程序逻辑
+理解示例程序
 ===============================
 
 这里我们将专注讲解消息的收发逻辑，关于如何启动魔方引擎您可以查询 :doc:`helloworld` 示例。
 
-#. 如前所述，我们需要给指定的联系人发送信息需要使用 `MessagingService <../../_static/cube-javascript-api/MessagingService.html>`__ 模块，因此，在魔方引擎启动之后，我们需要启动消息服务模块：
+#. 如前所述，我们需要给指定的联系人发送信息需要使用 `MessagingService <../../_static/cube-javascript-api/MessagingService.html>`__ 模块，因此，在魔方引擎启动之后，我们需要启动消息服务模块，模块短名 ``messaging`` ：
 
     .. code-block:: javascript
 
