@@ -109,16 +109,39 @@ Web/HTML5 - 视频通话
 
 魔方引擎将极大简化上述的通信过程的处理。
 
+|
 
 WebRTC 的工作流
 -------------------------------
 
+关于 :term:`WebRTC` 的介绍在很多地方都能查阅，这里通过来自 `MDN Web Docs <https://developer.mozilla.org/>`__ 的两张图说明一下示例程序里使用到的技术细节。
 
+WebRTC 通过 :term:`SDP` 进行媒体数据通道的协商，因此信令服务器要完成在各个对端之间进行 SDP 数据的传输，如下图所示：
+
+.. figure:: /images/tutorials/WebRTC_Signaling_Diagram.svg
+    :align: center
+    :alt: WebRTC 信令数据流
+
+    *WebRTC 信令数据流*
+
+借助 :term:`ICE` 技术 WebRTC 能实现 :term:`NAT Traversal` 方式在对端之间传递音视频数据流，如下图所示：
+
+.. figure:: /images/tutorials/WebRTC_ICE_Candidate_Exchange.svg
+    :align: center
+    :alt: WebRTC ICE Candidate Exchange
+
+    *WebRTC ICE Candidate Exchange*
+
+因此信令服务器需要完成 ICE Candidate 在终端之间的交换。
+
+以上两点就是示例程序里使用到的主要的 WebRTC 技术。
 
 |
 
 理解示例程序逻辑
 ===============================
+
+
 
 |
 
