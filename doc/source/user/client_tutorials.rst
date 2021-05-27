@@ -132,10 +132,85 @@ Hello World
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 </tutorials/web/groups_mgmt>
+    Web/HTML5 [TODO] </tutorials/web/groups_mgmt>
     Android [TODO] </tutorials/android/groups_mgmt>
     iOS [TODO] </tutorials/ios/groups_mgmt>
     Electron [TODO] </tutorials/electron/groups_mgmt>
+
+|
+
+会议的创建与管理
+===============================
+
+会议是进行即时沟通的有效手段，在时信魔方里可以创建并预约会议，也可以随时发起会议，这个示例将演示如何进行这些基础的会议操作。
+
+.. toctree::
+    :maxdepth: 1
+
+    Web/HTML5 [TODO] </tutorials/web/conference_basics>
+    Android [TODO] </tutorials/android/conference_basics>
+    iOS [TODO] </tutorials/ios/conference_basics>
+    Electron [TODO] </tutorials/electron/conference_basics>
+
+|
+
+会议的控制与调度
+===============================
+
+当我们在进行会议时需要根据会议的进度和参会人员进行必要的控制和调度，例如将当前的发言人画面突出显示将其他人静音，这些都可以在时信魔方里进行有效控制。
+
+.. toctree::
+    :maxdepth: 1
+
+    Web/HTML5 [TODO] </tutorials/web/conference_control>
+    Android [TODO] </tutorials/android/conference_control>
+    iOS [TODO] </tutorials/ios/conference_control>
+    Electron [TODO] </tutorials/electron/conference_control>
+
+|
+
+会议的直播管理
+===============================
+
+有些会议我们需要将会议画面以直播方式分享出去，这个示例将介绍如何将我们的会议进行实时直播。
+
+.. toctree::
+    :maxdepth: 1
+
+    Web/HTML5 [TODO] </tutorials/web/conference_live>
+    Android [TODO] </tutorials/android/conference_live>
+    iOS [TODO] </tutorials/ios/conference_live>
+    Electron [TODO] </tutorials/electron/conference_live>
+
+|
+
+白板的基本操作
+===============================
+
+这个示例将演示时信魔方的实时白板的相关操作，包括绘图、标记、文档演示等等。
+
+.. toctree::
+    :maxdepth: 1
+
+    Web/HTML5 [TODO] </tutorials/web/whiteboard_basics>
+    Android [TODO] </tutorials/android/whiteboard_basics>
+    iOS [TODO] </tutorials/ios/whiteboard_basics>
+    Electron [TODO] </tutorials/electron/whiteboard_basics>
+
+|
+
+桌面分享
+===============================
+
+这个示例将演示如何进行桌面分享。
+
+.. toctree::
+    :maxdepth: 1
+
+    Web/HTML5 [TODO] </tutorials/web/desktop_sharing>
+    Android [TODO] </tutorials/android/desktop_sharing>
+    iOS [TODO] </tutorials/ios/desktop_sharing>
+    Electron [TODO] </tutorials/electron/desktop_sharing>
 
 |
 
