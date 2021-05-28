@@ -22,7 +22,7 @@ Web/HTML5 - 视频通话
         npm install
         npm run example
 
-3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/examples/contact-video/ <http://localhost:8000/examples/contact-video/>`__ 或 `https://localhost:8443/examples/contact-video/ <https://localhost:8443/examples/contact-video/>`__ 进入演示程序界面。
+3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/examples/contact-video/ <http://localhost:8000/examples/contact-video/>`__ 或 `https://localhost:4430/examples/contact-video/ <https://localhost:4430/examples/contact-video/>`__ 进入演示程序界面。
 
 4. 输入 **对端 ID** ，例如：``20000`` ，输入 **我的 ID**  ，例如：``10000``，点击“登录”按钮启动演示程序。
 

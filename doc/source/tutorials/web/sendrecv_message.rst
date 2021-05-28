@@ -20,7 +20,7 @@ Web/HTML5 - 发送/接收即时消息
         npm install
         npm run example
 
-3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/examples/sendrecv-message/ <http://localhost:8000/examples/sendrecv-message/>`__ 或 `https://localhost:8443/examples/sendrecv-message/ <https://localhost:8443/examples/sendrecv-message/>`__ 进入演示程序界面。
+3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/examples/sendrecv-message/ <http://localhost:8000/examples/sendrecv-message/>`__ 或 `https://localhost:4430/examples/sendrecv-message/ <https://localhost:4430/examples/sendrecv-message/>`__ 进入演示程序界面。
 
 4. 输入账号 ID ，例如：``500100`` ，点击“启动”按钮启动程序。
 

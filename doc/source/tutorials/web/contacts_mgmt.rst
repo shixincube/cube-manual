@@ -24,7 +24,7 @@ Web/HTML5 - 联系人管理
         npm install
         npm run example
 
-3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/examples/contacts-mgmt/ <http://localhost:8000/examples/contacts-mgmt/>`__ 或 `https://localhost:8443/examples/contacts-mgmt/ <https://localhost:8443/examples/contacts-mgmt/>`__ 进入演示程序界面。
+3. 打开浏览器（Chrome 或 Firefox）输入：`http://localhost:8000/examples/contacts-mgmt/ <http://localhost:8000/examples/contacts-mgmt/>`__ 或 `https://localhost:4430/examples/contacts-mgmt/ <https://localhost:4430/examples/contacts-mgmt/>`__ 进入演示程序界面。
 
 4. 在账号 ID 输入框内输入任意账号 ID，例如：``20000`` 。点击“启动”按钮，启动程序。
 

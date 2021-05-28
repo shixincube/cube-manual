@@ -132,7 +132,7 @@ Hello World
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 [TODO] </tutorials/web/groups_mgmt>
+    Web/HTML5 </tutorials/web/groups_mgmt>
     Android [TODO] </tutorials/android/groups_mgmt>
     iOS [TODO] </tutorials/ios/groups_mgmt>
     Electron [TODO] </tutorials/electron/groups_mgmt>
