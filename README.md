@@ -4,6 +4,23 @@
 
 支持的操作系统有：Windows、Linux 、macOS 、Android、iOS 等，支持的浏览器有：Chrome、Firefox、Safari 等。
 
+## 文档构建
+
+### 安装 Sphinx Doc 工具
+
+```bash
+pip install -U sphinx
+pip install sphinx-rtd-theme
+```
+
+### 编译文档
+
+```bash
+cd doc
+make html
+```
+
+
 ## 功能列表
 
 Cube 包含以下协作功能：
@@ -120,10 +137,3 @@ Cube 应用程序图标如下表所示：
 ## 获得帮助
 
 您可以访问 [时信魔方官网](https://www.shixincube.com/) 获得更多信息。如果您在使用 Cube 的过程中需要帮助可以发送邮件到 [cube@spap.com](mailto:cube@spap.com) 。
-
-## 谁在使用 Cube
-
-|<a href="https://www.spap.com/" target="_blank">司派</a>|<a href="https://www.seehey.com/" target="_blank">SeeHey</a>|<a href="https://card.spap.com/" target="_blank">名片派</a>|<a href="https://apps.apple.com/cn/app/%E8%81%94%E5%AE%A2%E5%AD%A6%E9%99%A2/id1477432872" target="_blank">联客学院</a>|
-| :-: | :-: | :-: | :-: |
-|<a href="https://www.spap.com/" target="_blank" style="border-bottom:0px;"><img class="applogo" style="border-radius:10%;" src="https://static.shixincube.com/cube/assets/images/logo/spap.png" alt="www.spap.com" /></a>|<a href="https://www.seehey.com/" target="_blank" style="border-bottom:0px;"><img class="applogo" style="border-radius:10%;" src="https://static.shixincube.com/cube/assets/images/logo/seehey.png" alt="www.seehey.com" /></a>|<a href="https://card.spap.com/" target="_blank" style="border-bottom:0px;"><img class="applogo" style="border-radius:10%;" src="https://static.shixincube.com/cube/assets/images/logo/cardcase.png" alt="名片派" /></a>|<a href="https://apps.apple.com/cn/app/%E8%81%94%E5%AE%A2%E5%AD%A6%E9%99%A2/id1477432872" target="_blank" style="border-bottom:0px;"><img class="applogo" style="border-radius:10%;" src="https://static.shixincube.com/cube/assets/images/logo/lianke.png" alt="联客学院" /></a>|
-|会工作的人都在司派|高效企业协作平台|商务人士的数字化智能名片夹|全新的企业内部培训服务平台|
