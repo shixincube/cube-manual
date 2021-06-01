@@ -454,4 +454,71 @@ data.pedestal.port           值数据存储桩访问端口（*可选项*）
 媒体单元服务器 (Media Unit) 配置
 ===============================================
 
-[TODO - hidden]
+Kurento Media Server 的配置文件默认目录是：
+
+``/etc/kurento/kurento.conf.json``
+
+配置内容如下：
+
+.. code-block:: json
+
+    {
+      "mediaServer": {
+        "resources": {
+          "//": "KMS will raise an error when reaching this usage% of Kernel resources",
+          "//": "Applies to allowed number of threads, and number of open file descriptors",
+          "//": "Default: 0.8 (80%)",
+          "//exceptionLimit": "0.8",
+
+          "//": "KMS process will be automatically killed when there are no sessions but this % of resources are in use",
+          "//killLimit": "0.7",
+
+          "//": "Garbage collector period, in seconds",
+          "//": "Default: 240 (4 minutes)",
+          "garbageCollectorPeriod": 240,
+
+          "//": "Whether to disable the RPC API request cache, for memory constrained environments",
+          "//": "Default: false",
+          "disableRequestCache": false
+        },
+        "net": {
+          "websocket": {
+            "//": "Try (or not) to use IPv6 for the WebSocket connection, with IPv4 fallback",
+            "//": "Default: true",
+            "//ipv6": false,
+
+            "//": "WebSocket port where API clients connect to control KMS",
+            "//": "Set to 0 or comment out the line to disable WebSocket access",
+            "port": 6700,
+
+            "secure": {
+              "//": "Secure WebSocket port where API clients connect to control KMS",
+              "//": "Set to 0 or comment out the line to disable Secure WebSocket access",
+              "//port": 8433,
+
+              "//": "Path (absolute or relative to this config file) to the",
+              "//": "concatenated certificate (chain) file(s) + private key, in PEM format",
+              "//certificate": "cert+key.pem",
+
+              "//": "Password for the private key, if one was set when the key was created",
+              "//password": ""
+            },
+
+            "//registrar": {
+              "//address": "ws://localhost:9090",
+              "//localAddress": "localhost"
+            },
+
+            "//": "Maximum queue length of pending connections (see sysctl tcp_max_syn_backlog)",
+            "//": "Default: SOMAXCONN (128)",
+            "//connqueue": 128,
+
+            "path": "media",
+            "threads": 10
+          }
+        }
+      }
+    }
+
+* 修改 ``net.websocket.port`` 为 **6700**
+* 修改 ``net.websocket.path`` 为 **media**

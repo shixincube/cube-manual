@@ -14,24 +14,48 @@
 
 一般的，我们建议使用构建版本进行安装和配置，推荐使用 Ubuntu 或 CentOS 进行安装。
 
-
-1. 获取构建版本。
+#. 获取构建版本。
 
     * 下载预构建版本：
 
-    .. code-block:: shell
+        .. code-block:: shell
 
-        curl -o cube-server-3.0.tar.gz https://static.shixincube.com/cube/prebuild/cube-server-3.0.tar.gz
+            curl -o cube-server-3.0.tar.gz \
+                https://static.shixincube.com/cube/prebuild/cube-server-3.0.tar.gz
 
 
     * 解压安装包：
 
-    .. code-block:: shell
+        .. code-block:: shell
 
-        tar -xzf cube-server-3.0.tar.gz
+            tar -xzf cube-server-3.0.tar.gz
+
+    * 安装媒体服务器：
+
+        .. code-block:: shell
+
+            sudo apt-get update && sudo apt-get install --no-install-recommends --yes \
+                gnupg
+
+            # Add Kurento repository to Apt
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5AFA7A83
+
+            source /etc/upstream-release/lsb-release 2>/dev/null || source /etc/lsb-release
+
+            sudo tee "/etc/apt/sources.list.d/kurento.list" >/dev/null <<EOF
+            # Kurento Media Server - Release packages
+            deb [arch=amd64] http://ubuntu.openvidu.io/6.16.0 $DISTRIB_CODENAME kms6
+            EOF
+
+            # Install KMS
+            sudo apt-get update && sudo apt-get install --no-install-recommends --yes \
+                kurento-media-server
+
+        媒体服务器的配置说明请查阅 :doc:`/user/configuration` 文档。
 
 
-2. 配置服务器管理控制台。
+
+#. 配置服务器管理控制台。
 
     时信魔方控制台默认使用 MySQL 数据库，编辑 ``cube-server-3.0/console/console.properties`` 配置文件：
 
@@ -57,7 +81,7 @@
     在配置文件里填写您的 MySQL 配置信息。
 
 
-3. 启动服务器管理控制台。
+#. 启动服务器管理控制台。
 
     按照以下步骤启动控制器台程序。
 
@@ -76,7 +100,22 @@
         在浏览器中输入 "http://您的服务器IP:7080" 登录 Cube Console 。
 
 
-4. 登录控制台，在控制台里启动并配置服务器。
+#. 启动媒体单元服务器（可选步骤）。
+
+    如果您在 Ubuntu 系统里安装好了 KMS 服务器并且配置好了相关参数，可以执行以下命令启动服务器：
+
+    .. code-block:: shell
+
+        sudo service kurento-media-server start
+
+    需要关闭服务器时，执行以下命令：
+
+    .. code-block:: shell
+
+        sudo service kurento-media-server stop
+
+
+#. 登录控制台，在控制台里启动并配置服务器。
 
     在浏览器里输入：``http://127.0.0.1:7080`` 登录控制台。
 
