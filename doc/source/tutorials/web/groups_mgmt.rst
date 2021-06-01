@@ -49,6 +49,15 @@ Web/HTML5 - 群组管理
 
 示例程序主要演示了以下群组功能：
 
+* 查询当前签入的联系人所在的群组 - 使用 `queryGroups() <../../_static/cube-javascript-api/ContactService.html#queryGroups>`__ 方法以群组的更新时间为查询线索获得群组。
+
+    .. code-block:: javascript
+
+        cube.contact.queryGroups(beginning, ending, function(list) {
+            [...]
+        });
+
+
 * 创建群组 - 使用 `createGroup() <../../_static/cube-javascript-api/ContactService.html#createGroup>`__ 方法创建新的群组。
 
     .. code-block:: javascript
@@ -124,16 +133,38 @@ Web/HTML5 - 群组管理
 * **index.html** ：主页面文件。
 * **main.css** ：页面样式表文件。
 * **main.js** ：示例的程序主文件。包括程序逻辑流程和页面事件处理。
-* **helper.js** ：提供一些帮助函数的库文件。
+* **helper.js** ：提供一些帮助函数的库文件。这个示例主要使用了 ``dialog`` 函数来显示联系人列表对话框。
 * **cube.js** ：时信魔方的 JavaScript 客户端库文件。
 
-#. 在示例里我们增加了几个函数来帮助我们完成界面上的操作：
+#. 在示例程序的主文件 ``main.js`` 里我们增加了几个函数来帮助我们完成界面上的操作：
 
-    * ``getSelectedGroupId`` - 这个函数返回在群列表里选择的群组的 ID 。
-    * ``querySelectedContacts``
-    * ``presetContactsDialog``
-    * ``resetContactsDialog``
+    * ``getSelectedGroupId`` - 该函数返回在群列表里选择的群组的 ID 。
+    * ``querySelectedContacts`` - 该函数返回联系人对话框里被选中的联系人。
+    * ``presetContactsDialog`` - 在显示联系人对话框之前对数据进行预处理，预先设置要禁用的选项。
+    * ``resetContactsDialog`` - 重置联系人对话框的数据。
 
-#. 当用户登录后，触发 ``onSignIn``
+#. 当用户登录后，触发 ``onSignIn`` 回调函数调用 ``refreshGroupList()`` 查询当前签入联系人所在的群组。
+
+    .. code-block:: javascript
+
+        function refreshGroupList() {
+            [...]
+
+            // 查找自己所在的群组
+            cube.contact.queryGroups(function(list) {
+                list.forEach(function(group) {
+                    [...]
+                });
+            });
+        }
+
+#. 创建群组、解散群组、添加群组成员、移除群组成员和修改群公告按钮对应的回调函数依次是：
+
+      * ``createGroup``
+      * ``dissolveGroup``
+      * ``addMember``
+      * ``removeMember``
+      * ``updateNotice``
+
 
 |
