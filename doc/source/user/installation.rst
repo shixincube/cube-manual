@@ -148,7 +148,7 @@
 
     时信魔方代码同时托管在 `Gitee <https://gitee.com/shixinhulian>`__ 和 `GitHub <https://github.com/shixincube>`__ 两个站点，因此您可以选择其中一个站点来获得数据。
 
-0. 前期准备
+0. 安装前准备
 
     您需要在您的开发环境中正确安装以下工具，如果您已经配置好了请跳过该步骤：
 
@@ -161,8 +161,16 @@
 
     3. 安装开发与构建工具。
 
-        * 适用 Ubuntu 的安装命令：``sudo apt-get install build-essential``
-        * 适用 CentOS 的安装命令：``sudo yum groupinstall "Development Tools"``
+        执行以下命令安装基础构建工具：
+
+        .. code-block:: shell
+
+            sudo apt-get update && sudo apt-get install --no-install-recommends --yes \
+                build-essential \
+                ca-certificates \
+                cmake \
+                git \
+                gnupg
 
 
 1. 获取源代码。
@@ -178,15 +186,17 @@
 
     .. code-block:: shell
 
-        git clone https://gitee.com/shixinhulian/cube-server
         git clone https://gitee.com/shixinhulian/cube-server-dependencies
+        git clone https://gitee.com/shixinhulian/cube-server
+        git clone https://gitee.com/shixinhulian/cube-media-unit
     
     或
 
     .. code-block:: shell
 
-        git clone https://github.com/shixincube/cube-server
         git clone https://github.com/shixincube/cube-server-dependencies
+        git clone https://github.com/shixincube/cube-server
+        git clone https://github.com/shixinhulian/cube-media-unit
 
 
 2. 编译服务器。
@@ -220,6 +230,37 @@
     .. tip::
     
         更多的构建命令请使用 ``make help`` 查看。
+
+
+    编译媒体单元（ *可选步骤* ）：
+
+        * 安装依赖库
+
+            .. code-block:: shell
+
+                # Add Kurento repository to Apt
+                sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5AFA7A83
+
+                source /etc/upstream-release/lsb-release 2>/dev/null || source /etc/lsb-release
+
+                sudo tee "/etc/apt/sources.list.d/kurento.list" >/dev/null <<EOF
+                # Kurento Media Server - Nightly packages
+                deb [arch=amd64] http://ubuntu.openvidu.io/dev $DISTRIB_CODENAME kms6
+                EOF
+
+                sudo apt-get update
+
+                sudo apt-get update && sudo apt-get install --no-install-recommends --yes \
+                    kurento-media-server-dev
+
+        * 编译 KMS 项目
+
+            .. code-block:: shell
+
+                cd cube-media-unit/kms
+
+                export MAKEFLAGS="-j$(nproc)"
+                ./bin/kms-build-run.sh
 
 
 3. 配置控制台
