@@ -520,5 +520,5 @@ Kurento Media Server 的配置文件默认目录是：
       }
     }
 
-* 修改 ``net.websocket.port`` 为 **6700**
-* 修改 ``net.websocket.path`` 为 **media**
+* 配置 ``net.websocket.port`` 为 **6700**
+* 配置 ``net.websocket.path`` 为 **media**

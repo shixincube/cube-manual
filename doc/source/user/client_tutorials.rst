@@ -72,7 +72,7 @@ Hello World
 .. toctree::
     :maxdepth: 1
 
-    Web/HTML5 [TODO] </tutorials/web/group_audio>
+    Web/HTML5 </tutorials/web/group_audio>
     Android [TODO] </tutorials/android/group_audio>
     iOS [TODO] </tutorials/ios/group_audio>
     Electron [TODO] </tutorials/electron/group_audio>
