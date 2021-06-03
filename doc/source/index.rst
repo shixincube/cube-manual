@@ -14,6 +14,10 @@
 - :doc:`/project/relnotes/index`
 - :ref:`dev-docs`
 
+项目案例展示：
+
+- :doc:`project/showcase`
+
 |
 
 .. _user-docs:
