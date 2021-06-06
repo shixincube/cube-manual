@@ -133,6 +133,40 @@
     您可以查看 :doc:`时信魔方控制台使用文档 </features/server_console>` 了解如何使用控制台来管理各个服务器节点。
 
 
+#. 使用脚本命令运行服务器。
+
+    您也可以使用脚本命令启动和停止服务器，这样不需要运行控制台。进入 ``deploy`` 目录：
+
+    .. code-block:: shell
+
+        cd deploy
+
+    启动服务单元服务器：
+
+    .. code-block:: shell
+    
+        ./start-service.sh
+
+    停止服务单元服务器：
+
+    .. code-block:: shell
+
+        ./stop-service.sh
+
+    启动调度服务器：
+
+    .. code-block:: shell
+    
+        ./start-dispatcher.sh
+
+    停止调度服务器：
+
+    .. code-block:: shell
+
+        ./stop-dispatcher.sh
+
+|
+
 我们建议您在控制台里启动或停止时信魔方的服务器，当然，如果您需要进一步了解服务器的架构和集群结构可以查看 :doc:`时信魔方服务器架构 </features/server_java>` 文档。
 
 
@@ -148,7 +182,7 @@
 
     时信魔方代码同时托管在 `Gitee <https://gitee.com/shixinhulian>`__ 和 `GitHub <https://github.com/shixincube>`__ 两个站点，因此您可以选择其中一个站点来获得数据。
 
-0. 安装前准备
+#. 安装前准备
 
     您需要在您的开发环境中正确安装以下工具，如果您已经配置好了请跳过该步骤：
 
@@ -173,7 +207,7 @@
                 gnupg
 
 
-1. 获取源代码。
+#. 获取源代码。
 
     准备目录结构：
 
@@ -199,7 +233,7 @@
         git clone https://github.com/shixinhulian/cube-media-unit
 
 
-2. 编译服务器。
+#. 编译服务器。
 
     进入 `cube-server` 目录：
 
@@ -263,7 +297,7 @@
                 ./bin/kms-build-run.sh
 
 
-3. 配置控制台
+#. 配置控制台
 
     配置控制台的数据库。进入 ``console`` 目录：
 
@@ -297,7 +331,7 @@
         mysql.password=shixincube
 
 
-4. 启动控制台
+#. 启动控制台
 
     .. code-block:: shell
 
@@ -320,6 +354,39 @@
         *时信魔方控制台首页截图*
 
     您可以查看 :doc:`时信魔方控制台使用文档 </features/server_console>` 了解如何使用控制台来管理各个服务器节点。
+
+#. 使用脚本命令运行服务器。
+
+    您也可以使用脚本命令启动和停止服务器，这样不需要运行控制台。进入 ``deploy`` 目录：
+
+    .. code-block:: shell
+
+        cd deploy
+
+    启动服务单元服务器：
+
+    .. code-block:: shell
+    
+        ./start-service.sh
+
+    停止服务单元服务器：
+
+    .. code-block:: shell
+
+        ./stop-service.sh
+
+    启动调度服务器：
+
+    .. code-block:: shell
+    
+        ./start-dispatcher.sh
+
+    停止调度服务器：
+
+    .. code-block:: shell
+
+        ./stop-dispatcher.sh
+
 
 |
 
