@@ -4,7 +4,7 @@ Web/HTML5 - 群组语音通话
 
 本示例较之前的示例程序复杂，因此建议您先阅读 :doc:`视频通话 <contact_video_call>` 和 :doc:`群组管理 <groups_mgmt>` 再阅读本示例。
 
-:term:`时信魔方` 里可以直接使用 `Group`_ 进行群组成员之间的多人通话，这样便于群组成员随时发起通话邀请。
+:term:`时信魔方` 里使用 `MultipointComm <../../_static/cube-javascript-api/MultipointComm.html>`__ 模块进行多方通讯。这个示例里我们将使用 `Group`_ 进行群组成员之间的多人通话，这样便于群组成员随时发起通话邀请。
 
 在开始讲解前我们需要先清楚以下几个概念：
 
@@ -113,10 +113,38 @@ Web/HTML5 - 群组语音通话
         cube.mpComm.setLocalVideoElement(document.querySelector('video#local'));
         cube.mpComm.setRemoteVideoElement(document.querySelector('video#remote'));
 
+#. 发起/加入通话和退出通话，依次使用以下方法：
+
+    * `makeCall()`_ - 使用这个方法传入 `Group`_ 实例即可发起通话，同样的，加入通话也是调用该方法。
+    * `hangupCall()`_ - 使用这个方法从当前的通话中退出。
+
 
 #. 控制麦克风数据。`CommFieldEndpoint`_ 提供了对麦克风设备数据的控制操作：
 
     * `isAudioMuted()`_ - 用于判断麦克风是否被静音。
+    * `muteAudio()`_ - 将麦克风静音，即设备不再传输麦克风数据到服务器。
+    * `unmuteAudio()`_ - 将麦克风恢复，即设备恢复将麦克风数据传输到服务器。
+
+    |
+
+    这里需要注意的是，只有对当前登录的联系人对应的 ``CommFieldEndpoint`` 进行操作才能控制本地的媒体设备， **在任何情况下，您都无法控制别人的媒体设备** 。使用以下代码获得自己的本地终端对象实例：
+
+    .. code-block:: javascript
+
+        cube.mpComm.getActiveField().getEndpoint();
+
+
+#. 获取 :term:`RTP` 统计数据。这是一个 **可选操作**，如果您对 RTP 数据不感兴趣可以跳过这节内容。
+
+    `CommField`_ 对象提供了 ``snapshootStatsReport()`` 函数用于快照当前的 RTP 状态报告：
+
+    .. code-block:: javascript
+
+        cube.mpComm.getActiveField().snapshootStatsReport(function(field, stats) {
+            [...]
+        }, function(field, stats) {
+            [...]
+        });
 
 
 |
@@ -128,6 +156,10 @@ Web/HTML5 - 群组语音通话
 
 
 .. _Group: ../../_static/cube-javascript-api/Group.html
+.. _makeCall(): ../../_static/cube-javascript-api/MultipointComm.html#makeCall
+.. _hangupCall(): ../../_static/cube-javascript-api/MultipointComm.html#hangupCall
 .. _CommField: ../../_static/cube-javascript-api/CommField.html
 .. _CommFieldEndpoint: ../../_static/cube-javascript-api/CommFieldEndpoint.html
 .. _isAudioMuted(): ../../_static/cube-javascript-api/CommFieldEndpoint.html#isAudioMuted
+.. _muteAudio(): ../../_static/cube-javascript-api/CommFieldEndpoint.html#muteAudio
+.. _unmuteAudio(): ../../_static/cube-javascript-api/CommFieldEndpoint.html#unmuteAudio
