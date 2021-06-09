@@ -26,7 +26,7 @@
 3. **编写您的应用程序**
     时信魔方提供了基础功能的 :doc:`应用程序工程 </user/application>` ，您可以基于时信魔方的应用程序编写您的应用程序。
 
-    当然，我们为您提供了 :doc:`客户端SDK </user/client_tutorials>` 和 :doc:`服务器端SDK </user/server_tutorials>` ，您可以直接使用 SDK 方式编写您的应用程序。时信魔方的应用程序也是使用这些 SDK 编写的。
+    当然，我们为您提供了 :doc:`客户端SDK </user/client_tutorials>` 和 :doc:`服务器端 Client </user/server_tutorials>` ，您可以直接使用 SDK 方式编写您的应用程序。时信魔方的应用程序也是使用这些 SDK 编写的。
     
 
 4. **获得帮助**
