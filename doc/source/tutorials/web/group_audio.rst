@@ -151,6 +151,183 @@ Web/HTML5 - 群组语音通话
 
 代码详解
 ===============================
+示例里我们使用的文件有：
+
+* **index.html** ：主页面文件。
+* **main.css** ：页面样式表文件。
+* **main.js** ：示例的程序主文件。包括程序逻辑流程和页面事件处理。
+* **helper.js** ：提供一些帮助函数的库文件。
+* **cube.js** ：时信魔方的 JavaScript 客户端库文件。
+
+#. 监听魔方引擎事件：
+
+    .. code-block:: javascript
+
+        // 监听 SignIn 事件
+        cube.contact.on(ContactEvent.SignIn, onSignIn);
+
+        // 监听通话相关事件
+        cube.mpComm.on(CommEvent.InProgress, onInProgress);
+        cube.mpComm.on(CommEvent.Ringing, onRinging);
+        cube.mpComm.on(CommEvent.Connected, onConnected);
+        cube.mpComm.on(CommEvent.Bye, onBye);
+
+        // 监听参与人事件
+        cube.mpComm.on(CommEvent.Arrived, onArrived);
+        cube.mpComm.on(CommEvent.Left, onLeft);
+
+        // 监听麦克风音量事件
+        cube.mpComm.on(CommEvent.MicrophoneVolume, onMicrophoneVolume);
+
+
+#. 为界面上 UI 控件绑定事件：
+
+    .. code-block:: javascript
+
+        btnLogin.onclick = login;
+        btnLogout.onclick = logout;
+        btnInitiate.onclick = initiate;
+        btnJoin.onclick = join;
+        btnQuit.onclick = quit;
+        btnSwitchMic.onclick = switchMic;
+        btnStatistics.onclick = statistics;
+
+#. 账号签入之后创建一个用于群组通话的群组。为了便于示例演示，我们约定创建一个名为“ **群组语音通话演示群** ”的群组将所有演示账号加入到群组里，这样使用演示账号签入之后就可以进行群组通话了。
+
+    .. code-block:: javascript
+
+        function onSignIn(event) {
+            [...]
+
+            var groupName = '群组语音通话演示群';
+            var currentGroup = null;
+
+            // 查询与该账号有关的所有群组
+            cube.contact.queryGroups(function(list) {
+                // 查找是否有名称匹配的群组
+                for (var i = 0; i < list.length; ++i) {
+                    var group = list[i];
+                    if (group.getName() == groupName) {
+                        currentGroup = group;
+                        break;
+                    }
+                }
+
+                if (null == currentGroup) {
+                    // 创建新群组
+                    cube.contact.createGroup(groupName, getAllContactsId(), function(group) {
+                        [...]
+                        groupId = group.getId();
+                    });
+                }
+                else {
+                    // 已经有这个群组，不需要创建
+                    [...]
+                    groupId = currentGroup.getId();
+                }
+            });
+        }
+
+
+#. 发起群组通话：
+
+    .. code-block:: javascript
+
+        function initiate() {
+            // 选择媒体设备
+            selectMediaDevice('audio', function(device) {
+                [...]
+
+                // 设置媒体元素
+                cube.mpComm.setLocalVideoElement(document.querySelector('video#local'));
+                cube.mpComm.setRemoteVideoElement(document.querySelector('video#remote'));
+
+                // 创建媒体约束，使用音频，禁用视频
+                var mediaConstraint = new MediaConstraint(false, true);
+                // 设置设备
+                mediaConstraint.setAudioDevice(device);
+
+                // 获取指定的群组
+                cube.contact.getGroup(groupId, function(group) {
+
+                    // 使用指定的群组发起通话
+                    cube.mpComm.makeCall(group, mediaConstraint, function(activeCall) {
+                        [...]
+                    }, function(error) {
+                        [...]
+                    });
+                });
+            });
+        }
+    
+    函数 ``selectMediaDevice()`` 由 **helper.js** 文件提供，以对话框方式提示选择设备，如果只发现一个可用设备则不会显示对话框。
+
+    创建不使用视频，仅使用音频通道的 ``MediaConstraint`` 媒体约束，并设置设备。
+
+    从 `ContactService`_ 模块获得 `Group`_ 实例之后，将 **Group** 实例传递给 `makeCall()`_ 发起群组通话。当然加入群组通话也是调用 `makeCall()`_ 方法，这在后面会讲到。
+
+#. 加入群组通话：
+
+    .. code-block:: javascript
+
+        function join() {
+            // 获取指定的群组
+            cube.contact.getGroup(groupId, function(group) {
+
+                // 判断群组是否正在进行通话
+                cube.mpComm.isCalling(group, function(calling) {
+                    if (!calling) {
+                        alert('当前群组没有正在进行的语音通话');
+                        return;
+                    }
+
+                    // 如果群组正在通话，则执行 initiate() 函数
+                    initiate();
+                });
+            });
+        }
+
+    如前所述加入群组通话也是调用 `makeCall()`_ 方法。在示例里代码里，我们演示了使用 `isCalling()`_ 来判断指定的群组是否正在进行群组通话。
+
+#. 退出群组通话：
+
+    .. code-block:: javascript
+
+        function quit() {
+            [...]
+
+            // 挂断当前的通话
+            cube.mpComm.hangupCall(function() {
+                [...]
+            }, function(error) {
+                [...]
+            });
+        }
+
+    在任何时候退出通话都可以调用 `hangupCall()`_ 来操作。退出群组通话也是如此。
+
+#. 处理麦克风音量事件：
+
+    .. code-block:: javascript
+
+        function onMicrophoneVolume(event) {
+            var endpoint = event.data.endpoint;
+            var volume = event.data.volume;
+
+            if (endpoint.contact.id == cube.contact.getSelf().id) {
+                var num = Math.round(volume * 0.2);
+                var chunk = [];
+                for (var i = 0; i < num; ++i) {
+                    chunk.push('■');
+                }
+                inputMicVolume.value = chunk.join('');
+            }
+
+            // 更新麦克风音量显示
+            refreshMicVolume(endpoint, volume);
+        }
+
+    魔方引擎的麦克风音量值是从 **0** 到 **100** 的数值，数值越大表示麦克风输出的音量越大。为了便于显示示例程序将音量值乘于 **0.2** 将数值划分为五个区间显示，即 0 到 20 显示一个方块（ **■** ） ，20 到 40 显示两个方块（ **■■** ），依此类推。
 
 |
 
@@ -158,8 +335,10 @@ Web/HTML5 - 群组语音通话
 .. _Group: ../../_static/cube-javascript-api/Group.html
 .. _makeCall(): ../../_static/cube-javascript-api/MultipointComm.html#makeCall
 .. _hangupCall(): ../../_static/cube-javascript-api/MultipointComm.html#hangupCall
+.. _isCalling(): ../../_static/cube-javascript-api/MultipointComm.html#isCalling
 .. _CommField: ../../_static/cube-javascript-api/CommField.html
 .. _CommFieldEndpoint: ../../_static/cube-javascript-api/CommFieldEndpoint.html
 .. _isAudioMuted(): ../../_static/cube-javascript-api/CommFieldEndpoint.html#isAudioMuted
 .. _muteAudio(): ../../_static/cube-javascript-api/CommFieldEndpoint.html#muteAudio
 .. _unmuteAudio(): ../../_static/cube-javascript-api/CommFieldEndpoint.html#unmuteAudio
+.. _ContactService: ../../_static/cube-javascript-api/ContactService.html
