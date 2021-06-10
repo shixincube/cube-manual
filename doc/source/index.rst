@@ -18,6 +18,13 @@
 
 - :doc:`project/showcase`
 
+.. figure:: /images/showcase-album.jpg
+    :align: center
+    :alt: 产品截图展示
+
+    *产品截图展示*
+
+
 |
 
 .. _user-docs:
