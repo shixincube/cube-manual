@@ -2,7 +2,7 @@
 Web/HTML5 - 发送/接收即时消息
 ===============================
 
-时信魔方客户端的 **MessagingService** 模块是进行即时消息操作的主要模块。在 `MessagingService <../../_static/cube-javascript-api/MessagingService.html>`__ 里使用 `sendTo() <../../_static/cube-javascript-api/MessagingService.html#sendTo>`__ 、`sendToContact() <../../_static/cube-javascript-api/MessagingService.html#sendToContact>`__ 和 `sendToGroup() <../../_static/cube-javascript-api/MessagingService.html#sendToGroup>`__ 方法发送消息。通过加入事件监听器来接收 MessagingService 的事件，从而实现接收来自其他联系人或者群组的消息。
+时信魔方客户端的 **MessagingService** 模块是进行即时消息操作的主要模块。在 `MessagingService <../../_static/cube-javascript-api/MessagingService.html>`__ 里使用 `sendTo() <../../_static/cube-javascript-api/MessagingService.html#sendTo>`__ 、`sendToContact() <../../_static/cube-javascript-api/MessagingService.html#sendToContact>`__ 和 `sendToGroup() <../../_static/cube-javascript-api/MessagingService.html#sendToGroup>`__ 方法发送消息。通过加入事件监听器来接收 MessagingService 的事件，从而实现接收来自其他联系人或者群组的消息。使用 ``queryMessages*`` 方法来查询最近的消息记录。
 
 快速开始
 ===============================
@@ -168,3 +168,8 @@ Web/HTML5 - 发送/接收即时消息
         }
 
 示例程序会将已经发送的消息和已经接收的消息显示在页面的 ``textarea`` 标签里以便我们直观的看到消息。
+
+
+.. note::
+
+    很多时候，我们需要在界面上为用户呈现最近的消息记录。当用户签入之后，您可以使用 `queryMessages <../../_static/cube-javascript-api/MessagingService.html#queryMessages>`__ 查询指定起始时间内的消息。而 `queryMessagesWithContact <../../_static/cube-javascript-api/MessagingService.html#queryMessagesWithContact>`__ 和 `queryMessagesWithGroup <../../_static/cube-javascript-api/MessagingService.html#queryMessagesWithGroup>`__ 提供了对指定联系人和群组相关消息的查询。
