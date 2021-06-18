@@ -77,7 +77,7 @@
                 <max-connection>1000</max-connection>
             </ws-server>
 
-    2.2. WebSocket Secure 服务器配置，默认端口号 ``7077`` ：
+    2.2. Secure WebSocket 服务器配置，默认端口号 ``7077`` ：
 
         .. code-block:: xml
 
