@@ -30,7 +30,7 @@
 
             tar -xzf cube-server-3.0.tar.gz
 
-    * 安装媒体服务器：
+    * 安装媒体服务器（可选步骤）：
 
         .. code-block:: shell
 
