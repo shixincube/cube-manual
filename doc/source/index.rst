@@ -35,6 +35,7 @@
 
     /user/intro
     /user/quickstart
+    /user/best_practice
     /user/installation
     /user/configuration
     /user/application
