@@ -12,7 +12,7 @@
 从构建版本安装
 ===============================
 
-一般的，我们建议使用构建版本进行安装和配置，推荐使用 Ubuntu 或 CentOS 进行安装。
+一般的，我们建议使用构建版本进行安装和配置，推荐使用 `Ubuntu <https://ubuntu.com/>`__ 或 `CentOS <https://www.centos.org/>`__ 进行安装。
 
 #. 获取构建版本。
 
@@ -180,7 +180,7 @@
 
 .. note::
 
-    时信魔方代码同时托管在 `Gitee <https://gitee.com/shixinhulian>`__ 和 `GitHub <https://github.com/shixincube>`__ 两个站点，因此您可以选择其中一个站点来获得数据。
+    时信魔方代码同时托管在 `Gitee <https://gitee.com/shixinhulian>`__ 和 `GitHub <https://github.com/shixincube>`__ 两个站点，您可以任选其一获取源代码。
 
 #. 安装前准备
 
