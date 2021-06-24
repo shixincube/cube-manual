@@ -27,7 +27,63 @@ Server Client 使用 :term:`SHM` 协议连接到服务单元节点，建立长�
 快速开始
 ===============================
 
+#. 获取项目代码
 
+    .. code-block:: shell
+
+        mkdir cube
+        cd cube
+
+        # 从仓库获取代码
+        git clone https://gitee.com/shixinhulian/cube-server-dependencies.git
+        git clone https://gitee.com/shixinhulian/cube-server.git
+        git clone https://gitee.com/shixinhulian/cube-server-client.git
+
+
+#. 编译项目
+
+    .. code-block:: shell
+
+        # 编译服务器项目
+        cd cube-server
+        make all
+
+        # 编译客户端项目
+        cd ../cube-server-client
+        ant build
+
+
+#. 在项目中导入 JAR 文件
+
+    完成构建之后，在 ``cube-server-client`` 的 ``build`` 目录下将生成 ``cube-server-client-X.X.X.jar`` 的客户端 JAR 库文件。在项目中导入该 JAR 库文件，并导入 Client 的依赖文件：
+
+    - ``cube-server-dependencies/json-20201115.jar``
+    - ``cube-server-dependencies/cell-2.3.jar``
+    - ``cube-server/build/cube-common-3.0.jar``
+
+#. 使用 **CubeClient** 对象
+
+    客户端程序提供 ``CubeClient`` 作为 API 入口，因此，使用时仅需要实例化该类，并使用该类提供的方法进行操作。
+
+    .. code-block:: java
+
+        // 创建客户端实例
+        CubeClient client = new CubeClient("111.72.86.12");
+
+        [...]
+
+        // 注册联系人监听器
+        client.registerListener(new ContactListener() {
+            [...]
+        });
+
+        [...]
+
+        // 销毁客户端
+        client.destroy();
+
+
+    详细方法说明可以查看 `客户端 API 文档 <../_static/cube-server-client-api/index.html>`__ 。
 
 |
 

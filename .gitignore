@@ -3,3 +3,4 @@ doc/build
 doc/source/_build
 doc/.vscode
 doc/source/_static/cube-javascript-api
+doc/source/_static/cube-server-client-api
