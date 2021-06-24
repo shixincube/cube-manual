@@ -88,9 +88,56 @@ Server Client 使用 :term:`SHM` 协议连接到服务单元节点，建立长�
 |
 
 
-示例
+常用功能示例
 ===============================
 
+监听联系人事件
+-------------------------------
+
+使用 ``ContactListener`` 监听器接口可以监听连接到服务单元上的联系人行为。
+
+.. code-block:: java
+
+    // 注册监听器
+    client.registerListener(new ContactListener() {
+        @Override
+        public void onSignIn(CubeClient client, Contact contact, Device device) {
+            System.out.println("[ContactListener] onSignIn : "
+                + contact.getId() + " - " + device.getName());
+        }
+
+        @Override
+        public void onSignOut(CubeClient client, Contact contact, Device device) {
+        }
+
+        @Override
+        public void onDeviceTimeout(CubeClient client, Contact contact, Device device) {
+        }
+    });
+
+|
+
+以联系人身份发送消息
+-------------------------------
+
+有时我们需要从应用服务器给魔方引擎的应用发送消息，例如：客服人员给客户发送消息。服务器 Client 允许您的应用服务器以指定联系人直接向客户端应用程序发送消息。
+
+.. code-block:: java
+
+    // 接收消息的联系人
+    Contact receiver = new Contact(100100L, "shixincube.com", "Cube-500100");
+
+    // 服务器伪装的联系人
+    Contact pretender = new Contact(100200L, "shixincube.com", "Pretender");
+
+    Device device = new Device("Server", "Server Client");
+
+    JSONObject payload = new JSONObject();
+    payload.put("content", "您的消息已收到，马上去核实。");
+
+    // 使用 pushMessageWithPretender 向接收联系人推送消息
+    boolean result = client.pushMessageWithPretender(receiver, pretender, device, payload);
+    System.out.println("Push Result: " + result);
 
 
 |
