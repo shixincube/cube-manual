@@ -42,6 +42,7 @@
     /user/client_tutorials
     /user/server_tutorials
     /user/faq
+    /user/tip
     /user/support
 
 
