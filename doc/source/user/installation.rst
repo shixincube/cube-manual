@@ -30,6 +30,14 @@
 
             tar -xzf cube-server-3.0.tar.gz
 
+    * 安装辅助工具：
+
+        - 安装 `ImageMagick <https://imagemagick.org/>`__ 软件。
+
+            .. code-block:: shell
+
+                sudo apt-get install imagemagick
+
     * 安装媒体服务器（可选步骤）：
 
         .. code-block:: shell
@@ -186,14 +194,14 @@
 
     您需要在您的开发环境中正确安装以下工具，如果您已经配置好了请跳过该步骤：
 
-    1. 安装 `Java SE <https://www.oracle.com/java/technologies/javase-downloads.html>`__ 。建议从 Oracle 官网下载安装包后，按照安装程序引导进行安装。时信魔方需要的最低版本为 **Java SE 8** 。
+    #. 安装 `Java SE <https://www.oracle.com/java/technologies/javase-downloads.html>`__ 。建议从 Oracle 官网下载安装包后，按照安装程序引导进行安装。时信魔方需要的最低版本为 **Java SE 8** 。
 
-    2. 安装 `Apache Ant <http://ant.apache.org/>`__ 。
+    #. 安装 `Apache Ant <http://ant.apache.org/>`__ 。
 
         * 适用 Ubuntu 的安装命令：``sudo apt-get install ant``
         * 适用 CentOS 的安装命令：``sudo yum -y install ant``
 
-    3. 安装开发与构建工具。
+    #. 安装开发与构建工具。
 
         执行以下命令安装基础构建工具：
 
@@ -205,6 +213,14 @@
                 cmake \
                 git \
                 gnupg
+
+    #. 安装辅助软件：
+
+        - 安装 `ImageMagick <https://imagemagick.org/>`__ 软件。
+        
+            .. code-block:: shell
+        
+                sudo apt-get install imagemagick
 
 
 #. 获取源代码。

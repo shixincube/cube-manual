@@ -10,7 +10,7 @@
 
 .. note::
 
-    我们的客户端工程里提供的是使用 **Node.js** 技术的 `Express <https://expressjs.com/>`__ 作为 Web Application Server 。您可以使用其他 Web 应用服务器技术，例如：`Spring <https://spring.io/>`__ 、`Struts <https://struts.apache.org/>`__ 或 `Rails <https://rubyonrails.org/>`__ 等。您可以参考 :doc:`客户端说明 </features/client_javascript>` 文档来获得更多信息。
+    时信魔方的客户端工程默认提供的是使用 **Node.js** 技术的 `Express <https://expressjs.com/>`__ 作为 Web Application Server 。您可以使用其他 Web 应用服务器技术，例如：`Spring <https://spring.io/>`__ 、`Struts <https://struts.apache.org/>`__ 或 `Rails <https://rubyonrails.org/>`__ 等。您可以参考 :doc:`客户端说明 </features/client_javascript>` 文档来获得更多信息。
 
 
 1. 准备工作
