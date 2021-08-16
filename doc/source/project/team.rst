@@ -20,8 +20,4 @@
 
 `王艳生 <wangyansheng@spap.com>`__ （Wang Yansheng）主要参与服务器程序开发。
 
-`刘峰 <liufeng@spap.com>`__  (Liu Feng) 主要参与时信魔方 Android 端应用程序和 SDK 开发。
-
-`唐爽 <tangshuang@spap.com>`__  (Tang Shuang) 主要参与时信魔方 iOS 端应用程序和 SDK 开发。
-
 |
