@@ -36,7 +36,7 @@
     "account": "haosiyan",
     "password": "c7af98d321febe62e04d45e8806852e0",
     "nickname": "郝思雁",
-    "avatar": "avatar13.png"
+    "avatar": "avatar13"
 }
 ```
 *OR*
@@ -45,7 +45,7 @@
     "phone": "13012345678",
     "password": "c7af98d321febe62e04d45e8806852e0",
     "nickname": "郝思雁",
-    "avatar": "avatar13.png"
+    "avatar": "avatar13"
 }
 ```
 
@@ -58,11 +58,10 @@
         "account": "haosiyan",
         "phone": "130****0987",
         "name": "郝思雁",
-        "avatar": "avatar13.png",
+        "avatar": "avatar13",
         "state": 0,
         "region": "--",
-        "department": "--",
-        "last": 0
+        "department": "--"
     }
 }
 ```
@@ -169,11 +168,10 @@
     "account": "haosiyan",
     "name": "郝思雁",
     "phone": "130****9876",
-    "avatar": "avatar03.png",
+    "avatar": "avatar03",
     "state": 0,
     "region": "上海",
-    "department": "公关部",
-    "last": 0
+    "department": "公关部"
 }
 ```
 *OR*
@@ -182,21 +180,19 @@
     "id": 50001002,
     "name": "王沛珊",
     "phone": "130****1234",
-    "avatar": "avatar02.png",
+    "avatar": "avatar02",
     "state": "offline",
     "region": "武汉",
-    "department": "媒介部",
-    "last": 0
+    "department": "媒介部"
 },{
     "id": 50001003,
     "account": "haosiyan",
     "name": "郝思雁",
     "phone": "130****9876",
-    "avatar": "avatar03.png",
+    "avatar": "avatar03",
     "state": 0,
     "region": "上海",
-    "department": "公关部",
-    "last": 0
+    "department": "公关部"
 }]
 ```
 
@@ -213,7 +209,7 @@
 ```json
 {
     "name": "来自白垩纪",
-    "avatar": "avatar09.png",
+    "avatar": "avatar09",
     "token": "JSZeCEqjQgHpeoMAqwVVtmzLcDyJxGUK"
 }
 ```
@@ -224,11 +220,10 @@
     "id": 50001003,
     "phone": "130****9876",
     "name": "来自白垩纪",
-    "avatar": "avatar09.png",
+    "avatar": "avatar09",
     "state": 0,
     "region": "上海",
-    "department": "公关部",
-    "last": 0
+    "department": "公关部"
 }
 ```
 
@@ -274,47 +269,42 @@
     id: 50001001,
     name: '李国诚',
     phone: "130****1234",
-    avatar: 'avatar01.png',
+    avatar: 'avatar01',
     state: 'offline',
     region: '北京',
-    department: '产品中心',
-    last: 0
+    department: '产品中心'
 }, {
     id: 50001002,
     name: '王沛珊',
     phone: "130****1234",
-    avatar: 'avatar02.png',
+    avatar: 'avatar02',
     state: 'offline',
     region: '武汉',
-    department: '媒介部',
-    last: 0
+    department: '媒介部'
 }, {
     id: 50001003,
     name: '郝思雁',
     phone: "130****1234",
-    avatar: 'avatar03.png',
+    avatar: 'avatar03',
     state: 'offline',
     region: '上海',
-    department: '公关部',
-    last: 0
+    department: '公关部'
 }, {
     id: 50001004,
     name: '高海光',
     phone: "130****1234",
-    avatar: 'avatar04.png',
+    avatar: 'avatar04',
     state: 'offline',
     region: '成都',
-    department: '技术部',
-    last: 0
+    department: '技术部'
 }, {
     id: 50001005,
     name: '张明宇',
     phone: "130****1234",
-    avatar: 'avatar05.png',
+    avatar: 'avatar05',
     state: 'offline',
     region: '广州',
-    department: '设计部',
-    last: 0
+    department: '设计部'
 }]
 ```
 
