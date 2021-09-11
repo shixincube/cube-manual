@@ -91,12 +91,20 @@
     "device": "Web/Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0"
 }
 ```
+*OR*
+```json
+{
+    "token": "JSZeCEqjQgHpeoMAqwVVtmzLcDyJxGUK"
+}
+```
 
 ### Respond
 ```json
 {
     "code": 0,
-    "token": "JSZeCEqjQgHpeoMAqwVVtmzLcDyJxGUK"
+    "token": "JSZeCEqjQgHpeoMAqwVVtmzLcDyJxGUK",
+    "creation": 1615354962015,
+    "expire": 1615959762015
 }
 ```
 
