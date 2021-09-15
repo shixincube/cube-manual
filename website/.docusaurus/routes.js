@@ -60,59 +60,11 @@ export default [
   },
   {
     path: '/en/docs',
-    component: ComponentCreator('/en/docs','4b1'),
+    component: ComponentCreator('/en/docs','f5f'),
     routes: [
       {
         path: '/en/docs/intro',
         component: ComponentCreator('/en/docs/intro','fb4'),
-        exact: true,
-        'sidebar': "tutorialSidebar"
-      },
-      {
-        path: '/en/docs/tutorial-basics/congratulations',
-        component: ComponentCreator('/en/docs/tutorial-basics/congratulations','8bb'),
-        exact: true,
-        'sidebar': "tutorialSidebar"
-      },
-      {
-        path: '/en/docs/tutorial-basics/create-a-blog-post',
-        component: ComponentCreator('/en/docs/tutorial-basics/create-a-blog-post','5c2'),
-        exact: true,
-        'sidebar': "tutorialSidebar"
-      },
-      {
-        path: '/en/docs/tutorial-basics/create-a-document',
-        component: ComponentCreator('/en/docs/tutorial-basics/create-a-document','e5b'),
-        exact: true,
-        'sidebar': "tutorialSidebar"
-      },
-      {
-        path: '/en/docs/tutorial-basics/create-a-page',
-        component: ComponentCreator('/en/docs/tutorial-basics/create-a-page','3b3'),
-        exact: true,
-        'sidebar': "tutorialSidebar"
-      },
-      {
-        path: '/en/docs/tutorial-basics/deploy-your-site',
-        component: ComponentCreator('/en/docs/tutorial-basics/deploy-your-site','50b'),
-        exact: true,
-        'sidebar': "tutorialSidebar"
-      },
-      {
-        path: '/en/docs/tutorial-basics/markdown-features',
-        component: ComponentCreator('/en/docs/tutorial-basics/markdown-features','590'),
-        exact: true,
-        'sidebar': "tutorialSidebar"
-      },
-      {
-        path: '/en/docs/tutorial-extras/manage-docs-versions',
-        component: ComponentCreator('/en/docs/tutorial-extras/manage-docs-versions','d3c'),
-        exact: true,
-        'sidebar': "tutorialSidebar"
-      },
-      {
-        path: '/en/docs/tutorial-extras/translate-your-site',
-        component: ComponentCreator('/en/docs/tutorial-extras/translate-your-site','7c7'),
         exact: true,
         'sidebar': "tutorialSidebar"
       }

@@ -63,44 +63,12 @@
     "component": "1f391b9e",
     "content": "18918c3e"
   },
-  "/en/docs-4b1": {
+  "/en/docs-f5f": {
     "component": "1be78505",
     "versionMetadata": "935f2afb"
   },
   "/en/docs/intro-fb4": {
     "component": "17896441",
     "content": "0e384e19"
-  },
-  "/en/docs/tutorial-basics/congratulations-8bb": {
-    "component": "17896441",
-    "content": "822bd8ab"
-  },
-  "/en/docs/tutorial-basics/create-a-blog-post-5c2": {
-    "component": "17896441",
-    "content": "533a09ca"
-  },
-  "/en/docs/tutorial-basics/create-a-document-e5b": {
-    "component": "17896441",
-    "content": "1e4232ab"
-  },
-  "/en/docs/tutorial-basics/create-a-page-3b3": {
-    "component": "17896441",
-    "content": "5c868d36"
-  },
-  "/en/docs/tutorial-basics/deploy-your-site-50b": {
-    "component": "17896441",
-    "content": "f55d3e7a"
-  },
-  "/en/docs/tutorial-basics/markdown-features-590": {
-    "component": "17896441",
-    "content": "18c41134"
-  },
-  "/en/docs/tutorial-extras/manage-docs-versions-d3c": {
-    "component": "17896441",
-    "content": "dff1c289"
-  },
-  "/en/docs/tutorial-extras/translate-your-site-7c7": {
-    "component": "17896441",
-    "content": "e44a2883"
   }
 }

@@ -7,7 +7,7 @@
   "source": "@site/docs/tutorial-basics/create-a-page.md",
   "sourceDirName": "tutorial-basics",
   "slug": "/tutorial-basics/create-a-page",
-  "permalink": "/en/docs/tutorial-basics/create-a-page",
+  "permalink": "/docs/tutorial-basics/create-a-page",
   "editUrl": "https://github.com/shixincube/cube-manual/website/docs/tutorial-basics/create-a-page.md",
   "tags": [],
   "version": "current",
@@ -18,10 +18,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Tutorial Intro",
-    "permalink": "/en/docs/intro"
+    "permalink": "/docs/intro"
   },
   "next": {
     "title": "Create a Document",
-    "permalink": "/en/docs/tutorial-basics/create-a-document"
+    "permalink": "/docs/tutorial-basics/create-a-document"
   }
 }
