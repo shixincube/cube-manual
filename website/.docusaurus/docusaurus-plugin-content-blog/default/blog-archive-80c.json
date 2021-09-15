@@ -1,0 +1,37 @@
+{
+  "blogPosts": [
+    {
+      "id": "welcome",
+      "metadata": {
+        "permalink": "/blog/welcome",
+        "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-09-15-welcome/index.md",
+        "source": "@site/blog/2021-09-15-welcome/index.md",
+        "title": "欢迎来到时信魔方",
+        "description": "今天一早过来把官网的资料整理了一下，正式把官网迁到 Docusaurus 上。",
+        "date": "2021-09-15T00:00:00.000Z",
+        "formattedDate": "2021年9月15日",
+        "tags": [
+          {
+            "label": "welcome",
+            "permalink": "/blog/tags/welcome"
+          },
+          {
+            "label": "diary",
+            "permalink": "/blog/tags/diary"
+          }
+        ],
+        "readingTime": 0.725,
+        "truncated": false,
+        "authors": [
+          {
+            "name": "Ambrose Xu",
+            "title": "Leader of Cube",
+            "url": "https://github.com/xujiangwei",
+            "imageURL": "https://github.com/xujiangwei.png",
+            "key": "ambrose"
+          }
+        ]
+      }
+    }
+  ]
+}

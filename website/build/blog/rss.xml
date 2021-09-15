@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>时信魔方 Blog</title>
+        <link>https://shixincube.com/blog</link>
+        <description>时信魔方 Blog</description>
+        <lastBuildDate>Wed, 15 Sep 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[欢迎来到时信魔方]]></title>
+            <link>https://shixincube.com/blog/welcome</link>
+            <guid>welcome</guid>
+            <pubDate>Wed, 15 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[今天一早过来把官网的资料整理了一下，正式把官网迁到 Docusaurus 上。]]></description>
+        </item>
+    </channel>
+</rss>

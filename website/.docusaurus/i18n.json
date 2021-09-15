@@ -1,0 +1,18 @@
+{
+  "defaultLocale": "zh-cn",
+  "locales": [
+    "zh-cn",
+    "en"
+  ],
+  "currentLocale": "en",
+  "localeConfigs": {
+    "zh-cn": {
+      "label": "中文（中国）",
+      "direction": "ltr"
+    },
+    "en": {
+      "label": "English",
+      "direction": "ltr"
+    }
+  }
+}

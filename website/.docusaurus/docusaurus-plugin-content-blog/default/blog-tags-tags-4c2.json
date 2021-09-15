@@ -1,0 +1,16 @@
+{
+  "/blog/tags/welcome": {
+    "allTagsPath": "/blog/tags",
+    "slug": "/blog/tags/welcome",
+    "name": "welcome",
+    "count": 1,
+    "permalink": "/blog/tags/welcome"
+  },
+  "/blog/tags/diary": {
+    "allTagsPath": "/blog/tags",
+    "slug": "/blog/tags/diary",
+    "name": "diary",
+    "count": 1,
+    "permalink": "/blog/tags/diary"
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkshixincube=self.webpackChunkshixincube||[]).push([[65],{193:function(e){e.exports=JSON.parse('{"allTagsPath":"/en/blog/tags","slug":"/en/blog/tags/welcome","name":"welcome","count":1,"permalink":"/en/blog/tags/welcome"}')}}]);

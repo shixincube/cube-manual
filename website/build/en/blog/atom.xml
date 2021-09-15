@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://shixincube.com/en/blog</id>
+    <title>时信魔方 Blog</title>
+    <updated>2021-09-15T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://shixincube.com/en/blog"/>
+    <subtitle>时信魔方 Blog</subtitle>
+    <icon>https://shixincube.com/en/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[欢迎来到时信魔方]]></title>
+        <id>welcome</id>
+        <link href="https://shixincube.com/en/blog/welcome"/>
+        <updated>2021-09-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[今天一早过来把官网的资料整理了一下，正式把官网迁到 Docusaurus 上。]]></summary>
+        <author>
+            <name>Ambrose Xu</name>
+            <uri>https://github.com/xujiangwei</uri>
+        </author>
+    </entry>
+</feed>
