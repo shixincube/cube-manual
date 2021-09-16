@@ -8,11 +8,11 @@
   "formattedDate": "September 15, 2021",
   "tags": [
     {
-      "label": "welcome",
+      "label": "Welcome",
       "permalink": "/en/blog/tags/welcome"
     },
     {
-      "label": "diary",
+      "label": "Diary",
       "permalink": "/en/blog/tags/diary"
     }
   ],
@@ -23,7 +23,7 @@
       "name": "Ambrose Xu",
       "title": "Leader of Cube",
       "url": "https://github.com/xujiangwei",
-      "imageURL": "https://github.com/xujiangwei.png",
+      "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
       "key": "ambrose"
     }
   ]

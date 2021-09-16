@@ -2,7 +2,7 @@
 slug: welcome
 title: 欢迎来到时信魔方
 authors: [ambrose]
-tags: [welcome,diary]
+tags: [Welcome,Diary]
 ---
 
 今天一早过来把官网的资料整理了一下，正式把官网迁到 [Docusaurus](https://docusaurus.io/) 上。
