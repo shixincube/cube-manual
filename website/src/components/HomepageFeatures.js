@@ -8,7 +8,7 @@ const FeatureList = [
     showcase: 'img/feature_01.png',
     description: (
       <>
-        时信魔方从一开始就被设计轻量级 SDK ，易于安装和使用，让您可以快速构建自己的应用。
+        时信魔方从一开始就被设计为轻量级 SDK ，易于安装和使用，让您可以快速构建自己的应用。
         支持的操作系统：Windows、Linux 、macOS 、Android、iOS 等，支持的浏览器：Chrome、Firefox、Safari 等。
       </>
     ),

@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="即时通信,IM,实时协作,视频,视频会议,音视频,音视频通话,SDK">
+      description="即时通信,面向开发者的开源实时协作通信开发框架,时信魔方">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
