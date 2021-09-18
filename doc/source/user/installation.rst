@@ -6,6 +6,14 @@
 
 时信魔方团队仅提供支持 **64-bit x86** 架构的 **时信魔方服务器** 程序版本，如果您需要其他架构的服务器版本，需要您从源代码编译并构建。
 
+时信魔方的服务器主要由以下几个服务器类型构成：
+
+    * **魔方引擎调度服务器** - 所有魔方终端都与其建立连接，该服务器主要功能是管理各个接入的终端连接。
+    * **魔方引擎服务单元服务器** - 与调度服务器直接相连的服务器，是魔方业务功能的处理服务器。
+    * **魔方媒体单元服务器** - 进行与音视频等媒体数据流相关的操作的服务器。
+    * **魔方控制台服务器** - 便于对魔方各个服务器节点进行管理和配置的辅助程序，可选择性进行安装。
+    * **魔方应用服务器** - 魔方提供的基础应用程序的服务器，魔方为开发者预先开发了即时通信应用程序，该服务器就是与各个应用程序配套的服务器程序，可选择性安装。
+
 
 .. _installation-build:
 
@@ -89,6 +97,46 @@
     在配置文件里填写您的 MySQL 配置信息。
 
 
+    .. _section_config_appserver:
+
+#. 配置应用服务器（*可选步骤*）。 
+
+    时信魔方应用服务器默认使用 MySQL 数据库，编辑 ``cube-server-3.0/server-app/server.properties``
+
+    .. code-block:: properties
+
+        # server.properties
+
+        # DB
+        db=mysql
+        
+        # MySQL config
+        # 数据库服务器地址
+        mysql.host=192.168.10.121
+        # 数据库服务器端口
+        mysql.port=3306
+        # 数据库 Schema
+        mysql.schema=cube_3_app
+        # 访问用户名
+        mysql.user=cube
+        # 访问密码
+        mysql.password=shixincube
+
+        # 跨域源
+        http.allowOrigin=http://127.0.0.1:8080
+        https.allowOrigin=https://127.0.0.1:8080
+
+        # 魔方客户端的配置信息
+        cube.address=127.0.0.1
+        cube.domain=shixincube.com
+        cube.appKey=shixin-cubeteam-opensource-appkey
+    
+    跨域源请根据您实际部署 Web 应用程序访问时地址和端口进行配置。
+    
+    魔方客户端的配置信息是应用程序用于设置魔方引擎时的配置信息，请参考 :doc:`客户端应用程序 </user/application>` 章节了解相关配置信息。
+
+
+
 #. 启动服务器管理控制台。
 
     按照以下步骤启动控制器台程序。
@@ -108,7 +156,8 @@
         在浏览器中输入 "http://您的服务器IP:7080" 登录 Cube Console 。
 
 
-#. 启动媒体单元服务器（可选步骤）。
+
+#. 启动媒体单元服务器（*可选步骤*）。
 
     如果您在 Ubuntu 系统里安装好了 KMS 服务器并且配置好了相关参数，可以执行以下命令启动服务器：
 
@@ -121,6 +170,28 @@
     .. code-block:: shell
 
         sudo service kurento-media-server stop
+
+
+    .. _section_start_appserver:
+
+#. 启动应用服务器（*可选步骤*）。
+
+    如果您需要运行时信魔方的应用程序，并配置好的应用服务器，可以执行以下命令启动服务器：
+
+    .. code-block:: shell
+
+        cd cube-server-3/server-app
+        chmod +x ./start.sh
+        ./start.sh
+    
+    需要关闭服务器时，执行以下命令：
+
+    .. code-block:: shell
+
+        cd cube-server-3/server-app
+        chmod +x ./stop.sh
+        ./stop.sh
+
 
 
 #. 登录控制台，在控制台里启动并配置服务器。
@@ -139,6 +210,7 @@
         *时信魔方控制台首页截图*
 
     您可以查看 :doc:`时信魔方控制台使用文档 </features/server_console>` 了解如何使用控制台来管理各个服务器节点。
+
 
 
 #. 使用脚本命令运行服务器。
@@ -371,6 +443,7 @@
 
     您可以查看 :doc:`时信魔方控制台使用文档 </features/server_console>` 了解如何使用控制台来管理各个服务器节点。
 
+
 #. 使用脚本命令运行服务器。
 
     您也可以使用脚本命令启动和停止服务器，这样不需要运行控制台。进入 ``deploy`` 目录：
@@ -404,7 +477,74 @@
         ./stop-dispatcher.sh
 
 
+
+#. 配置应用服务器（*可选步骤*）。
+
+    配置控制台的数据库。进入 ``server-app`` 目录：
+
+    .. code-block:: shell
+
+        cd server-app
+
+    编辑配置文件 `server.properties` ：
+
+    .. code-block:: shell
+
+        vi server.properties
+
+    配置文件的相关配置项说明如下：
+
+    .. code-block:: properties
+
+        # server.properties
+
+        # DB
+        db=mysql
+        
+        # MySQL config
+        # 数据库服务器地址
+        mysql.host=192.168.10.121
+        # 数据库服务器端口
+        mysql.port=3306
+        # 数据库 Schema
+        mysql.schema=cube_3_app
+        # 访问用户名
+        mysql.user=cube
+        # 访问密码
+        mysql.password=shixincube
+
+        # 跨域源
+        http.allowOrigin=http://127.0.0.1:8080
+        https.allowOrigin=https://127.0.0.1:8080
+
+        # 魔方客户端的配置信息
+        cube.address=127.0.0.1
+        cube.domain=shixincube.com
+        cube.appKey=shixin-cubeteam-opensource-appkey
+    
+    跨域源请根据您实际部署 Web 应用程序访问时地址和端口进行配置。
+    
+    魔方客户端的配置信息是应用程序用于设置魔方引擎时的配置信息，请参考 :doc:`客户端应用程序 </user/application>` 章节了解相关配置信息。
+
+
+#. 启动/停止应用服务器（*可选步骤*）。
+
+    配置应用服务器后，在 ``server-app`` 目录下可执行以下命令启动应用服务器：
+
+    .. code-block:: shell
+
+        ./start.sh
+
+    在 ``server-app`` 目录下可执行以下命令停止应用服务器：
+
+    .. code-block:: shell
+
+        ./stop.sh
+
+
+
 |
+
 
 
 .. _installation-docker:

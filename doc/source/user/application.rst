@@ -55,29 +55,9 @@
         该编译脚本将编译应用程序的 Web 端 JavaScript 源代码。
 
 
-3. 配置 Web 版服务器数据库
-   
-    编辑 ``config.js`` 文件，修改数据库相关配置信息：
+3. 配置并启动应用服务器
 
-    .. code-block:: javascript
-
-        const config = {
-            db: {
-                host     : '192.168.100.122',  // 数据库服务器地址
-                port     : '3307',             // 数据库服务器端口
-                user     : 'cube',             // 数据库访问用户
-                password : 'shixincube',       // 数据库访问密码
-                database : 'cube_3_app',       // 数据库 Schema
-                charset  : 'UTF8',
-                supportBigNumbers : true
-            },
-        
-            cube: {
-                address : '127.0.0.1',         // 魔方服务器地址
-                domain  : 'shixincube.com',    // 当前应用所在的域
-                appKey  : 'shixin-cubeteam-opensource-appkey'  // 当前应用的 App-Key
-            }
-        };
+    参看 :doc:`服务器安装指南 </user/installation>` 中 `配置应用服务器 <installation.html#section-config-appserver>`__ 和 `启动应用服务器 <installation.html#section-start-appserver>`__ 段落。
 
 
 4. 运行
