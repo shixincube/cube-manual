@@ -4,9 +4,16 @@
         <title>时信魔方 Blog</title>
         <link>https://shixincube.com/blog</link>
         <description>时信魔方 Blog</description>
-        <lastBuildDate>Wed, 15 Sep 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 25 Sep 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[在路上 - 一个程序员的创业总结]]></title>
+            <link>https://shixincube.com/blog/on-my-road</link>
+            <guid>on-my-road</guid>
+            <pubDate>Sat, 25 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近一个月发生了很多事情，突然发现自己对一些事格外敏感，而对一些事情格外迟钝。人们总说每个人的成长都是经历一次又一次变故，这次的变故我决定以文字的形式记录下来。]]></description>
+        </item>
         <item>
             <title><![CDATA[欢迎来到时信魔方]]></title>
             <link>https://shixincube.com/blog/welcome</link>

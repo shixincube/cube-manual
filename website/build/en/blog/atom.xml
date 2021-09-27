@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shixincube.com/en/blog</id>
     <title>时信魔方 Blog</title>
-    <updated>2021-09-15T00:00:00.000Z</updated>
+    <updated>2021-09-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shixincube.com/en/blog"/>
     <subtitle>时信魔方 Blog</subtitle>
     <icon>https://shixincube.com/en/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[在路上 - 一个程序员的创业总结]]></title>
+        <id>on-my-road</id>
+        <link href="https://shixincube.com/en/blog/on-my-road"/>
+        <updated>2021-09-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近一个月发生了很多事情，突然发现自己对一些事格外敏感，而对一些事情格外迟钝。人们总说每个人的成长都是经历一次又一次变故，这次的变故我决定以文字的形式记录下来。]]></summary>
+        <author>
+            <name>Ambrose Xu</name>
+            <uri>https://github.com/xujiangwei</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[欢迎来到时信魔方]]></title>
         <id>welcome</id>

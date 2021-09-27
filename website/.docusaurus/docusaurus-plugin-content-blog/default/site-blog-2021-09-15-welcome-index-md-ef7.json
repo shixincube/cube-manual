@@ -16,7 +16,7 @@
       "permalink": "/en/blog/tags/diary"
     }
   ],
-  "readingTime": 0.725,
+  "readingTime": 0.73,
   "truncated": false,
   "authors": [
     {
@@ -26,5 +26,9 @@
       "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
       "key": "ambrose"
     }
-  ]
+  ],
+  "prevItem": {
+    "title": "在路上 - 一个程序员的创业总结",
+    "permalink": "/en/blog/on-my-road"
+  }
 }

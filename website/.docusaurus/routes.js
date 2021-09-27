@@ -10,12 +10,17 @@ export default [
   },
   {
     path: '/en/blog',
-    component: ComponentCreator('/en/blog','9bd'),
+    component: ComponentCreator('/en/blog','9bb'),
     exact: true
   },
   {
     path: '/en/blog/archive',
     component: ComponentCreator('/en/blog/archive','133'),
+    exact: true
+  },
+  {
+    path: '/en/blog/on-my-road',
+    component: ComponentCreator('/en/blog/on-my-road','d43'),
     exact: true
   },
   {
@@ -25,7 +30,12 @@ export default [
   },
   {
     path: '/en/blog/tags/diary',
-    component: ComponentCreator('/en/blog/tags/diary','6ad'),
+    component: ComponentCreator('/en/blog/tags/diary','c82'),
+    exact: true
+  },
+  {
+    path: '/en/blog/tags/perception',
+    component: ComponentCreator('/en/blog/tags/perception','81d'),
     exact: true
   },
   {
