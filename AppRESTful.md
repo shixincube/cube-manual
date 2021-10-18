@@ -10,7 +10,7 @@
 ### Request
 ```json
 {
-    "t": "JSZeCEqjQgHpeoMAqwVVtmzLcDyJxGUK"
+    "token": "JSZeCEqjQgHpeoMAqwVVtmzLcDyJxGUK"
 }
 ```
 
@@ -22,6 +22,32 @@
     "appKey": "shixin-cubeteam-opensource-appkey"
 }
 ```
+
+
+## /account/check_phone_available/
+
+校验手机号码，并支持是否发送验证码。
+
+> /account/check_phone_available/
+> POST
+
+### Request
+```json
+{
+    "regionCode": "86",
+    "phoneNumber": "13912345678",
+    "verificationCodeRequired": true
+}
+```
+
+### Respond
+```json
+{
+    "code": 0,
+    "verificationCodeRequired": true
+}
+```
+
 
 ## /account/register/
 
@@ -45,7 +71,8 @@
     "phone": "13012345678",
     "password": "c7af98d321febe62e04d45e8806852e0",
     "nickname": "郝思雁",
-    "avatar": "avatar13"
+    "avatar": "avatar13",
+    "vcode": "8752"
 }
 ```
 
