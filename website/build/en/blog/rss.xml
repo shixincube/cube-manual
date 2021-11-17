@@ -4,9 +4,16 @@
         <title>时信魔方 Blog</title>
         <link>https://shixincube.com/en/blog</link>
         <description>时信魔方 Blog</description>
-        <lastBuildDate>Sat, 25 Sep 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Nov 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[开发手记 1]]></title>
+            <link>https://shixincube.com/en/blog/note</link>
+            <guid>note</guid>
+            <pubDate>Wed, 17 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[时信魔方按照功能场景把各个功能分解为：授权、联系人服务、消息服务、文件存储服务、实时音视频服务、会议管理等各个模块。每个模块专注于自身的业务场景，同时也会依赖其他模块辅助完成特定功能。]]></description>
+        </item>
         <item>
             <title><![CDATA[在路上 - 一个程序员的创业总结]]></title>
             <link>https://shixincube.com/en/blog/on-my-road</link>

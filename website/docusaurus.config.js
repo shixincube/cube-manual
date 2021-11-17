@@ -102,7 +102,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                             href: 'https://doc.shixincube.com/user/quickstart.html'
                         },
                         {
-                            label: '最佳实践',
+                            label: '典范实践',
                             href: 'https://doc.shixincube.com/user/best_practice.html'
                         },
                         {

@@ -3,10 +3,13 @@
     "component": "c4f5d8e4",
     "config": "5e9f5e1a"
   },
-  "/en/blog-9bb": {
+  "/en/blog-a2a": {
     "component": "a6aa9e1f",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "16dc5d54"
+      },
       {
         "content": "3345e15a"
       },
@@ -20,6 +23,11 @@
     "component": "9e4087bc",
     "archive": "f6cbeee1"
   },
+  "/en/blog/note-6be": {
+    "component": "ccc49370",
+    "sidebar": "814f3328",
+    "content": "7583a400"
+  },
   "/en/blog/on-my-road-d43": {
     "component": "ccc49370",
     "sidebar": "814f3328",
@@ -29,6 +37,16 @@
     "component": "01a85c17",
     "sidebar": "814f3328",
     "tags": "9bdd22eb"
+  },
+  "/en/blog/tags/development-26c": {
+    "component": "6875c492",
+    "sidebar": "814f3328",
+    "items": [
+      {
+        "content": "16dc5d54"
+      }
+    ],
+    "metadata": "a4945182"
   },
   "/en/blog/tags/diary-c82": {
     "component": "6875c492",
@@ -42,6 +60,16 @@
       }
     ],
     "metadata": "02af156b"
+  },
+  "/en/blog/tags/note-e1e": {
+    "component": "6875c492",
+    "sidebar": "814f3328",
+    "items": [
+      {
+        "content": "16dc5d54"
+      }
+    ],
+    "metadata": "1d74f63b"
   },
   "/en/blog/tags/perception-81d": {
     "component": "6875c492",

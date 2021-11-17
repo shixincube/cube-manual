@@ -27,6 +27,10 @@
       "key": "ambrose"
     }
   ],
+  "prevItem": {
+    "title": "开发手记 1",
+    "permalink": "/en/blog/note"
+  },
   "nextItem": {
     "title": "欢迎来到时信魔方",
     "permalink": "/en/blog/welcome"

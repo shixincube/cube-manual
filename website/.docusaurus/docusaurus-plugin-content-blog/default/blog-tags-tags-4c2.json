@@ -1,4 +1,18 @@
 {
+  "/blog/tags/development": {
+    "allTagsPath": "/blog/tags",
+    "slug": "/blog/tags/development",
+    "name": "Development",
+    "count": 1,
+    "permalink": "/blog/tags/development"
+  },
+  "/blog/tags/note": {
+    "allTagsPath": "/blog/tags",
+    "slug": "/blog/tags/note",
+    "name": "Note",
+    "count": 1,
+    "permalink": "/blog/tags/note"
+  },
   "/blog/tags/perception": {
     "allTagsPath": "/blog/tags",
     "slug": "/blog/tags/perception",
