@@ -10,7 +10,7 @@ export default [
   },
   {
     path: '/en/blog',
-    component: ComponentCreator('/en/blog','a2a'),
+    component: ComponentCreator('/en/blog','d7a'),
     exact: true
   },
   {
@@ -25,7 +25,7 @@ export default [
   },
   {
     path: '/en/blog/on-my-road',
-    component: ComponentCreator('/en/blog/on-my-road','d43'),
+    component: ComponentCreator('/en/blog/on-my-road','7fc'),
     exact: true
   },
   {
@@ -40,7 +40,7 @@ export default [
   },
   {
     path: '/en/blog/tags/diary',
-    component: ComponentCreator('/en/blog/tags/diary','c82'),
+    component: ComponentCreator('/en/blog/tags/diary','f45'),
     exact: true
   },
   {
@@ -50,17 +50,17 @@ export default [
   },
   {
     path: '/en/blog/tags/perception',
-    component: ComponentCreator('/en/blog/tags/perception','81d'),
+    component: ComponentCreator('/en/blog/tags/perception','8da'),
     exact: true
   },
   {
     path: '/en/blog/tags/welcome',
-    component: ComponentCreator('/en/blog/tags/welcome','6fb'),
+    component: ComponentCreator('/en/blog/tags/welcome','bd9'),
     exact: true
   },
   {
     path: '/en/blog/welcome',
-    component: ComponentCreator('/en/blog/welcome','c28'),
+    component: ComponentCreator('/en/blog/welcome','480'),
     exact: true
   },
   {

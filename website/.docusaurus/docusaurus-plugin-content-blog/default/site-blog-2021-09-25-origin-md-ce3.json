@@ -1,0 +1,38 @@
+{
+  "permalink": "/en/blog/on-my-road",
+  "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-09-25-origin.md",
+  "source": "@site/blog/2021-09-25-origin.md",
+  "title": "在路上 - 一个程序员的创业总结",
+  "description": "最近一个月发生了很多事情，突然发现自己对一些事格外敏感，而对一些事情格外迟钝。人们总说每个人的成长都是经历一次又一次变故，这次的变故我决定以文字的形式记录下来。",
+  "date": "2021-09-25T00:00:00.000Z",
+  "formattedDate": "September 25, 2021",
+  "tags": [
+    {
+      "label": "Perception",
+      "permalink": "/en/blog/tags/perception"
+    },
+    {
+      "label": "Diary",
+      "permalink": "/en/blog/tags/diary"
+    }
+  ],
+  "readingTime": 6.07,
+  "truncated": true,
+  "authors": [
+    {
+      "name": "Ambrose Xu",
+      "title": "Leader of Cube",
+      "url": "https://github.com/xujiangwei",
+      "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+      "key": "ambrose"
+    }
+  ],
+  "prevItem": {
+    "title": "开发手记 1",
+    "permalink": "/en/blog/note"
+  },
+  "nextItem": {
+    "title": "欢迎来到时信魔方",
+    "permalink": "/en/blog/welcome"
+  }
+}

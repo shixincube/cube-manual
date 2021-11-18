@@ -1,0 +1,34 @@
+{
+  "permalink": "/en/blog/welcome",
+  "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-09-15-welcome.md",
+  "source": "@site/blog/2021-09-15-welcome.md",
+  "title": "欢迎来到时信魔方",
+  "description": "今天一早过来把官网的资料整理了一下，正式把官网迁到 Docusaurus 上。",
+  "date": "2021-09-15T00:00:00.000Z",
+  "formattedDate": "September 15, 2021",
+  "tags": [
+    {
+      "label": "Welcome",
+      "permalink": "/en/blog/tags/welcome"
+    },
+    {
+      "label": "Diary",
+      "permalink": "/en/blog/tags/diary"
+    }
+  ],
+  "readingTime": 0.73,
+  "truncated": false,
+  "authors": [
+    {
+      "name": "Ambrose Xu",
+      "title": "Leader of Cube",
+      "url": "https://github.com/xujiangwei",
+      "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+      "key": "ambrose"
+    }
+  ],
+  "prevItem": {
+    "title": "在路上 - 一个程序员的创业总结",
+    "permalink": "/en/blog/on-my-road"
+  }
+}
