@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = '时信魔方'
-copyright = '2021 Cube Team'
+copyright = '2022 Cube Team'
 author = 'Cube Team'
 
 # The full version, including alpha/beta/rc tags

@@ -44,7 +44,7 @@
               - int
               - Y
               - *--*
-              - 状态码
+              - `状态码 <../user/state_code.html#auth>`__
             * - ``data``
               - JSON
               - Y
@@ -83,12 +83,35 @@
               - int
               - Y
               - *--*
-              - 状态码
+              - `状态码 <../user/state_code.html#auth_state>`__
             * - ``data``
               - JSON
               - Y
               - *--*
               - 令牌数据，参看 `Auth Token <dev_structure.html#auth-token>`__
 
+
+|
+
+联系人模块
+===============================
+
+- 终端签入
+    - **Action** ``signIn``
+    - **C -> S**
+        .. list-table:: 
+            :widths: 20 10 10 10 30
+            :header-rows: 1
+
+            * - 字段
+              - 类型
+              - 是否必填
+              - 默认值
+              - 描述
+            * - self
+              - JSON
+              - Y
+              - *--*
+              - 当前终端的联系人描述
 
 |
