@@ -44,6 +44,7 @@
     /user/faq
     /user/tip
     /user/support
+    /user/state_code
 
 
 .. _feature-docs:
@@ -79,6 +80,8 @@
     :caption: 开发者文档
 
     /dev/dev_guide
+    /dev/dev_packet
+    /dev/dev_structure
 
 
 .. _knowledge-docs:
