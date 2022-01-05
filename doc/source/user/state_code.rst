@@ -5,7 +5,7 @@
 .. contents:: 目录
 
 
-.. _auth_state:
+.. _auth-service-state:
 
 Auth Service State
 ===============================
@@ -34,7 +34,7 @@ Auth Service State
       - 数据格式错误。
 
 
-.. _contact_state:
+.. _contact-service-state:
 
 Contact Service State
 ===============================
