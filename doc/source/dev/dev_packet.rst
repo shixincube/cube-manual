@@ -136,8 +136,38 @@
               - Y
               - 签入的联系人数据，参看 `Contact <dev_structure.html#contact>`_
 
-|
+- 终端签出
+    - **Action** ``signOut``
+    - **C -> S**
+        .. list-table:: 
+            :header-rows: 1
 
+            * - 数据
+              - 描述
+            * - 当前终端的联系人
+              - 参看 `Contact <dev_structure.html#contact>`_
+
+    - **S -> C**
+        .. list-table:: 
+            :widths: 20 20 10 50
+            :header-rows: 1
+
+            * - 字段
+              - 类型
+              - 是否必填
+              - 描述
+            * - ``code``
+              - int
+              - Y
+              - 参看 `联系人服务状态码 <../user/state_code.html#contact-service-state>`_
+            * - ``data``
+              - JSON
+              - Y
+              - 签出的联系人数据，参看 `Contact <dev_structure.html#contact>`_
+
+
+
+|
 
 
 .. |br| raw:: html
