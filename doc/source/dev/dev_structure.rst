@@ -13,7 +13,6 @@ Auth Token
 授权令牌。
 
 .. list-table:: 
-    :widths: 20 10 10 10 30
     :header-rows: 1
 
     * - 字段
@@ -99,7 +98,6 @@ Primary Description
 主内容描述。用于配置客户端各参数，为各模块提供必要的配置信息。
 
 .. list-table:: 
-    :widths: 20 10 10 10 30
     :header-rows: 1
 
     * - 字段
@@ -159,7 +157,6 @@ Device
 设备描述。
 
 .. list-table:: 
-    :widths: 20 10 10 10 30
     :header-rows: 1
 
     * - 字段
@@ -200,7 +197,6 @@ Contact
 联系人实体。联系人是魔方管理的最小用户单位，表示一个可被管理的基础实体，代表一个具体的用户及其关联的设备。
 
 .. list-table:: 
-    :widths: 20 10 10 10 30
     :header-rows: 1
 
     * - 字段
@@ -284,7 +280,6 @@ Contact Appendix
 联系人的附录。附录用于记录联系人的相关操作数据。
 
 .. list-table:: 
-    :widths: 20 10 10 10 30
     :header-rows: 1
 
     * - 字段
@@ -338,7 +333,6 @@ Group
 群组描述。群组是一系列联系人的集合，通过群组将联系人进行集中管理。
 
 .. list-table:: 
-    :widths: 20 10 10 10 30
     :header-rows: 1
 
     * - 字段
@@ -390,7 +384,7 @@ Group
       - int
       - Y
       - *--*
-      - 群组状态
+      - 群组状态，参看 :ref:`group-state`
     * - members
       - Array< :ref:`contact` >
       - N
@@ -471,7 +465,7 @@ Group Appendix
 群组的附录。附录用于记录群组的相关操作数据。
 
 .. list-table:: 
-    :widths: 20 10 10 10 30
+    :widths: 20 20 10 10 40
     :header-rows: 1
 
     * - 字段
@@ -484,4 +478,253 @@ Group Appendix
       - Y
       - *--*
       - 附录所属的群组 ID
+    * - group
+      - JSON
+      - Y
+      - *--*
+      - 附录所属的群组的数据，参看 :ref:`group`
+    * - notice
+      - string
+      - Y
+      - *--*
+      - 群组公告
+    * - noticeOperatorId
+      - long
+      - Y
+      - *--*
+      - 群组公告编写人的 ID
+    * - noticeTime
+      - long
+      - Y
+      - *--*
+      - 群组公告的更新时间
+    * - memberRemarks
+      - Array<JSON>
+      - Y
+      - *--*
+      - 成员的备注名清单，JSON 主键：|br| |br|
+        ``id`` - long ： 联系人ID |br| |br|
+        ``name`` - string ： 在群内的备注名
+    * - remark
+      - string
+      - Y
+      - ``""``
+      - 群组的备注名
+    * - following
+      - boolean
+      - Y
+      - ``false``
+      - 成员对该群是否进行了关注。 |br| 如果进行了关注该值为 ``true``
+    * - memberNameDisplayed
+      - boolean
+      - Y
+      - ``false``
+      - 是否需要显示群组成员的名称
+    * - applicants
+      - Array<JSON>
+      - N
+      - *--*
+      - 申请人清单，JSON 主键：|br| |br|
+        ``id`` - long ： 联系人 ID |br| |br|
+        ``time`` - long ： 申请时间 |br| |br|
+        ``postscript`` - string ： 附言 |br| |br|
+        ``agreed`` - boolean ： 是否允许 |br| |br|
+        ``agreedTime`` - long ： 处理申请时间
+    * - commId
+      - long
+      - N
+      - *--*
+      - 群组的通讯 ID
+
+
+.. _group-state:
+
+Group State
+===============================
+
+群组的状态描述。
+
+.. list-table::
+    :widths: 30 20 50
+    :header-rows: 1
+
+    * - 状态名
+      - 状态码
+      - 状态描述
+    * - Normal
+      - 0
+      - 正常状态
+    * - Dismissed
+      - 1
+      - 解散状态
+    * - Forbidden
+      - 2
+      - 禁用状态
+    * - HighRisk
+      - 3
+      - 高风险状态
+    * - Disabled
+      - 9
+      - 失效状态
+
+
+.. _contact-zone:
+
+Contact Zone
+===============================
+
+联系人分区。联系人分区是联系人和群组的集合，这个集合里没有管理逻辑和规则，可以按照需求随意修改分区数据。
+例如，用户的“好友列表”就可以是一个名为“friends”的分区。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - id
+      - long
+      - Y
+      - *--*
+      - 分区的 ID
+    * - domain
+      - string
+      - Y
+      - *--*
+      - 分区所属的域
+    * - timestamp
+      - long
+      - Y
+      - *--*
+      - 数据的时间戳
+    * - owner
+      - long
+      - Y
+      - *--*
+      - 分区所属的联系人 ID
+    * - name
+      - string
+      - Y
+      - *--*
+      - 分区名称， **分区名称是分区的唯一标识**
+    * - displayName
+      - string
+      - Y
+      - *--*
+      - 分区的显示名
+    * - state
+      - int
+      - Y
+      - *--*
+      - 分区状态
+    * - peerMode
+      - boolean
+      - Y
+      - ``false``
+      - 分区是否是端到端模式
+    * - participants
+      - Array< :ref:`contact-zone-participant` >
+      - Y
+      - *--*
+      - 当前分区里包含的参与者
+
+
+
+.. _contact-zone-participant:
+
+Contact Zone Participant
+===============================
+
+分区参与人。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - id
+      - long
+      - Y
+      - *--*
+      - 参与人 ID
+    * - type
+      - int
+      - Y
+      - *--*
+      - 参与人类型： |br| |br|
+        ``1`` - Contact |br|
+        ``2`` - Group |br|
+        ``3`` - Organization |br|
+        ``4`` - System |br|
+        ``5`` - Conference |br|
+        ``9`` - Other
+    * - timestamp
+      - long
+      - Y
+      - *--*
+      - 数据的时间戳
+    * - state
+      - int
+      - Y
+      - *--*
+      - 参与人状态，参看 :ref:`contact-zone-participant-state`
+    * - inviterId
+      - long
+      - Y
+      - *--*
+      - 邀请人的 ID
+    * - postscript
+      - string
+      - Y
+      - ``""``
+      - 加入分区时的附言
+
+
+
+.. _contact-zone-participant-state:
+
+Contact Zone Participant State
+===============================
+
+.. list-table::
+    :widths: 30 20 50
+    :header-rows: 1
+
+    * - 状态名
+      - 状态码
+      - 状态描述
+    * - Normal
+      - 0
+      - 正常状态
+    * - Pending
+      - 1
+      - 待处理状态
+    * - KnownPending
+      - 2
+      - 已知待处理状态
+    * - Reject
+      - 3
+      - 拒绝
+
+
+|
+
+.. |br| raw:: html
+
+    <br>
+
+.. |p-head| raw:: html
+
+    <p>
+
+.. |p-tail| raw:: html
+
+    </p>
 
