@@ -592,7 +592,7 @@ Contact Zone
       - 分区是否是端到端模式
     * - participants
       - Array< :ref:`contact-zone-participant` >
-      - Y
+      - N
       - *--*
       - 当前分区里包含的参与者
 
@@ -677,6 +677,41 @@ Contact Zone Participant State
     * - Reject
       - 3
       - 拒绝
+
+
+
+.. _group-bundle:
+
+Group Bundle
+===============================
+
+群组操作时受影响的相关数据描述。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - group
+      - JSON
+      - Y
+      - *--*
+      - 群组数据 :ref:`group`
+    * - modified
+      - Array<long>
+      - Y
+      - *--*
+      - 群组操作时变化的群成员 ID 列表
+    * - operator
+      - long
+      - N
+      - *--*
+      - 本次操作的联系人的 ID
+
 
 
 |
