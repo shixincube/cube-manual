@@ -44,7 +44,6 @@
     /user/faq
     /user/tip
     /user/support
-    /user/state_code
 
 
 .. _feature-docs:
@@ -91,6 +90,7 @@
     :caption: 知识库
 
     /glossary
+    /state_code
 
 
 索引

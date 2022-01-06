@@ -392,10 +392,10 @@ Group
       - *--*
       - 群组状态，参看 :ref:`group-state`
     * - members
-      - Array< :ref:`contact` >
+      - Array<long>
       - N
       - *--*
-      - 群组成员列表
+      - 群组成员的 ID 列表
 
 **JSON 示例**
 
@@ -412,53 +412,12 @@ Group
         "lastActive" : 1617197111210,
         "state" : 0,
         "members" : [
-            {
-                "id" : 1615268975051,
-                "name" : "时信开发者",
-                "timestamp" : 1615271263193,
-                "domain" : "shixincube.com",
-                "context" : {
-                    "last" : 1617185580703,
-                    "name" : "时信开发者",
-                    "id" : 1615268975051,
-                    "avatar" : "avatar16.png",
-                    "state" : 0,
-                    "region" : "--",
-                    "department" : "--",
-                    "account" : "xujiangwei",
-                    "token" : "usJbeagOKAwpBEYKBUKvbaricuKfaKum"
-                }
-            },
-            {
-                "id" : 50001001,
-                "name" : "Cube-50001001",
-                "timestamp" : 1615271263193,
-                "domain" : "shixincube.com"
-            },
-            {
-                "id" : 50001005,
-                "name" : "Cube-50001005",
-                "timestamp" : 1615271263193,
-                "domain" : "shixincube.com"
-            },
-            {
-                "id" : 50001004,
-                "name" : "Cube-50001004",
-                "timestamp" : 1615271263193,
-                "domain" : "shixincube.com"
-            },
-            {
-                "id" : 50001003,
-                "name" : "Cube-50001003",
-                "timestamp" : 1615271263193,
-                "domain" : "shixincube.com"
-            },
-            {
-                "id" : 50001002,
-                "name" : "Cube-50001002",
-                "timestamp" : 1615271263193,
-                "domain" : "shixincube.com"
-            }
+            1615268975051,
+            50001001,
+            50001005,
+            50001004,
+            50001003,
+            50001002
         ]
     }
 
