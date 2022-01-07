@@ -1080,6 +1080,145 @@
                 ``participantId`` - long ： 参与人 ID
 
 
+|
+
+文件存储服务模块
+===============================
+
+
+文件数据流操作
+-------------------------------
+
+- 数据上传
+    - 使用 HTTP 协议分块上传文件数据。
+    - URI : ``/filestorage/file/``
+    - Content-Type : ``application/octet-stream``
+    - Form fields :
+        .. list-table:: 
+            :widths: 20 20 10 50
+            :header-rows: 1
+
+            * - 字段
+              - 类型
+              - 是否必填
+              - 描述
+            * - cid
+              - long
+              - Y
+              - 当前上传数据的联系人 ID
+            * - domain
+              - string
+              - Y
+              - 当前工作域
+            * - fileSize
+              - long
+              - Y
+              - 文件大小，单位：字节
+            * - lastModified
+              - long
+              - Y
+              - 文件最近一次修改时间
+            * - cursor
+              - long
+              - Y
+              - 当前文件区块游标
+            * - size
+              - int
+              - Y
+              - 当前文件区块大小，单位：字节
+    - HTTP Response
+        - Format : JSON
+            .. list-table:: 
+                :widths: 20 20 10 50
+                :header-rows: 1
+
+                * - 字段
+                  - 类型
+                  - 是否必填
+                  - 描述
+                * - ``code``
+                  - int
+                  - Y
+                  - 参看 `文件存储服务状态码 <../state_code.html#file-storage-state>`_
+                * - ``data``
+                  - JSON
+                  - Y
+                  - 负载数据
+
+        - ``data`` 格式 :
+            .. list-table:: 
+                :widths: 20 20 10 50
+                :header-rows: 1
+
+                * - 字段
+                  - 类型
+                  - 是否必填
+                  - 描述
+                * - ``fileName``
+                  - string
+                  - Y
+                  - 文件名
+                * - ``fileSize``
+                  - long
+                  - Y
+                  - 文件大小，单位：字节
+                * - ``fileCode``
+                  - string
+                  - Y
+                  - 文件码
+                * - ``lastModified``
+                  - long
+                  - Y
+                  - 文件修改时间
+                * - ``position``
+                  - long
+                  - Y
+                  - 当前上传块所在文件的结束位置
+
+
+- 数据下载
+    - 使用 HTTP/HTTPS 协议载入文件数据。参看 `File Label <dev_structure.html#file-label>`_ 的 ``fileURL`` 和 ``fileSecureURL`` 字段。
+
+
+|
+
+文件操作
+-------------------------------
+
+- 获取文件信息。
+    - 通过指定文件码获取文件信息。
+    - **Action** ``getFile``
+    - **C -> S**
+        .. list-table:: 
+            :widths: 20 20 10 50
+            :header-rows: 1
+
+            * - 字段
+              - 类型
+              - 是否必填
+              - 描述
+            * - ``fileCode``
+              - string
+              - Y
+              - 文件码
+
+    - **S -> C**
+        .. list-table:: 
+            :widths: 20 20 10 50
+            :header-rows: 1
+
+            * - 字段
+              - 类型
+              - 是否必填
+              - 描述
+            * - ``code``
+              - int
+              - Y
+              - 参看 `文件存储服务状态码 <../state_code.html#file-storage-state>`_
+            * - ``data``
+              - JSON
+              - Y
+              - 参看 `File Label <dev_structure.html#file-label>`_
 
 
 |

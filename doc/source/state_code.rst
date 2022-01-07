@@ -34,6 +34,9 @@ Auth Service State
       - 数据格式错误。
 
 
+|
+
+
 .. _contact-service-state:
 
 Contact Service State
@@ -91,6 +94,62 @@ Contact Service State
     * - AlreadyExists
       - 104
       - 数据已存在。
+    * - Unknown
+      - 99
+      - 未知的状态。
+
+
+|
+
+
+.. _file-storage-state:
+
+File Storage State
+===============================
+
+.. list-table::
+    :widths: 30 20 50
+    :header-rows: 1
+
+    * - 状态名
+      - 状态码
+      - 状态描述
+    * - Ok
+      - 0
+      - 状态正常状态码。
+    * - InvalidParameter
+      - 5
+      - 传入无效参数。
+    * - Failure
+      - 9
+      - 状态出现异常状态码。
+    * - InvalidDomain
+      - 11
+      - 无效域信息。
+    * - Forbidden
+      - 12
+      - 无效的参数请求，禁止访问。
+    * - NotFound
+      - 13
+      - 未找到指定数据。
+    * - Unauthorized
+      - 14
+      - 未授权访问。
+    * - Reject
+      - 15
+      - 拒绝操作。
+    * - FileLabelError
+      - 16
+      - 文件标签错误。
+    * - Writing
+      - 17
+      - 正在写入文件。
+    * - DuplicationOfName
+      - 20
+      - 数据重名，不被允许操作。
+    * - SearchConditionError
+      - 25
+      - 搜索条件错误。
     * - Unknown
       - 99
       - 未知的状态。

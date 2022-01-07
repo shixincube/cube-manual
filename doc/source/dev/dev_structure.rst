@@ -714,6 +714,160 @@ Group Bundle
 
 
 
+.. _file-label:
+
+File Label
+===============================
+
+文件标签。文件标签表示可被存储到系统的文件实体。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``id``
+      - long
+      - Y
+      - *--*
+      - 标签的 ID
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 标签所属的域
+    * - ``fileCode``
+      - string
+      - Y
+      - *--*
+      - 文件码
+    * - ``ownerId``
+      - long
+      - Y
+      - *--*
+      - 标签所属的联系人 ID
+    * - ``fileName``
+      - string
+      - Y
+      - *--*
+      - 文件名
+    * - ``fileSize``
+      - long
+      - Y
+      - *--*
+      - 文件大小，单位：字节
+    * - ``lastModified``
+      - long
+      - Y
+      - *--*
+      - 文件最后一次修改时间戳
+    * - ``completedTime``
+      - long
+      - Y
+      - *--*
+      - 文件在服务器处理完成时的时间戳
+    * - ``expiryTime``
+      - long
+      - Y
+      - *--*
+      - 标签的失效时间戳
+    * - ``fileType``
+      - string
+      - Y
+      - *--*
+      - 文件类型
+    * - ``md5``
+      - string
+      - N
+      - *--*
+      - 文件内容的 MD5 散列码
+    * - ``sha1``
+      - string
+      - N
+      - *--*
+      - 文件内容的 SHA1 散列码
+    * - ``fileURL``
+      - string
+      - N
+      - *--*
+      - 文件的访问 URL ，默认使用 HTTP 协议
+    * - ``fileSecureURL``
+      - string
+      - N
+      - *--*
+      - 文件的安全访问 URL ，默认使用 HTTPS 协议
+
+
+
+.. _file-thumbnail:
+
+File Thumbnail
+===============================
+
+文件缩略图。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``id``
+      - long
+      - Y
+      - *--*
+      - 缩略图 ID
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 缩略图所属的域
+    * - ``fileLabel``
+      - :ref:`file-label`
+      - Y
+      - *--*
+      - 缩略图的文件标签
+    * - ``width``
+      - int
+      - Y
+      - *--*
+      - 缩略图宽度
+    * - ``height``
+      - int
+      - Y
+      - *--*
+      - 缩略图高度
+    * - ``sourceFileCode``
+      - string
+      - Y
+      - *--*
+      - 源文件的文件码
+    * - ``sourceWidth``
+      - int
+      - N
+      - *--*
+      - 源文件的宽度
+    * - ``sourceHeight``
+      - int
+      - N
+      - *--*
+      - 源文件的高度
+    * - ``quality``
+      - int
+      - Y
+      - *--*
+      - 缩略图质量，取值范围： ``0`` - ``100``
+
+
+
+
 |
 
 .. |br| raw:: html
