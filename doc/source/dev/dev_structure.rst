@@ -867,6 +867,84 @@ File Thumbnail
 
 
 
+.. _directory:
+
+Directory
+===============================
+
+文件目录。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``id``
+      - long
+      - Y
+      - *--*
+      - 目录的 ID
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 目录所属的域
+    * - ``owner``
+      - long
+      - N
+      - *--*
+      - 目录所属的文件层级 ID
+    * - ``name``
+      - string
+      - Y
+      - *--*
+      - 目录名
+    * - ``creation``
+      - long
+      - Y
+      - *--*
+      - 目录创建时间
+    * - ``lastModified``
+      - long
+      - Y
+      - *--*
+      - 目录最后一次修改时间
+    * - ``size``
+      - long
+      - Y
+      - *--*
+      - 目录包含的所有文件大小
+    * - ``hidden``
+      - boolean
+      - Y
+      - *--*
+      - 是否是隐藏目录
+    * - ``parentId``
+      - long
+      - N
+      - *--*
+      - 父目录 ID
+    * - ``numDirs``
+      - long
+      - Y
+      - *--*
+      - 包含的子目录数量
+    * - ``numFiles``
+      - long
+      - Y
+      - *--*
+      - 包含的文件数量
+    * - ``dirs``
+      - Array< :ref:`directory` >
+      - N
+      - *--*
+      - 包含的所有子目录列表
+
+
 
 |
 
