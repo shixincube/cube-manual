@@ -8,7 +8,7 @@
 |
 
 
-授权服务模块
+授权服务
 ===============================
 
 信令操作
@@ -95,7 +95,7 @@
 |
 
 
-联系人服务模块
+联系人服务
 ===============================
 
 终端操作
@@ -1118,7 +1118,7 @@
 |
 
 
-文件存储服务模块
+文件存储服务
 ===============================
 
 
@@ -1497,14 +1497,142 @@
 
 重命名目录
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 重新命名指定的目录。
+- **Action** ``renameDir``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``root``
+          - long
+          - Y
+          - 根目录 ID
+        * - ``workingId``
+          - long
+          - Y
+          - 工作目录的 ID
+        * - ``dirName``
+          - string
+          - Y
+          - 新的目录名
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `文件存储服务状态码 <../state_code.html#file-storage-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 参看 `Directory <dev_structure.html#directory>`_
 
 
-将文件插入到指定目录
+将文件插入到目录
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 将文件插入到指定的目录。
+- **Action** ``insertFile``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``root``
+          - long
+          - Y
+          - 根目录 ID
+        * - ``dirId``
+          - long
+          - Y
+          - 目标目录的 ID
+        * - ``fileCode``
+          - string
+          - Y
+          - 指定待插入的文件的文件码
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `文件存储服务状态码 <../state_code.html#file-storage-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - JSON 结构： |br2|
+            ``directory`` - `Directory <dev_structure.html#directory>`_ ：操作的目录数据。 |br2|
+            ``file`` - `File Label <dev_structure.html#file-label>`_ ：插入文件的文件标签。
 
 
 将文件从目录删除
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 将指定文件从指定目录删除。支持批量操作。
+- **Action** ``deleteFile``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``root``
+          - long
+          - Y
+          - 根目录 ID
+        * - ``workingId``
+          - long
+          - Y
+          - 工作目录的 ID
+        * - ``fileList``
+          - Array<string>
+          - Y
+          - 待删除的文件的文件码。
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `文件存储服务状态码 <../state_code.html#file-storage-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - JSON 结构： |br2|
+            ``workingId`` - long ：工作目录 ID |br2|
+            ``workingDir`` - `Directory <dev_structure.html#directory>`_ ：工作的目录数据。 |br2|
+            ``deletedList`` - Array< `File Label <dev_structure.html#file-label>`_ > ：已删除的文件标签。
 
 
 |
@@ -1527,6 +1655,206 @@
 
 从回收站恢复废弃数据
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+|
+
+
+即时消息服务
+===============================
+
+会话操作
+-------------------------------
+
+获取会话列表
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 获取最近有消息记录的会话列表。
+- **Action** ``getConversations``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``limit``
+          - int
+          - Y
+          - 获取会话的最大数量
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - JSON 结构： |br2|
+            ``total`` - int ：会话总数。 |br2|
+            ``list`` - Array< `Conversation <dev_structure.html#conversation>`_ > ：会话列表。
+
+
+更新会话
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 用于客户端更新指定的会话数据
+- **Action** ``updateConversation``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 会话数据
+          - 参看 `Conversation <dev_structure.html#conversation>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 会话数据，参看 `Conversation <dev_structure.html#conversation>`_
+
+
+消息操作
+-------------------------------
+
+拉取消息
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 从服务器拉取消息。
+- **Action** ``pull``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``id``
+          - long
+          - Y
+          - 签入的联系人的 ID
+        * - ``domain``
+          - string
+          - Y
+          - 签入的联系人的域
+        * - ``device``
+          - JSON
+          - Y
+          - 当前拉取消息的设备，参看 `Device <dev_structure.html#device>`_
+        * - ``beginning``
+          - long
+          - Y
+          - 消息时间戳的起始时间
+        * - ``ending``
+          - long
+          - Y
+          - 消息时间戳的结束时间
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - JSON 结构： |br2|
+            ``total`` - int ：总数量。 |br2|
+            ``beginning`` - long ：消息拉取的起始时间戳。 |br2|
+            ``ending`` - long ：消息拉取的结束时间戳。 |br2|
+            ``messages`` - Array< `Message <dev_structure.html#message>`_ > ：消息列表。
+    
+    .. tip::
+
+        服务器将最多 10 条消息数据打包在一个应答包里发送给客户端，因此客户端需要多次处理 ``pull`` 数据包。
+
+
+发送消息
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 将指定消息推送到服务器，服务器将即时投送消息到指定收件人。
+- **Action** ``push``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 消息数据
+          - 参看 `Message <dev_structure.html#message>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 消息数据，参看 `Message <dev_structure.html#message>`_
+
+
+消息通知
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 终端在线时收到服务器推送的消息数据。
+- **Action** ``notify``
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 消息数据，参看 `Message <dev_structure.html#message>`_
 
 
 

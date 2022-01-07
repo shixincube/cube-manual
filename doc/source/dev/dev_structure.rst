@@ -467,8 +467,8 @@ Group Appendix
       - Array<JSON>
       - Y
       - *--*
-      - 成员的备注名清单，JSON 主键：|br| |br|
-        ``id`` - long ： 联系人ID |br| |br|
+      - 成员的备注名清单，JSON 主键：|br2|
+        ``id`` - long ： 联系人ID |br2|
         ``name`` - string ： 在群内的备注名
     * - remark
       - string
@@ -489,11 +489,11 @@ Group Appendix
       - Array<JSON>
       - N
       - *--*
-      - 申请人清单，JSON 主键：|br| |br|
-        ``id`` - long ： 联系人 ID |br| |br|
-        ``time`` - long ： 申请时间 |br| |br|
-        ``postscript`` - string ： 附言 |br| |br|
-        ``agreed`` - boolean ： 是否允许 |br| |br|
+      - 申请人清单，JSON 主键：|br2|
+        ``id`` - long ： 联系人 ID |br2|
+        ``time`` - long ： 申请时间 |br2|
+        ``postscript`` - string ： 附言 |br2|
+        ``agreed`` - boolean ： 是否允许 |br2|
         ``agreedTime`` - long ： 处理申请时间
     * - commId
       - long
@@ -803,6 +803,50 @@ File Label
 
 
 
+.. _file-anchor:
+
+File Anchor
+===============================
+
+文件锚点。文件锚点用于客户端记录文件处理流程的相关信息。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``fileCode``
+      - string
+      - Y
+      - *--*
+      - 文件码
+    * - ``fileName``
+      - string
+      - Y
+      - *--*
+      - 文件名
+    * - ``fileSize``
+      - long
+      - Y
+      - *--*
+      - 文件大小，单位：字节
+    * - ``lastModified``
+      - long
+      - Y
+      - *--*
+      - 文件最后一次修改时间
+    * - ``position``
+      - long
+      - Y
+      - *--*
+      - 该锚点对应的文件的数据位置
+
+
+
 .. _file-thumbnail:
 
 File Thumbnail
@@ -946,11 +990,271 @@ Directory
 
 
 
+.. _file-attachment:
+
+File Attachment
+===============================
+
+消息的文件附件。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``anchors``
+      - Array< :ref:`file-anchor` >
+      - Y
+      - *--*
+      - 附件包含的文件锚点列表
+    * - ``labels``
+      - Array< :ref:`file-label` >
+      - Y
+      - *--*
+      - 附件包含的文件标签列表
+    * - ``compressed``
+      - boolean
+      - Y
+      - ``false``
+      - 附件文件是否是源文件的压缩文件
+
+
+
+.. _message:
+
+Message
+===============================
+
+即时消息结构。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``id``
+      - long
+      - Y
+      - *--*
+      - 消息的 ID
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 消息所属的域
+    * - ``from``
+      - long
+      - Y
+      - *--*
+      - 消息来源的 ID
+    * - ``to``
+      - long
+      - Y
+      - *--*
+      - 消息投送目标的 ID
+    * - ``source``
+      - long
+      - Y
+      - *--*
+      - 消息转副本之后的源 ID
+    * - ``owner``
+      - long
+      - Y
+      - *--*
+      - 副本持有人
+    * - ``lts``
+      - long
+      - Y
+      - *--*
+      - 消息生成时的源时间戳
+    * - ``rts``
+      - long
+      - Y
+      - *--*
+      - 消息到达接入层时的时间戳
+    * - ``state``
+      - int
+      - Y
+      - *--*
+      - 消息状态，参看 :ref:`message-state`
+    * - ``scope``
+      - int
+      - Y
+      - *--*
+      - 消息作用域： |br2|
+        ``0`` - Unlimited ：无限制。 |br2|
+        ``1`` - Private ：仅限自己可见。
+    * - ``payload``
+      - JSON
+      - Y
+      - *--*
+      - 消息数据负载
+    * - ``attachment``
+      - :ref:`file-attachment`
+      - N
+      - *--*
+      - 消息附件
+    * - ``device``
+      - :ref:`device`
+      - N
+      - *--*
+      - 发送消息的设备
+
+
+
+.. _message-state:
+
+Message State
+===============================
+
+消息状态描述。
+
+.. list-table::
+    :widths: 30 20 50
+    :header-rows: 1
+
+    * - 状态名
+      - 状态码
+      - 状态描述
+    * - Fault
+      - 1
+      - 消息处理失败
+    * - Unsent
+      - 5
+      - 未发送状态
+    * - Sending
+      - 9
+      - 正在发送状态
+    * - Sent
+      - 10
+      - 已发送状态
+    * - Read
+      - 20
+      - 已被阅读状态
+    * - Recalled
+      - 30
+      - 已召回
+    * - Deleted
+      - 40
+      - 已删除
+    * - SendBlocked
+      - 51
+      - 被阻止发送
+    * - ReceiveBlocked
+      - 52
+      - 被阻止接收
+    * - Unknown
+      - 0
+      - 未知状态
+
+
+
+.. _conversation:
+
+Conversation
+===============================
+
+消息会话。用于集中管理与联系人或者群组的连续消息记录。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``id``
+      - long
+      - Y
+      - *--*
+      - 会话的 ID
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 所属的域
+    * - ``timestamp``
+      - long
+      - Y
+      - *--*
+      - 会话的数据时间戳
+    * - ``owner``
+      - long
+      - Y
+      - *--*
+      - 会话所属的联系人 ID
+    * - ``type``
+      - int
+      - Y
+      - *--*
+      - 会话类型： |br2|
+        ``1`` - Contact ：与联系人的会话。 |br2|
+        ``2`` - Group ：与群组的会话。 |br2|
+        ``3`` - Organization ：与组织的会话。 |br2|
+        ``4`` - System ：系统类型会话。 |br2|
+        ``5`` - Notifier ：通知类型会话。 |br2|
+        ``6`` - Assistant ：助手类型会话。 |br2|
+        ``9`` - Other ：其他会话类型。
+    * - ``state``
+      - int
+      - Y
+      - *--*
+      - 会话状态： |br2|
+        ``1`` - Normal ：正常状态。 |br2|
+        ``2`` - Important ：重要的或置顶的状态。 |br2|
+        ``3`` - Deleted ：已删除状态。 |br2|
+        ``4`` - Destroyed ：已销毁状态。
+    * - ``remind``
+      - int
+      - Y
+      - *--*
+      - 会话提醒类型： |br2|
+        ``1`` - Normal ：正常接收。 |br2|
+        ``2`` - Closed ：接收不提醒。 |br2|
+        ``3`` - NotCare ：接收但不关注。 |br2|
+        ``4`` - Refused ：不接收。
+    * - ``pivotal``
+      - long
+      - Y
+      - *--*
+      - 与会话相关的关键实体的 ID
+    * - ``recentMessage``
+      - :ref:`message`
+      - N
+      - *--*
+      - 会话最近一条消息
+    * - ``avatarURL``
+      - string
+      - N
+      - *--*
+      - 会话头像的 URL
+    * - ``avatarName``
+      - string
+      - N
+      - *--*
+      - 会话头像名
+
+
+
 |
 
 .. |br| raw:: html
 
     <br>
+
+.. |br2| raw:: html
+
+    <br><br>
 
 .. |p-head| raw:: html
 

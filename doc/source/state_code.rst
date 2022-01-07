@@ -153,3 +153,61 @@ File Storage State
     * - Unknown
       - 99
       - 未知的状态。
+
+
+|
+
+
+.. _messaging-service-state:
+
+Messaging Service State
+===============================
+
+.. list-table::
+    :widths: 30 20 50
+    :header-rows: 1
+
+    * - 状态名
+      - 状态码
+      - 状态描述
+    * - Ok
+      - 0
+      - 状态正常状态码。
+    * - InvalidParameter
+      - 5
+      - 传入无效参数。
+    * - Failure
+      - 9
+      - 遇到故障。
+    * - InvalidDomain
+      - 11
+      - 无效域信息。
+    * - DataStructureError
+      - 12
+      - 数据结构错误。
+    * - NoDomain
+      - 13
+      - 没有域信息。
+    * - NoDevice
+      - 14
+      - 没有设备信息。
+    * - NoContact
+      - 15
+      - 没有找到联系人。
+    * - NoGroup
+      - 16
+      - 没有找到群组。
+    * - AttachmentError
+      - 17
+      - 消息附件错误。
+    * - GroupError
+      - 18
+      - 群组数据错误。
+    * - BeBlocked
+      - 30
+      - 被对方阻止。
+    * - Unknown
+      - 99
+      - 未知的状态。
+
+
