@@ -1857,6 +1857,107 @@
           - 消息数据，参看 `Message <dev_structure.html#message>`_
 
 
+标记消息已读
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 将指定消息标记为已读。服务器会实时将已读状态发送给相关联系人。
+- **Action** ``read``
+- **C -> S**
+    .. list-table:: 对单条消息进行标记
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``contactId``
+          - long
+          - Y
+          - 当前签入的联系人 ID
+        * - ``messageId``
+          - long
+          - Y
+          - 消息 ID
+
+    .. list-table:: 对消息进行批量标记
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``contactId``
+          - long
+          - Y
+          - 当前签入的联系人 ID
+        * - ``messageIdList``
+          - Array<long>
+          - Y
+          - 消息 ID 列表
+        * - ``messageFrom``
+          - long
+          - Y
+          - 该次操作的消息发件人 ID
+
+    .. list-table:: 对消息进行批量标记
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``contactId``
+          - long
+          - Y
+          - 当前签入的联系人 ID
+        * - ``messageIdList``
+          - Array<long>
+          - Y
+          - 消息 ID 列表
+        * - ``messageSource``
+          - long
+          - Y
+          - 该次操作的消息的群组
+
+- **S -> C** *[仅应答]*
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 客户端发送的请求数据
+
+- **S -> C** *[仅通知]*
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 被标记的消息，参看 `Message <dev_structure.html#message>`_
+
+
 
 |
 
