@@ -19,7 +19,7 @@ Auth Token
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - code
@@ -105,7 +105,7 @@ Primary Description
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - address
@@ -164,7 +164,7 @@ Device
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - name
@@ -205,7 +205,7 @@ Contact
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - id
@@ -295,7 +295,7 @@ Contact Appendix
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - contact
@@ -349,7 +349,7 @@ Group
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - id
@@ -442,7 +442,7 @@ Group Appendix
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - groupId
@@ -556,7 +556,7 @@ Contact Zone
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - id
@@ -620,7 +620,7 @@ Contact Zone Participant
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - id
@@ -702,7 +702,7 @@ Group Bundle
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - group
@@ -736,7 +736,7 @@ File Label
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``id``
@@ -825,7 +825,7 @@ File Anchor
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``fileCode``
@@ -869,7 +869,7 @@ File Thumbnail
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``id``
@@ -933,7 +933,7 @@ Directory
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``id``
@@ -1012,7 +1012,7 @@ File Attachment
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``anchors``
@@ -1046,7 +1046,7 @@ Message
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``id``
@@ -1179,7 +1179,7 @@ Conversation
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``id``
@@ -1268,7 +1268,7 @@ Media Constraint
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``video``
@@ -1305,7 +1305,7 @@ Comm Field
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``id``
@@ -1384,7 +1384,7 @@ Comm Field Endpoint
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``id``
@@ -1402,6 +1402,55 @@ Comm Field Endpoint
       - Y
       - *--*
       - 当前数据的时间戳
+    * - ``contact``
+      - :ref:`contact`
+      - Y
+      - *--*
+      - 终端的联系人数据
+    * - ``device``
+      - :ref:`device`
+      - Y
+      - *--*
+      - 终端的设备数据
+    * - ``name``
+      - string
+      - Y
+      - *--*
+      - 终端名称
+    * - ``state``
+      - int
+      - Y
+      - *--*
+      - 状态描述： |br2|
+        ``0`` - Normal ：正常状态 |br2|
+        ``10`` - Calling ：正在建立通话 |br2|
+        ``11`` - Busy ：当前线路忙 |br2|
+        ``13`` - CallConnected ：通话已接通 |br2|
+        ``15`` - CallBye ：通话结束
+    * - ``description``
+      - JSON
+      - N
+      - *--*
+      - 会话描述数据
+    * - ``constraint``
+      - JSON
+      - N
+      - *--*
+      - 媒体约束，参看 :ref:`media-constraint`
+    * - ``video``
+      - JSON
+      - N
+      - *--*
+      - 视频流状态描述，JSON 结构： |br2|
+        ``enabled`` - boolean ：是否启用了视频通道 |br2|
+        ``streamEnabled`` - boolean ：当前数据流是否可传输
+    * - ``audio``
+      - JSON
+      - N
+      - *--*
+      - 音频流状态描述，JSON 结构： |br2|
+        ``enabled`` - boolean ：是否启用了音频通道 |br2|
+        ``streamEnabled`` - boolean ：当前数据流是否可传输
 
 |
 
@@ -1418,7 +1467,7 @@ Signaling
 
     * - 字段
       - 类型
-      - 是否必填
+      - 必填
       - 默认值
       - 描述
     * - ``sn``
