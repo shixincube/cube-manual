@@ -5,6 +5,8 @@
 .. contents:: 目录
 
 
+|
+
 .. _auth-token:
 
 Auth Token
@@ -89,6 +91,7 @@ Auth Token
         }
     }
 
+|
 
 .. _pd:
 
@@ -188,6 +191,7 @@ Device
         "platform": "Chrome/Mac OS X 10.15"
     }
 
+|
 
 .. _contact:
 
@@ -277,6 +281,7 @@ Contact
         }
     }
 
+|
 
 .. _contact-appendix:
 
@@ -330,6 +335,7 @@ Contact Appendix
         "remarkName" : "银河之外的你"
     }
 
+|
 
 .. _group:
 
@@ -421,6 +427,7 @@ Group
         ]
     }
 
+|
 
 .. _group-appendix:
 
@@ -501,6 +508,7 @@ Group Appendix
       - *--*
       - 群组的通讯 ID
 
+|
 
 .. _group-state:
 
@@ -532,6 +540,7 @@ Group State
       - 9
       - 失效状态
 
+|
 
 .. _contact-zone:
 
@@ -596,7 +605,7 @@ Contact Zone
       - *--*
       - 当前分区里包含的参与者
 
-
+|
 
 .. _contact-zone-participant:
 
@@ -651,7 +660,7 @@ Contact Zone Participant
       - ``""``
       - 加入分区时的附言
 
-
+|
 
 .. _contact-zone-participant-state:
 
@@ -678,7 +687,7 @@ Contact Zone Participant State
       - 3
       - 拒绝
 
-
+|
 
 .. _group-bundle:
 
@@ -712,7 +721,7 @@ Group Bundle
       - *--*
       - 本次操作的联系人的 ID
 
-
+|
 
 .. _file-label:
 
@@ -801,7 +810,7 @@ File Label
       - *--*
       - 文件的安全访问 URL ，默认使用 HTTPS 协议
 
-
+|
 
 .. _file-anchor:
 
@@ -845,7 +854,7 @@ File Anchor
       - *--*
       - 该锚点对应的文件的数据位置
 
-
+|
 
 .. _file-thumbnail:
 
@@ -909,7 +918,7 @@ File Thumbnail
       - *--*
       - 缩略图质量，取值范围： ``0`` - ``100``
 
-
+|
 
 .. _directory:
 
@@ -988,7 +997,7 @@ Directory
       - *--*
       - 包含的所有子目录列表
 
-
+|
 
 .. _file-attachment:
 
@@ -1022,7 +1031,7 @@ File Attachment
       - ``false``
       - 附件文件是否是源文件的压缩文件
 
-
+|
 
 .. _message:
 
@@ -1108,7 +1117,7 @@ Message
       - *--*
       - 发送消息的设备
 
-
+|
 
 .. _message-state:
 
@@ -1155,7 +1164,7 @@ Message State
       - 0
       - 未知状态
 
-
+|
 
 .. _conversation:
 
@@ -1243,6 +1252,191 @@ Conversation
       - N
       - *--*
       - 会话头像名
+
+|
+
+.. _media-constraint:
+
+Media Constraint
+===============================
+
+媒体的参数约束。包括视频和音频的性能约束。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``video``
+      - boolean
+      - Y
+      - *--*
+      - 是否启用视频数据通道
+    * - ``audio``
+      - boolean
+      - Y
+      - *--*
+      - 是否启用音频数据通道
+    * - ``dimension``
+      - JSON
+      - N
+      - *--*
+      - 视频尺寸约束。 |br2|
+        ``width`` - int ：优先的视频宽度 |br2|
+        ``height`` - int ：优先的视频宽度 |br2|
+        ``constraints`` - JSON ：用于 WebRTC 的约束。
+
+|
+
+.. _comm-field:
+
+Comm Field
+===============================
+
+通讯场域。通讯场域是指一个多方通讯的集中管理场所，在一个场域内进行媒体流的管理和配置，对每个参与多方通讯的终端进行数据流的分配。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``id``
+      - long
+      - Y
+      - *--*
+      - 场域的 ID
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 场域所属的域
+    * - ``timestamp``
+      - long
+      - Y
+      - *--*
+      - 当前数据的时间戳
+    * - ``name``
+      - string
+      - Y
+      - *--*
+      - 场域的名称
+    * - ``founder``
+      - JSON
+      - Y
+      - *--*
+      - 场域的创建人，参看 :ref:`Contact`
+    * - ``mediaConstraint``
+      - JSON
+      - Y
+      - *--*
+      - 场域的创建人，参看 :ref:`media-constraint`
+    * - ``startTime``
+      - long
+      - Y
+      - *--*
+      - 场域开始进行通讯的时间
+    * - ``endTime``
+      - long
+      - Y
+      - *--*
+      - 场域结束通讯的时间
+    * - ``endpoints``
+      - Array<JSON>
+      - N
+      - *--*
+      - 参与多方通讯的各个终端节点， |br2| 参看 :ref:`comm-field-endpoint`
+    * - ``group``
+      - JSON
+      - N
+      - *--*
+      - 场域关联的群组，参看 :ref:`group`
+    * - ``caller``
+      - JSON
+      - N
+      - *--*
+      - 场域的主叫联系人，参看 :ref:`contact`
+    * - ``callee``
+      - JSON
+      - N
+      - *--*
+      - 场域的被叫联系人，参看 :ref:`contact`
+
+|
+
+.. _comm-field-endpoint:
+
+Comm Field Endpoint
+===============================
+
+场域内的终端节点。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``id``
+      - long
+      - Y
+      - *--*
+      - 场域终端的 ID
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 场域终端所属的域
+    * - ``timestamp``
+      - long
+      - Y
+      - *--*
+      - 当前数据的时间戳
+
+|
+
+.. _signaling:
+
+Signaling
+===============================
+
+通讯信令。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 是否必填
+      - 默认值
+      - 描述
+    * - ``sn``
+      - long
+      - Y
+      - *--*
+      - 信令的序号
+    * - ``name``
+      - string
+      - Y
+      - *--*
+      - 信令名
+    * - ``field``
+      - JSON
+      - Y
+      - *--*
+      - 信令作用的场域，参看 :ref:`comm-field`
+
 
 
 

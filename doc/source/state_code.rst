@@ -211,3 +211,85 @@ Messaging Service State
       - 未知的状态。
 
 
+|
+
+
+.. _multipoint-comm-state:
+
+Multipoint-Comm State
+===============================
+
+.. list-table::
+    :widths: 30 20 50
+    :header-rows: 1
+
+    * - 状态名
+      - 状态码
+      - 状态描述
+    * - Ok
+      - 0
+      - 状态正常状态码。
+    * - InvalidParameter
+      - 5
+      - 传入无效参数。
+    * - Failure
+      - 9
+      - 遇到故障。
+    * - InvalidDomain
+      - 11
+      - 无效的域信息。
+    * - NoDomain
+      - 12
+      - 没有找到域。
+    * - NoDevice
+      - 13
+      - 没有设备信息。
+    * - NoContact
+      - 14
+      - 没有找到联系人。
+    * - NoCommField
+      - 15
+      - 没有找到通讯场域。
+    * - NoMediaUnit
+      - 16
+      - 没有找到媒体单元。
+    * - NoPipeline
+      - 17
+      - 没有找到与媒体单元的数据通道。
+    * - NoCommFieldEndpoint
+      - 18
+      - 没有找到通信场域的终端节点。
+    * - NoPeerEndpoint
+      - 19
+      - 没有找到对端。
+    * - DataStructureError
+      - 20
+      - 数据结构错误。
+    * - CommFieldStateError
+      - 21
+      - 场域状态错误。
+    * - MediaUnitField
+      - 23
+      - 媒体单元故障。
+    * - UnsupportedSignaling
+      - 24
+      - 不被支持的信令。
+    * - UnsupportedOperation
+      - 25
+      - 不支持的操作。
+    * - CallerBusy
+      - 41
+      - 主叫忙。
+    * - CalleeBusy
+      - 42
+      - 被叫忙。
+    * - BeCallerBlocked
+      - 45
+      - 被主叫阻止。
+    * - BeCalleeBlocked
+      - 46
+      - 被被叫阻止。
+    * - Unknown
+      - 99
+      - 未知的状态。
+
