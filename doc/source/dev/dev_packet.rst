@@ -1962,12 +1962,132 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - 在有效时间内撤回已发送的消息。
 - **Action** ``recall``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``contactId``
+          - long
+          - Y
+          - 消息所属的联系人 ID
+        * - ``messageId``
+          - long
+          - Y
+          - 撤回消息的 ID
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - JSON 结构： |br2|
+            ``contactId`` - long ：联系人 ID |br2|
+            ``messageId`` - long ：消息 ID
+    
+    .. note:: 客户端需要多次处理该数据报文。服务器会实时将被撤回的消息发送给客户端。
+
 
 
 删除消息
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - 删除消息。该操作会联动联系人的所有终端删除指定消息。
 - **Action** ``delete``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``contactId``
+          - long
+          - Y
+          - 消息所属的联系人 ID
+        * - ``messageId``
+          - long
+          - Y
+          - 删除消息的 ID
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - JSON 结构： |br2|
+            ``contactId`` - long ：联系人 ID |br2|
+            ``messageId`` - long ：消息 ID
+
+
+
+查询消息状态
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 查询指定消息的状态。消息的管理通过消息的状态进行体现。
+- **Action** ``queryState``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``contactId``
+          - long
+          - Y
+          - 消息所属的联系人 ID
+        * - ``messageId``
+          - long
+          - Y
+          - 消息的 ID
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 是否必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `即时消息服务状态码 <../state_code.html#messaging-service-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 消息数据，参看 `Message <dev_structure.html#message>`_
+
 
 
 |
