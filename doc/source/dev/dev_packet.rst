@@ -25,7 +25,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``domain``
           - string
@@ -43,7 +43,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -66,7 +66,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - string
@@ -80,7 +80,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -112,7 +112,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``self``
           - JSON
@@ -129,7 +129,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - string
@@ -143,7 +143,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -175,7 +175,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -207,7 +207,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -236,7 +236,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``id``
           - long
@@ -254,7 +254,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -277,7 +277,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``contactId``
           - long
@@ -291,7 +291,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -314,7 +314,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``name``
           - string
@@ -332,7 +332,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -355,7 +355,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``contactId``
           - long
@@ -373,7 +373,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -402,7 +402,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``id``
           - long
@@ -420,7 +420,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -444,7 +444,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``groupId``
           - long
@@ -458,7 +458,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -481,7 +481,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``beginning``
           - long
@@ -510,7 +510,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -537,7 +537,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``group``
           - JSON
@@ -555,7 +555,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -587,7 +587,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -610,7 +610,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``groupId``
           - long
@@ -632,7 +632,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -655,7 +655,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``groupId``
           - long
@@ -677,7 +677,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -700,7 +700,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``groupId`` |br2| *OR* |br2| ``id``
           - long
@@ -730,7 +730,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -753,7 +753,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``groupId``
           - long
@@ -793,7 +793,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -822,7 +822,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``name``
           - string
@@ -849,7 +849,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -872,7 +872,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``name``
           - string
@@ -886,7 +886,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -910,7 +910,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``name``
           - string
@@ -928,7 +928,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -953,7 +953,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``name``
           - string
@@ -971,7 +971,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -997,7 +997,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``name``
           - string
@@ -1015,7 +1015,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1041,7 +1041,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``name``
           - string
@@ -1059,7 +1059,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1082,7 +1082,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``name``
           - string
@@ -1100,7 +1100,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1137,7 +1137,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - cid
           - long
@@ -1171,7 +1171,7 @@
 
             * - 字段
               - 类型
-              - 是否必填
+              - 必填
               - 描述
             * - ``code``
               - int
@@ -1189,7 +1189,7 @@
 
             * - 字段
               - 类型
-              - 是否必填
+              - 必填
               - 描述
             * - ``fileName``
               - string
@@ -1235,7 +1235,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``fileCode``
           - string
@@ -1249,7 +1249,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1272,7 +1272,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``id``
           - long
@@ -1286,7 +1286,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1309,7 +1309,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``root``
           - long
@@ -1327,7 +1327,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1353,7 +1353,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``root``
           - long
@@ -1379,7 +1379,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1407,7 +1407,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``root``
           - long
@@ -1429,7 +1429,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1452,7 +1452,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``root``
           - long
@@ -1480,7 +1480,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1506,7 +1506,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``root``
           - long
@@ -1528,7 +1528,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1551,7 +1551,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``root``
           - long
@@ -1573,7 +1573,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1598,7 +1598,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``root``
           - long
@@ -1620,7 +1620,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1678,7 +1678,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``limit``
           - int
@@ -1692,7 +1692,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1726,7 +1726,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1736,6 +1736,9 @@
           - JSON
           - Y
           - 会话数据，参看 `Conversation <dev_structure.html#conversation>`_
+
+
+|
 
 
 消息操作
@@ -1752,7 +1755,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``id``
           - long
@@ -1782,7 +1785,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1822,7 +1825,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1845,7 +1848,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1868,7 +1871,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``contactId``
           - long
@@ -1885,7 +1888,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``contactId``
           - long
@@ -1906,7 +1909,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``contactId``
           - long
@@ -1928,7 +1931,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1946,7 +1949,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -1969,7 +1972,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``contactId``
           - long
@@ -1987,7 +1990,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -2015,7 +2018,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``contactId``
           - long
@@ -2033,7 +2036,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -2059,7 +2062,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``contactId``
           - long
@@ -2077,7 +2080,7 @@
 
         * - 字段
           - 类型
-          - 是否必填
+          - 必填
           - 描述
         * - ``code``
           - int
@@ -2087,6 +2090,615 @@
           - JSON
           - Y
           - 消息数据，参看 `Message <dev_structure.html#message>`_
+
+
+
+|
+
+
+多方通讯服务
+===============================
+
+通讯场域操作
+-------------------------------
+
+获取场域数据
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 获取场域的数据。
+- **Action** ``getField``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``commFieldId``
+          - long
+          - Y
+          - 场域 ID
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+
+
+创建场域数据
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 创建新的场域。
+- **Action** ``createField``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 场域的数据
+          - 参看 `Comm Field <dev_structure.html#comm-field>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+
+
+销毁场域数据
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 销毁指定的场域。
+- **Action** ``destroyField``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``commFieldId``
+          - long
+          - Y
+          - 场域 ID
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+
+
+|
+
+
+通话操作
+-------------------------------
+
+申请发起通话
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 用于客户端申请在指定场域内通话。
+- **Action** ``applyCall``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``field``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+        * - ``participant``
+          - JSON
+          - Y
+          - 参与人，参看 `Contact <dev_structure.html#contact>`_
+        * - ``device``
+          - JSON
+          - Y
+          - 参与人使用的设备，参看 `Device <dev_structure.html#device>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+
+
+申请加入场域
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 用于客户端申请加入场域进行通话。
+- **Action** ``applyJoin``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``field``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+        * - ``participant``
+          - JSON
+          - Y
+          - 参与人，参看 `Contact <dev_structure.html#contact>`_
+        * - ``device``
+          - JSON
+          - Y
+          - 参与人使用的设备，参看 `Device <dev_structure.html#device>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+
+
+申请终止在场域内的通话
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- 用于客户端申请终止通话。
+- **Action** ``applyTerminate``
+- **C -> S**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``field``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+        * - ``participant``
+          - JSON
+          - Y
+          - 参与人，参看 `Contact <dev_structure.html#contact>`_
+        * - ``device``
+          - JSON
+          - Y
+          - 参与人使用的设备，参看 `Device <dev_structure.html#device>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 场域数据，参看 `Comm Field <dev_structure.html#comm-field>`_
+
+
+|
+
+
+媒体数据信令
+-------------------------------
+
+进行 Offer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Action** ``offer``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 信令数据
+          - 参看 `Signaling <dev_structure.html#signaling>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. tip:: 客户端需要处理来自服务器的 ``offer`` 动作，以提示用户有新的通话请求。
+
+- **Response Action** ``offerAck``
+- **S -> C** 
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. note:: 客户端的请求 ``offer`` 动作服务器应答动作为 ``offerAck`` 。
+
+
+进行 Answer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Action** ``answer``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 信令数据
+          - 参看 `Signaling <dev_structure.html#signaling>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. tip:: 客户端需要处理来自服务器的 ``answer`` 动作，以提示用户对方已经应答了通话。
+
+- **Response Action** ``answerAck``
+- **S -> C** 
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. note:: 客户端的请求 ``answer`` 动作服务器应答动作为 ``answerAck`` 。
+
+
+进行 Bye
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Action** ``bye``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 信令数据
+          - 参看 `Signaling <dev_structure.html#signaling>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. tip:: 客户端需要处理来自服务器的 ``bye`` 动作，以提示用户对方已退出通话。
+
+- **Response Action** ``byeAck``
+- **S -> C** 
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. note:: 客户端的请求 ``bye`` 动作服务器应答动作为 ``byeAck`` 。
+
+
+进行 Busy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Action** ``busy``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 信令数据
+          - 参看 `Signaling <dev_structure.html#signaling>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. tip:: 客户端需要处理来自服务器的 ``busy`` 动作，以提示用户对方拒绝接通通话。
+
+- **Response Action** ``busyAck``
+- **S -> C** 
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. note:: 客户端的请求 ``busy`` 动作服务器应答动作为 ``busyAck`` 。
+
+
+进行 Candidate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Action** ``candidate``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 信令数据
+          - 参看 `Signaling <dev_structure.html#signaling>`_
+
+- **S -> C**
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. tip:: 客户端需要处理来自服务器的 ``candidate`` 动作。
+
+- **Response Action** ``candidateAck``
+- **S -> C** 
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+    .. note:: 客户端的请求 ``candidate`` 动作服务器应答动作为 ``candidateAck`` 。
+
+
+发出多方邀请
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Action** ``invite``
+- **C -> S**
+    .. list-table:: 
+        :header-rows: 1
+
+        * - 包负载
+          - 描述
+        * - 信令数据
+          - 参看 `Signaling <dev_structure.html#signaling>`_
+
+- **S -> C** 
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+
+参与终端已进入场域
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Action** ``arrived``
+- **S -> C** 
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
+
+参与终端已退出场域
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- **Action** ``left``
+- **S -> C** 
+    .. list-table:: 
+        :widths: 20 20 10 50
+        :header-rows: 1
+
+        * - 字段
+          - 类型
+          - 必填
+          - 描述
+        * - ``code``
+          - int
+          - Y
+          - 状态码，参看 `多方通讯服务状态码 <../state_code.html#multipoint-comm-state>`_
+        * - ``data``
+          - JSON
+          - Y
+          - 信令数据，参看 `Signaling <dev_structure.html#signaling>`_
+
 
 
 
