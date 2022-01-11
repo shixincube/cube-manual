@@ -593,17 +593,19 @@ Contact Zone
       - int
       - Y
       - *--*
-      - 分区状态
+      - 分区状态 |br2|
+        ``0`` - Normal ：正常状态。  |br2|
+        ``1`` - Deleted ：已删除状态。
     * - ``peerMode``
       - boolean
       - Y
       - ``false``
       - 分区是否是端到端模式
     * - ``participants``
-      - Array< :ref:`contact-zone-participant` >
+      - Array<JSON>
       - N
       - *--*
-      - 当前分区里包含的参与者
+      - 分区里的参与者，参看 :ref:`contact-zone-participant`
 
 |
 
