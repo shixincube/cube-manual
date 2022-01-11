@@ -593,14 +593,14 @@ Contact Zone
       - int
       - Y
       - *--*
-      - 分区状态 |br2|
+      - 分区状态： |br2|
         ``0`` - Normal ：正常状态。  |br2|
         ``1`` - Deleted ：已删除状态。
     * - ``peerMode``
       - boolean
       - Y
       - ``false``
-      - 分区是否是端到端模式
+      - 分区是否是端到端对等模式
     * - ``participants``
       - Array<JSON>
       - N
