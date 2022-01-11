@@ -22,37 +22,37 @@ Auth Token
       - 必填
       - 默认值
       - 描述
-    * - code
+    * - ``code``
       - string
       - Y
       - *--*
       - 令牌编码
-    * - domain
+    * - ``domain``
       - string
       - Y
       - *--*
       - App 的访问域
-    * - appKey
+    * - ``appKey``
       - string
       - Y
       - *--*
       - App 的 Key 串
-    * - cid
+    * - ``cid``
       - long
       - Y
       - 0
       - 令牌绑定的联系人 ID
-    * - issues
+    * - ``issues``
       - long
       - Y
       - *--*
       - 发布时间
-    * - expiry
+    * - ``expiry``
       - long
       - Y
       - *--*
       - 过期时间
-    * - description
+    * - ``description``
       - JSON
       - Y
       - *--*
@@ -108,17 +108,17 @@ Primary Description
       - 必填
       - 默认值
       - 描述
-    * - address
+    * - ``address``
       - string
       - Y
       - *--*
       - 客户端需要优先连接的主地址
-    * - port
+    * - ``port``
       - int
       - Y
       - *--*
       - 客户端需要优先连接的端口
-    * - primaryContent
+    * - ``primaryContent``
       - JSON
       - Y
       - *--*
@@ -167,12 +167,12 @@ Device
       - 必填
       - 默认值
       - 描述
-    * - name
+    * - ``name``
       - string
       - Y
       - *--*
       - 设备名称
-    * - platform
+    * - ``platform``
       - string
       - Y
       - *--*
@@ -208,42 +208,42 @@ Contact
       - 必填
       - 默认值
       - 描述
-    * - id
+    * - ``id``
       - long
       - Y
       - *--*
       - 联系人 ID
-    * - domain
+    * - ``domain``
       - string
       - Y
       - *--*
       - 联系人所在域
-    * - timestamp
+    * - ``timestamp``
       - long
       - Y
       - *--*
       - 数据时间戳
-    * - name
+    * - ``name``
       - string
       - Y
       - *--*
       - 联系人名称
-    * - namePY
+    * - ``namePY``
       - string
       - N
       - *--*
       - 联系人名称的拼音形式
-    * - context
+    * - ``context``
       - JSON
       - N
       - *--*
       - 关联的上下文数据
-    * - devices
+    * - ``devices``
       - Array< :ref:`device` >
       - N
       - *--*
       - 联系人当前登录的设备列表
-    * - device
+    * - ``device``
       - :ref:`device`
       - N
       - *--*
@@ -298,12 +298,12 @@ Contact Appendix
       - 必填
       - 默认值
       - 描述
-    * - contact
+    * - ``contact``
       - JSON
       - Y
       - *--*
       - 附录所属的联系人，参看 :ref:`contact`
-    * - remarkName
+    * - ``remarkName``
       - string
       - Y
       - *--*
@@ -352,52 +352,52 @@ Group
       - 必填
       - 默认值
       - 描述
-    * - id
+    * - ``id``
       - long
       - Y
       - *--*
       - 群组 ID
-    * - domain
+    * - ``domain``
       - string
       - Y
       - *--*
       - 群组所在域
-    * - timestamp
+    * - ``timestamp``
       - long
       - Y
       - *--*
       - 数据时间戳
-    * - name
+    * - ``name``
       - string
       - Y
       - *--*
       - 群组名称
-    * - tag
+    * - ``tag``
       - string
       - Y
       - *--*
       - 群组标签
-    * - ownerId
+    * - ``ownerId``
       - long
       - Y
       - *--*
       - 群组当前群主的 ID
-    * - creation
+    * - ``creation``
       - long
       - Y
       - *--*
       - 群组的创建时间
-    * - lastActive
+    * - ``lastActive``
       - long
       - Y
       - *--*
       - 群组的最后一次活跃时间戳
-    * - state
+    * - ``state``
       - int
       - Y
       - *--*
       - 群组状态，参看 :ref:`group-state`
-    * - members
+    * - ``members``
       - Array<long>
       - N
       - *--*
@@ -445,54 +445,54 @@ Group Appendix
       - 必填
       - 默认值
       - 描述
-    * - groupId
+    * - ``groupId``
       - long
       - Y
       - *--*
       - 附录所属的群组 ID
-    * - group
+    * - ``group``
       - JSON
       - Y
       - *--*
       - 附录所属的群组的数据，参看 :ref:`group`
-    * - notice
+    * - ``notice``
       - string
       - Y
       - *--*
       - 群组公告
-    * - noticeOperatorId
+    * - ``noticeOperatorId``
       - long
       - Y
       - *--*
       - 群组公告编写人的 ID
-    * - noticeTime
+    * - ``noticeTime``
       - long
       - Y
       - *--*
       - 群组公告的更新时间
-    * - memberRemarks
+    * - ``memberRemarks``
       - Array<JSON>
       - Y
       - *--*
       - 成员的备注名清单，JSON 主键：|br2|
         ``id`` - long ： 联系人ID |br2|
         ``name`` - string ： 在群内的备注名
-    * - remark
+    * - ``remark``
       - string
       - Y
       - ``""``
       - 群组的备注名
-    * - following
+    * - ``following``
       - boolean
       - Y
       - ``false``
       - 成员对该群是否进行了关注。 |br| 如果进行了关注该值为 ``true``
-    * - memberNameDisplayed
+    * - ``memberNameDisplayed``
       - boolean
       - Y
       - ``false``
       - 是否需要显示群组成员的名称
-    * - applicants
+    * - ``applicants``
       - Array<JSON>
       - N
       - *--*
@@ -502,7 +502,7 @@ Group Appendix
         ``postscript`` - string ： 附言 |br2|
         ``agreed`` - boolean ： 是否允许 |br2|
         ``agreedTime`` - long ： 处理申请时间
-    * - commId
+    * - ``commId``
       - long
       - N
       - *--*
@@ -559,47 +559,47 @@ Contact Zone
       - 必填
       - 默认值
       - 描述
-    * - id
+    * - ``id``
       - long
       - Y
       - *--*
       - 分区的 ID
-    * - domain
+    * - ``domain``
       - string
       - Y
       - *--*
       - 分区所属的域
-    * - timestamp
+    * - ``timestamp``
       - long
       - Y
       - *--*
       - 数据的时间戳
-    * - owner
+    * - ``owner``
       - long
       - Y
       - *--*
       - 分区所属的联系人 ID
-    * - name
+    * - ``name``
       - string
       - Y
       - *--*
       - 分区名称， **分区名称是分区的唯一标识**
-    * - displayName
+    * - ``displayName``
       - string
       - Y
       - *--*
       - 分区的显示名
-    * - state
+    * - ``state``
       - int
       - Y
       - *--*
       - 分区状态
-    * - peerMode
+    * - ``peerMode``
       - boolean
       - Y
       - ``false``
       - 分区是否是端到端模式
-    * - participants
+    * - ``participants``
       - Array< :ref:`contact-zone-participant` >
       - N
       - *--*
@@ -623,12 +623,12 @@ Contact Zone Participant
       - 必填
       - 默认值
       - 描述
-    * - id
+    * - ``id``
       - long
       - Y
       - *--*
       - 参与人 ID
-    * - type
+    * - ``type``
       - int
       - Y
       - *--*
@@ -639,22 +639,22 @@ Contact Zone Participant
         ``4`` - System |br|
         ``5`` - Conference |br|
         ``9`` - Other
-    * - timestamp
+    * - ``timestamp``
       - long
       - Y
       - *--*
       - 数据的时间戳
-    * - state
+    * - ``state``
       - int
       - Y
       - *--*
       - 参与人状态，参看 :ref:`contact-zone-participant-state`
-    * - inviterId
+    * - ``inviterId``
       - long
       - Y
       - *--*
       - 邀请人的 ID
-    * - postscript
+    * - ``postscript``
       - string
       - Y
       - ``""``
@@ -705,17 +705,17 @@ Group Bundle
       - 必填
       - 默认值
       - 描述
-    * - group
+    * - ``group``
       - JSON
       - Y
       - *--*
       - 群组数据 :ref:`group`
-    * - modified
+    * - ``modified``
       - Array<long>
       - Y
       - *--*
       - 群组操作时变化的群成员 ID 列表
-    * - operator
+    * - ``operator``
       - long
       - N
       - *--*
