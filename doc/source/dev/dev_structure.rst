@@ -1225,7 +1225,7 @@ Conversation
         ``2`` - Important ：重要的或置顶的状态。 |br2|
         ``3`` - Deleted ：已删除状态。 |br2|
         ``4`` - Destroyed ：已销毁状态。
-    * - ``remind``
+    * - ``reminding``
       - int
       - Y
       - *--*
