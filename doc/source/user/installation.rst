@@ -38,7 +38,7 @@
 
             tar -xzf cube-server-3.0.tar.gz
 
-    * 安装辅助工具：
+    * 安装辅助工具 *（可选步骤）* ：
 
         - 安装 `ImageMagick <https://imagemagick.org/>`__ 软件。
 
@@ -46,7 +46,7 @@
 
                 sudo apt-get install imagemagick
 
-    * 安装媒体服务器（可选步骤）：
+    * 安装媒体服务器 *（可选步骤）* ：
 
         .. code-block:: shell
 
@@ -69,6 +69,10 @@
 
         媒体服务器的配置说明请查阅 :doc:`/user/configuration` 文档。
 
+
+#. 配置服务器。
+
+    服务器详细的配置说明参看 :doc:`/user/configuration` 文档。
 
 
 #. 配置服务器管理控制台。
@@ -99,7 +103,7 @@
 
     .. _section_config_appserver:
 
-#. 配置应用服务器（*可选步骤*）。 
+#. 配置应用服务器 *（可选步骤）* 。 
 
     时信魔方应用服务器默认使用 MySQL 数据库，编辑 ``cube-server-3.0/server-app/server.properties``
 
@@ -215,11 +219,20 @@
 
 #. 使用脚本命令运行服务器。
 
-    您也可以使用脚本命令启动和停止服务器，这样不需要运行控制台。进入 ``deploy`` 目录：
+    您也可以使用脚本命令启动和停止服务器，这样不需要运行控制台。如果您是在 **cube-server** 工程目录里进入 ``deploy`` 目录；如果使用预构建安装包进入 ``server`` 目录：
 
     .. code-block:: shell
 
         cd deploy
+
+    或
+
+    .. code-block:: shell
+
+        cd server
+
+
+    执行各服务脚本：
 
     启动服务单元服务器：
 
