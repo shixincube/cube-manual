@@ -54,6 +54,42 @@
 
         该编译脚本将编译应用程序的 Web 端 JavaScript 源代码。
 
+    1.4. 配置服务器信息
+
+        进入 ``public/javascripts`` 目录，编辑 ``server.js`` 文件：
+
+        .. code-block:: javascript
+
+            (function (g, $) {
+
+                /**
+                 * 服务器地址。
+                 * 请修改为您的服务器地址。
+                 */
+                var address = '127.0.0.1';
+
+                /**
+                 * 服务器端口。
+                 * 填写 0 表示使用默认端口。
+                 */
+                var port = 0;
+
+                /**
+                 * 用于文件服务的 HTTP 链接。
+                 */
+                var httpURL = 'http://127.0.0.1:7777';
+
+                /**
+                 * 用于文件服务的 HTTPS 链接。
+                 */
+                var httpsURL = 'https://127.0.0.1:7777';
+
+                ...
+
+            })(window, jQuery);
+
+        将第36行的服务器地址 ``'127.0.0.1'`` 修改为时信魔方的服务器地址。
+
 
 3. 配置并启动应用服务器
 
@@ -68,7 +104,7 @@
 
         npm run start
 
-    启动成功之后，在浏览器里输入：``http://127.0.0.1:8080/`` 进入应用程序。
+    启动成功之后，在浏览器里输入：``http://您的服务器地址:8080/`` 进入应用程序。
 
     .. figure:: /images/snapshoot_cube_web_login.png
         :align: center
