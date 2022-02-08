@@ -15,7 +15,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     projectName: 'Cube',
 
     customFields: {
-        keywords: ['即时通讯','IM','实时协作','团队协作','视频会议','音视频通话','SDK','多人协作','聊天软件']
+        keywords: ['开源','即时通讯','IM','实时协作','团队协作','视频会议','音视频通话','SDK','多人协作','聊天软件','开源软件']
     },
 
     i18n: {

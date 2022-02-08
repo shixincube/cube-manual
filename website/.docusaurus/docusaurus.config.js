@@ -10,6 +10,7 @@ export default {
   "projectName": "Cube",
   "customFields": {
     "keywords": [
+      "开源",
       "即时通讯",
       "IM",
       "实时协作",
@@ -18,7 +19,8 @@ export default {
       "音视频通话",
       "SDK",
       "多人协作",
-      "聊天软件"
+      "聊天软件",
+      "开源软件"
     ]
   },
   "i18n": {

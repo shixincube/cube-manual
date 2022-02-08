@@ -4,6 +4,43 @@
       "id": "note",
       "metadata": {
         "permalink": "/blog/note",
+        "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2022-02-04-dev_note_002.md",
+        "source": "@site/blog/2022-02-04-dev_note_002.md",
+        "title": "开发手记 2",
+        "description": "消息会话的设计。",
+        "date": "2022-02-04T00:00:00.000Z",
+        "formattedDate": "2022年2月4日",
+        "tags": [
+          {
+            "label": "Development",
+            "permalink": "/blog/tags/development"
+          },
+          {
+            "label": "Note",
+            "permalink": "/blog/tags/note"
+          }
+        ],
+        "readingTime": 0.38,
+        "truncated": true,
+        "authors": [
+          {
+            "name": "Ambrose Xu",
+            "title": "Leader of Cube",
+            "url": "https://github.com/xujiangwei",
+            "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+            "key": "ambrose"
+          }
+        ],
+        "nextItem": {
+          "title": "开发手记 1",
+          "permalink": "/blog/note"
+        }
+      }
+    },
+    {
+      "id": "note",
+      "metadata": {
+        "permalink": "/blog/note",
         "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-11-17-dev_note_001.md",
         "source": "@site/blog/2021-11-17-dev_note_001.md",
         "title": "开发手记 1",
@@ -20,7 +57,7 @@
             "permalink": "/blog/tags/note"
           }
         ],
-        "readingTime": 0.95,
+        "readingTime": 3.27,
         "truncated": true,
         "authors": [
           {
@@ -31,6 +68,10 @@
             "key": "ambrose"
           }
         ],
+        "prevItem": {
+          "title": "开发手记 2",
+          "permalink": "/blog/note"
+        },
         "nextItem": {
           "title": "在路上 - 一个程序员的创业总结",
           "permalink": "/blog/on-my-road"

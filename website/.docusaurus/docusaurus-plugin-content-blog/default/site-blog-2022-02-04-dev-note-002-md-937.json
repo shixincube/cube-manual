@@ -1,0 +1,34 @@
+{
+  "permalink": "/en/blog/note",
+  "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2022-02-04-dev_note_002.md",
+  "source": "@site/blog/2022-02-04-dev_note_002.md",
+  "title": "开发手记 2",
+  "description": "消息会话的设计。",
+  "date": "2022-02-04T00:00:00.000Z",
+  "formattedDate": "February 4, 2022",
+  "tags": [
+    {
+      "label": "Development",
+      "permalink": "/en/blog/tags/development"
+    },
+    {
+      "label": "Note",
+      "permalink": "/en/blog/tags/note"
+    }
+  ],
+  "readingTime": 0.38,
+  "truncated": true,
+  "authors": [
+    {
+      "name": "Ambrose Xu",
+      "title": "Leader of Cube",
+      "url": "https://github.com/xujiangwei",
+      "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+      "key": "ambrose"
+    }
+  ],
+  "nextItem": {
+    "title": "开发手记 1",
+    "permalink": "/en/blog/note"
+  }
+}

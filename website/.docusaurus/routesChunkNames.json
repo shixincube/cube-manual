@@ -3,10 +3,13 @@
     "component": "c4f5d8e4",
     "config": "5e9f5e1a"
   },
-  "/en/blog-d7a": {
+  "/en/blog-4f5": {
     "component": "a6aa9e1f",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "16dc5d54"
+      },
       {
         "content": "16dc5d54"
       },
@@ -23,6 +26,11 @@
     "component": "9e4087bc",
     "archive": "f6cbeee1"
   },
+  "/en/blog/note-938": {
+    "component": "ccc49370",
+    "sidebar": "814f3328",
+    "content": "9378759a"
+  },
   "/en/blog/note-6be": {
     "component": "ccc49370",
     "sidebar": "814f3328",
@@ -38,10 +46,13 @@
     "sidebar": "814f3328",
     "tags": "9bdd22eb"
   },
-  "/en/blog/tags/development-26c": {
+  "/en/blog/tags/development-15c": {
     "component": "6875c492",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "16dc5d54"
+      },
       {
         "content": "16dc5d54"
       }
@@ -61,10 +72,13 @@
     ],
     "metadata": "02af156b"
   },
-  "/en/blog/tags/note-e1e": {
+  "/en/blog/tags/note-d00": {
     "component": "6875c492",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "16dc5d54"
+      },
       {
         "content": "16dc5d54"
       }

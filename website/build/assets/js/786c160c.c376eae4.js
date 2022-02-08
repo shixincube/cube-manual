@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkshixincube=self.webpackChunkshixincube||[]).push([[553],{7744:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/note","name":"Note","count":1,"permalink":"/blog/tags/note"}')}}]);

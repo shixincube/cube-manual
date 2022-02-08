@@ -4,9 +4,16 @@
         <title>时信魔方 Blog</title>
         <link>https://shixincube.com/en/blog</link>
         <description>时信魔方 Blog</description>
-        <lastBuildDate>Wed, 17 Nov 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 04 Feb 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[开发手记 2]]></title>
+            <link>https://shixincube.com/en/blog/note</link>
+            <guid>note</guid>
+            <pubDate>Fri, 04 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[消息会话的设计。]]></description>
+        </item>
         <item>
             <title><![CDATA[开发手记 1]]></title>
             <link>https://shixincube.com/en/blog/note</link>

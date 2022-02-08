@@ -2,6 +2,10 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "开发手记 2",
+      "permalink": "/en/blog/note"
+    },
+    {
       "title": "开发手记 1",
       "permalink": "/en/blog/note"
     },

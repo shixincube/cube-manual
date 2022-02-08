@@ -10,12 +10,17 @@ export default [
   },
   {
     path: '/en/blog',
-    component: ComponentCreator('/en/blog','d7a'),
+    component: ComponentCreator('/en/blog','4f5'),
     exact: true
   },
   {
     path: '/en/blog/archive',
     component: ComponentCreator('/en/blog/archive','133'),
+    exact: true
+  },
+  {
+    path: '/en/blog/note',
+    component: ComponentCreator('/en/blog/note','938'),
     exact: true
   },
   {
@@ -35,7 +40,7 @@ export default [
   },
   {
     path: '/en/blog/tags/development',
-    component: ComponentCreator('/en/blog/tags/development','26c'),
+    component: ComponentCreator('/en/blog/tags/development','15c'),
     exact: true
   },
   {
@@ -45,7 +50,7 @@ export default [
   },
   {
     path: '/en/blog/tags/note',
-    component: ComponentCreator('/en/blog/tags/note','e1e'),
+    component: ComponentCreator('/en/blog/tags/note','d00'),
     exact: true
   },
   {
