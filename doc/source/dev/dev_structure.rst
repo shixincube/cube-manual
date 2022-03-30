@@ -4,7 +4,6 @@
 
 .. contents:: 目录
 
-
 |
 
 .. _auth-token:
@@ -238,6 +237,11 @@ Contact
       - N
       - *--*
       - 关联的上下文数据
+    * - ``externalId``
+      - string
+      - N
+      - *--*
+      - 外部关联 ID
     * - ``devices``
       - Array< :ref:`device` >
       - N
@@ -260,6 +264,7 @@ Contact
         "timestamp" : 1615271263193,
         "name" : "时信开发者",
         "namePY" : "shi,xin,kai,fa,zhe",
+        "externalId" : "lei3_2020",
         "devices" : [
             {
                 "address" : "127.0.0.1",
@@ -402,6 +407,11 @@ Group
       - N
       - *--*
       - 群组成员的 ID 列表
+    * - ``memberContacts``
+      - Array< :ref:`contact` >
+      - N
+      - *--*
+      - 群组成员列表。 |br2| 该属性仅在 Hub 服务里使用。
 
 **JSON 示例**
 
