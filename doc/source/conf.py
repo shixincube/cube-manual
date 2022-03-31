@@ -35,7 +35,8 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.graphviz',
     'sphinx.ext.ifconfig',
-    'sphinx_rtd_theme'
+    'sphinx_rtd_theme',
+    'sphinxcontrib.httpdomain'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

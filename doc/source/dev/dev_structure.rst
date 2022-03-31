@@ -411,7 +411,7 @@ Group
       - Array< :ref:`contact` >
       - N
       - *--*
-      - 群组成员列表。 |br2| 该属性仅在 Hub 服务里使用。
+      - 群组成员列表。 |br2| 该属性仅在 Hub 服务里使用
 
 **JSON 示例**
 
@@ -1128,6 +1128,28 @@ Message
       - N
       - *--*
       - 发送消息的设备
+    * - ``sender``
+      - :ref:`contact`
+      - N
+      - *--*
+      - 消息发件人（仅客户端）
+    * - ``group``
+      - :ref:`group`
+      - N
+      - *--*
+      - 消息发生的群组（仅客户端）
+    * - ``partner``
+      - :ref:`contact`
+      - N
+      - *--*
+      - 消息对话伙伴方（仅客户端）
+    * - ``timestampPrecision``
+      - int
+      - N
+      - *--*
+      - 消息的时间戳精度描述（仅客户端）：|br2|
+        ``0`` - Minute ：精确到分钟。 |br2|
+        ``1`` - Day ：精确到天。
 
 |
 
@@ -1249,11 +1271,26 @@ Conversation
       - Y
       - *--*
       - 与会话相关的关键实体的 ID
+    * - ``unread``
+      - int
+      - Y
+      - *--*
+      - 未读消息数量
     * - ``recentMessage``
       - :ref:`message`
       - N
       - *--*
-      - 会话最近一条消息
+      - 会话最近一条消息，当仅有一条消息时使用该字段
+    * - ``recentMessages``
+      - Array< :ref:`message` >
+      - N
+      - *--*
+      - 会话最近的消息列表，当有多条消息时使用该字段
+    * - ``pivotalEntity``
+      - :ref:`contact` 或 :ref:`group`
+      - N
+      - *--*
+      - 关键会话实体（仅 Hub 使用）
     * - ``avatarURL``
       - string
       - N

@@ -9,11 +9,32 @@ Hub 数据结构
 
 .. _contact_context:
 
-联系人上下文数据字段
+`Contact` 上下文数据字段
 ===============================
+
+在 Hub 服务里将联系人的其他数据信息均保存在上下文中，即 `Contact <dev_structure.html#contact>`_ 的 ``context`` 字段中。
 
 - ``avatarFileLabel`` - 联系人头像的文件标签，参看 `File Label <dev_structure.html#file-label>`_ 结构。
 
+
+|
+
+
+.. _message_payload:
+
+`Message` 负载数据字段
+===============================
+
+在 Hub 服务里消息的负载数据不仅记录了消息数据还记录了消息类型，即 `Message <dev_structure.html#message>`_ 的 ``payload`` 字段。
+
+- ``type`` - 消息类型。
+    * ``text`` - 文本消息类型。
+    * ``file`` - 文件消息类型。
+    * ``image`` - 图片消息类型。
+
+- ``content`` - 文本消息的文本数据，使用 Base64 格式。
+
+对于图片和文件消息类型，可以通过 `Message <dev_structure.html#message>`_ 的 ``attachment`` 字段获取对应的文件码，通过文件码获取文件数据。
 
 
 |
@@ -68,7 +89,86 @@ Account Event JSON 字段
 Conversations Event JSON 字段
 ===============================
 
+会话数据事件。
 
+.. list-table:: 
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 必填
+      - 默认值
+      - 描述
+    * - ``sn``
+      - long
+      - Y
+      - *--*
+      - 事件序号
+    * - ``name``
+      - string
+      - Y
+      - *--*
+      - 事件名
+    * - ``product``
+      - string
+      - Y
+      - *--*
+      - 产品名
+    * - ``code``
+      - string
+      - Y
+      - *--*
+      - 通道码
+    * - ``conversations``
+      - Array< `Conversation <dev_structure.html#conversation>`_ >
+      - Y
+      - *--*
+      - 最近会话列表
+
+
+|
+
+
+.. _group-data-event:
+
+Group Data Event JSON 字段
+===============================
+
+群组数据事件。
+
+.. list-table:: 
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 必填
+      - 默认值
+      - 描述
+    * - ``sn``
+      - long
+      - Y
+      - *--*
+      - 事件序号
+    * - ``name``
+      - string
+      - Y
+      - *--*
+      - 事件名
+    * - ``product``
+      - string
+      - Y
+      - *--*
+      - 产品名
+    * - ``code``
+      - string
+      - Y
+      - *--*
+      - 通道码
+    * - ``group``
+      - `Group <dev_structure.html#group>`_
+      - Y
+      - *--*
+      - 群组数据，参看 `Group <dev_structure.html#group>`_
 
 
 |
