@@ -41,7 +41,7 @@ Hub 数据结构
 
 .. _account-event:
 
-Account Event JSON 字段
+Account JSON 字段
 ===============================
 
 账号数据事件。
@@ -86,7 +86,7 @@ Account Event JSON 字段
 
 .. _conversations-event:
 
-Conversations Event JSON 字段
+Conversations JSON 字段
 ===============================
 
 会话数据事件。
@@ -131,7 +131,7 @@ Conversations Event JSON 字段
 
 .. _group-data-event:
 
-Group Data Event JSON 字段
+Group Data JSON 字段
 ===============================
 
 群组数据事件。
@@ -169,6 +169,10 @@ Group Data Event JSON 字段
       - Y
       - *--*
       - 群组数据，参看 `Group <dev_structure.html#group>`_
+
+
+|
+
 
 
 |
