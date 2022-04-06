@@ -174,5 +174,41 @@ Group Data JSON 字段
 |
 
 
+.. _contact-zone-event:
+
+Contact Zone Data JSON 字段
+===============================
+
+联系人分区数据事件。
+
+.. list-table:: 
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 必填
+      - 默认值
+      - 描述
+    * - ``sn``
+      - long
+      - Y
+      - *--*
+      - 事件序号
+    * - ``name``
+      - string
+      - Y
+      - *--*
+      - 事件名
+    * - ``product``
+      - string
+      - Y
+      - *--*
+      - 产品名
+    * - ``zone``
+      - `Contact Zone <dev_structure.html#contact-zone>`_
+      - Y
+      - *--*
+      - 分区数据，参看 `Contact Zone <dev_structure.html#contact-zone>`_
+
 
 |

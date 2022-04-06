@@ -108,6 +108,24 @@ Hub RESTful API
 |
 
 
+获取通讯录数据
+-------------------------------
+
+.. http:get:: /hub/book/(channel_code)
+
+    获取指定通道账号的通讯录。应答数据格式参看 `Contact Zone Event <dev_hub_structure.html#contact-zone-event>`_ 。
+
+    :param channel_code: 您申请的通道码。
+    :type channel_code: string
+
+    :resheader Content-Type: ``application/json``
+
+    :>json object zone: 携带通讯录数据的分区数据结构，参看 `Contact Zone <dev_structure.html#contact-zone>`_ 。
+
+
+|
+
+
 获取群组信息
 -------------------------------
 
@@ -142,7 +160,7 @@ Hub RESTful API
 
     :<json string groupName: 指定消息发送的目标群组名。与 ``partnerId`` 参数二选一。
     :<json string partnerId: 指定消息发送的目标伙伴/好友的外部 ID 。与 ``groupName`` 参数二选一。
-    :<json string text: 指定消息的文本内容。
+    :<json string text: 指定消息的文本内容，文本内容必须为 Base64 编码形式。
 
     :resheader Content-Type: ``application/json``
 

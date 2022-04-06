@@ -671,6 +671,12 @@ Contact Zone Participant
       - Y
       - ``""``
       - 加入分区时的附言
+    * - ``linkedContact``
+      - JSON
+      - N
+      - *--*
+      - 链接的联系人，参看 :ref:`contact` 或 :ref:`group` 
+
 
 |
 
