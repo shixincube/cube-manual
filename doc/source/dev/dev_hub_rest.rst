@@ -118,9 +118,15 @@ Hub RESTful API
     :param channel_code: 您申请的通道码。
     :type channel_code: string
 
+    :query begin: 查询数据的起始索引。默认值：0 。
+    :query end: 查询数据的结束索引。默认值：9 。
+
     :resheader Content-Type: ``application/json``
 
     :>json object zone: 携带通讯录数据的分区数据结构，参看 `Contact Zone <dev_structure.html#contact-zone>`_ 。
+    :>json int begin: 数据的起始索引。
+    :>json int end: 数据的结束索引。
+    :>json int total: 数据的总数。
 
 
 |
@@ -129,7 +135,7 @@ Hub RESTful API
 获取群组信息
 -------------------------------
 
-.. http:get:: /hub/group/(channel_code)?name=group_name
+.. http:get:: /hub/group/(channel_code)
 
     获取指定群组的数据。应答数据格式参看 `Group Data <dev_hub_structure.html#group-data-event>`_ 。
 

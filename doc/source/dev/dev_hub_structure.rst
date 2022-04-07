@@ -209,6 +209,21 @@ Contact Zone Data JSON 字段
       - Y
       - *--*
       - 分区数据，参看 `Contact Zone <dev_structure.html#contact-zone>`_
+    * - ``begin``
+      - int
+      - Y
+      - *--*
+      - 数据的起始索引
+    * - ``end``
+      - int
+      - Y
+      - *--*
+      - 数据的结束索引
+    * - ``total``
+      - int
+      - Y
+      - *--*
+      - 数据总数量
 
 
 |
