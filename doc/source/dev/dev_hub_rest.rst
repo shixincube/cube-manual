@@ -71,7 +71,7 @@ Hub RESTful API
 |
 
 
-账号数据管理
+账号数据操作
 ===============================
 
 获取通道的账号信息
@@ -87,23 +87,6 @@ Hub RESTful API
     :resheader Content-Type: ``application/json``
 
     :>json object account: 账号数据，参看 `Contact <dev_structure.html#contact>`_ 。
-
-|
-
-
-获取最近的消息会话列表
--------------------------------
-
-.. http:get:: /hub/conversations/(channel_code)
-
-    获取指定通道的账号最近消息会话列表。应答数据格式参看 `Conversations <dev_hub_structure.html#conversations-event>`_ 。
-
-    :param channel_code: 您申请的通道码。
-    :type channel_code: string
-
-    :resheader Content-Type: ``application/json``
-
-    :>json array conversations: 按照时间倒序存储的最近会话数组。
 
 |
 
@@ -128,7 +111,6 @@ Hub RESTful API
     :>json int end: 数据的结束索引。
     :>json int total: 数据的总数。
 
-
 |
 
 
@@ -151,8 +133,50 @@ Hub RESTful API
 |
 
 
-消息操作
+消息会话操作
 ===============================
+
+获取最近的消息会话列表
+-------------------------------
+
+.. http:get:: /hub/conversations/(channel_code)
+
+    获取指定通道的账号最近消息会话列表。应答数据格式参看 `Conversations <dev_hub_structure.html#conversations-event>`_ 。
+
+    :param channel_code: 您申请的通道码。
+    :type channel_code: string
+
+    :query nc: 查询会话的数量。默认值：8 。
+    :query nm: 查询的每个会话的最近消息数量。默认值：5 。
+
+    :resheader Content-Type: ``application/json``
+
+    :>json array conversations: 按照时间倒序存储的最近会话数组。
+
+|
+
+
+获取指定消息列表
+-------------------------------
+
+.. http:get:: /hub/messages/(channel_code)
+
+    获取指定会话的消息列表。应答数据格式参看 `Messages <dev_hub_structure.html#messages-event>`_ 。
+
+    :param channel_code: 您申请的通道码。
+    :type channel_code: string
+
+    :query cid: 查询的联系人的外部 ID 。（与 ``gn`` 参数二选一）。
+    :query gn: 查询的群组名称 。（与 ``cid`` 参数二选一）。
+    :query begin: 查询列表的起始索引。默认值：0 。
+    :query end: 查询列表的结束索引。默认值：9 。
+
+    :resheader Content-Type: ``application/json``
+
+    :>json array messages: 按照时间序存储的消息列表。消息结构参看 `Message <dev_structure.html#message>`_ 。
+
+|
+
 
 发送消息
 -------------------------------

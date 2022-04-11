@@ -227,3 +227,63 @@ Contact Zone Data JSON 字段
 
 
 |
+
+
+.. _messages-event:
+
+Messages JSON 字段
+===============================
+
+消息列表数据。
+
+.. list-table:: 
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 必填
+      - 默认值
+      - 描述
+    * - ``sn``
+      - long
+      - Y
+      - *--*
+      - 事件序号
+    * - ``name``
+      - string
+      - Y
+      - *--*
+      - 事件名
+    * - ``product``
+      - string
+      - Y
+      - *--*
+      - 产品名
+    * - ``group``
+      - `Group <dev_structure.html#group>`_
+      - N
+      - *--*
+      - 当前消息清单对应的群组
+    * - ``partner``
+      - `Contact <dev_structure.html#contact>`_
+      - N
+      - *--*
+      - 当前消息清单对应的参与人
+    * - ``begin``
+      - int
+      - Y
+      - *--*
+      - 起始索引位置
+    * - ``end``
+      - int
+      - Y
+      - *--*
+      - 结束索引位置
+    * - ``messages``
+      - Array< `Message <dev_structure.html#message>`_ >
+      - Y
+      - *--*
+      - 消息数据清单
+
+
+|
