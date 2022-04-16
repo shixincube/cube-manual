@@ -51,12 +51,12 @@ Hub RESTful API
 |
 
 
-读取文件数据
+下载文件数据
 -------------------------------
 
 .. http:get:: /hub/file/(channel_code)/(file_code)
 
-    读取指定文件码的文件数据。
+    下载指定文件码的文件数据。
 
     :param channel_code: 您申请的通道码。
     :type channel_code: string
@@ -67,6 +67,32 @@ Hub RESTful API
 
     :status 403: 指定的文件码无效。
     :status 404: 服务器未能成功读取到指定文件码对应的文件数据。
+
+|
+
+
+上传文件数据
+-------------------------------
+
+.. http:post:: /hub/file/(channel_code)
+
+    上传文件数据到服务器，客户端需要按照 ``multipart/form-data`` 的 MIME 类型封装表单数据。
+    应答数据为 JSON 结构，参看 `File Label <dev_structure.html#file-label>`_ 。
+
+    :param channel_code: 您申请的通道码。
+    :type channel_code: string
+
+    :form file: 文件名和文件数据。
+
+    :reqheader Content-Type: ``multipart/form-data``
+
+    :resheader Content-Type: ``application/json``
+
+    :>json string fileCode: 文件码。
+    :>json string fileName: 文件名。
+    :>json string fileSize: 文件大小。
+
+    :status 400: 上传文件数据时发生错误。
 
 |
 
@@ -191,9 +217,26 @@ Hub RESTful API
     :<json string groupName: 指定消息发送的目标群组名。与 ``partnerId`` 参数二选一。
     :<json string partnerId: 指定消息发送的目标伙伴/好友的外部 ID 。与 ``groupName`` 参数二选一。
     :<json string text: 指定消息的文本内容，文本内容必须为 Base64 编码形式。
+    :<json string fileCode: 指定文件消息的文件码。
 
     :resheader Content-Type: ``application/json``
 
     :>json ack: 一般应答数据。
+
+    **请求示例**
+
+    .. sourcecode:: http
+
+        POST /hub/message/xdUrpSczEgWbSiDKmjhOWIOXZjQFOcmh HTTP/1.1
+        HOST: api.shixincube.com
+        Accept: application/json
+
+        {
+            "partnerId": "heit9077_cube",
+            "text": "5LuK5aSp5pivMjAyMuW5tDTmnIgxNeaXpQ=="
+        }
+
+
+
 
 |
