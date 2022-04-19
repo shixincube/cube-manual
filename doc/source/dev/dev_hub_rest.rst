@@ -159,6 +159,29 @@ Hub RESTful API
 |
 
 
+申请添加朋友
+-------------------------------
+
+.. http:post:: /hub/friend/add/(channel_code)
+
+    通过检索指定关键字申请添加联系人为朋友。
+
+    :param channel_code: 您申请的通道码。
+    :type channel_code: string
+
+    :reqheader Content-Type: ``application/json``
+
+    :<json string keyword: 指定联系人的外部 ID 或者手机号码。
+    :<json string postscript: 指定申请附言， **可选参数** 。
+    :<json string remarkName: 指定添加的朋友备注名， **可选参数** 。
+
+    :resheader Content-Type: ``application/json``
+
+    :>json code: 通道码。
+
+|
+
+
 消息会话操作
 ===============================
 
@@ -214,6 +237,8 @@ Hub RESTful API
     :param channel_code: 您申请的通道码。
     :type channel_code: string
 
+    :reqheader Content-Type: ``application/json``
+
     :<json string groupName: 指定消息发送的目标群组名。与 ``partnerId`` 参数二选一。
     :<json string partnerId: 指定消息发送的目标伙伴/好友的外部 ID 。与 ``groupName`` 参数二选一。
     :<json string text: 指定消息的文本内容，文本内容必须为 Base64 编码形式。
@@ -221,7 +246,7 @@ Hub RESTful API
 
     :resheader Content-Type: ``application/json``
 
-    :>json ack: 一般应答数据。
+    :>json code: 通道码。
 
     **请求示例**
 
