@@ -1,9 +1,9 @@
 {
   "blogPosts": [
     {
-      "id": "note",
+      "id": "note2",
       "metadata": {
-        "permalink": "/blog/note",
+        "permalink": "/blog/note2",
         "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2022-02-04-dev_note_002.md",
         "source": "@site/blog/2022-02-04-dev_note_002.md",
         "title": "开发手记 2",
@@ -33,14 +33,14 @@
         ],
         "nextItem": {
           "title": "开发手记 1",
-          "permalink": "/blog/note"
+          "permalink": "/blog/note1"
         }
       }
     },
     {
-      "id": "note",
+      "id": "note1",
       "metadata": {
-        "permalink": "/blog/note",
+        "permalink": "/blog/note1",
         "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-11-17-dev_note_001.md",
         "source": "@site/blog/2021-11-17-dev_note_001.md",
         "title": "开发手记 1",
@@ -70,7 +70,7 @@
         ],
         "prevItem": {
           "title": "开发手记 2",
-          "permalink": "/blog/note"
+          "permalink": "/blog/note2"
         },
         "nextItem": {
           "title": "在路上 - 一个程序员的创业总结",
@@ -111,7 +111,7 @@
         ],
         "prevItem": {
           "title": "开发手记 1",
-          "permalink": "/blog/note"
+          "permalink": "/blog/note1"
         },
         "nextItem": {
           "title": "欢迎来到时信魔方",

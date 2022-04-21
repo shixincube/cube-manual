@@ -56,9 +56,46 @@
       "blogSidebarTitle": "Recent posts",
       "blogPosts": [
         {
-          "id": "note",
+          "id": "note2",
           "metadata": {
-            "permalink": "/blog/note",
+            "permalink": "/blog/note2",
+            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2022-02-04-dev_note_002.md",
+            "source": "@site/blog/2022-02-04-dev_note_002.md",
+            "title": "开发手记 2",
+            "description": "消息会话的设计。",
+            "date": "2022-02-04T00:00:00.000Z",
+            "formattedDate": "2022年2月4日",
+            "tags": [
+              {
+                "label": "Development",
+                "permalink": "/blog/tags/development"
+              },
+              {
+                "label": "Note",
+                "permalink": "/blog/tags/note"
+              }
+            ],
+            "readingTime": 0.38,
+            "truncated": true,
+            "authors": [
+              {
+                "name": "Ambrose Xu",
+                "title": "Leader of Cube",
+                "url": "https://github.com/xujiangwei",
+                "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+                "key": "ambrose"
+              }
+            ],
+            "nextItem": {
+              "title": "开发手记 1",
+              "permalink": "/blog/note1"
+            }
+          }
+        },
+        {
+          "id": "note1",
+          "metadata": {
+            "permalink": "/blog/note1",
             "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-11-17-dev_note_001.md",
             "source": "@site/blog/2021-11-17-dev_note_001.md",
             "title": "开发手记 1",
@@ -75,7 +112,7 @@
                 "permalink": "/blog/tags/note"
               }
             ],
-            "readingTime": 0.95,
+            "readingTime": 3.27,
             "truncated": true,
             "authors": [
               {
@@ -86,6 +123,10 @@
                 "key": "ambrose"
               }
             ],
+            "prevItem": {
+              "title": "开发手记 2",
+              "permalink": "/blog/note2"
+            },
             "nextItem": {
               "title": "在路上 - 一个程序员的创业总结",
               "permalink": "/blog/on-my-road"
@@ -96,8 +137,8 @@
           "id": "on-my-road",
           "metadata": {
             "permalink": "/blog/on-my-road",
-            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-09-25-origin/index.md",
-            "source": "@site/blog/2021-09-25-origin/index.md",
+            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-09-25-origin.md",
+            "source": "@site/blog/2021-09-25-origin.md",
             "title": "在路上 - 一个程序员的创业总结",
             "description": "最近一个月发生了很多事情，突然发现自己对一些事格外敏感，而对一些事情格外迟钝。人们总说每个人的成长都是经历一次又一次变故，这次的变故我决定以文字的形式记录下来。",
             "date": "2021-09-25T00:00:00.000Z",
@@ -125,7 +166,7 @@
             ],
             "prevItem": {
               "title": "开发手记 1",
-              "permalink": "/blog/note"
+              "permalink": "/blog/note1"
             },
             "nextItem": {
               "title": "欢迎来到时信魔方",
@@ -137,8 +178,8 @@
           "id": "welcome",
           "metadata": {
             "permalink": "/blog/welcome",
-            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-09-15-welcome/index.md",
-            "source": "@site/blog/2021-09-15-welcome/index.md",
+            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-09-15-welcome.md",
+            "source": "@site/blog/2021-09-15-welcome.md",
             "title": "欢迎来到时信魔方",
             "description": "今天一早过来把官网的资料整理了一下，正式把官网迁到 Docusaurus 上。",
             "date": "2021-09-15T00:00:00.000Z",
@@ -178,14 +219,15 @@
             "page": 1,
             "postsPerPage": 10,
             "totalPages": 1,
-            "totalCount": 3,
+            "totalCount": 4,
             "previousPage": null,
             "nextPage": null,
             "blogDescription": "Blog",
             "blogTitle": "Blog"
           },
           "items": [
-            "note",
+            "note2",
+            "note1",
             "on-my-road",
             "welcome"
           ]
@@ -195,14 +237,16 @@
         "/blog/tags/development": {
           "name": "Development",
           "items": [
-            "note"
+            "note2",
+            "note1"
           ],
           "permalink": "/blog/tags/development"
         },
         "/blog/tags/note": {
           "name": "Note",
           "items": [
-            "note"
+            "note2",
+            "note1"
           ],
           "permalink": "/blog/tags/note"
         },

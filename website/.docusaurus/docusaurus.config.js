@@ -2,7 +2,7 @@ export default {
   "title": "时信魔方",
   "tagline": "面向开发者的开源实时协作、通信开发框架。",
   "url": "https://shixincube.com",
-  "baseUrl": "/en/",
+  "baseUrl": "/",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "favicon": "img/favicon.ico",

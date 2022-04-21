@@ -3,19 +3,19 @@
   "items": [
     {
       "title": "开发手记 2",
-      "permalink": "/en/blog/note"
+      "permalink": "/blog/note2"
     },
     {
       "title": "开发手记 1",
-      "permalink": "/en/blog/note"
+      "permalink": "/blog/note1"
     },
     {
       "title": "在路上 - 一个程序员的创业总结",
-      "permalink": "/en/blog/on-my-road"
+      "permalink": "/blog/on-my-road"
     },
     {
       "title": "欢迎来到时信魔方",
-      "permalink": "/en/blog/welcome"
+      "permalink": "/blog/welcome"
     }
   ]
 }

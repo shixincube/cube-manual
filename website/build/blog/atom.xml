@@ -9,8 +9,8 @@
     <icon>https://shixincube.com/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[开发手记 2]]></title>
-        <id>note</id>
-        <link href="https://shixincube.com/blog/note"/>
+        <id>note2</id>
+        <link href="https://shixincube.com/blog/note2"/>
         <updated>2022-02-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[消息会话的设计。]]></summary>
         <author>
@@ -20,8 +20,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[开发手记 1]]></title>
-        <id>note</id>
-        <link href="https://shixincube.com/blog/note"/>
+        <id>note1</id>
+        <link href="https://shixincube.com/blog/note1"/>
         <updated>2021-11-17T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[时信魔方按照功能场景把各个功能分解为：授权、联系人服务、消息服务、文件存储服务、实时音视频服务、会议管理等各个模块。每个模块专注于自身的业务场景，同时也会依赖其他模块辅助完成特定功能。]]></summary>
         <author>
