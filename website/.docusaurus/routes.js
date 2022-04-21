@@ -10,7 +10,7 @@ export default [
   },
   {
     path: '/en/blog',
-    component: ComponentCreator('/en/blog','4f5'),
+    component: ComponentCreator('/en/blog','081'),
     exact: true
   },
   {
@@ -20,12 +20,12 @@ export default [
   },
   {
     path: '/en/blog/note',
-    component: ComponentCreator('/en/blog/note','938'),
+    component: ComponentCreator('/en/blog/note','6be'),
     exact: true
   },
   {
     path: '/en/blog/note',
-    component: ComponentCreator('/en/blog/note','6be'),
+    component: ComponentCreator('/en/blog/note','938'),
     exact: true
   },
   {
@@ -40,7 +40,7 @@ export default [
   },
   {
     path: '/en/blog/tags/development',
-    component: ComponentCreator('/en/blog/tags/development','15c'),
+    component: ComponentCreator('/en/blog/tags/development','ff4'),
     exact: true
   },
   {
@@ -50,7 +50,7 @@ export default [
   },
   {
     path: '/en/blog/tags/note',
-    component: ComponentCreator('/en/blog/tags/note','d00'),
+    component: ComponentCreator('/en/blog/tags/note','017'),
     exact: true
   },
   {
