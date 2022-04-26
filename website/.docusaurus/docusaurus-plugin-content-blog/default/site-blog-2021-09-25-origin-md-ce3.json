@@ -1,19 +1,19 @@
 {
-  "permalink": "/blog/on-my-road",
+  "permalink": "/en/blog/on-my-road",
   "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-09-25-origin.md",
   "source": "@site/blog/2021-09-25-origin.md",
   "title": "在路上 - 一个程序员的创业总结",
   "description": "最近一个月发生了很多事情，突然发现自己对一些事格外敏感，而对一些事情格外迟钝。人们总说每个人的成长都是经历一次又一次变故，这次的变故我决定以文字的形式记录下来。",
   "date": "2021-09-25T00:00:00.000Z",
-  "formattedDate": "2021年9月25日",
+  "formattedDate": "September 25, 2021",
   "tags": [
     {
       "label": "Perception",
-      "permalink": "/blog/tags/perception"
+      "permalink": "/en/blog/tags/perception"
     },
     {
       "label": "Diary",
-      "permalink": "/blog/tags/diary"
+      "permalink": "/en/blog/tags/diary"
     }
   ],
   "readingTime": 6.07,
@@ -29,10 +29,10 @@
   ],
   "prevItem": {
     "title": "开发手记 1",
-    "permalink": "/blog/note1"
+    "permalink": "/en/blog/note1"
   },
   "nextItem": {
     "title": "欢迎来到时信魔方",
-    "permalink": "/blog/welcome"
+    "permalink": "/en/blog/welcome"
   }
 }

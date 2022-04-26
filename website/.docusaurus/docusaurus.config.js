@@ -2,7 +2,7 @@ export default {
   "title": "时信魔方",
   "tagline": "面向开发者的开源实时协作、通信开发框架。",
   "url": "https://shixincube.com",
-  "baseUrl": "/",
+  "baseUrl": "/en/",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "favicon": "img/favicon.ico",
@@ -75,6 +75,11 @@ export default {
         {
           "href": "https://doc.shixincube.com/user/client_tutorials.html",
           "label": "客户端开发教程",
+          "position": "left"
+        },
+        {
+          "href": "https://hub.shixincube.com",
+          "label": "Hub",
           "position": "left"
         },
         {
