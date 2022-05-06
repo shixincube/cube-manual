@@ -222,7 +222,36 @@ Hub RESTful API
 
     :resheader Content-Type: ``application/json``
 
-    :>json array messages: 按照时间序存储的消息列表。消息结构参看 `Message <dev_structure.html#message>`_ 。
+    :>json array messages: 按照时间序存储的消息列表。消息数据结构参看 `Message <dev_structure.html#message>`_ 。
+
+|
+
+
+轮询最近消息列表
+-------------------------------
+
+.. warning:: 
+    1. 该方法仅供采用 HTTP 协议的客户端使用。
+    2. 该方法仅对最新的消息队列数据进行查询，不对会话的消息列表进行操作。
+    3. 更短的轮询间隔并不能提高消息更新频率，消息更新频率由通道规则控制。
+
+
+.. http:get:: /hub/polling/(channel_code)
+
+    实时获取指定会话的最近消息。可以定时调用该接口获取最近的消息列表，最小调用间隔 **200 ms** 。
+
+    :param channel_code: 您申请的通道码。
+    :type channel_code: string
+
+    :query type: 指定会话类型，数值参考 `Conversation <dev_structure.html#conversation>`_ 的 ``type`` **会话类型** 字段。
+    :query name: 指定会话名称，群组会话则设置为群组名称，联系人会话则设置为联系人名称。
+    :query num: 指定查询的最大数量。默认值：5 。
+
+    :resheader Content-Type: ``application/json``
+
+    :>json int conversationType: 会话类型。
+    :>json string conversationName: 会话名称。
+    :>json array messageList: 消息列表。消息数据结构参看 `Message <dev_structure.html#message>`_ 。
 
 |
 
