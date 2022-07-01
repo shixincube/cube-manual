@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkshixincube=self.webpackChunkshixincube||[]).push([[459],{6509:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/perception","name":"Perception","count":1,"permalink":"/blog/tags/perception"}')}}]);

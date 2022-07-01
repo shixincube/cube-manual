@@ -3,16 +3,10 @@
     "component": "c4f5d8e4",
     "config": "5e9f5e1a"
   },
-  "/en/blog-aa0": {
+  "/en/blog-6b1": {
     "component": "a6aa9e1f",
     "sidebar": "814f3328",
     "items": [
-      {
-        "content": "854acf0c"
-      },
-      {
-        "content": "16dc5d54"
-      },
       {
         "content": "9700d7fe"
       },
@@ -26,16 +20,6 @@
     "component": "9e4087bc",
     "archive": "f6cbeee1"
   },
-  "/en/blog/note1-71a": {
-    "component": "ccc49370",
-    "sidebar": "814f3328",
-    "content": "7583a400"
-  },
-  "/en/blog/note2-d99": {
-    "component": "ccc49370",
-    "sidebar": "814f3328",
-    "content": "9378759a"
-  },
   "/en/blog/on-my-road-7fc": {
     "component": "ccc49370",
     "sidebar": "814f3328",
@@ -45,19 +29,6 @@
     "component": "01a85c17",
     "sidebar": "814f3328",
     "tags": "9bdd22eb"
-  },
-  "/en/blog/tags/development-986": {
-    "component": "6875c492",
-    "sidebar": "814f3328",
-    "items": [
-      {
-        "content": "854acf0c"
-      },
-      {
-        "content": "16dc5d54"
-      }
-    ],
-    "metadata": "a4945182"
   },
   "/en/blog/tags/diary-f45": {
     "component": "6875c492",
@@ -71,19 +42,6 @@
       }
     ],
     "metadata": "02af156b"
-  },
-  "/en/blog/tags/note-6c7": {
-    "component": "6875c492",
-    "sidebar": "814f3328",
-    "items": [
-      {
-        "content": "854acf0c"
-      },
-      {
-        "content": "16dc5d54"
-      }
-    ],
-    "metadata": "1d74f63b"
   },
   "/en/blog/tags/perception-8da": {
     "component": "6875c492",

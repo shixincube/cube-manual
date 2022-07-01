@@ -2,14 +2,6 @@
   "title": "Recent posts",
   "items": [
     {
-      "title": "开发手记 2",
-      "permalink": "/en/blog/note2"
-    },
-    {
-      "title": "开发手记 1",
-      "permalink": "/en/blog/note1"
-    },
-    {
       "title": "在路上 - 一个程序员的创业总结",
       "permalink": "/en/blog/on-my-road"
     },

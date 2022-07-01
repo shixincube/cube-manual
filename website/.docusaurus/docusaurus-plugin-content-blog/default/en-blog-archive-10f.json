@@ -1,84 +1,6 @@
 {
   "blogPosts": [
     {
-      "id": "note2",
-      "metadata": {
-        "permalink": "/en/blog/note2",
-        "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2022-02-04-dev_note_002.md",
-        "source": "@site/blog/2022-02-04-dev_note_002.md",
-        "title": "开发手记 2",
-        "description": "消息会话的设计。",
-        "date": "2022-02-04T00:00:00.000Z",
-        "formattedDate": "February 4, 2022",
-        "tags": [
-          {
-            "label": "Development",
-            "permalink": "/en/blog/tags/development"
-          },
-          {
-            "label": "Note",
-            "permalink": "/en/blog/tags/note"
-          }
-        ],
-        "readingTime": 0.38,
-        "truncated": true,
-        "authors": [
-          {
-            "name": "Ambrose Xu",
-            "title": "Leader of Cube",
-            "url": "https://github.com/xujiangwei",
-            "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
-            "key": "ambrose"
-          }
-        ],
-        "nextItem": {
-          "title": "开发手记 1",
-          "permalink": "/en/blog/note1"
-        }
-      }
-    },
-    {
-      "id": "note1",
-      "metadata": {
-        "permalink": "/en/blog/note1",
-        "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-11-17-dev_note_001.md",
-        "source": "@site/blog/2021-11-17-dev_note_001.md",
-        "title": "开发手记 1",
-        "description": "时信魔方按照功能场景把各个功能分解为：授权、联系人服务、消息服务、文件存储服务、实时音视频服务、会议管理等各个模块。每个模块专注于自身的业务场景，同时也会依赖其他模块辅助完成特定功能。",
-        "date": "2021-11-17T00:00:00.000Z",
-        "formattedDate": "November 17, 2021",
-        "tags": [
-          {
-            "label": "Development",
-            "permalink": "/en/blog/tags/development"
-          },
-          {
-            "label": "Note",
-            "permalink": "/en/blog/tags/note"
-          }
-        ],
-        "readingTime": 3.27,
-        "truncated": true,
-        "authors": [
-          {
-            "name": "Ambrose Xu",
-            "title": "Leader of Cube",
-            "url": "https://github.com/xujiangwei",
-            "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
-            "key": "ambrose"
-          }
-        ],
-        "prevItem": {
-          "title": "开发手记 2",
-          "permalink": "/en/blog/note2"
-        },
-        "nextItem": {
-          "title": "在路上 - 一个程序员的创业总结",
-          "permalink": "/en/blog/on-my-road"
-        }
-      }
-    },
-    {
       "id": "on-my-road",
       "metadata": {
         "permalink": "/en/blog/on-my-road",
@@ -109,10 +31,6 @@
             "key": "ambrose"
           }
         ],
-        "prevItem": {
-          "title": "开发手记 1",
-          "permalink": "/en/blog/note1"
-        },
         "nextItem": {
           "title": "欢迎来到时信魔方",
           "permalink": "/en/blog/welcome"
