@@ -1051,6 +1051,179 @@ File Attachment
 
 |
 
+.. _sharing-tag-config:
+
+Sharing Tag Config
+===============================
+
+分享标签的配置信息。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 必填
+      - 默认值
+      - 描述
+    * - ``contact``
+      - :ref:`contact`
+      - Y
+      - *--*
+      - 分享数据的发起人。
+    * - ``device``
+      - :ref:`device`
+      - N
+      - *--*
+      - 创建分享的设备。
+    * - ``fileLabel``
+      - :ref:`file-label`
+      - Y
+      - *--*
+      - 分享的文件。
+    * - ``duration``
+      - long
+      - Y
+      - *--*
+      - 分享的有效时长。
+    * - ``password``
+      - string
+      - N
+      - *--*
+      - 文件的下载密码。
+    * - ``preview``
+      - boolean
+      - Y
+      - ``false``
+      - 分享文件是否有预览图。
+    * - ``download``
+      - boolean
+      - Y
+      - ``true``
+      - 是否允许下载原文件。
+
+|
+
+.. _sharing-tag:
+
+Sharing Tag
+===============================
+
+分享标签。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 必填
+      - 默认值
+      - 描述
+    * - ``id``
+      - long
+      - Y
+      - *--*
+      - 分享标签的唯一 ID 。
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 标签的域。
+    * - ``timestamp``
+      - long
+      - Y
+      - *--*
+      - 创建标签时的时间戳。
+    * - ``code``
+      - string
+      - Y
+      - *--*
+      - 分享码。分享码是分享标签对外公开的唯一检索。
+    * - ``expiryDate``
+      - long
+      - Y
+      - *--*
+      - 标签的到期日期。
+    * - ``config``
+      - :ref:`sharing-tag-config`
+      - Y
+      - *--*
+      - 分享标签的配置信息。
+    * - ``httpURL``
+      - string
+      - N
+      - *--*
+      - 分享链接的 HTTP URL 。
+    * - ``httpsURL``
+      - string
+      - N
+      - *--*
+      - 分享链接的 HTTPS URL 。
+    * - ``httpHostInfo``
+      - string
+      - N
+      - *--*
+      - HTTP URL 的主机信息。
+    * - ``httpsHostInfo``
+      - string
+      - N
+      - *--*
+      - HTTPS URL 的主机信息。
+    * - ``sharer``
+      - :ref:`trace`
+      - N
+      - *--*
+      - 该分享标签的分享人。
+    * - ``parent``
+      - :ref:`trace`
+      - N
+      - *--*
+      - 该分享标签上一级来源。
+    * - ``previewList``
+      - Array< :ref:`file-label` >
+      - N
+      - *--*
+      - 分享文件的预览图列表。
+
+|
+
+.. _trace:
+
+Trace
+===============================
+
+操作痕迹描述。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 必填
+      - 默认值
+      - 描述
+    * - ``string``
+      - string
+      - Y
+      - *--*
+      - 追踪串。用于识别痕迹的随机字符串。
+    * - ``contact``
+      - :ref:`contact`
+      - N
+      - *--*
+      - 留痕的联系人。
+    * - ``contactId``
+      - long
+      - N
+      - *--*
+      - 留痕的联系人 ID 。
+
+
+|
+
 .. _message:
 
 Message

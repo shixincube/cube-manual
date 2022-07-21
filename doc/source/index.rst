@@ -81,6 +81,7 @@
     /dev/dev_guide
     /dev/dev_packet
     /dev/dev_structure
+    /dev/dev_app_rest
     /dev/dev_hub_rest
     /dev/dev_hub_structure
 
