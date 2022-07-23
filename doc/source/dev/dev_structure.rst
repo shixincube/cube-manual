@@ -1221,6 +1221,107 @@ Trace
       - *--*
       - 留痕的联系人 ID 。
 
+|
+
+.. _visit-trace:
+
+Visit Trace
+===============================
+
+访问痕迹记录。
+
+.. list-table:: 
+    :widths: 20 20 10 10 40
+    :header-rows: 1
+
+    * - 字段
+      - 类型
+      - 必填
+      - 默认值
+      - 描述
+    * - ``platform``
+      - string
+      - Y
+      - *--*
+      - 操作平台： |br2|
+        ``Browser`` - 浏览器。 |br2|
+        ``AppletWeChat`` - 微信小程序。
+    * - ``time``
+      - long
+      - Y
+      - *--*
+      - 记录的时间。
+    * - ``address``
+      - string
+      - Y
+      - *--*
+      - 操作时的地址。
+    * - ``url``
+      - string
+      - Y
+      - *--*
+      - 可访问的 URL 。
+    * - ``domain``
+      - string
+      - Y
+      - *--*
+      - 操作时数据访问的站点域名。
+    * - ``title``
+      - string
+      - Y
+      - *--*
+      - 操作界面标题。
+    * - ``screen``
+      - JSON Object
+      - Y
+      - *--*
+      - 设备的屏幕参数信息：|br2|
+        ``width`` (*int*) - 屏幕宽度。|br2|
+        ``height`` (*int*) - 屏幕高度。|br2|
+        ``colorDepth`` (*int*) - 屏幕颜色深度值。|br2|
+        ``orientation`` (*string*) - 操作时的屏幕方向描述。
+    * - ``language``
+      - string
+      - Y
+      - *--*
+      - 系统的语言。
+    * - ``userAgent``
+      - string
+      - N
+      - *--*
+      - 浏览器的 User Agent 描述。|br2|
+        只有在平台类型是 ``Browser`` 时才有该数据。
+    * - ``agent``
+      - JSON Object
+      - N
+      - *--*
+      - 小程序的 Agent 描述。|br2|
+        只有在平台类型是 ``AppletWeChat`` 时才有该数据。
+    * - ``event``
+      - string
+      - Y
+      - *--*
+      - 事件名。
+    * - ``eventTag``
+      - string
+      - N
+      - *--*
+      - 事件标签。
+    * - ``eventParam``
+      - JSON Object
+      - N
+      - *--*
+      - 事件参数。
+    * - ``sharerId``
+      - long
+      - N
+      - *--*
+      - 分享人 ID 。
+    * - ``parentId``
+      - long
+      - N
+      - *--*
+      - 上一级分享人 ID 。
 
 |
 

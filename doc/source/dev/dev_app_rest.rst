@@ -96,12 +96,33 @@
 
 |
 
-操作痕迹记录
+批量获取文件分享的访问记录
+-------------------------------
+
+.. http:get:: /file/list/trace/
+
+    以批量方式返回文件分享的操作或访问记录。该接口仅返回分享人是当前用户的记录。
+
+    :query string token: 用户的有效令牌。
+    :query string code: 文件分享码。
+    :query int begin: 查询数据的起始索引位置。
+    :query int end: 查询数据的结束索引位置。
+
+    :resheader Content-Type: ``application/json``
+
+    :>json Array list: 分享访问记录列表。分享访问记录数据结构参看 `Visit Trace <dev_structure.html#visit-trace>`_ 。
+    :>json string sharingCode: 文件分享码。 
+    :>json int begin: 数据列表的起始索引。
+    :>json int end: 数据列表的结束索引。
+
+|
+
+提交小程序的操作记录
 -------------------------------
 
 .. http:post:: /trace/sharing/applet/wechat/
 
-    提交访问或操作记录。
+    提交小程序访问或操作记录。
 
     :reqheader Content-Type: ``application/json``
 
@@ -201,4 +222,8 @@
     :<json string event: 事件名。
     :<json string eventTag: 事件标签（ *选填数据* ）。
     :<json object eventParam: 事件参数（ *选填数据* ）。
+
+    :resheader Content-Type: ``application/json``
+
+    :>json long time: 记录时间戳。
 
