@@ -29,11 +29,11 @@
 
     :resheader Content-Type: ``application/json``
 
-    :>json int code: 状态码。状态码 ``0`` 表示成功。
+    :>json number code: 状态码。状态码 ``0`` 表示成功。
     :>json string token: 访问令牌。
     :>json string trace: 访问痕迹标识。
-    :>json long creation: 令牌的创建时间。
-    :>json long expire: 令牌的超期时间。
+    :>json number creation: 令牌的创建时间。
+    :>json number expire: 令牌的超期时间。
 
 |
 
@@ -62,12 +62,35 @@
 
     :resheader Content-Type: ``application/json``
 
-    :>json int code: 状态码。状态码 ``0`` 表示成功。
+    :>json number code: 状态码。状态码 ``0`` 表示成功。
     :>json string token: 访问令牌。
     :>json string trace: 访问痕迹标识。
-    :>json long creation: 令牌的创建时间。
-    :>json long expire: 令牌的超期时间。
+    :>json number creation: 令牌的创建时间。
+    :>json number expire: 令牌的超期时间。
 
+|
+
+账号信息
+-------------------------------
+
+.. http:get:: /account/info/
+
+    获取指定令牌对应的账号数据。
+
+    :query string token: 用户的有效令牌。
+
+    :resheader Content-Type: ``application/json``
+
+    :>json number id: 账号的 ID 。
+    :>json string domain: 账号所属的域。
+    :>json string account: 账号名。
+    :>json string phone: 账号的电话号码。
+    :>json string name: 账号的显示昵称。
+    :>json string avatar: 账号的头像描述。
+    :>json number state: 账号状态描述。
+    :>json string region: 账号的社交区域描述。
+    :>json string department: 账号的部门描述。
+    :>json number registration: 账号注册时的时间戳。
 
 |
 
@@ -83,15 +106,15 @@
     以批量方式获取该用户创建的分享标签。
 
     :query string token: 用户的有效令牌。
-    :query int begin: 查询数据的起始索引位置。
-    :query int end: 查询数据的结束索引位置。
+    :query number begin: 查询数据的起始索引位置。
+    :query number end: 查询数据的结束索引位置。
     :query boolean valid: 待查询的分享标签是否是有效的标签。
 
     :resheader Content-Type: ``application/json``
 
     :>json Array list: 分享标签列表。分享标签数据结构参看 `Sharing Tag <dev_structure.html#sharing-tag>`_ 。
-    :>json int begin: 标签列表的起始索引。
-    :>json int end: 标签列表的结束索引。
+    :>json number begin: 标签列表的起始索引。
+    :>json number end: 标签列表的结束索引。
     :>json boolean valid: 是否是有效的分享标签。
 
 |
@@ -105,15 +128,15 @@
 
     :query string token: 用户的有效令牌。
     :query string code: 文件分享码。
-    :query int begin: 查询数据的起始索引位置。
-    :query int end: 查询数据的结束索引位置。
+    :query number begin: 查询数据的起始索引位置。
+    :query number end: 查询数据的结束索引位置。
 
     :resheader Content-Type: ``application/json``
 
     :>json Array list: 分享访问记录列表。分享访问记录数据结构参看 `Visit Trace <dev_structure.html#visit-trace>`_ 。
     :>json string sharingCode: 文件分享码。 
-    :>json int begin: 数据列表的起始索引。
-    :>json int end: 数据列表的结束索引。
+    :>json number begin: 数据列表的起始索引。
+    :>json number end: 数据列表的结束索引。
 
 |
 
@@ -225,5 +248,5 @@
 
     :resheader Content-Type: ``application/json``
 
-    :>json long time: 记录时间戳。
+    :>json number time: 记录时间戳。
 
