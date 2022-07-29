@@ -98,12 +98,28 @@
 分享标签管理
 ===============================
 
+获取分享标签信息
+-------------------------------
+
+.. http:get:: /file/sharing/
+
+    通过分享码（ **Sharing Code** ）获取分享标签信息。
+
+    :query string token: 用户的有效令牌。
+    :query string sc: 分享码。
+
+    :resheader Content-Type: ``application/json``
+
+    应答数据的 JSON Object 结构参看 `Sharing Tag <dev_structure.html#sharing-tag>`_ 。
+
+|
+
 批量获取分享标签
 -------------------------------
 
 .. http:get:: /file/list/sharing/
 
-    以批量方式获取该用户创建的分享标签。
+    以批量方式获取该用户创建的分享标签。单次调用的最大数据条目不允许超过30条。
 
     :query string token: 用户的有效令牌。
     :query number begin: 查询数据的起始索引位置。
