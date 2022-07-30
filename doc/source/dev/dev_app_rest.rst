@@ -129,6 +129,7 @@
     :resheader Content-Type: ``application/json``
 
     :>json Array list: 分享标签列表。分享标签数据结构参看 `Sharing Tag <dev_structure.html#sharing-tag>`_ 。
+    :>json number total: 符合条件的总数量。
     :>json number begin: 标签列表的起始索引。
     :>json number end: 标签列表的结束索引。
     :>json boolean valid: 是否是有效的分享标签。
