@@ -151,6 +151,7 @@
     :resheader Content-Type: ``application/json``
 
     :>json Array list: 分享访问记录列表。分享访问记录数据结构参看 `Visit Trace <dev_structure.html#visit-trace>`_ 。
+    :>json number total: 记录总条目数。
     :>json string sharingCode: 文件分享码。 
     :>json number begin: 数据列表的起始索引。
     :>json number end: 数据列表的结束索引。
@@ -261,9 +262,78 @@
 
     :<json string event: 事件名。
     :<json string eventTag: 事件标签（ *选填数据* ）。
+
+            标签：``download``，``open`` 等
+
     :<json object eventParam: 事件参数（ *选填数据* ）。
+
+        .. code-block:: json
+
+            {
+                "sn": 1659533823805,
+                "sharer": "gbdcebeeh095",
+                "parent": "ZUWVXUXX91082",
+                "id": 1898471,
+                "domain": "shixincube.com"
+            }
 
     :resheader Content-Type: ``application/json``
 
     :>json number time: 记录时间戳。
+
+
+|
+
+|
+
+
+附录
+===============================
+
+事件名
+-------------------------------
+
+.. list-table:: 
+    :widths: 40 30 30
+    :header-rows: 1
+
+    * - 事件名
+      - 描述
+      - 参数说明
+    * - Transmit
+      - 发送事件
+      - *--*
+    * - Open
+      - 打开事件
+      - *--*
+    * - Forward
+      - 转发事件
+      - *--*
+    * - Archive
+      - 归档事件
+      - *--*
+    * - Delete
+      - 删除事件
+      - *--*
+    * - Rename
+      - 重命名事件
+      - *--*
+    * - Copy
+      - 复制数据事件
+      - *--*
+    * - Share
+      - 分享事件
+      - *--*
+    * - View
+      - 浏览事件
+      - *--*
+    * - ViewLoss
+      - 浏览已丢失的数据事件
+      - *--*
+    * - ViewExpired
+      - 浏览已过期的数据事件
+      - *--*
+    * - Extract
+      - 提取/下载数据事件
+      - *--*
 
