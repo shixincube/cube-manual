@@ -1322,6 +1322,16 @@ Visit Trace
       - N
       - *--*
       - 上一级分享人 ID 。
+    * - ``contactId``
+      - long
+      - N
+      - *--*
+      - 触发记录的联系人 ID 。
+    * - ``contactDomain``
+      - string
+      - N
+      - *--*
+      - 触发记录的联系人的域。
 
 |
 
