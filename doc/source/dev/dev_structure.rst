@@ -1102,6 +1102,11 @@ Sharing Tag Config
       - Y
       - ``true``
       - 是否允许下载原文件。
+    * - ``traceDownload``
+      - boolean
+      - Y
+      - ``true``
+      - 下载原文件时是否需要登录以便留痕。
 
 |
 
@@ -1186,6 +1191,13 @@ Sharing Tag
       - N
       - *--*
       - 分享文件的预览图列表。
+    * - ``state``
+      - number
+      - Y
+      - *--*
+      - 标签状态：|br2|
+        ``0`` - 一般状态。 |br2|
+        ``1`` - 已取消状态。
 
 |
 
