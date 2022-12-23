@@ -78,11 +78,6 @@ export default {
           "position": "left"
         },
         {
-          "href": "https://hub.shixincube.com",
-          "label": "Hub",
-          "position": "left"
-        },
-        {
           "href": "https://github.com/shixincube/",
           "label": "GitHub",
           "position": "right"
