@@ -3,10 +3,13 @@
     "component": "c4f5d8e4",
     "config": "5e9f5e1a"
   },
-  "/en/blog-6b1": {
+  "/en/blog-e16": {
     "component": "a6aa9e1f",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "c27ac31e"
+      },
       {
         "content": "9700d7fe"
       },
@@ -20,6 +23,11 @@
     "component": "9e4087bc",
     "archive": "f6cbeee1"
   },
+  "/en/blog/courage-8cf": {
+    "component": "ccc49370",
+    "sidebar": "814f3328",
+    "content": "fc0770ac"
+  },
   "/en/blog/on-my-road-7fc": {
     "component": "ccc49370",
     "sidebar": "814f3328",
@@ -30,10 +38,13 @@
     "sidebar": "814f3328",
     "tags": "9bdd22eb"
   },
-  "/en/blog/tags/diary-f45": {
+  "/en/blog/tags/diary-357": {
     "component": "6875c492",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "c27ac31e"
+      },
       {
         "content": "9700d7fe"
       },

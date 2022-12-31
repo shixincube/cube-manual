@@ -4,9 +4,16 @@
         <title>时信魔方 Blog</title>
         <link>https://shixincube.com/blog</link>
         <description>时信魔方 Blog</description>
-        <lastBuildDate>Sat, 25 Sep 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 31 Dec 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[勇气]]></title>
+            <link>https://shixincube.com/blog/courage</link>
+            <guid>courage</guid>
+            <pubDate>Sat, 31 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[苦难、挣扎、彷徨也许是对2022年互联网行业最好的注脚。就像谈了一场错误百出、精疲力竭的恋爱，到最后你默默无语，身心俱疲……]]></description>
+        </item>
         <item>
             <title><![CDATA[在路上 - 一个程序员的创业总结]]></title>
             <link>https://shixincube.com/blog/on-my-road</link>

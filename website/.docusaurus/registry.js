@@ -20,10 +20,12 @@ export default {
   '9e4087bc': [() => import(/* webpackChunkName: '9e4087bc' */ "@theme/BlogArchivePage"), "@theme/BlogArchivePage", require.resolveWeak("@theme/BlogArchivePage")],
   'a6aa9e1f': [() => import(/* webpackChunkName: 'a6aa9e1f' */ "@theme/BlogListPage"), "@theme/BlogListPage", require.resolveWeak("@theme/BlogListPage")],
   'b72715e5': [() => import(/* webpackChunkName: 'b72715e5' */ "@site/blog/2021-09-15-welcome.md"), "@site/blog/2021-09-15-welcome.md", require.resolveWeak("@site/blog/2021-09-15-welcome.md")],
+  'c27ac31e': [() => import(/* webpackChunkName: 'c27ac31e' */ "@site/blog/2022-12-31-courage.md?truncated=true"), "@site/blog/2022-12-31-courage.md?truncated=true", require.resolveWeak("@site/blog/2022-12-31-courage.md?truncated=true")],
   'c4f5d8e4': [() => import(/* webpackChunkName: 'c4f5d8e4' */ "@site/src/pages/index.js"), "@site/src/pages/index.js", require.resolveWeak("@site/src/pages/index.js")],
   'ccc49370': [() => import(/* webpackChunkName: 'ccc49370' */ "@theme/BlogPostPage"), "@theme/BlogPostPage", require.resolveWeak("@theme/BlogPostPage")],
   'ce39f467': [() => import(/* webpackChunkName: 'ce39f467' */ "@site/blog/2021-09-25-origin.md"), "@site/blog/2021-09-25-origin.md", require.resolveWeak("@site/blog/2021-09-25-origin.md")],
   'cf96a82b': [() => import(/* webpackChunkName: 'cf96a82b' */ "~blog/default/en-blog-tags-welcome-027.json"), "~blog/default/en-blog-tags-welcome-027.json", require.resolveWeak("~blog/default/en-blog-tags-welcome-027.json")],
   'f2843c14': [() => import(/* webpackChunkName: 'f2843c14' */ "@site/blog/2021-09-15-welcome.md?truncated=true"), "@site/blog/2021-09-15-welcome.md?truncated=true", require.resolveWeak("@site/blog/2021-09-15-welcome.md?truncated=true")],
   'f6cbeee1': [() => import(/* webpackChunkName: 'f6cbeee1' */ "~blog/default/en-blog-archive-10f.json"), "~blog/default/en-blog-archive-10f.json", require.resolveWeak("~blog/default/en-blog-archive-10f.json")],
-  'fba6c282': [() => import(/* webpackChunkName: 'fba6c282' */ "~blog/default/en-blog-038.json"), "~blog/default/en-blog-038.json", require.resolveWeak("~blog/default/en-blog-038.json")],};
+  'fba6c282': [() => import(/* webpackChunkName: 'fba6c282' */ "~blog/default/en-blog-038.json"), "~blog/default/en-blog-038.json", require.resolveWeak("~blog/default/en-blog-038.json")],
+  'fc0770ac': [() => import(/* webpackChunkName: 'fc0770ac' */ "@site/blog/2022-12-31-courage.md"), "@site/blog/2022-12-31-courage.md", require.resolveWeak("@site/blog/2022-12-31-courage.md")],};

@@ -2,6 +2,10 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "勇气",
+      "permalink": "/en/blog/courage"
+    },
+    {
       "title": "在路上 - 一个程序员的创业总结",
       "permalink": "/en/blog/on-my-road"
     },

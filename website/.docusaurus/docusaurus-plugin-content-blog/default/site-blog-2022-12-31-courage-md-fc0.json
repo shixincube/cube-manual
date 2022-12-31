@@ -1,0 +1,30 @@
+{
+  "permalink": "/en/blog/courage",
+  "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2022-12-31-courage.md",
+  "source": "@site/blog/2022-12-31-courage.md",
+  "title": "勇气",
+  "description": "苦难、挣扎、彷徨也许是对2022年互联网行业最好的注脚。就像谈了一场错误百出、精疲力竭的恋爱，到最后你默默无语，身心俱疲……",
+  "date": "2022-12-31T00:00:00.000Z",
+  "formattedDate": "December 31, 2022",
+  "tags": [
+    {
+      "label": "Diary",
+      "permalink": "/en/blog/tags/diary"
+    }
+  ],
+  "readingTime": 3.155,
+  "truncated": true,
+  "authors": [
+    {
+      "name": "Ambrose Xu",
+      "title": "Leader of Cube",
+      "url": "https://github.com/xujiangwei",
+      "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+      "key": "ambrose"
+    }
+  ],
+  "nextItem": {
+    "title": "在路上 - 一个程序员的创业总结",
+    "permalink": "/en/blog/on-my-road"
+  }
+}

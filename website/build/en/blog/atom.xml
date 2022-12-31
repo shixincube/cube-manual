@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shixincube.com/en/blog</id>
     <title>时信魔方 Blog</title>
-    <updated>2021-09-25T00:00:00.000Z</updated>
+    <updated>2022-12-31T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shixincube.com/en/blog"/>
     <subtitle>时信魔方 Blog</subtitle>
     <icon>https://shixincube.com/en/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[勇气]]></title>
+        <id>courage</id>
+        <link href="https://shixincube.com/en/blog/courage"/>
+        <updated>2022-12-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[苦难、挣扎、彷徨也许是对2022年互联网行业最好的注脚。就像谈了一场错误百出、精疲力竭的恋爱，到最后你默默无语，身心俱疲……]]></summary>
+        <author>
+            <name>Ambrose Xu</name>
+            <uri>https://github.com/xujiangwei</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[在路上 - 一个程序员的创业总结]]></title>
         <id>on-my-road</id>
