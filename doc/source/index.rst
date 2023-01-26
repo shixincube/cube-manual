@@ -84,6 +84,7 @@
     /dev/dev_app_rest
     /dev/dev_hub_rest
     /dev/dev_hub_structure
+    /dev/dev_robot
 
 
 .. _knowledge-docs:
