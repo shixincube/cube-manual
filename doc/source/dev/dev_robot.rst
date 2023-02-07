@@ -14,7 +14,7 @@ Robot
 
 任务名称：
 
-``ReportDouYinAccountData``
+``DouYinAccountData``
 
 
 参数说明：
@@ -31,7 +31,52 @@ Robot
         parameter.put("maxNumVideo", 10);
 
 
+|
+
 
 数据结构
 ===============================
 
+[TODO]
+
+
+|
+
+
+开放接口
+===============================
+
+注册回调
+-------------------------------
+
+.. http:post:: /robot/register/(code)
+
+    注册事件回调的 URL 链接。
+
+    :param code: 您申请的访问码。
+    :type code: string
+
+    :reqheader Content-Type: ``application/json``
+
+    :<json string url: 回调的 URL 链接。
+
+    :status 401: 该状态表示访问码无效或者已过期。
+    :status 403: 该状态表示请求数据错误。
+
+
+注销回调
+-------------------------------
+
+.. http:post:: /robot/deregister/(code)
+
+    注销事件回调的 URL 链接。
+
+    :param code: 您申请的访问码。
+    :type code: string
+
+    :reqheader Content-Type: ``application/json``
+
+    :<json string url: 回调的 URL 链接。
+
+    :status 401: 该状态表示访问码无效或者已过期。
+    :status 403: 该状态表示请求数据错误。
