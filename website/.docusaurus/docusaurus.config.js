@@ -145,7 +145,7 @@ export default {
           ]
         }
       ],
-      "copyright": "版权所有 © 2022 时信云服(北京)科技有限公司<br/><a class=\"footer__link-item footer_link\" href=\"https://beian.miit.gov.cn/\" target=\"_blank\">京ICP备18018443号-3</a><br/><a class=\"footer__link-item footer_link\" href=\"http://www.beian.gov.cn/portal/registerSystemInfo\" target=\"_blank\">京公网安备11010502037036号</a>"
+      "copyright": "版权所有 © 2023 时信云服(北京)科技有限公司<br/><a class=\"footer__link-item footer_link\" href=\"https://beian.miit.gov.cn/\" target=\"_blank\">京ICP备18018443号-3</a><br/><a class=\"footer__link-item footer_link\" href=\"http://www.beian.gov.cn/portal/registerSystemInfo\" target=\"_blank\">京公网安备11010502037036号</a>"
     },
     "prism": {
       "theme": {

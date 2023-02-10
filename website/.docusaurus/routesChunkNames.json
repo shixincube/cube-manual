@@ -3,10 +3,13 @@
     "component": "c4f5d8e4",
     "config": "5e9f5e1a"
   },
-  "/en/blog-e16": {
+  "/en/blog-18c": {
     "component": "a6aa9e1f",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "ed7b8b27"
+      },
       {
         "content": "c27ac31e"
       },
@@ -33,15 +36,23 @@
     "sidebar": "814f3328",
     "content": "ce39f467"
   },
+  "/en/blog/opening_topic-422": {
+    "component": "ccc49370",
+    "sidebar": "814f3328",
+    "content": "0bf2ee8c"
+  },
   "/en/blog/tags-1b8": {
     "component": "01a85c17",
     "sidebar": "814f3328",
     "tags": "9bdd22eb"
   },
-  "/en/blog/tags/diary-357": {
+  "/en/blog/tags/diary-002": {
     "component": "6875c492",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "ed7b8b27"
+      },
       {
         "content": "c27ac31e"
       },

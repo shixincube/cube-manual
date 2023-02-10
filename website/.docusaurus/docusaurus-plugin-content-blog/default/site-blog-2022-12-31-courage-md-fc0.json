@@ -12,7 +12,7 @@
       "permalink": "/en/blog/tags/diary"
     }
   ],
-  "readingTime": 3.155,
+  "readingTime": 3.1,
   "truncated": true,
   "authors": [
     {
@@ -23,6 +23,10 @@
       "key": "ambrose"
     }
   ],
+  "prevItem": {
+    "title": "一路走，一路丢 （开题）",
+    "permalink": "/en/blog/opening_topic"
+  },
   "nextItem": {
     "title": "在路上 - 一个程序员的创业总结",
     "permalink": "/en/blog/on-my-road"

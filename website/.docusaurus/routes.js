@@ -10,7 +10,7 @@ export default [
   },
   {
     path: '/en/blog',
-    component: ComponentCreator('/en/blog','e16'),
+    component: ComponentCreator('/en/blog','18c'),
     exact: true
   },
   {
@@ -29,13 +29,18 @@ export default [
     exact: true
   },
   {
+    path: '/en/blog/opening_topic',
+    component: ComponentCreator('/en/blog/opening_topic','422'),
+    exact: true
+  },
+  {
     path: '/en/blog/tags',
     component: ComponentCreator('/en/blog/tags','1b8'),
     exact: true
   },
   {
     path: '/en/blog/tags/diary',
-    component: ComponentCreator('/en/blog/tags/diary','357'),
+    component: ComponentCreator('/en/blog/tags/diary','002'),
     exact: true
   },
   {

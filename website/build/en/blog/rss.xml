@@ -4,9 +4,16 @@
         <title>时信魔方 Blog</title>
         <link>https://shixincube.com/en/blog</link>
         <description>时信魔方 Blog</description>
-        <lastBuildDate>Sat, 31 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Feb 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[一路走，一路丢 （开题）]]></title>
+            <link>https://shixincube.com/en/blog/opening_topic</link>
+            <guid>opening_topic</guid>
+            <pubDate>Fri, 10 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[一路走，一路丢。]]></description>
+        </item>
         <item>
             <title><![CDATA[勇气]]></title>
             <link>https://shixincube.com/en/blog/courage</link>

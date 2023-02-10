@@ -56,26 +56,22 @@
       "blogSidebarTitle": "Recent posts",
       "blogPosts": [
         {
-          "id": "note2",
+          "id": "opening_topic",
           "metadata": {
-            "permalink": "/blog/note2",
-            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2022-02-04-dev_note_002.md",
-            "source": "@site/blog/2022-02-04-dev_note_002.md",
-            "title": "开发手记 2",
-            "description": "消息会话的设计。",
-            "date": "2022-02-04T00:00:00.000Z",
-            "formattedDate": "2022年2月4日",
+            "permalink": "/blog/opening_topic",
+            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2023-02-10-go_all_the_way_lose_all_the_way.md",
+            "source": "@site/blog/2023-02-10-go_all_the_way_lose_all_the_way.md",
+            "title": "一路走，一路丢 （开题）",
+            "description": "一路走，一路丢。",
+            "date": "2023-02-10T00:00:00.000Z",
+            "formattedDate": "2023年2月10日",
             "tags": [
               {
-                "label": "Development",
-                "permalink": "/blog/tags/development"
-              },
-              {
-                "label": "Note",
-                "permalink": "/blog/tags/note"
+                "label": "Diary",
+                "permalink": "/blog/tags/diary"
               }
             ],
-            "readingTime": 0.38,
+            "readingTime": 0.76,
             "truncated": true,
             "authors": [
               {
@@ -87,32 +83,28 @@
               }
             ],
             "nextItem": {
-              "title": "开发手记 1",
-              "permalink": "/blog/note1"
+              "title": "勇气",
+              "permalink": "/blog/courage"
             }
           }
         },
         {
-          "id": "note1",
+          "id": "courage",
           "metadata": {
-            "permalink": "/blog/note1",
-            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2021-11-17-dev_note_001.md",
-            "source": "@site/blog/2021-11-17-dev_note_001.md",
-            "title": "开发手记 1",
-            "description": "时信魔方按照功能场景把各个功能分解为：授权、联系人服务、消息服务、文件存储服务、实时音视频服务、会议管理等各个模块。每个模块专注于自身的业务场景，同时也会依赖其他模块辅助完成特定功能。",
-            "date": "2021-11-17T00:00:00.000Z",
-            "formattedDate": "2021年11月17日",
+            "permalink": "/blog/courage",
+            "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2022-12-31-courage.md",
+            "source": "@site/blog/2022-12-31-courage.md",
+            "title": "勇气",
+            "description": "苦难、挣扎、彷徨也许是对2022年互联网行业最好的注脚。就像谈了一场错误百出、精疲力竭的恋爱，到最后你默默无语，身心俱疲……",
+            "date": "2022-12-31T00:00:00.000Z",
+            "formattedDate": "2022年12月31日",
             "tags": [
               {
-                "label": "Development",
-                "permalink": "/blog/tags/development"
-              },
-              {
-                "label": "Note",
-                "permalink": "/blog/tags/note"
+                "label": "Diary",
+                "permalink": "/blog/tags/diary"
               }
             ],
-            "readingTime": 3.27,
+            "readingTime": 3.1,
             "truncated": true,
             "authors": [
               {
@@ -124,8 +116,8 @@
               }
             ],
             "prevItem": {
-              "title": "开发手记 2",
-              "permalink": "/blog/note2"
+              "title": "一路走，一路丢 （开题）",
+              "permalink": "/blog/opening_topic"
             },
             "nextItem": {
               "title": "在路上 - 一个程序员的创业总结",
@@ -153,7 +145,7 @@
                 "permalink": "/blog/tags/diary"
               }
             ],
-            "readingTime": 6.07,
+            "readingTime": 6.055,
             "truncated": true,
             "authors": [
               {
@@ -165,8 +157,8 @@
               }
             ],
             "prevItem": {
-              "title": "开发手记 1",
-              "permalink": "/blog/note1"
+              "title": "勇气",
+              "permalink": "/blog/courage"
             },
             "nextItem": {
               "title": "欢迎来到时信魔方",
@@ -226,29 +218,23 @@
             "blogTitle": "Blog"
           },
           "items": [
-            "note2",
-            "note1",
+            "opening_topic",
+            "courage",
             "on-my-road",
             "welcome"
           ]
         }
       ],
       "blogTags": {
-        "/blog/tags/development": {
-          "name": "Development",
+        "/blog/tags/diary": {
+          "name": "Diary",
           "items": [
-            "note2",
-            "note1"
+            "opening_topic",
+            "courage",
+            "on-my-road",
+            "welcome"
           ],
-          "permalink": "/blog/tags/development"
-        },
-        "/blog/tags/note": {
-          "name": "Note",
-          "items": [
-            "note2",
-            "note1"
-          ],
-          "permalink": "/blog/tags/note"
+          "permalink": "/blog/tags/diary"
         },
         "/blog/tags/perception": {
           "name": "Perception",
@@ -256,14 +242,6 @@
             "on-my-road"
           ],
           "permalink": "/blog/tags/perception"
-        },
-        "/blog/tags/diary": {
-          "name": "Diary",
-          "items": [
-            "on-my-road",
-            "welcome"
-          ],
-          "permalink": "/blog/tags/diary"
         },
         "/blog/tags/welcome": {
           "name": "Welcome",

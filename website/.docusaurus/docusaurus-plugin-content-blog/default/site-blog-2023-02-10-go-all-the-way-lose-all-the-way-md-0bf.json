@@ -1,0 +1,30 @@
+{
+  "permalink": "/en/blog/opening_topic",
+  "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2023-02-10-go_all_the_way_lose_all_the_way.md",
+  "source": "@site/blog/2023-02-10-go_all_the_way_lose_all_the_way.md",
+  "title": "一路走，一路丢 （开题）",
+  "description": "一路走，一路丢。",
+  "date": "2023-02-10T00:00:00.000Z",
+  "formattedDate": "February 10, 2023",
+  "tags": [
+    {
+      "label": "Diary",
+      "permalink": "/en/blog/tags/diary"
+    }
+  ],
+  "readingTime": 0.76,
+  "truncated": true,
+  "authors": [
+    {
+      "name": "Ambrose Xu",
+      "title": "Leader of Cube",
+      "url": "https://github.com/xujiangwei",
+      "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+      "key": "ambrose"
+    }
+  ],
+  "nextItem": {
+    "title": "勇气",
+    "permalink": "/en/blog/courage"
+  }
+}
