@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Web/HTML5 - 联系人管理 &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Android - 联系人管理" href="../android/contacts_mgmt.html" />
+    <link rel="prev" title="Electron - 文件的存储与管理（基础）" href="../electron/file_basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../user/intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/application.html">客户端应用程序</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../user/client_tutorials.html">客户端开发教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#hello-world">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id2">事件回调机制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id3">即时消息的发送与接收</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id4">视频通话</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id5">群组语音通话</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id6">群组视频通话</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id7">文件的上传、下载与目录管理</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../user/client_tutorials.html#id8">联系人管理</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Web/HTML5</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">快速开始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">理解示例程序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">代码详解</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../android/contacts_mgmt.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ios/contacts_mgmt.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../electron/contacts_mgmt.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id9">群组管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id10">会议的创建与管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id11">会议的控制与调度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id12">会议的直播管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id13">白板的基本操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id14">桌面分享</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id15">自定义消息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id16">在视频画面中实时检测人脸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id17">在多人会议中进行人脸检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id18">实时视频流转直播流</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../user/client_tutorials.html">客户端开发教程</a> &raquo;</li>
+        
+      <li>Web/HTML5 - 联系人管理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="web-html5">
+<h1>Web/HTML5 - 联系人管理<a class="headerlink" href="#web-html5" title="永久链接至标题">¶</a></h1>
+<p><a class="reference internal" href="../../glossary.html#term-0"><span class="xref std std-term">魔方引擎</span></a> 的 <a class="reference external" href="../../_static/cube-javascript-api/ContactService.html">联系人服务模块</a> 是魔方引擎最基础的模块，几乎所有的模块都依赖该模块。</p>
+<p>魔方引擎是以 <a class="reference external" href="../../_static/cube-javascript-api/Contact.html">Contact</a> 即“ <strong>联系人</strong> ”为基础管理单元，也就是我们常说的“ <strong>用户</strong> ”。每个联系人对应一个有效 ID 标记的用户，通过 ID 我们能访问到该联系人的所有开放数据。</p>
+<p>一般的，我们在管理社交关系时，需要把若干个联系人分组到一起，比如说把我的好友分到一个叫“好友”的列表里以便快速查阅。在时信魔方里，使用 <a class="reference external" href="../../_static/cube-javascript-api/ContactZone.html">ContactZone</a> 联系人分区来管理一组特定分类的联系人。</p>
+<div class="section" id="id1">
+<h2>快速开始<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>按照以下步骤运行演示程序：</p>
+<ol class="arabic">
+<li><p>安装时信魔方服务器：<a class="reference internal" href="../../user/installation.html"><span class="doc">服务器安装指南</span></a> 。</p></li>
+<li><p>执行以下命令运行演示程序：</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://gitee.com/shixinhulian/cube-javascript
+<span class="nb">cd</span> cube-javascript/cube
+npm install
+npm run example
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>打开浏览器（Chrome 或 Firefox）输入：<a class="reference external" href="http://localhost:8000/examples/contacts-mgmt/">http://localhost:8000/examples/contacts-mgmt/</a> 或 <a class="reference external" href="https://localhost:4430/examples/contacts-mgmt/">https://localhost:4430/examples/contacts-mgmt/</a> 进入演示程序界面。</p></li>
+<li><p>在账号 ID 输入框内输入任意账号 ID，例如：<code class="docutils literal notranslate"><span class="pre">20000</span></code> 。点击“启动”按钮，启动程序。</p></li>
+<li><p>在“候选联系人”里选择一个联系人，点击“ <strong>添加到 “friends”</strong> ”或者“ <strong>添加到 “teammates”</strong> ”按钮可将联系人添加到对应的分区里。</p></li>
+<li><p>在 “friends” 区或者 “teammates” 区选择一个联系人，点击“移除”按钮可从分区里移除。</p></li>
+<li><p>刷新页面后，使用之前的 ID 再次登录程序，点击“ <strong>加载 “friends”</strong> ”或“ <strong>加载 “teammates”</strong> ”，之前操作的数据将被加载到界面里。</p></li>
+</ol>
+<div class="figure align-center" id="id4">
+<img alt="联系人管理" src="../../_images/web_contacts_mgmt.png" />
+<p class="caption"><span class="caption-text"><em>联系人管理</em></span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>理解示例程序<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>示例程序操作了两个分区，一个名称是 <strong>friends</strong> ，另一个是 <strong>teammates</strong> ，两个分区相当于两个列表，登录的联系人可以将任意联系人添加到分区里。这里需要注意的是 <strong>被添加的联系人在其“待处理”分区里会增加一条待处理记录，通过查询待处理分区可以了解到有哪些联系人把“我”添加到了他的分区里</strong> 。</p>
+<ul>
+<li><p>查询分区数据：</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">cube</span><span class="p">.</span><span class="nx">contact</span><span class="p">.</span><span class="nx">getContactZone</span><span class="p">(</span><span class="s1">&#39;friends&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">contactZone</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[...]</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[...]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>添加联系人到分区：</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">cube</span><span class="p">.</span><span class="nx">contact</span><span class="p">.</span><span class="nx">addContactToZone</span><span class="p">(</span><span class="s1">&#39;friends&#39;</span><span class="p">,</span> <span class="nx">contactId</span><span class="p">,</span> <span class="s1">&#39;这是示例演示&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">zoneName</span><span class="p">,</span> <span class="nx">contactId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[...]</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[...]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>从分区删除联系人：</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">cube</span><span class="p">.</span><span class="nx">contact</span><span class="p">.</span><span class="nx">removeContactFromZone</span><span class="p">(</span><span class="s1">&#39;friends&#39;</span><span class="p">,</span> <span class="nx">contactId</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">zoneName</span><span class="p">,</span> <span class="nx">contactId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[...]</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[...]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>这个示例主要演示如何管理联系人分区，如果需要操作“待处理”联系人，可以使用 <a class="reference external" href="../../_static/cube-javascript-api/ContactService.html#getPendingZone">getPendingZone()</a> 获取待处理分区数据。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>使用 <a class="reference external" href="../../_static/cube-javascript-api/ContactService.html#queryBlockList">queryBlockList()</a> 、 <a class="reference external" href="../../_static/cube-javascript-api/ContactService.html#addBlockList">addBlockList()</a> 和 <a class="reference external" href="../../_static/cube-javascript-api/ContactService.html#removeBlockList">removeBlockList()</a> 可以管理该联系人的 <strong>阻止清单</strong> （俗称“黑名单”）。</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>代码详解<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>示例里我们使用的文件有：</p>
+<ul class="simple">
+<li><p><strong>index.html</strong> ：主页面文件。</p></li>
+<li><p><strong>main.css</strong> ：页面样式表文件。</p></li>
+<li><p><strong>main.js</strong> ：示例的程序主文件。包括程序逻辑流程和页面事件处理。</p></li>
+<li><p><strong>helper.js</strong> ：提供一些帮助函数的库文件。</p></li>
+<li><p><strong>cube.js</strong> ：时信魔方的 JavaScript 客户端库文件。</p></li>
+</ul>
+<ol class="arabic">
+<li><p>程序启动后，将账号签入，使用 <strong>helper.js</strong> 提供的 <code class="docutils literal notranslate"><span class="pre">loadContacts()</span></code> 函数将预置的联系人数据装载到 <em>select</em> 标签里。</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">loadContacts</span><span class="p">(</span><span class="nx">cube</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">list</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">contact</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">option</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;option&#39;</span><span class="p">);</span>
+        <span class="nx">option</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">contact</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span>
+        <span class="nx">option</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">contact</span><span class="p">.</span><span class="nx">getId</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39; - &#39;</span> <span class="o">+</span> <span class="nx">contact</span><span class="p">.</span><span class="nx">getName</span><span class="p">();</span>
+        <span class="nx">selContacts</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">option</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>操作栏里的6个按钮对应6个按钮事件处理函数：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">loadFriends</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addFrined</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">removeFriend</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loadTeammates</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addTeammate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">removeTeammate</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../android/contacts_mgmt.html" class="btn btn-neutral float-right" title="Android - 联系人管理" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../electron/file_basics.html" class="btn btn-neutral float-left" title="Electron - 文件的存储与管理（基础）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

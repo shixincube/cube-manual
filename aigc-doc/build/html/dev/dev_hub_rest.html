@@ -1,0 +1,809 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Hub RESTful API &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Hub 数据结构" href="dev_hub_structure.html" />
+    <link rel="prev" title="应用服务器 RESTful API" href="dev_app_rest.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/application.html">客户端应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/client_tutorials.html">客户端开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hub RESTful API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">通道管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">启用通道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">关闭通道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">下载文件数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">上传文件数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">账号数据操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">获取通道的账号信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">获取通讯录数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">获取群组信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">申请添加朋友</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">消息会话操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">获取最近的消息会话列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">获取指定消息列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">轮询最近消息列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">发送消息</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Hub RESTful API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hub-restful-api">
+<h1><a class="toc-backref" href="#id20">Hub RESTful API</a><a class="headerlink" href="#hub-restful-api" title="永久链接至标题">¶</a></h1>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#hub-restful-api" id="id20">Hub RESTful API</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id21">通道管理</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id22">启用通道</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id23">关闭通道</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id24">下载文件数据</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id25">上传文件数据</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id8" id="id26">账号数据操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id9" id="id27">获取通道的账号信息</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id28">获取通讯录数据</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id29">获取群组信息</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id30">申请添加朋友</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id14" id="id31">消息会话操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id15" id="id32">获取最近的消息会话列表</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id33">获取指定消息列表</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id34">轮询最近消息列表</a></p></li>
+<li><p><a class="reference internal" href="#id19" id="id35">发送消息</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id21">通道管理</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id22">启用通道</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-open-(channel_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/open/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-open-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>启用指定通道码的通道。启用 Hub 通道时将登录指定的产品账号。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>product</strong> (<em>string</em>) – 产品名。</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – 通道开启操作，例如 <em>LoginQRCode</em> 。</p></li>
+<li><p><strong>fileLabel</strong> (<em>object</em>) – 产品需要的登录二维码文件，参看 <a class="reference external" href="dev_structure.html#file-label">File Label</a> 。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 该状态表示您的授权码无效或者已过期。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id23">关闭通道</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-close-(channel_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/close/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-close-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭指定的通道。通道关闭时对应的账号将退出登录。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>product</strong> (<em>string</em>) – 产品名。</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – 通道的关闭操作，例如 <em>Logout</em> 。</p></li>
+<li><p><strong>account</strong> (<em>object</em>) – 退出登录的账号信息，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a> 。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 该状态表示您的授权码无效或者已过期。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id24">下载文件数据</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-file-(channel_code)-(file_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/file/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">file_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-file-(channel_code)-(file_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>下载指定文件码的文件数据。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+<li><p><strong>file_code</strong> (<em>string</em>) – 文件的文件码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – 对应文件的 MIME 描述。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Status Codes</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – 指定的文件码无效。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> – 服务器未能成功读取到指定文件码对应的文件数据。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id25">上传文件数据</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--hub-file-(channel_code)">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/hub/file/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#post--hub-file-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>上传文件数据到服务器，客户端需要按照 <code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code> 的 MIME 类型封装表单数据。
+应答数据为 JSON 结构，参看 <a class="reference external" href="dev_structure.html#file-label">File Label</a> 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Form Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>file</strong> – 文件名和文件数据。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileCode</strong> (<em>string</em>) – 文件码。</p></li>
+<li><p><strong>fileName</strong> (<em>string</em>) – 文件名。</p></li>
+<li><p><strong>fileSize</strong> (<em>string</em>) – 文件大小。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> – 上传文件数据时发生错误。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id26">账号数据操作</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id27">获取通道的账号信息</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-account-(channel_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/account/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-account-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>获取指定通道已经登录的产品账号信息。应答数据格式参看 <a class="reference external" href="dev_hub_structure.html#account-event">Account</a> 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account</strong> (<em>object</em>) – <p>账号数据，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a> 。</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id28">获取通讯录数据</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-book-(channel_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/book/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-book-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>获取指定通道账号的通讯录。应答数据格式参看 <a class="reference external" href="dev_hub_structure.html#contact-zone-event">Contact Zone Event</a> 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>begin</strong> – 查询数据的起始索引。默认值：0 。</p></li>
+<li><p><strong>end</strong> – 查询数据的结束索引。默认值：9 。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>zone</strong> (<em>object</em>) – 携带通讯录数据的分区数据结构，参看 <a class="reference external" href="dev_structure.html#contact-zone">Contact Zone</a> 。</p></li>
+<li><p><strong>begin</strong> (<em>int</em>) – 数据的起始索引。</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – 数据的结束索引。</p></li>
+<li><p><strong>total</strong> (<em>int</em>) – 数据的总数。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id29">获取群组信息</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-group-(channel_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/group/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-group-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>获取指定群组的数据。应答数据格式参看 <a class="reference external" href="dev_hub_structure.html#group-data-event">Group Data</a> 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>name</strong> – 群组名称，必须使用 URL 编码形式。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>group</strong> (<em>object</em>) – 群组数据，参看 <a class="reference external" href="dev_structure.html#group">Group</a> 。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3><a class="toc-backref" href="#id30">申请添加朋友</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--hub-friend-add-(channel_code)">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/hub/friend/add/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#post--hub-friend-add-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>通过检索指定关键字申请添加联系人为朋友。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Request Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Request JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyword</strong> (<em>string</em>) – 指定联系人的外部 ID 或者手机号码。</p></li>
+<li><p><strong>postscript</strong> (<em>string</em>) – 指定申请附言， <strong>可选参数</strong> 。</p></li>
+<li><p><strong>remarkName</strong> (<em>string</em>) – 指定添加的朋友备注名， <strong>可选参数</strong> 。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> – 通道码。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2><a class="toc-backref" href="#id31">消息会话操作</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#id32">获取最近的消息会话列表</a><a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-conversations-(channel_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/conversations/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-conversations-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>获取指定通道的账号最近消息会话列表。应答数据格式参看 <a class="reference external" href="dev_hub_structure.html#conversations-event">Conversations</a> 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>nc</strong> – 查询会话的数量。默认值：8 。</p></li>
+<li><p><strong>nm</strong> – 查询的每个会话的最近消息数量。默认值：5 。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>conversations</strong> (<em>array</em>) – 按照时间倒序存储的最近会话数组。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3><a class="toc-backref" href="#id33">获取指定消息列表</a><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-messages-(channel_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/messages/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-messages-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>获取指定会话的消息列表。应答数据格式参看 <a class="reference external" href="dev_hub_structure.html#messages-event">Messages</a> 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>cid</strong> – 查询的联系人的外部 ID 。（与 <code class="docutils literal notranslate"><span class="pre">gn</span></code> 参数二选一）。</p></li>
+<li><p><strong>gn</strong> – 查询的群组名称 。（与 <code class="docutils literal notranslate"><span class="pre">cid</span></code> 参数二选一）。</p></li>
+<li><p><strong>begin</strong> – 查询列表的起始索引。默认值：0 。</p></li>
+<li><p><strong>end</strong> – 查询列表的结束索引。默认值：9 。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>messages</strong> (<em>array</em>) – 按照时间序存储的消息列表。消息数据结构参看 <a class="reference external" href="dev_structure.html#message">Message</a> 。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3><a class="toc-backref" href="#id34">轮询最近消息列表</a><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<ol class="arabic simple">
+<li><p>该方法仅供采用 HTTP 协议的客户端使用。</p></li>
+<li><p>该方法仅对最新的消息队列数据进行查询，不对会话的消息列表进行操作。</p></li>
+<li><p>更短的轮询间隔并不能提高消息更新频率，消息更新频率由通道规则控制。</p></li>
+</ol>
+</div>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--hub-polling-(channel_code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/hub/polling/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--hub-polling-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>实时获取指定会话的最近消息。可以定时调用该接口获取最近的消息列表，最小调用间隔 <strong>200 ms</strong> 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>type</strong> – 指定会话类型，数值参考 <a class="reference external" href="dev_structure.html#conversation">Conversation</a> 的 <code class="docutils literal notranslate"><span class="pre">type</span></code> <strong>会话类型</strong> 字段。</p></li>
+<li><p><strong>name</strong> – 指定会话名称，群组会话则设置为群组名称，联系人会话则设置为联系人名称。</p></li>
+<li><p><strong>num</strong> – 指定查询的最大数量。默认值：5 。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>conversationType</strong> (<em>int</em>) – 会话类型。</p></li>
+<li><p><strong>conversationName</strong> (<em>string</em>) – 会话名称。</p></li>
+<li><p><strong>messageList</strong> (<em>array</em>) – <p>消息列表。消息数据结构参看 <a class="reference external" href="dev_structure.html#message">Message</a> 。</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id19">
+<h3><a class="toc-backref" href="#id35">发送消息</a><a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--hub-message-(channel_code)">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/hub/message/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">channel_code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#post--hub-message-(channel_code)" title="永久链接至目标">¶</a></dt>
+<dd><p>发送消息数据到指定会话。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_code</strong> (<em>string</em>) – 您申请的通道码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Request Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Request JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>groupName</strong> (<em>string</em>) – 指定消息发送的目标群组名。与 <code class="docutils literal notranslate"><span class="pre">partnerId</span></code> 参数二选一。</p></li>
+<li><p><strong>partnerId</strong> (<em>string</em>) – 指定消息发送的目标伙伴/好友的外部 ID 。与 <code class="docutils literal notranslate"><span class="pre">groupName</span></code> 参数二选一。</p></li>
+<li><p><strong>text</strong> (<em>string</em>) – 指定消息的文本内容，文本内容必须为 Base64 编码形式。</p></li>
+<li><p><strong>fileCode</strong> (<em>string</em>) – 指定文件消息的文件码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> – 通道码。</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>请求示例</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/hub/message/xdUrpSczEgWbSiDKmjhOWIOXZjQFOcmh</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">HOST</span><span class="o">:</span> <span class="l">api.shixincube.com</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+    &quot;partnerId&quot;: &quot;heit9077_cube&quot;,
+    &quot;text&quot;: &quot;5LuK5aSp5pivMjAyMuW5tDTmnIgxNeaXpQ==&quot;
+}
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="dev_hub_structure.html" class="btn btn-neutral float-right" title="Hub 数据结构" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dev_app_rest.html" class="btn btn-neutral float-left" title="应用服务器 RESTful API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

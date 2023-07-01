@@ -1,0 +1,876 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Robot &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="术语" href="../glossary.html" />
+    <link rel="prev" title="Hub 数据结构" href="dev_hub_structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/application.html">客户端应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/client_tutorials.html">客户端开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Robot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#robot-auto-task">自动任务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">采集抖音账号基础数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">抖音日常操作</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">开放接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">注册回调</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">注销回调</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">获取在线设备列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">获取账号数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">批量获取账号数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">执行任务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">取消任务</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">数据结构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#robot-account">账号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#robot-device">设备</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Robot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="robot">
+<h1><a class="toc-backref" href="#id20">Robot</a><a class="headerlink" href="#robot" title="永久链接至标题">¶</a></h1>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#robot" id="id20">Robot</a></p>
+<ul>
+<li><p><a class="reference internal" href="#robot-auto-task" id="id21">自动任务</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id22">采集抖音账号基础数据</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id23">抖音日常操作</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id5" id="id24">开放接口</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id25">注册回调</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id26">注销回调</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id27">获取在线设备列表</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id28">获取账号数据</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id29">批量获取账号数据</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id30">执行任务</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id31">取消任务</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id17" id="id32">数据结构</a></p>
+<ul>
+<li><p><a class="reference internal" href="#robot-account" id="id33">账号</a></p></li>
+<li><p><a class="reference internal" href="#robot-device" id="id34">设备</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="robot-auto-task">
+<span id="id2"></span><h2><a class="toc-backref" href="#id21">自动任务</a><a class="headerlink" href="#robot-auto-task" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id22">采集抖音账号基础数据</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>通过指定账号搜索关键字，通过搜索方式定位数据，读取搜索结果的账号数据。包括账号发布的作品信息。</p>
+<ul>
+<li><p>任务名称：</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">DouYinAccountData</span></code></p>
+</div></blockquote>
+</li>
+<li><p>参数说明：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">word</span></code> - 检索关键词</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maxNumVideo</span></code> - 采集视频作品的最大数量</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>参数设置示例：</p>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">JSONObject</span> <span class="n">parameter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="p">();</span>
+<span class="n">parameter</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;word&quot;</span><span class="p">,</span> <span class="s">&quot;光明网&quot;</span><span class="p">);</span>
+<span class="n">parameter</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;maxNumVideo&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id23">抖音日常操作</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>模拟日常刷抖音看视频操作。</p>
+<ul>
+<li><p>任务名称：</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">DouYinDailyOperation</span></code></p>
+</div></blockquote>
+</li>
+<li><p>参数说明：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">duration</span></code> - 操作需要执行总时长，单位：秒。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id24">开放接口</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id25">注册回调</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--robot-register-(code)">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/robot/register/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#post--robot-register-(code)" title="永久链接至目标">¶</a></dt>
+<dd><p>注册事件回调的 URL 链接。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>string</em>) – 您申请的访问码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Request Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Request JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>string</em>) – 回调的 URL 链接。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 访问码无效或者已过期。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – 请求数据错误。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id26">注销回调</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--robot-deregister-(code)">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/robot/deregister/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#post--robot-deregister-(code)" title="永久链接至目标">¶</a></dt>
+<dd><p>注销事件回调的 URL 链接。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>string</em>) – 您申请的访问码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Request Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Request JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>string</em>) – 回调的 URL 链接。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 访问码无效或者已过期。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – 请求数据错误。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id27">获取在线设备列表</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--robot-online-(code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/robot/online/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--robot-online-(code)" title="永久链接至目标">¶</a></dt>
+<dd><p>获取当前在线的设备列表。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>string</em>) – 您申请的访问码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>total</strong> (<em>number</em>) – 在线设备总数。</p></li>
+<li><p><strong>list</strong> (<em>Array</em>) – 设备账号数据列表，参看 <a class="reference external" href="#robot-account">账号</a> 数据结构。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 访问码无效或者已过期。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> – 读取数据错误。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id28">获取账号数据</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--robot-account-(code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/robot/account/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--robot-account-(code)" title="永久链接至目标">¶</a></dt>
+<dd><p>获取账号数据。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>string</em>) – 您申请的访问码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>-</strong> (<em>object</em>) – <p>账号数据，参看 <a class="reference external" href="#robot-account">账号</a> 数据结构。</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 访问码无效或者已过期。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – 参数错误或参数名错误。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> – 读取数据错误。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id29">批量获取账号数据</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--robot-account-list-(code)">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/robot/account/list/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get--robot-account-list-(code)" title="永久链接至目标">¶</a></dt>
+<dd><p>以批量方式获取账号数据。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>string</em>) – 您申请的访问码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Query Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>begin</strong> – 查询数据的起始索引。</p></li>
+<li><p><strong>end</strong> – 查询数据的结束索引。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>begin</strong> (<em>number</em>) – 数据列表起始索引位置。</p></li>
+<li><p><strong>end</strong> (<em>number</em>) – 数据列表结束索引位置。</p></li>
+<li><p><strong>list</strong> (<em>Object[]</em>) – <p>账号数据数组。参看 <a class="reference external" href="#robot-account">账号</a> 数据结构。</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Status Codes</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 访问码无效或者已过期。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – 参数错误或参数名错误。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> – 读取数据错误。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id14">
+<h3><a class="toc-backref" href="#id30">执行任务</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--robot-perform-(code)">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/robot/perform/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#post--robot-perform-(code)" title="永久链接至目标">¶</a></dt>
+<dd><p>执行指定任务。可执行任务参看 <a class="reference external" href="#robot-auto-task">自动任务</a> 章节。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>string</em>) – 您申请的访问码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Request Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Request JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – 任务名称。</p></li>
+<li><p><strong>parameter</strong> (<em>object</em>) – 任务参数。</p></li>
+<li><p><strong>accountId</strong> (<em>number</em>) – 执行任务的设备账号。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 访问码无效或者已过期。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – 参数错误，请检测参数格式。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> – 交付任务到设备失败。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> – 任务执行失败。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id16">
+<h3><a class="toc-backref" href="#id31">取消任务</a><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--robot-cancel-(code)">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/robot/cancel/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#post--robot-cancel-(code)" title="永久链接至目标">¶</a></dt>
+<dd><p>取消正在执行的任务。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>string</em>) – 您申请的访问码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Request Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Request JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>accountId</strong> (<em>number</em>) – 执行任务的设备账号。</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – 任务名称。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Status Codes</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2">401 Unauthorized</a> – 访问码无效或者已过期。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – 参数错误，请检测参数格式。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> – 取消任务时服务器出错。</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> – 取消任务失败。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2><a class="toc-backref" href="#id32">数据结构</a><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
+<div class="section" id="robot-account">
+<span id="id18"></span><h3><a class="toc-backref" href="#id33">账号</a><a class="headerlink" href="#robot-account" title="永久链接至标题">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>默认值</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号 ID 。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号名。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">avatar</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号头像。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">isAdmin</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>是否是管理员账号。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fullName</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号全名。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">creationTime</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号创建时间戳。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">state</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号状态。<br><br>
+<code class="docutils literal notranslate"><span class="pre">0</span></code> - 状态正常 <br>
+<code class="docutils literal notranslate"><span class="pre">3</span></code> - 账号被禁用</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">online</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号是否在线。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">taskRunning</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号当前是否有正在执行的任务。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lastAddress</span></code></p></td>
+<td><p>string</p></td>
+<td><p>N</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号最近一次连接服务器的地址。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lastLoginTime</span></code></p></td>
+<td><p>long</p></td>
+<td><p>N</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号最近一次登录时间戳。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lastDevice</span></code></p></td>
+<td><p>JSON Object</p></td>
+<td><p>N</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号最近一次登录的设备信息。参看 <a class="reference internal" href="#robot-device"><span class="std std-ref">设备</span></a> 。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">token</span></code></p></td>
+<td><p>string</p></td>
+<td><p>N</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号的授权令牌。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="robot-device">
+<span id="id19"></span><h3><a class="toc-backref" href="#id34">设备</a><a class="headerlink" href="#robot-device" title="永久链接至标题">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>默认值</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">width</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>设备屏幕分辨率宽度。例如 1080。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">height</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>设备屏幕分辨率高度。例如 1920。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">buildId</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>修订版本号。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">broad</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>设备板卡型号。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">brand</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>与产品或硬件相关的厂商品牌，例如 “Xiaomi”, “Huawei”。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">device</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>设备在工业设计中的名称。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>设备型号。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">product</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>整个产品的名称。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bootloader</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>设备 Bootloader 的版本。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">hardware</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>设备的硬件名称。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fingerprint</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>构建(build)的唯一标识码。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sdkInt</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>Android 系统 API 版本。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">incremental</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>底层源代码版本控制描述，用于表示此构建的内部值。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">release</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>Android 系统版本号。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baseOS</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>产品所基于的基础操作系统。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">securityPatch</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>用户可见的安全补丁级别。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">codename</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>开发代号。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">buildDisplay</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>用于显示给用户的构建ID字符串。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../glossary.html" class="btn btn-neutral float-right" title="术语" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dev_hub_structure.html" class="btn btn-neutral float-left" title="Hub 数据结构" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

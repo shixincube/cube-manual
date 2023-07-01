@@ -1,0 +1,644 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Hub 数据结构 &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Robot" href="dev_robot.html" />
+    <link rel="prev" title="Hub RESTful API" href="dev_hub_rest.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/application.html">客户端应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/client_tutorials.html">客户端开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hub 数据结构</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contact"><cite>Contact</cite> 上下文数据字段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#message"><cite>Message</cite> 负载数据字段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#account-json">Account JSON 字段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conversations-json">Conversations JSON 字段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#group-data-json">Group Data JSON 字段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contact-zone-data-json">Contact Zone Data JSON 字段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#messages-json">Messages JSON 字段</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Hub 数据结构</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hub">
+<h1><a class="toc-backref" href="#id11">Hub 数据结构</a><a class="headerlink" href="#hub" title="永久链接至标题">¶</a></h1>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#hub" id="id11">Hub 数据结构</a></p>
+<ul>
+<li><p><a class="reference internal" href="#contact" id="id12"><cite>Contact</cite> 上下文数据字段</a></p></li>
+<li><p><a class="reference internal" href="#message" id="id13"><cite>Message</cite> 负载数据字段</a></p></li>
+<li><p><a class="reference internal" href="#account-json" id="id14">Account JSON 字段</a></p></li>
+<li><p><a class="reference internal" href="#conversations-json" id="id15">Conversations JSON 字段</a></p></li>
+<li><p><a class="reference internal" href="#group-data-json" id="id16">Group Data JSON 字段</a></p></li>
+<li><p><a class="reference internal" href="#contact-zone-data-json" id="id17">Contact Zone Data JSON 字段</a></p></li>
+<li><p><a class="reference internal" href="#messages-json" id="id18">Messages JSON 字段</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="contact">
+<span id="contact-context"></span><h2><a class="toc-backref" href="#id12"><cite>Contact</cite> 上下文数据字段</a><a class="headerlink" href="#contact" title="永久链接至标题">¶</a></h2>
+<p>在 Hub 服务里将联系人的其他数据信息均保存在上下文中，即 <a class="reference external" href="dev_structure.html#contact">Contact</a> 的 <code class="docutils literal notranslate"><span class="pre">context</span></code> 字段中。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">avatarFileLabel</span></code> - 联系人头像的文件标签，参看 <a class="reference external" href="dev_structure.html#file-label">File Label</a> 结构。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="message">
+<span id="message-payload"></span><h2><a class="toc-backref" href="#id13"><cite>Message</cite> 负载数据字段</a><a class="headerlink" href="#message" title="永久链接至标题">¶</a></h2>
+<p>在 Hub 服务里消息的负载数据不仅记录了消息数据还记录了消息类型，即 <a class="reference external" href="dev_structure.html#message">Message</a> 的 <code class="docutils literal notranslate"><span class="pre">payload</span></code> 字段。</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code> - 消息类型。</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> - 文本消息类型。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file</span></code> - 文件消息类型。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image</span></code> - 图片消息类型。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">content</span></code> - 文本消息的文本数据，使用 Base64 格式。</p></li>
+</ul>
+<p>对于图片和文件消息类型，可以通过 <a class="reference external" href="dev_structure.html#message">Message</a> 的 <code class="docutils literal notranslate"><span class="pre">attachment</span></code> 字段获取对应的文件码，通过文件码获取文件数据。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="account-json">
+<span id="account-event"></span><h2><a class="toc-backref" href="#id14">Account JSON 字段</a><a class="headerlink" href="#account-json" title="永久链接至标题">¶</a></h2>
+<p>账号数据事件。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>默认值</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sn</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件序号</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件名</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">product</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>产品名</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>通道码</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">account</span></code></p></td>
+<td><p><a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>账号数据</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="conversations-json">
+<span id="conversations-event"></span><h2><a class="toc-backref" href="#id15">Conversations JSON 字段</a><a class="headerlink" href="#conversations-json" title="永久链接至标题">¶</a></h2>
+<p>会话数据事件。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>默认值</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sn</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件序号</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件名</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">product</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>产品名</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>通道码</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conversations</span></code></p></td>
+<td><p>Array&lt; <a class="reference external" href="dev_structure.html#conversation">Conversation</a> &gt;</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>最近会话列表</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="group-data-json">
+<span id="group-data-event"></span><h2><a class="toc-backref" href="#id16">Group Data JSON 字段</a><a class="headerlink" href="#group-data-json" title="永久链接至标题">¶</a></h2>
+<p>群组数据事件。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>默认值</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sn</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件序号</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件名</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">product</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>产品名</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>通道码</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></td>
+<td><p><a class="reference external" href="dev_structure.html#group">Group</a></p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>群组数据，参看 <a class="reference external" href="dev_structure.html#group">Group</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="contact-zone-data-json">
+<span id="contact-zone-event"></span><h2><a class="toc-backref" href="#id17">Contact Zone Data JSON 字段</a><a class="headerlink" href="#contact-zone-data-json" title="永久链接至标题">¶</a></h2>
+<p>联系人分区数据事件。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>默认值</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sn</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件序号</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件名</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">product</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>产品名</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">zone</span></code></p></td>
+<td><p><a class="reference external" href="dev_structure.html#contact-zone">Contact Zone</a></p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>分区数据，参看 <a class="reference external" href="dev_structure.html#contact-zone">Contact Zone</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">begin</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>数据的起始索引</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">end</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>数据的结束索引</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">total</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>数据总数量</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="messages-json">
+<span id="messages-event"></span><h2><a class="toc-backref" href="#id18">Messages JSON 字段</a><a class="headerlink" href="#messages-json" title="永久链接至标题">¶</a></h2>
+<p>消息列表数据。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>默认值</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sn</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件序号</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>事件名</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">product</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>产品名</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></td>
+<td><p><a class="reference external" href="dev_structure.html#group">Group</a></p></td>
+<td><p>N</p></td>
+<td><p><em>–</em></p></td>
+<td><p>当前消息清单对应的群组</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">partner</span></code></p></td>
+<td><p><a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+<td><p>N</p></td>
+<td><p><em>–</em></p></td>
+<td><p>当前消息清单对应的参与人</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">begin</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>起始索引位置</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">end</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>结束索引位置</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">messages</span></code></p></td>
+<td><p>Array&lt; <a class="reference external" href="dev_structure.html#message">Message</a> &gt;</p></td>
+<td><p>Y</p></td>
+<td><p><em>–</em></p></td>
+<td><p>消息数据清单</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="dev_robot.html" class="btn btn-neutral float-right" title="Robot" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dev_hub_rest.html" class="btn btn-neutral float-left" title="Hub RESTful API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

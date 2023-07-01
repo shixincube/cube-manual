@@ -4,32 +4,32 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: '简单易用',
+    title: '聚焦AI生产力',
     showcase: 'img/feature_01.png',
     description: (
       <>
-        时信魔方从一开始就被设计为轻量级 SDK ，易于安装和使用，让您可以快速构建自己的应用。
-        支持的操作系统：Windows、Linux 、macOS 、Android、iOS 等，支持的浏览器：Chrome、Firefox、Safari 等。
+        时信魔方定位于为 AIGC 的“集成器”，将各个 AI 任务及其对应的下游任务，业务任务进行连通，构造统一的、整体的 AI 用户体验。
+        基于此各种 AI 任务可以平滑地在各个生产力场景中衔接和应用。
       </>
     ),
   },
   {
-    title: '聚焦通讯',
+    title: '覆盖数据流',
     showcase: 'img/feature_02.png',
     description: (
       <>
-        时信魔方的核心任务就是”通讯“，所有功能都聚焦在高效、稳定并安全地完成通讯任务上。
-        从核心的传输协议、存储机制、网络拓扑架构都服务于通讯任务。开发者和应用者只需要关注业务逻辑如何达成，数据通讯与安全交由魔方完成。
+        借助时信魔方的数据覆盖能力，可以为模型提供训练语料，为各个子任务提供分析要素。
+        时信魔方能完成包括 App 数据采集，LLM模型操作，AIGC 任务，数据的实时收发，音视频数据的传输，以及特定场景的定制数据流传输。
       </>
     ),
   },
   {
-    title: '功能丰富',
+    title: '开箱即用',
     showcase: 'img/feature_03.png',
     description: (
       <>
-        时信魔方能完成包括文本、文件数据的实时收发，基于 RTC 技术的音视频数据的传输，以及特定场景的定制数据流传输。
-        同时，配套包括数据链路安全功能，存储安全管理功能，以及在实际应用中的风控管理能力。
+        时信魔方从一开始就被设计为轻量级结构，易于安装和使用，开箱即用。让您可以快速构建自己的AI应用。
+        支持的操作系统：Android、HarmonyOS、iOS、Linux、macOS、Windows等，支持的浏览器：Chrome、Firefox、Safari、Edge等。
       </>
     ),
   }

@@ -1,0 +1,31 @@
+{% extends "!layout.html" %}
+
+<!--
+  Add a custom header to all pages, trying to redirect novice users to OpenVidu.
+-->
+{% block document %}
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+{{ super() }}
+{% endblock %}

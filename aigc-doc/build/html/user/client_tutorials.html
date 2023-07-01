@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>客户端开发教程 &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Web/HTML5 - Hello World" href="../tutorials/web/helloworld.html" />
+    <link rel="prev" title="客户端应用程序" href="application.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application.html">客户端应用程序</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">客户端开发教程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hello-world">Hello World</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/helloworld.html">Web/HTML5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/helloworld.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/helloworld.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/helloworld.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">事件回调机制</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/event_callback.html">Web/HTML5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/event_callback.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/event_callback.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/event_callback.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">即时消息的发送与接收</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/sendrecv_message.html">Web/HTML5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/sendrecv_message.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/sendrecv_message.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/sendrecv_message.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">视频通话</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/contact_video_call.html">Web/HTML5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/contact_video_call.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/contact_video_call.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/contact_video_call.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">群组语音通话</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/group_audio.html">Web/HTML5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/group_audio.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/group_audio.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/group_audio.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">群组视频通话</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/group_video.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/group_video.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/group_video.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/group_video.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">文件的上传、下载与目录管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/file_basics.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/file_basics.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/file_basics.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/file_basics.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">联系人管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/contacts_mgmt.html">Web/HTML5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/contacts_mgmt.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/contacts_mgmt.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/contacts_mgmt.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">群组管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/groups_mgmt.html">Web/HTML5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/groups_mgmt.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/groups_mgmt.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/groups_mgmt.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">会议的创建与管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/conference_basics.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/conference_basics.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/conference_basics.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/conference_basics.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">会议的控制与调度</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/conference_control.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/conference_control.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/conference_control.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/conference_control.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">会议的直播管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/conference_live.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/conference_live.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/conference_live.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/conference_live.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">白板的基本操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/whiteboard_basics.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/whiteboard_basics.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/whiteboard_basics.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/whiteboard_basics.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">桌面分享</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/desktop_sharing.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/desktop_sharing.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/desktop_sharing.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/desktop_sharing.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">自定义消息</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/custom_message.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/custom_message.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/custom_message.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/custom_message.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">在视频画面中实时检测人脸</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/web/face_monitor.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/android/face_monitor.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/ios/face_monitor.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/electron/face_monitor.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">在多人会议中进行人脸检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">实时视频流转直播流</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>客户端开发教程</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>客户端开发教程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>在本节中，我们将介绍如何使用时信魔方开发各种协作功能。</p>
+<div class="section" id="hello-world">
+<h2>Hello World<a class="headerlink" href="#hello-world" title="永久链接至标题">¶</a></h2>
+<p>这是一个最简单的应用时信魔方的示例，在示例的应用程序里我们将实现如何启动时信魔方并向服务器签入我们的账号。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/helloworld.html">Web/HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/helloworld.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/helloworld.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/helloworld.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>事件回调机制<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>时信魔方利用事件回调机制向应用程序传统事件和数据，例如，当收到其他联系人发送的消息时，魔方客户端会通过事件回调机制通知应用程序，因此了解事件回调机制是很有必要的。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/event_callback.html">Web/HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/event_callback.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/event_callback.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/event_callback.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>即时消息的发送与接收<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>这个示例将介绍如何使用消息传输模块进行即时消息的发送和接收。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/sendrecv_message.html">Web/HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/sendrecv_message.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/sendrecv_message.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/sendrecv_message.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>视频通话<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>在这个示例里我们将实现两个联系人之间的视频通话，这个过程类似于一个打电话的过程，一个联系人去呼叫另一个联系人，被呼叫的联系人会收到通话邀请，同意邀请之后两个联系人之间将建立通话的数据通道进行双向视频通话。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/contact_video_call.html">Web/HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/contact_video_call.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/contact_video_call.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/contact_video_call.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>群组语音通话<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>在这个示例里我们将实现多个联系人进行语音通话，也就说我们常说的“群组通话”功能。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/group_audio.html">Web/HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/group_audio.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/group_audio.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/group_audio.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>群组视频通话<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>在这个示例里我们将实现多个联系人进行视频通话，与多人语音通话不同的是，多人视频通话我们可以选择更多的技术特征来满足我们不同的需求，例如，是否需要把多个人的画面拼接在一起等等。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/group_video.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/group_video.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/group_video.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/group_video.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>文件的上传、下载与目录管理<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>文件的管理是我们最常见的协作功能之一，而且用于管理文件的工具很多。这个示例我们将会了解到时信魔方的文件接口的用法。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/file_basics.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/file_basics.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/file_basics.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/file_basics.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>联系人管理<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>社交关系可以说是多人协作的基础能力，无论是聊天、通话还是会议都离不开社交关系作为底层的数据关系进行数据流的串连，联系人管理是基础的社交关系管理，这个示例将介绍在时信魔方里管理联系人的分组、阻止清单、待处理清单等。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/contacts_mgmt.html">Web/HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/contacts_mgmt.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/contacts_mgmt.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/contacts_mgmt.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>群组管理<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>社交关系可以说是多人协作的基础能力，无论是聊天、通话还是会议都离不开社交关系作为底层的数据关系进行数据流的串连，这个示例将介绍在时信魔方里创建群组、管理群组成员以及通过群组进行多人协作等。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/groups_mgmt.html">Web/HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/groups_mgmt.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/groups_mgmt.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/groups_mgmt.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>会议的创建与管理<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>会议是进行即时沟通的有效手段，在时信魔方里可以创建并预约会议，也可以随时发起会议，这个示例将演示如何进行这些基础的会议操作。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/conference_basics.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/conference_basics.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/conference_basics.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/conference_basics.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>会议的控制与调度<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>当我们在进行会议时需要根据会议的进度和参会人员进行必要的控制和调度，例如将当前的发言人画面突出显示将其他人静音，这些都可以在时信魔方里进行有效控制。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/conference_control.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/conference_control.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/conference_control.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/conference_control.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>会议的直播管理<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<p>有些会议我们需要将会议画面以直播方式分享出去，这个示例将介绍如何将我们的会议进行实时直播。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/conference_live.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/conference_live.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/conference_live.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/conference_live.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>白板的基本操作<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<p>这个示例将演示时信魔方的实时白板的相关操作，包括绘图、标记、文档演示等等。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/whiteboard_basics.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/whiteboard_basics.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/whiteboard_basics.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/whiteboard_basics.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>桌面分享<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<p>这个示例将演示如何进行桌面分享。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/desktop_sharing.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/desktop_sharing.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/desktop_sharing.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/desktop_sharing.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>自定义消息<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<p>在开发时，我们经常会遇到新的挑战，我们需要在现有的系统里进行功能的扩展、追加，这个示例将实现如何在时信魔方里自定义自己的消息，来满足用户更多的需求。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/custom_message.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/custom_message.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/custom_message.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/custom_message.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>在视频画面中实时检测人脸<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+<p>在这个示例里我们将使用人脸监视模块实现实时画面下的人脸检测，并且实现一些有趣的检测功能。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/web/face_monitor.html">Web/HTML5 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/android/face_monitor.html">Android [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ios/face_monitor.html">iOS [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/electron/face_monitor.html">Electron [TODO]</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>在多人会议中进行人脸检测<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
+<p>[TODO]</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>实时视频流转直播流<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h2>
+<p>[TODO]</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../tutorials/web/helloworld.html" class="btn btn-neutral float-right" title="Web/HTML5 - Hello World" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="application.html" class="btn btn-neutral float-left" title="客户端应用程序" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

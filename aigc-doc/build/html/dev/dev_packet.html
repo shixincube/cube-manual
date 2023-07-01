@@ -1,0 +1,4975 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>通信报文 &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="数据结构" href="dev_structure.html" />
+    <link rel="prev" title="开发向导 [TODO]" href="dev_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/application.html">客户端应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/client_tutorials.html">客户端开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">通信报文</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id3">授权服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">信令操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">申请信令</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">获取指定令牌码的令牌</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">联系人服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">终端操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">终端签入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">终端签出</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">终端恢复</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">联系人操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id26">获取联系人数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id29">获取联系人附录数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id31">修改联系人数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id34">更新联系人附录</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id37">群组操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id38">获取群组数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id40">获取群组附录数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id42">按照最近活跃时间查找联系人的群组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id46">创建群组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id50">解散群组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id54">添加联系人到群组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id57">移除群组里的联系人</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id61">修改群组基础数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id65">更新群组附录</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id68">联系人分区操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id69">创建分区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id71">删除分区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id73">获取分区数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id76">添加参与人到指定分区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id80">从指定分区删除参与人</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id84">修改分区参与人数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id88">分区是否包含指定参与人</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id90">文件存储服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id91">文件数据流操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id92">数据上传</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id94">数据下载</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id95">文件/目录操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id96">获取文件信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id99">获取指定实体的根目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id101">获取目录下的子目录列表</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id104">获取目录下的文件列表</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id107">创建新目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id110">删除子目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id114">重命名目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id117">将文件插入到目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id121">将文件从目录删除</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id125">文件回收站操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id126">列举指定回收站里的数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id127">抹除回收站里的指定数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id128">清空回收站里的所有废弃数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id129">从回收站恢复废弃数据</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id130">即时消息服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id131">会话操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id132">获取会话列表</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id134">更新会话</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id138">消息操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id139">拉取消息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id141">发送消息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id145">消息通知</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id148">标记消息已读</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id152">撤回消息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id154">删除消息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id156">查询消息状态</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id159">多方通讯服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id160">通讯场域操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id161">获取场域数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id163">创建场域数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id167">销毁场域数据</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id170">通话操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id171">申请发起通话</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id177">申请加入场域</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id183">申请终止在场域内的通话</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id189">媒体数据信令</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#offer">进行 Offer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#answer">进行 Answer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye">进行 Bye</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#busy">进行 Busy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#candidate">进行 Candidate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id214">发出多方邀请</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id218">参与终端已进入场域</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id221">参与终端已退出场域</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>通信报文</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><a class="toc-backref" href="#id229">通信报文</a><a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="contents topic" id="id2">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id229">通信报文</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id230">授权服务</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id231">信令操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id232">申请信令</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id233">获取指定令牌码的令牌</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id10" id="id234">联系人服务</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id11" id="id235">终端操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id12" id="id236">终端签入</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id237">终端签出</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id238">终端恢复</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id25" id="id239">联系人操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id26" id="id240">获取联系人数据</a></p></li>
+<li><p><a class="reference internal" href="#id29" id="id241">获取联系人附录数据</a></p></li>
+<li><p><a class="reference internal" href="#id31" id="id242">修改联系人数据</a></p></li>
+<li><p><a class="reference internal" href="#id34" id="id243">更新联系人附录</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id37" id="id244">群组操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id38" id="id245">获取群组数据</a></p></li>
+<li><p><a class="reference internal" href="#id40" id="id246">获取群组附录数据</a></p></li>
+<li><p><a class="reference internal" href="#id42" id="id247">按照最近活跃时间查找联系人的群组</a></p></li>
+<li><p><a class="reference internal" href="#id46" id="id248">创建群组</a></p></li>
+<li><p><a class="reference internal" href="#id50" id="id249">解散群组</a></p></li>
+<li><p><a class="reference internal" href="#id54" id="id250">添加联系人到群组</a></p></li>
+<li><p><a class="reference internal" href="#id57" id="id251">移除群组里的联系人</a></p></li>
+<li><p><a class="reference internal" href="#id61" id="id252">修改群组基础数据</a></p></li>
+<li><p><a class="reference internal" href="#id65" id="id253">更新群组附录</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id68" id="id254">联系人分区操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id69" id="id255">创建分区</a></p></li>
+<li><p><a class="reference internal" href="#id71" id="id256">删除分区</a></p></li>
+<li><p><a class="reference internal" href="#id73" id="id257">获取分区数据</a></p></li>
+<li><p><a class="reference internal" href="#id76" id="id258">添加参与人到指定分区</a></p></li>
+<li><p><a class="reference internal" href="#id80" id="id259">从指定分区删除参与人</a></p></li>
+<li><p><a class="reference internal" href="#id84" id="id260">修改分区参与人数据</a></p></li>
+<li><p><a class="reference internal" href="#id88" id="id261">分区是否包含指定参与人</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id90" id="id262">文件存储服务</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id91" id="id263">文件数据流操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id92" id="id264">数据上传</a></p></li>
+<li><p><a class="reference internal" href="#id94" id="id265">数据下载</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id95" id="id266">文件/目录操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id96" id="id267">获取文件信息</a></p></li>
+<li><p><a class="reference internal" href="#id99" id="id268">获取指定实体的根目录</a></p></li>
+<li><p><a class="reference internal" href="#id101" id="id269">获取目录下的子目录列表</a></p></li>
+<li><p><a class="reference internal" href="#id104" id="id270">获取目录下的文件列表</a></p></li>
+<li><p><a class="reference internal" href="#id107" id="id271">创建新目录</a></p></li>
+<li><p><a class="reference internal" href="#id110" id="id272">删除子目录</a></p></li>
+<li><p><a class="reference internal" href="#id114" id="id273">重命名目录</a></p></li>
+<li><p><a class="reference internal" href="#id117" id="id274">将文件插入到目录</a></p></li>
+<li><p><a class="reference internal" href="#id121" id="id275">将文件从目录删除</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id125" id="id276">文件回收站操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id126" id="id277">列举指定回收站里的数据</a></p></li>
+<li><p><a class="reference internal" href="#id127" id="id278">抹除回收站里的指定数据</a></p></li>
+<li><p><a class="reference internal" href="#id128" id="id279">清空回收站里的所有废弃数据</a></p></li>
+<li><p><a class="reference internal" href="#id129" id="id280">从回收站恢复废弃数据</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id130" id="id281">即时消息服务</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id131" id="id282">会话操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id132" id="id283">获取会话列表</a></p></li>
+<li><p><a class="reference internal" href="#id134" id="id284">更新会话</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id138" id="id285">消息操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id139" id="id286">拉取消息</a></p></li>
+<li><p><a class="reference internal" href="#id141" id="id287">发送消息</a></p></li>
+<li><p><a class="reference internal" href="#id145" id="id288">消息通知</a></p></li>
+<li><p><a class="reference internal" href="#id148" id="id289">标记消息已读</a></p></li>
+<li><p><a class="reference internal" href="#id152" id="id290">撤回消息</a></p></li>
+<li><p><a class="reference internal" href="#id154" id="id291">删除消息</a></p></li>
+<li><p><a class="reference internal" href="#id156" id="id292">查询消息状态</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id159" id="id293">多方通讯服务</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id160" id="id294">通讯场域操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id161" id="id295">获取场域数据</a></p></li>
+<li><p><a class="reference internal" href="#id163" id="id296">创建场域数据</a></p></li>
+<li><p><a class="reference internal" href="#id167" id="id297">销毁场域数据</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id170" id="id298">通话操作</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id171" id="id299">申请发起通话</a></p></li>
+<li><p><a class="reference internal" href="#id177" id="id300">申请加入场域</a></p></li>
+<li><p><a class="reference internal" href="#id183" id="id301">申请终止在场域内的通话</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id189" id="id302">媒体数据信令</a></p>
+<ul>
+<li><p><a class="reference internal" href="#offer" id="id303">进行 Offer</a></p></li>
+<li><p><a class="reference internal" href="#answer" id="id304">进行 Answer</a></p></li>
+<li><p><a class="reference internal" href="#bye" id="id305">进行 Bye</a></p></li>
+<li><p><a class="reference internal" href="#busy" id="id306">进行 Busy</a></p></li>
+<li><p><a class="reference internal" href="#candidate" id="id307">进行 Candidate</a></p></li>
+<li><p><a class="reference internal" href="#id214" id="id308">发出多方邀请</a></p></li>
+<li><p><a class="reference internal" href="#id218" id="id309">参与终端已进入场域</a></p></li>
+<li><p><a class="reference internal" href="#id221" id="id310">参与终端已退出场域</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id230">授权服务</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id231">信令操作</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h4><a class="toc-backref" href="#id232">申请信令</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于终端向服务器申请可用的访问令牌。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">applyToken</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">domain</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>App 的访问域</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">appKey</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>App 的 Key 串</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><a class="reference external" href="../state_code.html#auth-service-state">授权服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>申请到的令牌数据，参看 <a class="reference external" href="dev_structure.html#auth-token">Auth Token</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#id233">获取指定令牌码的令牌</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于通过令牌编码查找其对应的令牌信息。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getToken</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>令牌编码</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p><a class="reference external" href="../state_code.html#auth-service-state">授权服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>令牌数据，参看 <a class="reference external" href="dev_structure.html#auth-token">Auth Token</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><a class="toc-backref" href="#id234">联系人服务</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id235">终端操作</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id12">
+<h4><a class="toc-backref" href="#id236">终端签入</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于终端将指定联系人及其当前设备签入到服务器。签入操作是客户端获得一切服务操作的前提，服务器将签入的联系人及其提供的合法令牌进行绑定，从而授权签入联系人进行相关操作。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">signIn</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default" id="id224">
+<caption><span class="caption-text"><strong>使用联系人和令牌签入</strong></span><a class="headerlink" href="#id224" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">self</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>当前终端的联系人描述，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">token</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>当前使用的令牌，参看 <a class="reference external" href="dev_structure.html#auth-token">Auth Token</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id225">
+<caption><span class="caption-text"><strong>使用令牌码签入</strong></span><a class="headerlink" href="#id225" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>当前有效令牌的令牌码，参看 <a class="reference external" href="dev_structure.html#auth-token">Auth Token</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>签入的联系人数据，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h4><a class="toc-backref" href="#id237">终端签出</a><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于将已签入的联系人及其设备签出。签出表示服务器不再为其提供服务，该联系人不再活跃。签出后的联系人可再次签入。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">signOut</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>当前终端的联系人</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>签出的联系人数据，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id21">
+<h4><a class="toc-backref" href="#id238">终端恢复</a><a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>对于暂时离线的终端，可以使用该操作恢复自身在服务器内的数据，不需要提供令牌数据，服务器会自动匹配之前使用的合法令牌。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">comeback</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>当前终端的联系人</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>恢复的联系人数据，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id25">
+<h3><a class="toc-backref" href="#id239">联系人操作</a><a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id26">
+<h4><a class="toc-backref" href="#id240">获取联系人数据</a><a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>通过联系人的 ID 查找对应联系人的数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getContact</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">domain</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>联系人所属的域</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>联系人数据，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id29">
+<h4><a class="toc-backref" href="#id241">获取联系人附录数据</a><a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>获取指定联系人对应的附录数据。</p></li>
+<li><p><strong>Action</strong> getAppendix</p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contactId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>联系人 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>联系人附录数据，参看 <a class="reference external" href="dev_structure.html#contact-appendix">Contact Appendix</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id31">
+<h4><a class="toc-backref" href="#id242">修改联系人数据</a><a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于客户端修改当前签入的联系人的数据，即修改“自己”的数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">modifyContact</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>N</p></td>
+<td><p>联系人的名称。 <br> 如果不设置该字段将不修改联系人名称。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">context</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>N</p></td>
+<td><p>联系人的上下文数据。 <br> 如果不设置该字段将不修改上下文数据。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>联系人数据，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id34">
+<h4><a class="toc-backref" href="#id243">更新联系人附录</a><a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>更新联系人关联的附录数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">updateAppendix</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contactId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>附录的联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">remarkName</span></code></p></td>
+<td><p>string</p></td>
+<td><p>N</p></td>
+<td><p>指定该联系人的新的备注名</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>联系人附录数据，参看 <a class="reference external" href="dev_structure.html#contact-appendix">Contact Appendix</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id37">
+<h3><a class="toc-backref" href="#id244">群组操作</a><a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id38">
+<h4><a class="toc-backref" href="#id245">获取群组数据</a><a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>通过群组的 ID 查找对应的群组数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getGroup</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>群组的 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">domain</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>群组所属的域</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>群组数据，参看 <a class="reference external" href="dev_structure.html#group">Group</a> 。 <br>
+返回数据包含 <code class="docutils literal notranslate"><span class="pre">members</span></code> 数据。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id40">
+<h4><a class="toc-backref" href="#id246">获取群组附录数据</a><a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>获取指定群组对应的附录数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getAppendix</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">groupId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>群组 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>群组附录数据，参看 <a class="reference external" href="dev_structure.html#group-appendix">Group Appendix</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id42">
+<h4><a class="toc-backref" href="#id247">按照最近活跃时间查找联系人的群组</a><a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于客户单列出所有当前签入的联系人所在的群组。查询条件为该群组的最近一次活跃时间。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">listGroups</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">beginning</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>查询起始的最近一次活跃时间戳</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ending</span></code></p></td>
+<td><p>long</p></td>
+<td><p>N</p></td>
+<td><p>查询截止的最近一次活跃时间戳。 <br>
+如果不填写，使用当前实时时间戳。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">state</span></code></p></td>
+<td><p>int</p></td>
+<td><p>N</p></td>
+<td><p>查询 <a class="reference external" href="dev_structure.html#group-state">群组的状态</a> 。 <br>
+如果不填写，默认使用 <code class="docutils literal notranslate"><span class="pre">Normal</span></code> 状态。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pageSize</span></code></p></td>
+<td><p>int</p></td>
+<td><p>N</p></td>
+<td><p>指定返回数据时每个数据包内包含的群组数量。 <br>
+如果不填写，默认指定为 <code class="docutils literal notranslate"><span class="pre">4</span></code> 。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>查找到的群组列表数据。JSON 字段包括： <br> <br>
+<code class="docutils literal notranslate"><span class="pre">list</span></code> - Array&lt; <a class="reference external" href="dev_structure.html#group">Group</a> &gt; ： 每页的群组列表。 <br> <br>
+<code class="docutils literal notranslate"><span class="pre">total</span></code> - int ： 满足查询条件的群组总数量。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>以上数据包服务器会按照 <code class="docutils literal notranslate"><span class="pre">pageSize</span></code> 指定的规则发送给客户端，因此客户端需要多次处理 <code class="docutils literal notranslate"><span class="pre">listGroups</span></code> 数据包。</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id46">
+<h4><a class="toc-backref" href="#id248">创建群组</a><a class="headerlink" href="#id46" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>创建新的群组。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">createGroup</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>群组数据，参看 <a class="reference external" href="dev_structure.html#group">Group</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">members</span></code></p></td>
+<td><p>Array&lt;long&gt;</p></td>
+<td><p>Y</p></td>
+<td><p>群组的成员 ID 的数组</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>群组数据，参看 <a class="reference external" href="dev_structure.html#group">Group</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id50">
+<h4><a class="toc-backref" href="#id249">解散群组</a><a class="headerlink" href="#id50" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>解散指定的群组，只有该群组的群主才能解散该群。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">dismissGroup</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>请求解散的群组</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#group">Group</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>被解散的群组数据，参看 <a class="reference external" href="dev_structure.html#group">Group</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id54">
+<h4><a class="toc-backref" href="#id250">添加联系人到群组</a><a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>向指定的群组添加联系人。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">addGroupMember</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">groupId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>群组的 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">memberIdList</span></code></p></td>
+<td><p>Array&lt;long&gt;</p></td>
+<td><p>Y</p></td>
+<td><p>加入群组的联系人 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">operator</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>执行该操作的操作员，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>群组的变化数据，参看 <a class="reference external" href="dev_structure.html#group-bundle">Group Bundle</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id57">
+<h4><a class="toc-backref" href="#id251">移除群组里的联系人</a><a class="headerlink" href="#id57" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>从指定群组移除联系人。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">removeGroupMember</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">groupId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>群组的 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">memberIdList</span></code></p></td>
+<td><p>Array&lt;long&gt;</p></td>
+<td><p>Y</p></td>
+<td><p>加入群组的联系人 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">operator</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>执行该操作的操作员，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>群组的变化数据，参看 <a class="reference external" href="dev_structure.html#group-bundle">Group Bundle</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id61">
+<h4><a class="toc-backref" href="#id252">修改群组基础数据</a><a class="headerlink" href="#id61" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>修改群组的基础数据，包括群组名称、群主（群组所有者）和上下文数据等。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">modifyGroup</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">groupId</span></code> <br><br> <em>OR</em> <br><br> <code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>群组的 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ownerId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>N</p></td>
+<td><p>群组新的群主 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">owner</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>N</p></td>
+<td><p>群组新的群主，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>N</p></td>
+<td><p>新的群组名称</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">context</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>N</p></td>
+<td><p>新的群组的上下文数据</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>新的群组数据，参看 <a class="reference external" href="dev_structure.html#group">Group</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id65">
+<h4><a class="toc-backref" href="#id253">更新群组附录</a><a class="headerlink" href="#id65" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>更新群组关联的附录数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">updateAppendix</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">groupId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>附录的群组 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">notice</span></code></p></td>
+<td><p>string</p></td>
+<td><p>N</p></td>
+<td><p>群组公告内容</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">memberRemark</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>N</p></td>
+<td><p>指定群成员备注名。JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">id</span></code> - long ：成员的 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">name</span></code> - string ： 成员的备注名</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">remark</span></code></p></td>
+<td><p>string</p></td>
+<td><p>N</p></td>
+<td><p>指定对该群的备注</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">following</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>N</p></td>
+<td><p>指定是否关注该群组</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">memberNameDisplayed</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>N</p></td>
+<td><p>指定群组是否显示群成员名称</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">commId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>N</p></td>
+<td><p>指定群组当前的通讯 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>群组附录数据，参看 <a class="reference external" href="dev_structure.html#group-appendix">Group Appendix</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id68">
+<h3><a class="toc-backref" href="#id254">联系人分区操作</a><a class="headerlink" href="#id68" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id69">
+<h4><a class="toc-backref" href="#id255">创建分区</a><a class="headerlink" href="#id69" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>创建指定名称的新分区。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">createContactZone</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>分区名称</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">participants</span></code></p></td>
+<td><p>Array&lt;JSON&gt;</p></td>
+<td><p>N</p></td>
+<td><p>分区参与人列表。 <br> 列表里存储参与人的 JSON 数据， <br>
+参看 <a class="reference external" href="dev_structure.html#contact-zone-participant">Contact Zone Participant</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">displayName</span></code></p></td>
+<td><p>string</p></td>
+<td><p>N</p></td>
+<td><p>指定分区的显示名</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">peerMode</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>N</p></td>
+<td><p>指定是否使用对等模式。 <br> 默认值： <code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>新的分区，参看 <a class="reference external" href="dev_structure.html#contact-zone">Contact Zone</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id71">
+<h4><a class="toc-backref" href="#id256">删除分区</a><a class="headerlink" href="#id71" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>删除指定名称的分区。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">deleteContactZone</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>分区名称</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>客户端发送的数据，JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">name</span></code> - string ： 被删除的分区名称。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id73">
+<h4><a class="toc-backref" href="#id257">获取分区数据</a><a class="headerlink" href="#id73" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>获取指定名称的分区数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getContactZone</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>分区名称</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">compact</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>N</p></td>
+<td><p>是否返回紧凑结构，紧凑结构不包括参与人列表</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>分区数据，参看 <a class="reference external" href="dev_structure.html#contact-zone">Contact Zone</a> 。 <br>
+如果请求数据设置 <code class="docutils literal notranslate"><span class="pre">compact</span></code> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code> ， <br>
+则 Contact Zone 数据没有 <code class="docutils literal notranslate"><span class="pre">participants</span></code> 字段。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id76">
+<h4><a class="toc-backref" href="#id258">添加参与人到指定分区</a><a class="headerlink" href="#id76" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>向指定分区添加参与人。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">addParticipantToZone</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>分区名称</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">participant</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>待添加的分区参与人，参看 <a class="reference external" href="dev_structure.html#contact-zone-participant">Contact Zone Participant</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">name</span></code> - string ： 分区名称 <br><br>
+<code class="docutils literal notranslate"><span class="pre">participant</span></code> - JSON ： 添加的参与人 <a class="reference external" href="dev_structure.html#contact-zone-participant">Contact Zone Participant</a> <br><br>
+<code class="docutils literal notranslate"><span class="pre">timestamp</span></code> - long ： 新的分区时间戳</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id80">
+<h4><a class="toc-backref" href="#id259">从指定分区删除参与人</a><a class="headerlink" href="#id80" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>将指定的参与人从分区移除。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">removeParticipantFromZone</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>分区名称</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">participant</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>待删除的分区参与人，参看 <a class="reference external" href="dev_structure.html#contact-zone-participant">Contact Zone Participant</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">name</span></code> - string ： 分区名称 <br><br>
+<code class="docutils literal notranslate"><span class="pre">participant</span></code> - JSON ： 删除的参与人 <a class="reference external" href="dev_structure.html#contact-zone-participant">Contact Zone Participant</a> <br><br>
+<code class="docutils literal notranslate"><span class="pre">timestamp</span></code> - long ： 新的分区时间戳</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id84">
+<h4><a class="toc-backref" href="#id260">修改分区参与人数据</a><a class="headerlink" href="#id84" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>修改指定分区参与人数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">modifyZoneParticipant</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>分区名称</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">participant</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>新的分区参与人，参看 <a class="reference external" href="dev_structure.html#contact-zone-participant">Contact Zone Participant</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>新的参与人数据，参看 <a class="reference external" href="dev_structure.html#contact-zone-participant">Contact Zone Participant</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id88">
+<h4><a class="toc-backref" href="#id261">分区是否包含指定参与人</a><a class="headerlink" href="#id88" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>判断指定的参与人是否已经在指定分区里。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">containsParticipantInZone</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>分区名称</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">participantId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>指定参与人 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="../state_code.html#contact-service-state">联系人服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br>
+<code class="docutils literal notranslate"><span class="pre">contained</span></code> - boolean ： 是否包含指定的参与人 <br>
+<code class="docutils literal notranslate"><span class="pre">name</span></code> - string ： 分区名称 <br>
+<code class="docutils literal notranslate"><span class="pre">participantId</span></code> - long ： 参与人 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id90">
+<h2><a class="toc-backref" href="#id262">文件存储服务</a><a class="headerlink" href="#id90" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id91">
+<h3><a class="toc-backref" href="#id263">文件数据流操作</a><a class="headerlink" href="#id91" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id92">
+<h4><a class="toc-backref" href="#id264">数据上传</a><a class="headerlink" href="#id92" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>使用 HTTP 协议分块上传文件数据。</p></li>
+<li><p>URI : <code class="docutils literal notranslate"><span class="pre">/filestorage/file/</span></code></p></li>
+<li><p>Content-Type : <code class="docutils literal notranslate"><span class="pre">application/octet-stream</span></code></p></li>
+<li><dl>
+<dt>Form fields :</dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cid</p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>当前上传数据的联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>domain</p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>当前工作域</p></td>
+</tr>
+<tr class="row-even"><td><p>fileSize</p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>文件大小，单位：字节</p></td>
+</tr>
+<tr class="row-odd"><td><p>lastModified</p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>文件最近一次修改时间</p></td>
+</tr>
+<tr class="row-even"><td><p>cursor</p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>当前文件区块游标</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>当前文件区块大小，单位：字节</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>HTTP Response</dt><dd><ul>
+<li><dl>
+<dt>Format<span class="classifier">JSON</span></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>负载数据</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">data</span></code> 格式 :</dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fileName</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>文件名</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fileSize</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>文件大小，单位：字节</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fileCode</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>文件码</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lastModified</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>文件修改时间</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">position</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>当前上传块所在文件的结束位置</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id94">
+<h4><a class="toc-backref" href="#id265">数据下载</a><a class="headerlink" href="#id94" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>使用 HTTP/HTTPS 协议载入文件数据。参看 <a class="reference external" href="dev_structure.html#file-label">File Label</a> 的 <code class="docutils literal notranslate"><span class="pre">fileURL</span></code> 和 <code class="docutils literal notranslate"><span class="pre">fileSecureURL</span></code> 字段。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id95">
+<h3><a class="toc-backref" href="#id266">文件/目录操作</a><a class="headerlink" href="#id95" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id96">
+<h4><a class="toc-backref" href="#id267">获取文件信息</a><a class="headerlink" href="#id96" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>通过指定文件码获取文件信息。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getFile</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fileCode</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>文件码</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#file-label">File Label</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id99">
+<h4><a class="toc-backref" href="#id268">获取指定实体的根目录</a><a class="headerlink" href="#id99" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于客户端获取签入联系人和相关群组的根文件目录。 <strong>魔方会为每个联系人和群组生成默认的根存储目录。</strong></p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getRoot</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>联系人 ID 或群组 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#directory">Directory</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id101">
+<h4><a class="toc-backref" href="#id269">获取目录下的子目录列表</a><a class="headerlink" href="#id101" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>获取指定目录下的所有子目录。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">listDirs</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">root</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>根目录 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>指定目录的 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 字段： <br><br>
+<code class="docutils literal notranslate"><span class="pre">root</span></code> - long ： 根目录 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">id</span></code> - long ： 目录 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">list</span></code> - Array&lt; <a class="reference external" href="dev_structure.html#directory">Directory</a> &gt; ：目录列表</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id104">
+<h4><a class="toc-backref" href="#id270">获取目录下的文件列表</a><a class="headerlink" href="#id104" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>获取指定目录下的满足条件的文件。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">listFiles</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">root</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>根目录 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>指定目录的 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">begin</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>查询的起始索引</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">end</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>查询的结束索引</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 字段： <br><br>
+<code class="docutils literal notranslate"><span class="pre">root</span></code> - long ： 根目录 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">id</span></code> - long ： 目录 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">begin</span></code> - int ： 起始索引 <br><br>
+<code class="docutils literal notranslate"><span class="pre">end</span></code> - int ： 结束索引 <br><br>
+<code class="docutils literal notranslate"><span class="pre">list</span></code> - Array&lt; <a class="reference external" href="dev_structure.html#file-label">File Label</a> &gt; ：文件标签列表</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id107">
+<h4><a class="toc-backref" href="#id271">创建新目录</a><a class="headerlink" href="#id107" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>在指定目录下创建新目录。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">newDir</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">root</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>根目录 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">workingId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>工作目录的 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dirName</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>新目录名</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#directory">Directory</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id110">
+<h4><a class="toc-backref" href="#id272">删除子目录</a><a class="headerlink" href="#id110" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>删除指定目录下的子目录，可以进行批量删除或者递归删除。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">deleteDir</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">root</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>根目录 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">workingId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>工作目录的 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dirList</span></code></p></td>
+<td><p>Array&lt;long&gt;</p></td>
+<td><p>Y</p></td>
+<td><p>待删除目录的 ID 列表</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">recursive</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>Y</p></td>
+<td><p>是否递归删除</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>当 <code class="docutils literal notranslate"><span class="pre">recursive</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">false</span></code> 时，待删除目录不为空目录时则无法删除该目录。</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 字段： <br><br>
+<code class="docutils literal notranslate"><span class="pre">workingId</span></code> - long ：工作目录 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">workingDir</span></code> - <a class="reference external" href="dev_structure.html#directory">Directory</a> ：工作目录 <br><br>
+<code class="docutils literal notranslate"><span class="pre">deletedList</span></code> - Array&lt; <a class="reference external" href="dev_structure.html#directory">Directory</a> &gt; ：被删除的目录清单</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id114">
+<h4><a class="toc-backref" href="#id273">重命名目录</a><a class="headerlink" href="#id114" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>重新命名指定的目录。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">renameDir</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">root</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>根目录 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">workingId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>工作目录的 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dirName</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>新的目录名</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#directory">Directory</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id117">
+<h4><a class="toc-backref" href="#id274">将文件插入到目录</a><a class="headerlink" href="#id117" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>将文件插入到指定的目录。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">insertFile</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">root</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>根目录 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dirId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>目标目录的 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fileCode</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>指定待插入的文件的文件码</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">directory</span></code> - <a class="reference external" href="dev_structure.html#directory">Directory</a> ：操作的目录数据。 <br><br>
+<code class="docutils literal notranslate"><span class="pre">file</span></code> - <a class="reference external" href="dev_structure.html#file-label">File Label</a> ：插入文件的文件标签。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id121">
+<h4><a class="toc-backref" href="#id275">将文件从目录删除</a><a class="headerlink" href="#id121" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>将指定文件从指定目录删除。支持批量操作。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">deleteFile</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">root</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>根目录 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">workingId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>工作目录的 ID</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fileList</span></code></p></td>
+<td><p>Array&lt;string&gt;</p></td>
+<td><p>Y</p></td>
+<td><p>待删除的文件的文件码。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#file-storage-state">文件存储服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">workingId</span></code> - long ：工作目录 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">workingDir</span></code> - <a class="reference external" href="dev_structure.html#directory">Directory</a> ：工作的目录数据。 <br><br>
+<code class="docutils literal notranslate"><span class="pre">deletedList</span></code> - Array&lt; <a class="reference external" href="dev_structure.html#file-label">File Label</a> &gt; ：已删除的文件标签。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id125">
+<h3><a class="toc-backref" href="#id276">文件回收站操作</a><a class="headerlink" href="#id125" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id126">
+<h4><a class="toc-backref" href="#id277">列举指定回收站里的数据</a><a class="headerlink" href="#id126" title="永久链接至标题">¶</a></h4>
+</div>
+<div class="section" id="id127">
+<h4><a class="toc-backref" href="#id278">抹除回收站里的指定数据</a><a class="headerlink" href="#id127" title="永久链接至标题">¶</a></h4>
+</div>
+<div class="section" id="id128">
+<h4><a class="toc-backref" href="#id279">清空回收站里的所有废弃数据</a><a class="headerlink" href="#id128" title="永久链接至标题">¶</a></h4>
+</div>
+<div class="section" id="id129">
+<h4><a class="toc-backref" href="#id280">从回收站恢复废弃数据</a><a class="headerlink" href="#id129" title="永久链接至标题">¶</a></h4>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id130">
+<h2><a class="toc-backref" href="#id281">即时消息服务</a><a class="headerlink" href="#id130" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id131">
+<h3><a class="toc-backref" href="#id282">会话操作</a><a class="headerlink" href="#id131" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id132">
+<h4><a class="toc-backref" href="#id283">获取会话列表</a><a class="headerlink" href="#id132" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>获取最近有消息记录的会话列表。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getConversations</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">limit</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>获取会话的最大数量</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">total</span></code> - int ：会话总数。 <br><br>
+<code class="docutils literal notranslate"><span class="pre">list</span></code> - Array&lt; <a class="reference external" href="dev_structure.html#conversation">Conversation</a> &gt; ：会话列表。</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id134">
+<h4><a class="toc-backref" href="#id284">更新会话</a><a class="headerlink" href="#id134" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于客户端更新指定的会话数据</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">updateConversation</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>会话数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#conversation">Conversation</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>会话数据，参看 <a class="reference external" href="dev_structure.html#conversation">Conversation</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id138">
+<h3><a class="toc-backref" href="#id285">消息操作</a><a class="headerlink" href="#id138" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id139">
+<h4><a class="toc-backref" href="#id286">拉取消息</a><a class="headerlink" href="#id139" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>从服务器拉取消息。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">pull</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>签入的联系人的 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">domain</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Y</p></td>
+<td><p>签入的联系人的域</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>当前拉取消息的设备，参看 <a class="reference external" href="dev_structure.html#device">Device</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">beginning</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>消息时间戳的起始时间</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ending</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>消息时间戳的结束时间</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">total</span></code> - int ：总数量。 <br><br>
+<code class="docutils literal notranslate"><span class="pre">beginning</span></code> - long ：消息拉取的起始时间戳。 <br><br>
+<code class="docutils literal notranslate"><span class="pre">ending</span></code> - long ：消息拉取的结束时间戳。 <br><br>
+<code class="docutils literal notranslate"><span class="pre">messages</span></code> - Array&lt; <a class="reference external" href="dev_structure.html#message">Message</a> &gt; ：消息列表。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>服务器将最多 10 条消息数据打包在一个应答包里发送给客户端，因此客户端需要多次处理 <code class="docutils literal notranslate"><span class="pre">pull</span></code> 数据包。</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id141">
+<h4><a class="toc-backref" href="#id287">发送消息</a><a class="headerlink" href="#id141" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>将指定消息推送到服务器，服务器将即时投送消息到指定收件人。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">push</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>消息数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#message">Message</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>消息数据，参看 <a class="reference external" href="dev_structure.html#message">Message</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id145">
+<h4><a class="toc-backref" href="#id288">消息通知</a><a class="headerlink" href="#id145" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>终端在线时收到服务器推送的消息数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">notify</span></code></p></li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>消息数据，参看 <a class="reference external" href="dev_structure.html#message">Message</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id148">
+<h4><a class="toc-backref" href="#id289">标记消息已读</a><a class="headerlink" href="#id148" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>将指定消息标记为已读。服务器会实时将已读状态发送给相关联系人。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">read</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default" id="id226">
+<caption><span class="caption-text">对单条消息进行标记</span><a class="headerlink" href="#id226" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contactId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>当前签入的联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">messageId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>消息 ID</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id227">
+<caption><span class="caption-text">对消息进行批量标记</span><a class="headerlink" href="#id227" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contactId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>当前签入的联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">messageIdList</span></code></p></td>
+<td><p>Array&lt;long&gt;</p></td>
+<td><p>Y</p></td>
+<td><p>消息 ID 列表</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">messageFrom</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>该次操作的消息发件人 ID</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id228">
+<caption><span class="caption-text">对消息进行批量标记</span><a class="headerlink" href="#id228" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contactId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>当前签入的联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">messageIdList</span></code></p></td>
+<td><p>Array&lt;long&gt;</p></td>
+<td><p>Y</p></td>
+<td><p>消息 ID 列表</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">messageSource</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>该次操作的消息的群组</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong> <em>[仅应答]</em></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>客户端发送的请求数据</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong> <em>[仅通知]</em></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>被标记的消息，参看 <a class="reference external" href="dev_structure.html#message">Message</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id152">
+<h4><a class="toc-backref" href="#id290">撤回消息</a><a class="headerlink" href="#id152" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>在有效时间内撤回已发送的消息。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">recall</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contactId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>消息所属的联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">messageId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>撤回消息的 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">contactId</span></code> - long ：联系人 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">messageId</span></code> - long ：消息 ID</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>客户端需要多次处理该数据报文。服务器会实时将被撤回的消息发送给客户端。</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id154">
+<h4><a class="toc-backref" href="#id291">删除消息</a><a class="headerlink" href="#id154" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>删除消息。该操作会联动联系人的所有终端删除指定消息。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">delete</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contactId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>消息所属的联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">messageId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>删除消息的 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>JSON 结构： <br><br>
+<code class="docutils literal notranslate"><span class="pre">contactId</span></code> - long ：联系人 ID <br><br>
+<code class="docutils literal notranslate"><span class="pre">messageId</span></code> - long ：消息 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id156">
+<h4><a class="toc-backref" href="#id292">查询消息状态</a><a class="headerlink" href="#id156" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>查询指定消息的状态。消息的管理通过消息的状态进行体现。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">queryState</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contactId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>消息所属的联系人 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">messageId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>消息的 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#messaging-service-state">即时消息服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>消息数据，参看 <a class="reference external" href="dev_structure.html#message">Message</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id159">
+<h2><a class="toc-backref" href="#id293">多方通讯服务</a><a class="headerlink" href="#id159" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id160">
+<h3><a class="toc-backref" href="#id294">通讯场域操作</a><a class="headerlink" href="#id160" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id161">
+<h4><a class="toc-backref" href="#id295">获取场域数据</a><a class="headerlink" href="#id161" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>获取场域的数据。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">getField</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">commFieldId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>场域 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id163">
+<h4><a class="toc-backref" href="#id296">创建场域数据</a><a class="headerlink" href="#id163" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>创建新的场域。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">createField</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>场域的数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id167">
+<h4><a class="toc-backref" href="#id297">销毁场域数据</a><a class="headerlink" href="#id167" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>销毁指定的场域。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">destroyField</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">commFieldId</span></code></p></td>
+<td><p>long</p></td>
+<td><p>Y</p></td>
+<td><p>场域 ID</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id170">
+<h3><a class="toc-backref" href="#id298">通话操作</a><a class="headerlink" href="#id170" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id171">
+<h4><a class="toc-backref" href="#id299">申请发起通话</a><a class="headerlink" href="#id171" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于客户端申请在指定场域内通话。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">applyCall</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">field</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">participant</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参与人，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参与人使用的设备，参看 <a class="reference external" href="dev_structure.html#device">Device</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id177">
+<h4><a class="toc-backref" href="#id300">申请加入场域</a><a class="headerlink" href="#id177" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于客户端申请加入场域进行通话。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">applyJoin</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">field</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">participant</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参与人，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参与人使用的设备，参看 <a class="reference external" href="dev_structure.html#device">Device</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id183">
+<h4><a class="toc-backref" href="#id301">申请终止在场域内的通话</a><a class="headerlink" href="#id183" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>用于客户端申请终止通话。</p></li>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">applyTerminate</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">field</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">participant</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参与人，参看 <a class="reference external" href="dev_structure.html#contact">Contact</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">device</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>参与人使用的设备，参看 <a class="reference external" href="dev_structure.html#device">Device</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>场域数据，参看 <a class="reference external" href="dev_structure.html#comm-field">Comm Field</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id189">
+<h3><a class="toc-backref" href="#id302">媒体数据信令</a><a class="headerlink" href="#id189" title="永久链接至标题">¶</a></h3>
+<div class="section" id="offer">
+<h4><a class="toc-backref" href="#id303">进行 Offer</a><a class="headerlink" href="#offer" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">offer</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>信令数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>客户端需要处理来自服务器的 <code class="docutils literal notranslate"><span class="pre">offer</span></code> 动作，以提示用户有新的通话请求。</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Response Action</strong> <code class="docutils literal notranslate"><span class="pre">offerAck</span></code></p></li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>客户端的请求 <code class="docutils literal notranslate"><span class="pre">offer</span></code> 动作服务器应答动作为 <code class="docutils literal notranslate"><span class="pre">offerAck</span></code> 。</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="answer">
+<h4><a class="toc-backref" href="#id304">进行 Answer</a><a class="headerlink" href="#answer" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">answer</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>信令数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>客户端需要处理来自服务器的 <code class="docutils literal notranslate"><span class="pre">answer</span></code> 动作，以提示用户对方已经应答了通话。</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Response Action</strong> <code class="docutils literal notranslate"><span class="pre">answerAck</span></code></p></li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>客户端的请求 <code class="docutils literal notranslate"><span class="pre">answer</span></code> 动作服务器应答动作为 <code class="docutils literal notranslate"><span class="pre">answerAck</span></code> 。</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="bye">
+<h4><a class="toc-backref" href="#id305">进行 Bye</a><a class="headerlink" href="#bye" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">bye</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>信令数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>客户端需要处理来自服务器的 <code class="docutils literal notranslate"><span class="pre">bye</span></code> 动作，以提示用户对方已退出通话。</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Response Action</strong> <code class="docutils literal notranslate"><span class="pre">byeAck</span></code></p></li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>客户端的请求 <code class="docutils literal notranslate"><span class="pre">bye</span></code> 动作服务器应答动作为 <code class="docutils literal notranslate"><span class="pre">byeAck</span></code> 。</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="busy">
+<h4><a class="toc-backref" href="#id306">进行 Busy</a><a class="headerlink" href="#busy" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">busy</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>信令数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>客户端需要处理来自服务器的 <code class="docutils literal notranslate"><span class="pre">busy</span></code> 动作，以提示用户对方拒绝接通通话。</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Response Action</strong> <code class="docutils literal notranslate"><span class="pre">busyAck</span></code></p></li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>客户端的请求 <code class="docutils literal notranslate"><span class="pre">busy</span></code> 动作服务器应答动作为 <code class="docutils literal notranslate"><span class="pre">busyAck</span></code> 。</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="candidate">
+<h4><a class="toc-backref" href="#id307">进行 Candidate</a><a class="headerlink" href="#candidate" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">candidate</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>信令数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>客户端需要处理来自服务器的 <code class="docutils literal notranslate"><span class="pre">candidate</span></code> 动作。</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p><strong>Response Action</strong> <code class="docutils literal notranslate"><span class="pre">candidateAck</span></code></p></li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>客户端的请求 <code class="docutils literal notranslate"><span class="pre">candidate</span></code> 动作服务器应答动作为 <code class="docutils literal notranslate"><span class="pre">candidateAck</span></code> 。</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id214">
+<h4><a class="toc-backref" href="#id308">发出多方邀请</a><a class="headerlink" href="#id214" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">invite</span></code></p></li>
+<li><dl>
+<dt><strong>C -&gt; S</strong></dt><dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>包负载</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>信令数据</p></td>
+<td><p>参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id218">
+<h4><a class="toc-backref" href="#id309">参与终端已进入场域</a><a class="headerlink" href="#id218" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">arrived</span></code></p></li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id221">
+<h4><a class="toc-backref" href="#id310">参与终端已退出场域</a><a class="headerlink" href="#id221" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p><strong>Action</strong> <code class="docutils literal notranslate"><span class="pre">left</span></code></p></li>
+<li><dl>
+<dt><strong>S -&gt; C</strong></dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字段</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>必填</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>int</p></td>
+<td><p>Y</p></td>
+<td><p>状态码，参看 <a class="reference external" href="../state_code.html#multipoint-comm-state">多方通讯服务状态码</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>JSON</p></td>
+<td><p>Y</p></td>
+<td><p>信令数据，参看 <a class="reference external" href="dev_structure.html#signaling">Signaling</a></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="dev_structure.html" class="btn btn-neutral float-right" title="数据结构" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dev_guide.html" class="btn btn-neutral float-left" title="开发向导 [TODO]" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

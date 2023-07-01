@@ -1,0 +1,909 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>服务器配置指南 &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="客户端应用程序" href="application.html" />
+    <link rel="prev" title="服务器安装指南" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">服务器安装指南</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">服务器配置指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-framework">服务器组件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dispatcher">调度服务器 (Dispatcher) 配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">运行容器配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http-https"><span class="xref std std-term">HTTP</span>/<span class="xref std std-term">HTTPS</span> 配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">主/从连接配置</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#service">服务单元服务器 (Service) 配置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">服务器配置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">容器配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">数据库/存储配置</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">缓存配置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">存储键值对的高速缓存</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">采用时序存储的高速缓存</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">模块配置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">文件存储模块配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">多方通讯模块配置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#media-unit">媒体单元服务器 (Media Unit) 配置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="application.html">客户端应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_tutorials.html">客户端开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>服务器配置指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><a class="toc-backref" href="#id16">服务器配置指南</a><a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="contents topic" id="id2">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id16">服务器配置指南</a></p>
+<ul>
+<li><p><a class="reference internal" href="#configuration-framework" id="id17">服务器组件</a></p></li>
+<li><p><a class="reference internal" href="#dispatcher" id="id18">调度服务器 (Dispatcher) 配置</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id19">运行容器配置</a></p></li>
+<li><p><a class="reference internal" href="#http-https" id="id20"><a class="reference internal" href="../glossary.html#term-HTTP"><span class="xref std std-term">HTTP</span></a>/<a class="reference internal" href="../glossary.html#term-HTTPS"><span class="xref std std-term">HTTPS</span></a> 配置</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id21">主/从连接配置</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#service" id="id22">服务单元服务器 (Service) 配置</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id23">服务器配置</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id24">容器配置</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id25">数据库/存储配置</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id9" id="id26">缓存配置</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id10" id="id27">存储键值对的高速缓存</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id28">采用时序存储的高速缓存</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id12" id="id29">模块配置</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id13" id="id30">文件存储模块配置</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id31">多方通讯模块配置</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#media-unit" id="id32">媒体单元服务器 (Media Unit) 配置</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>时信魔方的各个服务器节点可以使用 <a class="reference internal" href="../features/server_console.html"><span class="doc">时信魔方控制台</span></a> 进行配置和管理，而这节里我们重点介绍的是时信魔方主要服务器组件的配置方式以便您在实际开发环境中按需进行包括主从、集群架构的配置。</p>
+<div class="section" id="configuration-framework">
+<span id="id3"></span><h2><a class="toc-backref" href="#id17">服务器组件</a><a class="headerlink" href="#configuration-framework" title="永久链接至标题">¶</a></h2>
+<p>时信魔方的核心服务器组件包括调度服务器、服务单元服务器和媒体单元服务器等，他们之间的数据流关系如下图所示：</p>
+<div class="figure align-center" id="id15">
+<img alt="时信魔方服务器数据流图" src="../_images/data_flow_topology.png" />
+<p class="caption"><span class="caption-text"><em>时信魔方服务器数据流图</em></span><a class="headerlink" href="#id15" title="永久链接至图片">¶</a></p>
+</div>
+<p>图中 <strong>Dispatcher</strong> 是调度服务器， <strong>Service</strong> 是服务单元， <strong>Media</strong> 是媒体单元。</p>
+<ul class="simple">
+<li><p>调度服务器负责接入客户端，客户端通过连接调度服务器来处理数据。</p></li>
+<li><p>服务单元服务器按照模块化原则将各个业务单元封装在模块里，每个模块各自完成具体的业务功能，例如：联系人模块负责联系的签入和签出管理，即时消息模块负责消息的推送和接收等等。</p></li>
+<li><p>媒体单元服务器负责处理客户端与客户端、客户端与服务器之间的媒体流数据，实现 MCU 或 SFU 流传输、分析和记录等。</p></li>
+</ul>
+<p>其中 <strong>服务单元</strong> 是主要的计算和处理节点，包括授权服务、联系人服务、即时消息服务、文件存储服务、多方音视频通讯服务、会议服务等在内的核心功能都在服务单元里进行处理。调度服务器仅负责接入客户端并从服务单元获取数据，媒体单元则仅处理音视频流数据。</p>
+<p>因此在实际的部署配置时，我们建议1个调度服务器连接多个（2个以上）服务单元服务器，多个服务单元服务器共享1个媒体单元服务器。</p>
+<p>时信魔方服务器的配置文件都放置在服务器工程的 <code class="docutils literal notranslate"><span class="pre">config</span></code> 目录下面。</p>
+</div>
+<div class="section" id="dispatcher">
+<span id="configuration-dispatcher"></span><h2><a class="toc-backref" href="#id18">调度服务器 (Dispatcher) 配置</a><a class="headerlink" href="#dispatcher" title="永久链接至标题">¶</a></h2>
+<p>与调度服务器相关的配置文件有：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dispatcher.xml</span></code> - Cell 容器配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dispatcher.properties</span></code> - 调度服务器工作参数配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">console-follower-dispatcher.properties</span></code> - 调度服务器连接控制台服务参数配置文件。</p></li>
+</ul>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id19">运行容器配置</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>调度服务器使用 Cell 容器运行，配置文件 <code class="docutils literal notranslate"><span class="pre">dispatcher.xml</span></code> 主要配置了服务监听端口和支持的服务单元。</p>
+<ol class="arabic">
+<li><p>配置 <a class="reference internal" href="../glossary.html#term-SHM"><span class="xref std std-term">SHM</span></a> 协议的监听地址、端口和最大连接数，默认端口号 <code class="docutils literal notranslate"><span class="pre">7000</span></code> ：</p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;server&gt;</span>
+    <span class="c">&lt;!-- 服务绑定的地址 --&gt;</span>
+    <span class="nt">&lt;host&gt;</span>0.0.0.0<span class="nt">&lt;/host&gt;</span>
+    <span class="c">&lt;!-- 服务绑定的端口号 --&gt;</span>
+    <span class="nt">&lt;port&gt;</span>7000<span class="nt">&lt;/port&gt;</span>
+    <span class="c">&lt;!-- 最大允许连接数 --&gt;</span>
+    <span class="nt">&lt;max-connection&gt;</span>1000<span class="nt">&lt;/max-connection&gt;</span>
+<span class="nt">&lt;/server&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>配置 <a class="reference internal" href="../glossary.html#term-WebSocket"><span class="xref std std-term">WebSocket</span></a> 协议的监听地址、端口和最大连接数：</p>
+<blockquote>
+<div><p>2.1. WebSocket 服务器配置，默认端口号 <code class="docutils literal notranslate"><span class="pre">7070</span></code> ：</p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ws-server&gt;</span>
+    <span class="c">&lt;!-- 服务绑定的地址 --&gt;</span>
+    <span class="nt">&lt;host&gt;</span>0.0.0.0<span class="nt">&lt;/host&gt;</span>
+    <span class="c">&lt;!-- 服务绑定的端口号 --&gt;</span>
+    <span class="nt">&lt;port&gt;</span>7070<span class="nt">&lt;/port&gt;</span>
+    <span class="c">&lt;!-- 最大允许连接数 --&gt;</span>
+    <span class="nt">&lt;max-connection&gt;</span>1000<span class="nt">&lt;/max-connection&gt;</span>
+<span class="nt">&lt;/ws-server&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>2.2. Secure WebSocket 服务器配置，默认端口号 <code class="docutils literal notranslate"><span class="pre">7077</span></code> ：</p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wss-server&gt;</span>
+    <span class="c">&lt;!-- 服务绑定的地址 --&gt;</span>
+    <span class="nt">&lt;host&gt;</span>0.0.0.0<span class="nt">&lt;/host&gt;</span>
+    <span class="c">&lt;!-- 服务绑定的端口号 --&gt;</span>
+    <span class="nt">&lt;port&gt;</span>7077<span class="nt">&lt;/port&gt;</span>
+    <span class="c">&lt;!-- 最大允许连接数 --&gt;</span>
+    <span class="nt">&lt;max-connection&gt;</span>1000<span class="nt">&lt;/max-connection&gt;</span>
+<span class="nt">&lt;/wss-server&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>配置 <a class="reference internal" href="../glossary.html#term-SSL"><span class="xref std std-term">SSL</span></a> (Secure Socket Layer)</p>
+<blockquote>
+<div><p>服务器使用 <a class="reference internal" href="../glossary.html#term-JKS"><span class="xref std std-term">JKS</span></a> 存储证书数据，建议将 JKS 文件放置在部署目录下面。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ssl&gt;</span>
+    <span class="nt">&lt;keystore&gt;</span>server.jks<span class="nt">&lt;/keystore&gt;</span>
+    <span class="nt">&lt;password&gt;</span>
+        <span class="nt">&lt;store-password&gt;</span>shixincube.com<span class="nt">&lt;/store-password&gt;</span>
+        <span class="nt">&lt;manager-password&gt;</span>shixincube.com<span class="nt">&lt;/manager-password&gt;</span>
+    <span class="nt">&lt;/password&gt;</span>
+<span class="nt">&lt;/ssl&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>配置默认日志</p>
+<blockquote>
+<div><p>日志等级从低到高依次是：<code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> ， <code class="docutils literal notranslate"><span class="pre">INFO</span></code> ， <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> 。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;log&gt;</span>
+    <span class="c">&lt;!-- 日志等级 --&gt;</span>
+    <span class="nt">&lt;level&gt;</span>DEBUG<span class="nt">&lt;/level&gt;</span>
+<span class="nt">&lt;/log&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>配置 Cellet 服务单元</p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;cellets&gt;</span>
+    <span class="nt">&lt;cellet</span> <span class="na">port=</span><span class="s">&quot;7000,7070,7077&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;class&gt;</span>cube.dispatcher.auth.AuthCellet<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;class&gt;</span>cube.dispatcher.contact.ContactCellet<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;class&gt;</span>cube.dispatcher.filestorage.FileStorageCellet<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;class&gt;</span>cube.dispatcher.fileprocessor.FileProcessorCellet<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;class&gt;</span>cube.dispatcher.messaging.MessagingCellet<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;class&gt;</span>cube.dispatcher.multipointcomm.MultipointCommCellet<span class="nt">&lt;/class&gt;</span>
+        <span class="nt">&lt;class&gt;</span>cube.dispatcher.conference.ConferenceCellet<span class="nt">&lt;/class&gt;</span>
+    <span class="nt">&lt;/cellet&gt;</span>
+<span class="nt">&lt;/cellets&gt;</span>
+</pre></div>
+</div>
+<p>这里可以为不同的服务单元指定端口。如果您的服务器修改了端口需要修改 <code class="docutils literal notranslate"><span class="pre">port</span></code> 属性对应的端口号。</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="http-https">
+<h3><a class="toc-backref" href="#id20"><a class="reference internal" href="../glossary.html#term-HTTP"><span class="xref std std-term">HTTP</span></a>/<a class="reference internal" href="../glossary.html#term-HTTPS"><span class="xref std std-term">HTTPS</span></a> 配置</a><a class="headerlink" href="#http-https" title="永久链接至标题">¶</a></h3>
+<p>时信魔方的 Web/HTML5 客户端需要使用 HTTP/HTTPS 协议进行文件数据的传输。在 <code class="docutils literal notranslate"><span class="pre">dispatcher.properties</span></code> 文件里进行配置。</p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># HTTP 监听地址</span>
+<span class="na">http.host</span><span class="o">=</span><span class="s">0.0.0.0</span>
+<span class="c"># HTTP 监听端口</span>
+<span class="na">http.port</span><span class="o">=</span><span class="s">7010</span>
+<span class="c"># HTTPS 监听地址</span>
+<span class="na">https.host</span><span class="o">=</span><span class="s">0.0.0.0</span>
+<span class="c"># HTTPS 监听端口</span>
+<span class="na">https.port</span><span class="o">=</span><span class="s">7017</span>
+<span class="c"># JKS 文件</span>
+<span class="na">keystore</span><span class="o">=</span><span class="s">server.jks</span>
+<span class="na">storePassword</span><span class="o">=</span><span class="s">shixincube.com</span>
+<span class="na">managerPassword</span><span class="o">=</span><span class="s">shixincube.com</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id21">主/从连接配置</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>在 <code class="docutils literal notranslate"><span class="pre">dispatcher.properties</span></code> 文件里配置调度服务器后连的服务单元服务器。</p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># Cellet list</span>
+<span class="na">cellets</span><span class="o">=</span><span class="s">Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference</span>
+
+<span class="c"># Director 1 config</span>
+<span class="na">director.1.address</span><span class="o">=</span><span class="s">127.0.0.1</span>
+<span class="na">director.1.port</span><span class="o">=</span><span class="s">6000</span>
+<span class="na">director.1.cellets</span><span class="o">=</span><span class="s">Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference</span>
+<span class="na">director.1.weight</span><span class="o">=</span><span class="s">5</span>
+</pre></div>
+</div>
+<p>各参数说明如下：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数名</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cellets</p></td>
+<td><p>配置此调度服务器可以连接的 Cellet 服务单元</p></td>
+</tr>
+<tr class="row-odd"><td><p>director. <em>X</em> .address</p></td>
+<td><p>被连接服务单元的访问地址</p></td>
+</tr>
+<tr class="row-even"><td><p>director. <em>X</em> .port</p></td>
+<td><p>被连接服务单元的访问端口</p></td>
+</tr>
+<tr class="row-odd"><td><p>director. <em>X</em> .cellets</p></td>
+<td><p>配置连接哪些 Cellet 服务，使用半角逗号分隔</p></td>
+</tr>
+<tr class="row-even"><td><p>director. <em>X</em> .weight</p></td>
+<td><p>配置连接此服务单元的权重，取值范围 1 到 10，数值越大权重越大</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><em>X</em> 是从 1 到 N 的自编序号。</p>
+</div>
+<p>当需要连接多个服务单元时，可以增加 <em>director</em> 配置参数项，例如配置调度服务器连接 3 个服务单元节点：</p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># Director 1 config</span>
+<span class="na">director.1.address</span><span class="o">=</span><span class="s">192.168.20.11</span>
+<span class="na">director.1.port</span><span class="o">=</span><span class="s">6000</span>
+<span class="na">director.1.cellets</span><span class="o">=</span><span class="s">Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference</span>
+<span class="na">director.1.weight</span><span class="o">=</span><span class="s">5</span>
+
+<span class="c"># Director 2 config</span>
+<span class="na">director.2.address</span><span class="o">=</span><span class="s">192.168.20.12</span>
+<span class="na">director.2.port</span><span class="o">=</span><span class="s">6000</span>
+<span class="na">director.2.cellets</span><span class="o">=</span><span class="s">Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference</span>
+<span class="na">director.2.weight</span><span class="o">=</span><span class="s">5</span>
+
+<span class="c"># Director 3 config</span>
+<span class="na">director.3.address</span><span class="o">=</span><span class="s">192.168.20.13</span>
+<span class="na">director.3.port</span><span class="o">=</span><span class="s">6000</span>
+<span class="na">director.3.cellets</span><span class="o">=</span><span class="s">Auth,Contact,Messaging,FileStorage,FileProcessor,MultipointComm,Conference</span>
+<span class="na">director.3.weight</span><span class="o">=</span><span class="s">2</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="service">
+<span id="configuration-service"></span><h2><a class="toc-backref" href="#id22">服务单元服务器 (Service) 配置</a><a class="headerlink" href="#service" title="永久链接至标题">¶</a></h2>
+<p>与服务单元服务器相关的配置文件有：</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>服务器配置相关：</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">service.xml</span></code> - Cell 容器配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">storage.json</span></code> - 数据库配置文件。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>缓存配置相关：</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">token-pool.properties</span></code> - 集群的令牌缓存池配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">general-cache.properties</span></code> - 集群的通用型缓存配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contact-cache.properties</span></code> - 联系人模块的集群联系人数据缓存配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group-cache.properties</span></code> - 联系人模块的集群群组数据缓存配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filelabel-cache.properties</span></code> - 文件模块的集群文件标签数据缓存配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">messaging-series-memory.properties</span></code> - 消息模块的集群时序缓存配置文件。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>模块配置相关：</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">file-storage.properties</span></code> - 文件存储模块配置文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multipoint-comm.properties</span></code> - 多方通讯模块配置文件。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id23">服务器配置</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#id24">容器配置</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<p>容器配置文件是 <code class="docutils literal notranslate"><span class="pre">service.xml</span></code> 。配置服务器监听端口：</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;server&gt;</span>
+    <span class="c">&lt;!-- 服务绑定的地址 --&gt;</span>
+    <span class="nt">&lt;host&gt;</span>0.0.0.0<span class="nt">&lt;/host&gt;</span>
+    <span class="c">&lt;!-- 服务绑定的端口号 --&gt;</span>
+    <span class="nt">&lt;port&gt;</span>6000<span class="nt">&lt;/port&gt;</span>
+    <span class="c">&lt;!-- 最大允许连接数 --&gt;</span>
+    <span class="nt">&lt;max-connection&gt;</span>1000<span class="nt">&lt;/max-connection&gt;</span>
+<span class="nt">&lt;/server&gt;</span>
+</pre></div>
+</div>
+<p>如果修改了端口配置信息，需要同时修改 <code class="docutils literal notranslate"><span class="pre">cellet</span></code> 标签的 <code class="docutils literal notranslate"><span class="pre">port</span></code> 属性：</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;cellets&gt;</span>
+    <span class="nt">&lt;cellet</span> <span class="na">port=</span><span class="s">&quot;6000&quot;</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;/cellet&gt;</span>
+<span class="nt">&lt;/cellets&gt;</span>
+</pre></div>
+</div>
+<p>配置联系人事件队列，时信魔方服务器以“联系人”为基本的数据元进行数据管理，因此主要的事件队列以联系人为主检索条件。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;adapter</span> <span class="na">name=</span><span class="s">&quot;Contacts&quot;</span> <span class="na">host=</span><span class="s">&quot;192.168.100.160&quot;</span> <span class="na">port=</span><span class="s">&quot;6860&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nodes&gt;</span>
+        <span class="nt">&lt;node</span> <span class="na">host=</span><span class="s">&quot;192.168.100.165&quot;</span> <span class="na">port=</span><span class="s">&quot;6860&quot;</span><span class="nt">&gt;&lt;/node&gt;</span>
+        <span class="nt">&lt;node</span> <span class="na">host=</span><span class="s">&quot;192.168.100.175&quot;</span> <span class="na">port=</span><span class="s">&quot;6860&quot;</span><span class="nt">&gt;&lt;/node&gt;</span>
+    <span class="nt">&lt;/nodes&gt;</span>
+<span class="nt">&lt;/adapter&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">adapter</span></code> 标签配置使用 <strong>Contacts</strong> 作为队列名称且 <strong>不可修改</strong> ，<code class="docutils literal notranslate"><span class="pre">host</span></code> 配置为部署主机的可访问内网地址，<code class="docutils literal notranslate"><span class="pre">port</span></code> 配置为集群端口号 6860 。</p>
+<p><code class="docutils literal notranslate"><span class="pre">nodes</span></code> 标签下面配置其他集群内的节点信息，同样的，<code class="docutils literal notranslate"><span class="pre">host</span></code> 配置为节点的访问地址，<code class="docutils literal notranslate"><span class="pre">port</span></code> 配置为节点的监听端口。</p>
+<p>上述示例里，我们配置了一个3个节点构成的对等集群网络，访问地址分别是 <em>192.168.100.160</em> 、 <em>192.168.100.165</em> 和 <em>192.168.100.175</em> 。</p>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>Cell 的 Nucleus 适配器 (Adapter) 支持节点“传播”，当集群节点很多时，只需要填写1到2个节点即可，通过自动“传播”方式，单个节点能找到集群里其他节点，并建立通信。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h4><a class="toc-backref" href="#id25">数据库/存储配置</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<p>数据库配置文件是 <code class="docutils literal notranslate"><span class="pre">storage.json</span></code> ：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;Auth&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLite&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;storage/AuthService.db&quot;</span>
+    <span class="p">},</span>
+
+    <span class="nt">&quot;Contact&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLite&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;storage/ContactService.db&quot;</span>
+    <span class="p">},</span>
+
+    <span class="nt">&quot;Messaging&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLite&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;storage/MessagingService.db&quot;</span>
+    <span class="p">},</span>
+
+    <span class="nt">&quot;FileStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLite&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;storage/FileStorageService.db&quot;</span>
+    <span class="p">},</span>
+
+    <span class="nt">&quot;Conference&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLite&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;storage/ConferenceService.db&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>上述配置使用 <strong>SQLite</strong> 作为数据库系统进行数据存储。您也可以使用其他数据库系统，例如使用 MySQL 数据库：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Auth&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span>     <span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;host&quot;</span>     <span class="p">:</span> <span class="s2">&quot;192.168.100.32&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;port&quot;</span>     <span class="p">:</span> <span class="mi">3306</span><span class="p">,</span>
+    <span class="nt">&quot;schema&quot;</span>   <span class="p">:</span> <span class="s2">&quot;cube_3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;user&quot;</span>     <span class="p">:</span> <span class="s2">&quot;cube&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;password&quot;</span> <span class="p">:</span> <span class="s2">&quot;shixincube&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>服务器启动时会自动检测数据库表是否存在，如果不存在服务器会创建新的数据库表。</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id26">缓存配置</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>时信魔方服务器使用了针对即时通信技术特点开发的缓存系统，如果您需要使用第三方的缓存系统，例如 <a class="reference external" href="https://redis.io/">Redis</a> 等，请参考 <a class="reference internal" href="../dev/dev_guide.html"><span class="doc">时信魔方开发者向导</span></a> 进行配置，这里我们主要说明如何配置时信魔方服务器默认的两种缓存服务：<strong>存储键值对的高速缓存</strong> 和 <strong>采用时序存储的高速缓存</strong> 。</p>
+<div class="section" id="id10">
+<h4><a class="toc-backref" href="#id27">存储键值对的高速缓存</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<p>时信魔方使用对等集群方式的缓存器来缓存键值对数据，因此缓存程序随程序主进程一起运行，相较 C/S 模式的缓存系统来说，不连接外部缓存器服务进程。</p>
+<p>键值对缓存器一共有5个，分别由 <code class="docutils literal notranslate"><span class="pre">token-pool.properties</span></code> 、 <code class="docutils literal notranslate"><span class="pre">general-cache.properties</span></code> 、 <code class="docutils literal notranslate"><span class="pre">contact-cache.properties</span></code> 、 <code class="docutils literal notranslate"><span class="pre">group-cache.properties</span></code> 、 <code class="docutils literal notranslate"><span class="pre">filelabel-cache.properties</span></code> 5个文件进行配置。他们的配置项相同，各配置项说明如下：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数名</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>host</p></td>
+<td><p>缓存器可被其他对等节点访问的地址</p></td>
+</tr>
+<tr class="row-odd"><td><p>port</p></td>
+<td><p>缓存器开放的连接端口</p></td>
+</tr>
+<tr class="row-even"><td><p>capacity</p></td>
+<td><p>缓存器容量，如果数据量超过该容量，缓存器按照“LRU”原则将数据转储到存储桩。</p></td>
+</tr>
+<tr class="row-odd"><td><p>expiry</p></td>
+<td><p>单条数据的有效时长，单位：毫秒</p></td>
+</tr>
+<tr class="row-even"><td><p>threshold</p></td>
+<td><p>缓存使用的最大内存大小，单位：字节，如果缓存占用内存空间超过该数值，缓存器按照“LRU”原则将数据转储到存储桩。</p></td>
+</tr>
+<tr class="row-odd"><td><p>blocking</p></td>
+<td><p>当存储任务排队时，每个存储任务阻塞等待的最长时长，单位：毫秒</p></td>
+</tr>
+<tr class="row-even"><td><p>endpoint. <em>X</em> .host</p></td>
+<td><p>集群中的其他节点的访问地址</p></td>
+</tr>
+<tr class="row-odd"><td><p>endpoint. <em>X</em> .port</p></td>
+<td><p>集群中的其他节点的访问端口</p></td>
+</tr>
+<tr class="row-even"><td><p>storage</p></td>
+<td><p>缓存器放置临时数据的目录（<em>可选项</em>）</p></td>
+</tr>
+<tr class="row-odd"><td><p>pedestal.host</p></td>
+<td><p>存储桩访问地址（<em>可选项</em>）</p></td>
+</tr>
+<tr class="row-even"><td><p>pedestal.port</p></td>
+<td><p>存储桩访问端口（<em>可选项</em>）</p></td>
+</tr>
+<tr class="row-odd"><td><p>pedestal.backup.host</p></td>
+<td><p>备用存储桩访问地址（<em>可选项</em>）</p></td>
+</tr>
+<tr class="row-even"><td><p>pedestal.backup.port</p></td>
+<td><p>备用存储桩访问端口（<em>可选项</em>）</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><em>X</em> 是从 1 到 N 的自编序号。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h4><a class="toc-backref" href="#id28">采用时序存储的高速缓存</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<p>时信魔方的即时消息模块在进行消息处理时使用时序逻辑的缓存器，即时消息的时序缓存器的配置文件是： <code class="docutils literal notranslate"><span class="pre">messaging-series-memory.properties</span></code> ，配置项说明如下：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数名</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>capacity</p></td>
+<td><p>缓存器可容纳的最大数据条目数</p></td>
+</tr>
+<tr class="row-odd"><td><p>segment.num</p></td>
+<td><p>每个键对应的时序数据的分段数量</p></td>
+</tr>
+<tr class="row-even"><td><p>segment.size</p></td>
+<td><p>每个分段的数据的数据量</p></td>
+</tr>
+<tr class="row-odd"><td><p>host</p></td>
+<td><p>缓存器可被其他对等节点访问的地址</p></td>
+</tr>
+<tr class="row-even"><td><p>port</p></td>
+<td><p>缓存器开放的连接端口</p></td>
+</tr>
+<tr class="row-odd"><td><p>expiry</p></td>
+<td><p>单条数据的有效时长，单位：毫秒</p></td>
+</tr>
+<tr class="row-even"><td><p>threshold.index</p></td>
+<td><p>键的索引数据占用内存空间的最大值，单位：字节</p></td>
+</tr>
+<tr class="row-odd"><td><p>threshold.data</p></td>
+<td><p>值数据占用内存空间的最大值，单位：字节</p></td>
+</tr>
+<tr class="row-even"><td><p>endpoint. <em>X</em> .host</p></td>
+<td><p>集群中的其他节点的访问地址</p></td>
+</tr>
+<tr class="row-odd"><td><p>endpoint. <em>X</em> .port</p></td>
+<td><p>集群中的其他节点的访问端口</p></td>
+</tr>
+<tr class="row-even"><td><p>index.pedestal.host</p></td>
+<td><p>键数据存储桩访问地址（<em>可选项</em>）</p></td>
+</tr>
+<tr class="row-odd"><td><p>index.pedestal.port</p></td>
+<td><p>键数据存储桩访问端口（<em>可选项</em>）</p></td>
+</tr>
+<tr class="row-even"><td><p>data.pedestal.host</p></td>
+<td><p>值数据存储桩访问地址（<em>可选项</em>）</p></td>
+</tr>
+<tr class="row-odd"><td><p>data.pedestal.port</p></td>
+<td><p>值数据存储桩访问端口（<em>可选项</em>）</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><em>X</em> 是从 1 到 N 的自编序号。</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id29">模块配置</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id13">
+<h4><a class="toc-backref" href="#id30">文件存储模块配置</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<p>文件存储模块的配置文件是 <code class="docutils literal notranslate"><span class="pre">file-storage.properties</span></code> 。</p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># 使用的文件管理系统：disk 或 fastdfs</span>
+<span class="na">filesystem</span><span class="o">=</span><span class="s">disk</span>
+
+<span class="c"># 磁盘文件系统的目录</span>
+<span class="na">disk.dir</span><span class="o">=</span><span class="s">storage/files</span>
+<span class="na">disk.host</span><span class="o">=</span><span class="s">127.0.0.1</span>
+<span class="na">disk.port</span><span class="o">=</span><span class="s">6080</span>
+
+
+<span class="c"># 文件标签集群缓存配置</span>
+<span class="na">label.cache.name</span><span class="o">=</span><span class="s">FileLabelCache</span>
+<span class="na">label.cache.config</span><span class="o">=</span><span class="s">{&quot;type&quot;: &quot;SMC&quot;, &quot;configFile&quot;: &quot;config/filelabel-cache.properties&quot;}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h4><a class="toc-backref" href="#id31">多方通讯模块配置</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
+<p>多方通讯模块的配置文件是 <code class="docutils literal notranslate"><span class="pre">multipoint-comm.properties</span></code> 。</p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># Media unit list</span>
+<span class="na">unit.1.kms.url</span><span class="o">=</span><span class="s">ws://192.168.56.121:6700/media</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="media-unit">
+<span id="configuration-media-unit"></span><h2><a class="toc-backref" href="#id32">媒体单元服务器 (Media Unit) 配置</a><a class="headerlink" href="#media-unit" title="永久链接至标题">¶</a></h2>
+<p>Kurento Media Server 的配置文件默认目录是：</p>
+<p><code class="docutils literal notranslate"><span class="pre">/etc/kurento/kurento.conf.json</span></code></p>
+<p>配置内容如下：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;mediaServer&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;resources&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;KMS will raise an error when reaching this usage% of Kernel resources&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Applies to allowed number of threads, and number of open file descriptors&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Default: 0.8 (80%)&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;//exceptionLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0.8&quot;</span><span class="p">,</span>
+
+      <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;KMS process will be automatically killed when there are no sessions but this % of resources are in use&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;//killLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0.7&quot;</span><span class="p">,</span>
+
+      <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Garbage collector period, in seconds&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Default: 240 (4 minutes)&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;garbageCollectorPeriod&quot;</span><span class="p">:</span> <span class="mi">240</span><span class="p">,</span>
+
+      <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether to disable the RPC API request cache, for memory constrained environments&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Default: false&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;disableRequestCache&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;net&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;websocket&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Try (or not) to use IPv6 for the WebSocket connection, with IPv4 fallback&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Default: true&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;//ipv6&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+
+        <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;WebSocket port where API clients connect to control KMS&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Set to 0 or comment out the line to disable WebSocket access&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">6700</span><span class="p">,</span>
+
+        <span class="nt">&quot;secure&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Secure WebSocket port where API clients connect to control KMS&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Set to 0 or comment out the line to disable Secure WebSocket access&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;//port&quot;</span><span class="p">:</span> <span class="mi">8433</span><span class="p">,</span>
+
+          <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Path (absolute or relative to this config file) to the&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;concatenated certificate (chain) file(s) + private key, in PEM format&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;//certificate&quot;</span><span class="p">:</span> <span class="s2">&quot;cert+key.pem&quot;</span><span class="p">,</span>
+
+          <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Password for the private key, if one was set when the key was created&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;//password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">},</span>
+
+        <span class="nt">&quot;//registrar&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;//address&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://localhost:9090&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;//localAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span>
+        <span class="p">},</span>
+
+        <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Maximum queue length of pending connections (see sysctl tcp_max_syn_backlog)&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;//&quot;</span><span class="p">:</span> <span class="s2">&quot;Default: SOMAXCONN (128)&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;//connqueue&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+
+        <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;media&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;threads&quot;</span><span class="p">:</span> <span class="mi">10</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>配置 <code class="docutils literal notranslate"><span class="pre">net.websocket.port</span></code> 为 <strong>6700</strong></p></li>
+<li><p>配置 <code class="docutils literal notranslate"><span class="pre">net.websocket.path</span></code> 为 <strong>media</strong></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="application.html" class="btn btn-neutral float-right" title="客户端应用程序" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="服务器安装指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Web/HTML5 - Hello World &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Android - Hello World" href="../android/helloworld.html" />
+    <link rel="prev" title="客户端开发教程" href="../../user/client_tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../user/intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/application.html">客户端应用程序</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../user/client_tutorials.html">客户端开发教程</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../user/client_tutorials.html#hello-world">Hello World</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Web/HTML5</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">快速开始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">理解示例原理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">代码详解</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../android/helloworld.html">Android [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ios/helloworld.html">iOS [TODO]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../electron/helloworld.html">Electron [TODO]</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id2">事件回调机制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id3">即时消息的发送与接收</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id4">视频通话</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id5">群组语音通话</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id6">群组视频通话</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id7">文件的上传、下载与目录管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id8">联系人管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id9">群组管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id10">会议的创建与管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id11">会议的控制与调度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id12">会议的直播管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id13">白板的基本操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id14">桌面分享</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id15">自定义消息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id16">在视频画面中实时检测人脸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id17">在多人会议中进行人脸检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/client_tutorials.html#id18">实时视频流转直播流</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../user/client_tutorials.html">客户端开发教程</a> &raquo;</li>
+        
+      <li>Web/HTML5 - Hello World</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="web-html5-hello-world">
+<h1>Web/HTML5 - Hello World<a class="headerlink" href="#web-html5-hello-world" title="永久链接至标题">¶</a></h1>
+<p>这个示例将介绍如何在您的项目里导入时信魔方的 JavaScript SDK 文件，并演示如何启动和停止魔方引擎。在此之前，我们需要您确认您已经阅读了 <a class="reference internal" href="../../user/installation.html"><span class="doc">服务器安装指南</span></a> 并且已经成功启动了时信魔方的服务器程序，因为我们的演示程序会需要连接服务器程序。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>目前主流的浏览器都推荐使用 <a class="reference internal" href="../../glossary.html#term-HTTPS"><span class="xref std std-term">HTTPS</span></a> 进行访问，因此，我们建议您在您的 Web 服务器上配置好 HTTPS 服务，以便正常的使用浏览器的功能。</p>
+</div>
+<div class="section" id="id1">
+<h2>快速开始<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>按照以下步骤运行演示程序：</p>
+<ol class="arabic">
+<li><p>安装时信魔方服务器：<a class="reference internal" href="../../user/installation.html"><span class="doc">服务器安装指南</span></a> 。</p></li>
+<li><p>执行以下命令运行演示程序：</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://gitee.com/shixinhulian/cube-javascript
+<span class="nb">cd</span> cube-javascript/cube
+npm install
+npm run example
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>打开浏览器（Chrome 或 Firefox）输入：<a class="reference external" href="http://localhost:8000/examples/hello-world/">http://localhost:8000/examples/hello-world/</a> 或 <a class="reference external" href="https://localhost:4430/examples/hello-world/">https://localhost:4430/examples/hello-world/</a> 进入演示程序界面。</p></li>
+<li><p>点击“启动”按钮启动魔方引擎。</p></li>
+<li><p>输入账号ID（至少6位数字），点击“签入”即可签入账号。</p></li>
+<li><p>点击“签出”按钮将账号签出，点击“停止”按钮停止魔方引擎。</p></li>
+</ol>
+<div class="figure align-center" id="id4">
+<img alt="Hello World" src="../../_images/web_hello_world.png" />
+<p class="caption"><span class="caption-text"><em>Hello World</em></span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>理解示例原理<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>时信魔方通过客户端 SDK 程序连接时信魔方服务器进行通信，如下图所示。应用程序通过在页面中引入客户端 JavaScript 的 SDK 库文件加载魔方程序，在应用程序启动后对魔方引擎进行必要的设置即可调用魔方的各模块进行工作。</p>
+<div class="figure align-center" id="id5">
+<img alt="客户端连接服务器示意图" src="../../_images/client_connect_server.png" />
+<p class="caption"><span class="caption-text"><em>客户端连接服务器</em></span><a class="headerlink" href="#id5" title="永久链接至图片">¶</a></p>
+</div>
+<p>这个示例是最简单的使用时信魔方的演示程序，在这个程序里，我们在页面加载 JavaScript 文件之后启动魔方，启动成功之后模拟用户签入到服务器。</p>
+<div class="figure align-center" id="id6">
+<img alt="JavaScript 客户端时序图" src="../../_images/web_hello_world_sequence.png" />
+<p class="caption"><span class="caption-text"><em>JavaScript 客户端时序图</em></span><a class="headerlink" href="#id6" title="永久链接至图片">¶</a></p>
+</div>
+<p>在程序界面上我们打印了每次操作的信息。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>代码详解<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>示例里我们使用的文件有：</p>
+<ul class="simple">
+<li><p><strong>index.html</strong>：主页面文件。</p></li>
+<li><p><strong>main.css</strong>：页面样式表文件。</p></li>
+<li><p><strong>main.js</strong>：示例的程序主文件。包括程序逻辑流程和页面事件处理。</p></li>
+<li><p><strong>cube.js</strong>：时信魔方的 JavaScript 客户端库文件。</p></li>
+</ul>
+<p>接下来我们详细说明一下代码。</p>
+<ol class="arabic">
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">index.html</span></code> 页面里，我们载入时信魔方的 JavaScript 客户端文件 <code class="docutils literal notranslate"><span class="pre">cube.js</span></code>：</p>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../../js/cube.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>在主程序 <code class="docutils literal notranslate"><span class="pre">main.js</span></code> 里获取魔方引擎的实例：</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">cube</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">cube</span><span class="p">();</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>在主程序文件 <code class="docutils literal notranslate"><span class="pre">main.js</span></code> 里点击“启动”按钮将调用 <code class="docutils literal notranslate"><span class="pre">startCube()</span></code> 函数来启动魔方引擎：</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">startCube</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">println</span><span class="p">(</span><span class="s1">&#39;启动引擎...&#39;</span><span class="p">);</span>
+
+    <span class="c1">// 填写引擎需要的参数</span>
+    <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;address&quot;</span><span class="o">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;domain&quot;</span><span class="o">:</span> <span class="s2">&quot;shixincube.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;appKey&quot;</span><span class="o">:</span> <span class="s2">&quot;shixin-cubeteam-opensource-appkey&quot;</span>
+    <span class="p">};</span>
+
+    <span class="c1">// 调用 start 启动引擎</span>
+    <span class="nx">cube</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">println</span><span class="p">(</span><span class="s1">&#39;启动 Cube 成功&#39;</span><span class="p">);</span>
+    <span class="p">},</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">println</span><span class="p">(</span><span class="s1">&#39;启动 Cube 失败&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>在启动魔方引擎时我们需要向引擎提供诸如服务器地址、所属的域和当前应用程序的校验主键等信息。示例里填写的信息是用于演示用的预置数据。</p>
+<p>引擎启动函数 <code class="docutils literal notranslate"><span class="pre">cube.start()</span></code> 的后面两个参数分别是启动成功的回调函数和启动失败的回调函数。通过这两个函数我们就能知道引擎是否启动成功了。</p>
+</div></blockquote>
+</li>
+<li><p>魔方引擎启动成功后，会从服务器申请对应域的访问令牌从而获得合法的访问权限。之后您就可以开始使用引擎各个模块了，例如发送消息或者邀请视频通话，但在这之前我们需要为当前的应用程序指定账号，通过该账号来进行通信。</p>
+<blockquote>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">cube</span><span class="p">.</span><span class="nx">signIn</span><span class="p">(</span><span class="nx">contactIdInput</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nx">contactNameInput</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>调用 <code class="docutils literal notranslate"><span class="pre">cube.signIn()</span></code> 函数来签入账号，这个过程类似账号登录。时信魔方的账号 ID 必须是 <code class="docutils literal notranslate"><span class="pre">number</span></code> 类型，具体函数释义可以参考 <a class="reference external" href="../../_static/cube-javascript-api/CubeShortcut.html#signIn">API 文档</a> 。</p>
+</div></blockquote>
+</li>
+<li><p>同样的，调用 <code class="docutils literal notranslate"><span class="pre">cube.singOut()</span></code> 可以将账号签出，调用 <code class="docutils literal notranslate"><span class="pre">cube.stop()</span></code> 方法将魔方引擎关闭。</p></li>
+</ol>
+<p>至此，您已经知道了如何启动魔方引擎并完成账号的签入，这是我们使用魔方客户端的第一步，也是最基础的一步。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>魔方引擎需要支持 HTML5 特性的浏览器，如果您的浏览器不支持 HTML5 特性，我们建议您安装 Chrome 或者 Firefox 浏览器。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../android/helloworld.html" class="btn btn-neutral float-right" title="Android - Hello World" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../user/client_tutorials.html" class="btn btn-neutral float-left" title="客户端开发教程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

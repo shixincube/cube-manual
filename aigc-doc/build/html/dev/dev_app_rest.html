@@ -1,0 +1,775 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>应用服务器 RESTful API &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Hub RESTful API" href="dev_hub_rest.html" />
+    <link rel="prev" title="RESTful API" href="dev_rest.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/intro.html">时信魔方介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/application.html">客户端应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/client_tutorials.html">客户端开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">应用服务器 RESTful API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">账号管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">账号登录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">账号登出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">关联账号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">账号信息</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">分享标签管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">获取分享标签信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">批量获取分享标签</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">批量获取文件分享的访问记录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">提交小程序的操作记录</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">附录</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id14">事件名</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>应用服务器 RESTful API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="restful-api">
+<h1><a class="toc-backref" href="#id15">应用服务器 RESTful API</a><a class="headerlink" href="#restful-api" title="永久链接至标题">¶</a></h1>
+<p>应用服务器的 RESTful 接口文档。</p>
+<p>应用服务器的默认端口： <code class="docutils literal notranslate"><span class="pre">7777</span></code> 。</p>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#restful-api" id="id15">应用服务器 RESTful API</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id16">账号管理</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id17">账号登录</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id18">账号登出</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id19">关联账号</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id20">账号信息</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id7" id="id21">分享标签管理</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id8" id="id22">获取分享标签信息</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id23">批量获取分享标签</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id24">批量获取文件分享的访问记录</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id25">提交小程序的操作记录</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id13" id="id26">附录</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id14" id="id27">事件名</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id16">账号管理</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id17">账号登录</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--account-login-">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/account/login/</span></span><a class="headerlink" href="#post--account-login-" title="永久链接至目标">¶</a></dt>
+<dd><p>通过指定的账号数据进行登录。登录成功后返回有效的访问令牌。
+服务器会尝试将访问令牌写入 Cookie 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Request JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>device</strong> (<em>string</em>) – 指定登录账号使用的设备。</p></li>
+<li><p><strong>jsCode</strong> (<em>string</em>) – 指定登录时获取的 code 。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>code</strong> (<em>number</em>) – 状态码。状态码 <code class="docutils literal notranslate"><span class="pre">0</span></code> 表示成功。</p></li>
+<li><p><strong>token</strong> (<em>string</em>) – 访问令牌。</p></li>
+<li><p><strong>trace</strong> (<em>string</em>) – 访问痕迹标识。</p></li>
+<li><p><strong>creation</strong> (<em>number</em>) – 令牌的创建时间。</p></li>
+<li><p><strong>expire</strong> (<em>number</em>) – 令牌的超期时间。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id18">账号登出</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p><strong>TODO</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id19">关联账号</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--account-bind-">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/account/bind/</span></span><a class="headerlink" href="#post--account-bind-" title="永久链接至目标">¶</a></dt>
+<dd><p>绑定账号。将指定小程序用户与 Cube 用户进行关联绑定。
+绑定成功后自动使用该账号登录。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Request JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>device</strong> (<em>string</em>) – 指定登录账号使用的设备。</p></li>
+<li><p><strong>jsCode</strong> (<em>string</em>) – 指定登录时获取的 code 。</p></li>
+<li><p><strong>phone</strong> (<em>string</em>) – 指定账号的电话号码。与 <code class="docutils literal notranslate"><span class="pre">account</span></code> 参数二选一。</p></li>
+<li><p><strong>account</strong> (<em>string</em>) – 指定账号名。账号名为 Email 格式。与 <code class="docutils literal notranslate"><span class="pre">phone</span></code> 参数二选一。</p></li>
+<li><p><strong>password</strong> (<em>string</em>) – 指定待绑定账号的密码，使用 MD5 格式。</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>code</strong> (<em>number</em>) – 状态码。状态码 <code class="docutils literal notranslate"><span class="pre">0</span></code> 表示成功。</p></li>
+<li><p><strong>token</strong> (<em>string</em>) – 访问令牌。</p></li>
+<li><p><strong>trace</strong> (<em>string</em>) – 访问痕迹标识。</p></li>
+<li><p><strong>creation</strong> (<em>number</em>) – 令牌的创建时间。</p></li>
+<li><p><strong>expire</strong> (<em>number</em>) – 令牌的超期时间。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id20">账号信息</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--account-info-">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/account/info/</span></span><a class="headerlink" href="#get--account-info-" title="永久链接至目标">¶</a></dt>
+<dd><p>获取指定令牌对应的账号数据。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> (<em>string</em>) – 用户的有效令牌。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>number</em>) – 账号的 ID 。</p></li>
+<li><p><strong>domain</strong> (<em>string</em>) – 账号所属的域。</p></li>
+<li><p><strong>account</strong> (<em>string</em>) – 账号名。</p></li>
+<li><p><strong>phone</strong> (<em>string</em>) – 账号的电话号码。</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – 账号的显示昵称。</p></li>
+<li><p><strong>avatar</strong> (<em>string</em>) – 账号的头像描述。</p></li>
+<li><p><strong>state</strong> (<em>number</em>) – 账号状态描述。</p></li>
+<li><p><strong>region</strong> (<em>string</em>) – 账号的社交区域描述。</p></li>
+<li><p><strong>department</strong> (<em>string</em>) – 账号的部门描述。</p></li>
+<li><p><strong>registration</strong> (<em>number</em>) – 账号注册时的时间戳。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id21">分享标签管理</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id22">获取分享标签信息</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--file-sharing-">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/file/sharing/</span></span><a class="headerlink" href="#get--file-sharing-" title="永久链接至目标">¶</a></dt>
+<dd><p>通过分享码（ <strong>Sharing Code</strong> ）获取分享标签信息。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> (<em>string</em>) – 用户的有效令牌。</p></li>
+<li><p><strong>sc</strong> (<em>string</em>) – 分享码。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>应答数据的 JSON Object 结构参看 <a class="reference external" href="dev_structure.html#sharing-tag">Sharing Tag</a> 。</p>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id23">批量获取分享标签</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--file-list-sharing-">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/file/list/sharing/</span></span><a class="headerlink" href="#get--file-list-sharing-" title="永久链接至目标">¶</a></dt>
+<dd><p>以批量方式获取该用户创建的分享标签。单次调用的最大数据条目不允许超过30条。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> (<em>string</em>) – 用户的有效令牌。</p></li>
+<li><p><strong>begin</strong> (<em>number</em>) – 查询数据的起始索引位置。</p></li>
+<li><p><strong>end</strong> (<em>number</em>) – 查询数据的结束索引位置。</p></li>
+<li><p><strong>valid</strong> (<em>boolean</em>) – 待查询的分享标签是否是有效的标签。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list</strong> (<em>Array</em>) – <p>分享标签列表。分享标签数据结构参看 <a class="reference external" href="dev_structure.html#sharing-tag">Sharing Tag</a> 。</p>
+</p></li>
+<li><p><strong>total</strong> (<em>number</em>) – 符合条件的总数量。</p></li>
+<li><p><strong>begin</strong> (<em>number</em>) – 标签列表的起始索引。</p></li>
+<li><p><strong>end</strong> (<em>number</em>) – 标签列表的结束索引。</p></li>
+<li><p><strong>valid</strong> (<em>boolean</em>) – 是否是有效的分享标签。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id24">批量获取文件分享的访问记录</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--file-list-trace-">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/file/list/trace/</span></span><a class="headerlink" href="#get--file-list-trace-" title="永久链接至目标">¶</a></dt>
+<dd><p>以批量方式返回文件分享的操作或访问记录。该接口仅返回分享人是当前用户的记录。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Query Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> (<em>string</em>) – 用户的有效令牌。</p></li>
+<li><p><strong>code</strong> (<em>string</em>) – 文件分享码。</p></li>
+<li><p><strong>begin</strong> (<em>number</em>) – 查询数据的起始索引位置。</p></li>
+<li><p><strong>end</strong> (<em>number</em>) – 查询数据的结束索引位置。</p></li>
+</ul>
+</dd>
+<dt class="field-even">Response Headers</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response JSON Object</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list</strong> (<em>Array</em>) – 分享访问记录列表。分享访问记录数据结构参看 <a class="reference external" href="dev_structure.html#visit-trace">Visit Trace</a> 。</p></li>
+<li><p><strong>total</strong> (<em>number</em>) – 记录总条目数。</p></li>
+<li><p><strong>sharingCode</strong> (<em>string</em>) – 文件分享码。</p></li>
+<li><p><strong>begin</strong> (<em>number</em>) – 数据列表的起始索引。</p></li>
+<li><p><strong>end</strong> (<em>number</em>) – 数据列表的结束索引。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id25">提交小程序的操作记录</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--trace-sharing-applet-wechat-">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/trace/sharing/applet/wechat/</span></span><a class="headerlink" href="#post--trace-sharing-applet-wechat-" title="永久链接至目标">¶</a></dt>
+<dd><p>提交小程序访问或操作记录。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Request Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Request JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>domain</strong> (<em>string</em>) – 访问的域名。</p></li>
+<li><p><strong>url</strong> (<em>string</em>) – 完整的 URL 。</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – 标题。</p></li>
+<li><p><strong>screen</strong> (<em>object</em>) – <p>屏幕数据 JSON Object ：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;width&quot;</span> <span class="p">:</span> <span class="mi">1680</span><span class="p">,</span>
+    <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">1050</span><span class="p">,</span>
+    <span class="nt">&quot;colorDepth&quot;</span> <span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="nt">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;landscape-primary&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>language</strong> (<em>string</em>) – 平台语言。</p></li>
+<li><p><strong>userAgent</strong> (<em>string</em>) – 浏览器的 User Agent 描述（ <em>选填数据</em> ）。</p></li>
+<li><p><strong>agent</strong> (<em>object</em>) – <p>平台信息代理（ <em>选填数据</em> ）：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;SDKVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.25.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;appId&quot;</span><span class="p">:</span> <span class="s2">&quot;__UNI__75E13B4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;appLanguage&quot;</span><span class="p">:</span> <span class="s2">&quot;zh-Hans&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;appName&quot;</span><span class="p">:</span> <span class="s2">&quot;CubeBox&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;appVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;appVersionCode&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;batteryLevel&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nt">&quot;benchmarkLevel&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;bluetoothEnabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;brand&quot;</span><span class="p">:</span> <span class="s2">&quot;devtools&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;browserName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;browserVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cameraAuthorized&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;deviceBrand&quot;</span><span class="p">:</span> <span class="s2">&quot;devtools&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;deviceId&quot;</span><span class="p">:</span> <span class="s2">&quot;17578534465635660197&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;deviceModel&quot;</span><span class="p">:</span> <span class="s2">&quot;iPhone X&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;deviceOrientation&quot;</span><span class="p">:</span> <span class="s2">&quot;portrait&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;devicePixelRatio&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;deviceType&quot;</span><span class="p">:</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;enableDebug&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;errMsg&quot;</span><span class="p">:</span> <span class="s2">&quot;getSystemInfo:ok&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;fontSizeSetting&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="nt">&quot;hostFontSizeSetting&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="nt">&quot;hostLanguage&quot;</span><span class="p">:</span> <span class="s2">&quot;zh-CN&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;hostName&quot;</span><span class="p">:</span> <span class="s2">&quot;WeChat&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;hostPackageName&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;hostSDKVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.25.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;hostTheme&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;hostVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;8.0.5&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;zh_CN&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;locationAuthorized&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;locationEnabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;microphoneAuthorized&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;iPhone X&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;notificationAuthorized&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;osLanguage&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;osName&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;osTheme&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;osVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;10.0.1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;pixelRatio&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;platform&quot;</span><span class="p">:</span> <span class="s2">&quot;devtools&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;safeArea&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;top&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span>
+        <span class="nt">&quot;left&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;right&quot;</span><span class="p">:</span> <span class="mi">375</span><span class="p">,</span>
+        <span class="nt">&quot;bottom&quot;</span><span class="p">:</span> <span class="mi">778</span><span class="p">,</span>
+        <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">375</span><span class="p">,</span>
+        <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">724</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;safeAreaInsets&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;top&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span>
+        <span class="nt">&quot;left&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;right&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;bottom&quot;</span><span class="p">:</span> <span class="mi">34</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;screenHeight&quot;</span><span class="p">:</span> <span class="mi">812</span><span class="p">,</span>
+    <span class="nt">&quot;screenWidth&quot;</span><span class="p">:</span> <span class="mi">375</span><span class="p">,</span>
+    <span class="nt">&quot;statusBarHeight&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span>
+    <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;iOS 10.0.1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ua&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uniCompileVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.4.18&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uniPlatform&quot;</span><span class="p">:</span> <span class="s2">&quot;mp-weixin&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uniRuntimeVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;3.4.18&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;8.0.5&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;wifiEnabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;windowBottom&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;windowHeight&quot;</span><span class="p">:</span> <span class="mi">724</span><span class="p">,</span>
+    <span class="nt">&quot;windowTop&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;windowWidth&quot;</span><span class="p">:</span> <span class="mi">375</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>event</strong> (<em>string</em>) – 事件名。</p></li>
+<li><p><strong>eventTag</strong> (<em>string</em>) – <p>事件标签（ <em>选填数据</em> ）。</p>
+<p>标签：<code class="docutils literal notranslate"><span class="pre">download</span></code>，<code class="docutils literal notranslate"><span class="pre">open</span></code> 等</p>
+</p></li>
+<li><p><strong>eventParam</strong> (<em>object</em>) – <p>事件参数（ <em>选填数据</em> ）。</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;sn&quot;</span><span class="p">:</span> <span class="mi">1659533823805</span><span class="p">,</span>
+    <span class="nt">&quot;sharer&quot;</span><span class="p">:</span> <span class="s2">&quot;gbdcebeeh095&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;ZUWVXUXX91082&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1898471</span><span class="p">,</span>
+    <span class="nt">&quot;domain&quot;</span><span class="p">:</span> <span class="s2">&quot;shixincube.com&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Response Headers</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://tools.ietf.org/html/rfc7231#section-3.1.1.5">Content-Type</a> – <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Response JSON Object</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>time</strong> (<em>number</em>) – 记录时间戳。</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2><a class="toc-backref" href="#id26">附录</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id14">
+<h3><a class="toc-backref" href="#id27">事件名</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>事件名</p></th>
+<th class="head"><p>描述</p></th>
+<th class="head"><p>参数说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Transmit</p></td>
+<td><p>发送事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Open</p></td>
+<td><p>打开事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Forward</p></td>
+<td><p>转发事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Archive</p></td>
+<td><p>归档事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Delete</p></td>
+<td><p>删除事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Rename</p></td>
+<td><p>重命名事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Copy</p></td>
+<td><p>复制数据事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Share</p></td>
+<td><p>分享事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-even"><td><p>View</p></td>
+<td><p>浏览事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>ViewLoss</p></td>
+<td><p>浏览已丢失的数据事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-even"><td><p>ViewExpired</p></td>
+<td><p>浏览已过期的数据事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Extract</p></td>
+<td><p>提取/下载数据事件</p></td>
+<td><p><em>–</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="dev_hub_rest.html" class="btn btn-neutral float-right" title="Hub RESTful API" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dev_rest.html" class="btn btn-neutral float-left" title="RESTful API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

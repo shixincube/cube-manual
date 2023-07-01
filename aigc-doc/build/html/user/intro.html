@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>时信魔方介绍 &mdash; 时信魔方 3.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="入门指南" href="quickstart.html" />
+    <link rel="prev" title="欢迎来到“时信魔方”" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 时信魔方
+          
+
+          
+            
+            <img src="../_static/cube_html_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">用户文档</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">时信魔方介绍</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">时信魔方是什么？</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">即时消息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">实时音视频</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mcu-sfu">MCU &amp; SFU 会议</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">社交关系管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">文件传输与存储</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">互动白板与共享桌面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">视频直播</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">在线文档</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">运维与风控</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">为什么需要时信魔方？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">时信魔方的设计要点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">独立的内核模块与开放的脚手架</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shm">基于 SHM 的私有通信协议</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">多平台适用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">分域管理</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">时信魔方的主要技术特征</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="best_practice.html">最佳实践</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">服务器安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">服务器配置指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="application.html">客户端应用程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_tutorials.html">客户端开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_tutorials.html">服务器端集成教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tip.html">开发小贴士</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">获得帮助</a></li>
+</ul>
+<p class="caption"><span class="caption-text">功能文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_javascript.html">JavaScript 客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_android.html">Android 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/client_ios.html">iOS 客户端 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_console.html">服务器控制台</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features/server_java.html">服务器 Java Client</a></li>
+</ul>
+<p class="caption"><span class="caption-text">项目文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../project/team.html">时信魔方团队</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution.html">贡献与捐助 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/conduct.html">代码规范 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/showcase.html">项目展示</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/relnotes/index.html">发行说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">开发者文档</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_guide.html">开发向导 [TODO]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_packet.html">通信报文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_structure.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_rest.html">RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_app_rest.html">应用服务器 RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_hub_rest.html">Hub RESTful API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_hub_structure.html">Hub 数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/dev_robot.html">Robot</a></li>
+</ul>
+<p class="caption"><span class="caption-text">知识库</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../state_code.html">状态码</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">时信魔方</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>时信魔方介绍</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<!--
+  "admonition" is the class of Warning messages with the current RTD theme.
+  Obtained by directly checking the HTML sources of an already existing block.
+-->
+<div class="admonition warning">
+  <p class="admonition-title">提示</p>
+  <!--
+  <p>
+    时信魔方最新版本是 <b>3.0</b> ，我们正全力推进 3.0 版本的开发，目前的 2.5、2.7 版本转入维护状态。如果您需要使用其他发行版本，建议您到 <a target="_blank" href="https://shixincube.com/">时信魔方官方站点</a> 了解详情。
+  </p>
+  <p>
+    如果您需要的是一款成熟的社交协作产品，可以使用 <a target="_blank" href="https://spap.com/">司派</a> ，这是一款已经上线的产品。
+  </p>
+  -->
+  <!--
+  <p>
+      时信魔方目前已支持与第三方即时通讯工具（例如：微信、飞书、钉钉等）的消息和数据互通，详情请参看 <a target="_blank" href="https://hub.shixincube.com/">Cube Hub</a> 服务。
+  </p>
+  -->
+  <p>
+      如果您需要专业团队为您和您的企业订制全网互通的协作工具可以通过 <a target="_blank" href="mailto:cube@spap.com">cube#spap.com</a> 或者 <a target="_blank" href="mailto:xujiangwei@spap.com">xujiangwei#spap.com</a> <i>（将“#”替换为“@”）</i>邮箱联系我们。
+  </p>
+</div>
+
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>时信魔方介绍<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>时信魔方是什么？<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="../glossary.html#term-1"><span class="xref std std-term">时信魔方</span></a> 是面向开发者的实时协作开发框架。帮助开发者快速、高效的在项目中集成实时协作能力。从广义上讲，即时消息、音视频通话、实时白板、文档互传、在线会议都属于实时协作的功能范畴。这些功能帮助人们迅速地传递消息，同步资料并跟踪信息流，从而达到高效协作的目的。</p>
+<p>时信魔方是 <strong>开源项目</strong> ，基于 <a class="reference external" href="http://www.opensource.org/licenses/mit-license.php">MIT/Expat License</a> 条款发布，在 <a class="reference external" href="https://gitee.com/shixinhulian/">Gitee</a> 和 <a class="reference external" href="https://github.com/shixincube/">GitHub</a> 上托管源代码。</p>
+<p>支持的操作系统有：Windows、Linux 、macOS 、Android、iOS 等，支持的浏览器有：Chrome、Firefox、Safari 等。</p>
+<div class="section" id="id3">
+<h3>即时消息<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>即时消息（Instant Messaging / IM），消息全域投送，通过插件化进行消息类型的扩展。消息中心可以串接所有业务模块。支持客户端消息推送通知。</p>
+<ul class="simple">
+<li><p>文本消息</p></li>
+<li><p>图片消息</p></li>
+<li><p>文件消息</p></li>
+<li><p>卡片消息</p></li>
+<li><p>日程消息</p></li>
+<li><p>通知消息</p></li>
+<li><p>短语音</p></li>
+<li><p>短视频</p></li>
+<li><p>位置消息</p></li>
+<li><p>消息回执</p></li>
+<li><p>消息撤回</p></li>
+<li><p>自定义表情</p></li>
+<li><p>自定义消息</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>实时音视频<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>实时多人语音/多人视频（Multipoint RTC）支持自适应码率、超低延迟等，支持实时图像识别等。</p>
+<ul class="simple">
+<li><p>基于点对点的视频通话</p></li>
+<li><p>基于点对点的语音通话</p></li>
+<li><p>多方视频融屏会议</p></li>
+<li><p>多方视频单路多画会议</p></li>
+<li><p>多方音频混码会议</p></li>
+<li><p>音视频协作权限控制</p></li>
+<li><p>音视频协作媒体控制</p></li>
+<li><p>实时媒体转直播</p></li>
+<li><p>服务端音视频记录</p></li>
+<li><p>音视频回放</p></li>
+</ul>
+</div>
+<div class="section" id="mcu-sfu">
+<h3>MCU &amp; SFU 会议<a class="headerlink" href="#mcu-sfu" title="永久链接至标题">¶</a></h3>
+<p>超大规模(100+)视频会议 （Video Conference）支持会议控制、演讲模式，自定义 MCU 和 SFU 布局等。</p>
+<ul class="simple">
+<li><p>会议预约</p></li>
+<li><p>会议邀请</p></li>
+<li><p>会议人员管理</p></li>
+<li><p>会议人员媒体管理</p></li>
+<li><p>静默参会</p></li>
+<li><p>第三方访客参会</p></li>
+<li><p>会议文档管理</p></li>
+<li><p>会议记录管理</p></li>
+<li><p>支持拓展会议管理方式</p></li>
+<li><p>支持多点会控</p></li>
+<li><p>会议资料云端存储</p></li>
+<li><p>会议回放</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>社交关系管理<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>群组管理（Group management）与组织架构管理（Organization structure）支持集成式管理和扩展组织架构等。</p>
+<ul class="simple">
+<li><p>支持独立联系人表</p></li>
+<li><p>支持联系人分组与标签</p></li>
+<li><p>支持人数1000+超大群组</p></li>
+<li><p>使用创建人+管理员模式的分级权限管理</p></li>
+<li><p>独立群空间管理</p></li>
+<li><p>群成员管理</p></li>
+<li><p>群语音</p></li>
+<li><p>群视频</p></li>
+<li><p>群名片</p></li>
+<li><p>群公告</p></li>
+<li><p>群组历史记录管理</p></li>
+<li><p>多人群任务</p></li>
+<li><p>多人分组话题</p></li>
+<li><p>群/组织安全控制策略</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>文件传输与存储<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>文件存储（File Storage）与传输支持超大文件管理，小文件管理支持分区存储。</p>
+<ul class="simple">
+<li><p>文件上传与下载</p></li>
+<li><p>文件存储加密</p></li>
+<li><p>消息文件零流量转储</p></li>
+<li><p>分布式归档</p></li>
+<li><p>动态空间分配</p></li>
+<li><p>云端文件预览</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>互动白板与共享桌面<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>实时白板（Realtime Whiteboard）支持集成媒体回放、远程桌面和文档分享等。共享桌面（Remote Desktop Sharing）支持无缝集成白板等。</p>
+<ul class="simple">
+<li><p>常用涂鸦工具</p></li>
+<li><p>在线文档实时分享</p></li>
+<li><p>操作记录动画记录</p></li>
+<li><p>录制带语音的动画回放</p></li>
+<li><p>矢量绘图</p></li>
+<li><p>白板消息</p></li>
+<li><p>远程桌面</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>视频直播<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>视频直播（Live video）支持第三方推流和 CDN ，无缝支持会议直播和回放等。</p>
+<ul class="simple">
+<li><p>直播间管理</p></li>
+<li><p>多源合并</p></li>
+<li><p>对接会议模块实现会议直播</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>在线文档<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>在线文档协作（Online Document Collaboration）支持 Word、PowerPoint、Excel 等主流格式文多人在写协作。</p>
+</div>
+<div class="section" id="id10">
+<h3>运维与风控<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>安全与运维管理（Operation and Maintenance management）。所有数据通道支持加密，可支持国密算法等。风控管理（Risk Management）。对系统内所有文本、图片、视频、文件等内容进行包括 NLP、OCR、IR 等技术手段的风险控制和预警等。</p>
+<ul class="simple">
+<li><p>采用统一控制台管理所有服务器</p></li>
+<li><p>所有信息流都加密。</p></li>
+<li><p>所有数据内容无缝对接风控中心。</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>为什么需要时信魔方？<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>时信魔方的目标是 <strong>协作能力“超级集线器”</strong> 。</p>
+<p>当下，用户对即时通讯产品无论功能还是易用性都提出了越来越多的挑战，单一功能维度已经不足以满足用户多样化、个性化的需求，功能之间的衔接与互动变得越来越重要和迫切。</p>
+<p>实时协作产品不是简单的多个协作功能的堆砌，而应该是按照用户预期的操作体验进行功能之间的衔接与互动，时信魔方将这个设定为自己的目标，实现对实时协作体验的持续改进，因此，时信魔方里各能力模块被按照一定的规则组织起来，从而形成有效的、高效的协作软件系统。</p>
+<p>其次，一些看似技术简单的功能实则需要复杂的业务管理，例如，即时消息从技术上讲就是简单的消息发送和接收，但是每个消息的状态管理、内容形式触发的业务逻辑则各不相同。因此，时信魔方帮助开发者快速建立基础的实时协作能力，让开发者集中精力解决用户的复杂业务需求，而不需要关注更多细节，提升用户满意度。</p>
+<p>而对于那些技术复杂度更高的功能，例如实时视频画面的物体识别等，更需要专业的技术组件进行支持，甚至是“合纵连横”的方式来协同完成，时信魔方就是这样的“ <strong>超级集线器</strong> ”。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>时信魔方的设计要点<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id13">
+<h3>独立的内核模块与开放的脚手架<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<div class="figure align-center" id="id17">
+<img alt="内核模块与接口结构" src="../_images/cube-kernel-scaffold.png" />
+<p class="caption"><span class="caption-text"><em>内核模块与接口结构</em></span><a class="headerlink" href="#id17" title="永久链接至图片">¶</a></p>
+</div>
+<p>时信魔方按照经典的“面向接口的开发”原则设计脚手架。各个功能模块各自独立且遵循单向依赖原则，各个功能模块依赖的技术组件，例如：缓存器、消息队列、存储器等，都按照提供接口调用，便于开发者按照自身的开发需求选择和适配不同的技术组件来适应不同的运行环境和性能要求。</p>
+<p>时信魔方的基础功能集均为独立开发，不依赖第三方业务组件，一方面提高模块之间的集成度和耦合度可以对性能进行架构级的优化，并且因为功能集适用范围广进行二次开发时不会带来引入第三方框架的适配和调试风险，另一方面，耦合度较高导致扩展的便利性降低，有时我们需要符合自身需求的第三方模块进行替换。因此时信魔方遵照上述结构，提供从底层的数据库存储，信息数据缓存到上层的业务功能的接口拓展，方便进行二次开发和维护，开发者根据需要选择自己熟悉的数据库系统进行存储，或者选择第三方网盘替换魔方的文件存储模块，依然能保证文件高效地在即时消息、会议等模块中传输。</p>
+</div>
+<div class="section" id="shm">
+<h3>基于 SHM 的私有通信协议<a class="headerlink" href="#shm" title="永久链接至标题">¶</a></h3>
+<p>时信魔方没有采用通用的通信协议方案，而是针对性的开发了 <a class="reference internal" href="../glossary.html#term-Simple-Hybrid-Messaging"><span class="xref std std-term">Simple Hybrid Messaging</span></a> 简单混合消息传输协议，简称： <strong>SHM</strong> 。</p>
+<div class="figure align-center" id="id18">
+<img alt="Cell 通信结构" src="../_images/cell-struct.png" />
+<p class="caption"><span class="caption-text"><em>Cell 通信结构</em></span><a class="headerlink" href="#id18" title="永久链接至图片">¶</a></p>
+</div>
+<p>在时信魔方里实现该协议的工程是 <a class="reference internal" href="../glossary.html#term-Cell"><span class="xref std std-term">Cell</span></a> ，Cell 支持 direct <a class="reference internal" href="../glossary.html#term-TCP"><span class="xref std std-term">TCP</span></a> 和 <a class="reference internal" href="../glossary.html#term-WebSocket"><span class="xref std std-term">WebSocket</span></a> 两种连接方式。 SHM 链路支持快速加密和数据压缩，同时 SHM 链路上允许同一连接同时投送报文数据和流数据，从而减少客户端设备对于链路的管理（不需要像 HTTP/HTTPS 协议那样需要连接池同时管理数个 TCP 连接）。</p>
+</div>
+<div class="section" id="id14">
+<h3>多平台适用<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p>多平台适用性是时信魔方开发的重要目标。时信魔方提供所有主流平台适用的接入方案，采用客户端 <a class="reference internal" href="../glossary.html#term-SDK"><span class="xref std std-term">SDK</span></a> 的接入方式接入客户端服务能力，服务器端适用于虚拟化部署或混合部署。</p>
+<div class="figure align-center" id="id19">
+<img alt="时信魔方框架结构" src="../_images/cube-framework.png" />
+<p class="caption"><span class="caption-text"><em>时信魔方框架结构</em></span><a class="headerlink" href="#id19" title="永久链接至图片">¶</a></p>
+</div>
+<p>时信魔方针对大规模并发的实时业务请求进行了访问层级划分，分为接入层和业务层，接入层负责对接接入服务的客户端，业务层作为具体功能的执行层执行业务逻辑操作。</p>
+<p>对于服务节点之间的通信可按照不同的工作强度选择集群、分区或主从，这主要是考虑不同功能需要不同的技术特征来支持，例如，即时消息业务在10+W访问量级适用使用全局集群，实时音视频流适合使用主从结构为媒体单元分配可用的带宽和资源。</p>
+</div>
+<div class="section" id="id15">
+<h3>分域管理<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p>时信魔方严格按照“域”进行数据管理，也就是时信魔方是多租户系统。每个域都拥有自己独立的资源，包括自己的库表系统，自己的存储空间等。</p>
+<p>“域”是每个数据实体的基础属性，每个数据实体都在自己所属的域里进行工作。</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>时信魔方的主要技术特征<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>使用私有数据协议 SHM 协议</p></li>
+<li><p>NBTA (Non-blocking Transactional Atomicity)算法的集群适配器</p></li>
+<li><p>基于 UDP 的集群数据传输</p></li>
+<li><p>客户端支持原生代码插件</p></li>
+<li><p>服务器端支持基于 Lua 脚本的热部署插件</p></li>
+<li><p>使用 JSON 作为内部数据交换格式</p></li>
+<li><p>无服务端缓存系统</p></li>
+<li><p>基于路由表定义的事件通知</p></li>
+<li><p>兼容 SIP 协议（RFC3261）</p></li>
+<li><p>RTP/RTCP 实时音视频传输</p></li>
+<li><p>RTMP/RTSP 音视频流</p></li>
+<li><p>支持 WebRTC 技术</p></li>
+<li><p>支持 iSAC，iLBC，G711 等音频编解码</p></li>
+<li><p>支持 H.264，VP8，VP9 等视频编解码</p></li>
+<li><p>屏幕纵横比自适应</p></li>
+<li><p>自适应码率控制</p></li>
+<li><p>视频文件数据格式支持：MP4（H.264、MPEG4）、WebM、OGG 等</p></li>
+<li><p>音频文件数据格式支持：OGG、WAV、AMR、MP3 等</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="入门指南" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="欢迎来到“时信魔方”" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2023 Cube Team.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

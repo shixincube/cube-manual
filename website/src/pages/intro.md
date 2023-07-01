@@ -4,15 +4,35 @@ title: 初识魔方
 
 # 初识魔方
 
-**时信魔方** 是面向开发者的实时协作开发框架。帮助开发者快速、高效的在项目中集成实时协作能力。从广义上讲，即时消息、音视频通话、实时白板、文档互传、在线会议都属于实时协作的功能范畴。这些功能帮助人们迅速地传递消息，同步资料并跟踪信息流，从而达到高效协作的目的。
+**时信魔方** 是面向AIGC开发者的集成开发框架。帮助开发者快速、高效的在项目中集成AIGC能力和实时通信能力。时信魔方支持包括 `Natural Language Processing`，`Computer Vision`，`Audio/Video Processing` 等在内的主流 AIGC 任务集成能力。同时提供即时消息、音视频通话、实时白板、文档互传、在线会议等为 AIGC 配套的协作能力。
 
 时信魔方是 **开源项目** ，基于 [MIT/Expat License](http://www.opensource.org/licenses/mit-license.php) 条款发布，在 [Gitee](https://gitee.com/shixinhulian/) 和 [GitHub](https://github.com/shixincube/) 上托管源代码。
 
 支持的操作系统有：Windows、Linux 、macOS 、Android、iOS 等，支持的浏览器有：Chrome、Firefox、Safari 等。
 
-![产品展示截图](https://doc.shixincube.com/_images/showcase-album.jpg)
+![产品展示截图1](/assets/llm_screenshot_1.png)
+![产品展示截图2](/assets/llm_screenshot_2.png)
 
 <br/>
+
+![产品展示截图3](https://doc.shixincube.com/_images/showcase-album.jpg)
+
+<br/>
+
+## 文档创作
+
+* 学术论文 - 可以写各种类型的学术论文，包括科技论文、文学论文、社科论文等。可以帮助你进行井编写出符合学术标准的论文。
+* 创意写作 - 可以写小说、故步、剧本、请歌等创意性的文学作品，能够在描述情节和角色方面提供帮助。
+* 内容创作 - 可以写SEO文章、博客文章、社交媒体贴子、产品描还等各种类型的内容创作。能够创作可阅读的内容，帮助你吸引读者和提升品牌知名度。
+* 商业写作 - 可以编写商业计划书、市场调研报告、营销策路、商业简报、销售信件等。
+
+## 数据分析
+
+可以帮助你进行名种类型的数招分析，包括统计分析、文本分析、数据可视化等。
+
+## 教有培训
+
+可以編写各种类型的教学培训材料，包括课程大纲、课件、教学指南、教育评估等，可以按照指定的教学方法，为你制定适合你目标受众的培训计划。
 
 ## 即时消息
 
