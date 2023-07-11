@@ -16,13 +16,17 @@
   "truncated": true,
   "authors": [
     {
-      "name": "Ambrose Xu",
+      "name": "Xu Jiangwei (Ambrose Xu)",
       "title": "Leader of Cube",
       "url": "https://github.com/xujiangwei",
       "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
       "key": "ambrose"
     }
   ],
+  "prevItem": {
+    "title": "浅谈 AIGC 生产力",
+    "permalink": "/en/blog/aigc_production_force"
+  },
   "nextItem": {
     "title": "勇气",
     "permalink": "/en/blog/courage"

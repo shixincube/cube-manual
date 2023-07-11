@@ -2,6 +2,10 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "浅谈 AIGC 生产力",
+      "permalink": "/en/blog/aigc_production_force"
+    },
+    {
       "title": "一路走，一路丢 （开题）",
       "permalink": "/en/blog/opening_topic"
     },

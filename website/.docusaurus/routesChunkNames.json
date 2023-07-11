@@ -3,10 +3,13 @@
     "component": "c4f5d8e4",
     "config": "5e9f5e1a"
   },
-  "/en/blog-18c": {
+  "/en/blog-1d3": {
     "component": "a6aa9e1f",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "742c180c"
+      },
       {
         "content": "ed7b8b27"
       },
@@ -21,6 +24,11 @@
       }
     ],
     "metadata": "fba6c282"
+  },
+  "/en/blog/aigc_production_force-c12": {
+    "component": "ccc49370",
+    "sidebar": "814f3328",
+    "content": "23f8cbd6"
   },
   "/en/blog/archive-133": {
     "component": "9e4087bc",
@@ -46,10 +54,13 @@
     "sidebar": "814f3328",
     "tags": "9bdd22eb"
   },
-  "/en/blog/tags/diary-002": {
+  "/en/blog/tags/diary-2ac": {
     "component": "6875c492",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "742c180c"
+      },
       {
         "content": "ed7b8b27"
       },

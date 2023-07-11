@@ -1,0 +1,30 @@
+{
+  "permalink": "/en/blog/aigc_production_force",
+  "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2023-07-05-think_about_aigc_production_force.md",
+  "source": "@site/blog/2023-07-05-think_about_aigc_production_force.md",
+  "title": "浅谈 AIGC 生产力",
+  "description": "最近一段时间在 LLM/AIGC 行业里一大批商业、开源大模型如雨后春笋般爆发式涌现（例如：文心一言，通义，混元，伏羲，盘古，MOSS，悟道等），各种基于细分场景的产品也纷纷抛头露面，例如基于心理情感陪聊的 EmoGPT，用于医疗问诊的 MedGPT 和用于法律问答的 ChatLaw 等等。",
+  "date": "2023-07-05T00:00:00.000Z",
+  "formattedDate": "July 5, 2023",
+  "tags": [
+    {
+      "label": "Diary",
+      "permalink": "/en/blog/tags/diary"
+    }
+  ],
+  "readingTime": 8.225,
+  "truncated": true,
+  "authors": [
+    {
+      "name": "Xu Jiangwei (Ambrose Xu)",
+      "title": "Leader of Cube",
+      "url": "https://github.com/xujiangwei",
+      "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+      "key": "ambrose"
+    }
+  ],
+  "nextItem": {
+    "title": "一路走，一路丢 （开题）",
+    "permalink": "/en/blog/opening_topic"
+  }
+}

@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shixincube.com/blog</id>
     <title>时信魔方 Blog</title>
-    <updated>2023-02-10T00:00:00.000Z</updated>
+    <updated>2023-07-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shixincube.com/blog"/>
     <subtitle>时信魔方 Blog</subtitle>
     <icon>https://shixincube.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[浅谈 AIGC 生产力]]></title>
+        <id>aigc_production_force</id>
+        <link href="https://shixincube.com/blog/aigc_production_force"/>
+        <updated>2023-07-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近一段时间在 LLM/AIGC 行业里一大批商业、开源大模型如雨后春笋般爆发式涌现（例如：文心一言，通义，混元，伏羲，盘古，MOSS，悟道等），各种基于细分场景的产品也纷纷抛头露面，例如基于心理情感陪聊的 EmoGPT，用于医疗问诊的 MedGPT 和用于法律问答的 ChatLaw 等等。]]></summary>
+        <author>
+            <name>Xu Jiangwei (Ambrose Xu)</name>
+            <uri>https://github.com/xujiangwei</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[一路走，一路丢 （开题）]]></title>
         <id>opening_topic</id>
@@ -14,7 +25,7 @@
         <updated>2023-02-10T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[一路走，一路丢。]]></summary>
         <author>
-            <name>Ambrose Xu</name>
+            <name>Xu Jiangwei (Ambrose Xu)</name>
             <uri>https://github.com/xujiangwei</uri>
         </author>
     </entry>
@@ -25,7 +36,7 @@
         <updated>2022-12-31T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[苦难、挣扎、彷徨也许是对2022年互联网行业最好的注脚。就像谈了一场错误百出、精疲力竭的恋爱，到最后你默默无语，身心俱疲……]]></summary>
         <author>
-            <name>Ambrose Xu</name>
+            <name>Xu Jiangwei (Ambrose Xu)</name>
             <uri>https://github.com/xujiangwei</uri>
         </author>
     </entry>
@@ -36,7 +47,7 @@
         <updated>2021-09-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[最近一个月发生了很多事情，突然发现自己对一些事格外敏感，而对一些事情格外迟钝。人们总说每个人的成长都是经历一次又一次变故，这次的变故我决定以文字的形式记录下来。]]></summary>
         <author>
-            <name>Ambrose Xu</name>
+            <name>Xu Jiangwei (Ambrose Xu)</name>
             <uri>https://github.com/xujiangwei</uri>
         </author>
     </entry>
@@ -47,7 +58,7 @@
         <updated>2021-09-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[今天一早过来把官网的资料整理了一下，正式把官网迁到 Docusaurus 上。]]></summary>
         <author>
-            <name>Ambrose Xu</name>
+            <name>Xu Jiangwei (Ambrose Xu)</name>
             <uri>https://github.com/xujiangwei</uri>
         </author>
     </entry>

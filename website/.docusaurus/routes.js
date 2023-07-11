@@ -10,7 +10,12 @@ export default [
   },
   {
     path: '/en/blog',
-    component: ComponentCreator('/en/blog','18c'),
+    component: ComponentCreator('/en/blog','1d3'),
+    exact: true
+  },
+  {
+    path: '/en/blog/aigc_production_force',
+    component: ComponentCreator('/en/blog/aigc_production_force','c12'),
     exact: true
   },
   {
@@ -40,7 +45,7 @@ export default [
   },
   {
     path: '/en/blog/tags/diary',
-    component: ComponentCreator('/en/blog/tags/diary','002'),
+    component: ComponentCreator('/en/blog/tags/diary','2ac'),
     exact: true
   },
   {

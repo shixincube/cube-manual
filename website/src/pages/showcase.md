@@ -9,6 +9,11 @@ title: 项目展示
 *支持搜索的会话*
 ![支持搜索的会话](/assets/llm_screenshot_1.png)
 
+<br/>
+
+*支持数据可视化的会话*
+![支持数据可视化的会话](/assets/llm_screenshot_2.png)
+
 ## 即时消息
 
 *即时消息*

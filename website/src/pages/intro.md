@@ -8,7 +8,7 @@ title: 初识魔方
 
 时信魔方是 **开源项目** ，基于 [MIT/Expat License](http://www.opensource.org/licenses/mit-license.php) 条款发布，在 [Gitee](https://gitee.com/shixinhulian/) 和 [GitHub](https://github.com/shixincube/) 上托管源代码。
 
-支持的操作系统有：Windows、Linux 、macOS 、Android、iOS 等，支持的浏览器有：Chrome、Firefox、Safari 等。
+支持的操作系统有：Linux、HarmonyOS、Windows、macOS、Android、iOS 等，支持的浏览器有：Chrome、Firefox、Safari 等。
 
 ![产品展示截图1](/assets/llm_screenshot_1.png)
 ![产品展示截图2](/assets/llm_screenshot_2.png)
