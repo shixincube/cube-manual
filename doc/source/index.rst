@@ -1,7 +1,7 @@
 欢迎来到“时信魔方”
 ===============================
 
-:term:`时信魔方` 是面向开发者的实时协作开发框架。帮助开发者快速、高效地在项目中集成实时协作能力。
+:term:`时信魔方` 是面向AIGC开发者的集成开发框架。帮助开发者快速、高效的在项目中集成AIGC能力和实时通信能力。时信魔方支持包括 `Natural Language Processing`， `Computer Vision`， `Audio/Video Processing` 等在内的主流 AIGC 任务集成能力。同时提供即时消息、音视频通话、实时白板、文档互传、在线会议等为 AIGC 配套的协作能力。
 
 项目的主要文档有：
 
@@ -17,6 +17,14 @@
 项目案例展示：
 
 - :doc:`project/showcase`
+
+
+.. figure:: /images/llm_screenshot_1.png
+   :alt: 大模型问答
+   :align: center
+
+   *互动对话截图*
+
 
 .. figure:: /images/showcase-album.jpg
     :align: center
@@ -36,6 +44,7 @@
     /user/intro
     /user/quickstart
     /user/best_practice
+    /user/aigc_public_opinion
     /user/installation
     /user/configuration
     /user/application

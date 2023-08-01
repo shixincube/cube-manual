@@ -75,7 +75,7 @@ graphviz_output_format = 'png'
 
 # Add English Wikipedia as an external site role.
 extlinks = {
-    'wikipedia': ('https://zh.wikipedia.org/wiki/%s', '维基百科：')
+    'wikipedia': ('https://zh.wikipedia.org/wiki/%s', '维基百科：%s')
 }
 
 
@@ -115,3 +115,7 @@ html_show_sourcelink = False
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = False
+
+html_js_files = [
+    'js/custom.js'
+]
