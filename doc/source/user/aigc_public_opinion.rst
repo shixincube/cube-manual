@@ -82,10 +82,35 @@ API 指南
 舆情正负面分析
 -------------------------------
 
-Cube 内置的舆情模块会利用复合上下文 ``ComplexContext`` 的异步推理接口对加入的舆情内容进行正负面分析。
+Cube 的舆情模块使用复合上下文 ``ComplexContext`` 的异步推理接口对舆情内容进行正负面分析。开发者通过 `舆情数据接口 <https://doc.shixincube.com/baize/#api-Data_Management-%E6%93%8D%E4%BD%9C%E8%88%86%E6%83%85%E6%A8%A1%E5%9D%97%E6%95%B0%E6%8D%AE>`__ 向 Cube 导入舆情相关数据，例如相关的舆情正面、负面文章等。Baize LLM 会自动对舆情文章内容进行相关的正面和负面分析，开发者通过 `获取上下文推理内容 <https://doc.shixincube.com/baize/#api-Natural_Language_Processing-%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%AF%9D%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E6%8E%A8%E7%90%86%E5%86%85%E5%AE%B9>`__ 接口以异步方式获取分析内容。
+
+.. figure:: /images/tutorials/aigc_po_infer_example.jpg
+    :align: center
+    :alt: 推理示例
+
+    *推理内容示例*
+
+
+通过以下步骤实现对正负面数据的推理：
+
+#. 添加正负面文章，以便在进行互动对话时，Baize 能找到对应时间的相关文章数据。
+
+    调用 ``addArticle`` 新增文章数据时， 我们建议 ``category`` 使用有显著辨识度的名词，例如上述示例 ``category`` 设置为 **汤臣倍健** 。
+
+#. 调用互动对话接口后，判断 ``context`` 的 ``inferable`` 值，如果该值为 ``true`` ，则调用 `获取上下文推理内容 <https://doc.shixincube.com/baize/#api-Natural_Language_Processing-%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%AF%9D%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E6%8E%A8%E7%90%86%E5%86%85%E5%AE%B9>`__ 获取 ``inferenceResult`` 数据，从而得到推理结果。
 
 
 
 提示词设计
 ===============================
+
+在使用互动对话方式获取舆情数据时，提示词可以简单明了，即使用较短的提示词 Baize 就能进行数据匹配并生成数据序列和推理。 
+
+例如：
+
+.. code-block:: shell
+
+    展示汤臣倍健2023年6月的舆情数据图表。
+
+在实际的应用场景里，我们需要在提示词里明确数据的时间描述，例如： `2023年6月` 。在时间不明确的情况下 Baize 会尝试推理最近的数据日期。对于不符合日期的数据 Baize 不会进行后续推理。
 
