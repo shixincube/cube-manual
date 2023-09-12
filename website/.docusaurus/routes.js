@@ -10,7 +10,7 @@ export default [
   },
   {
     path: '/en/blog',
-    component: ComponentCreator('/en/blog','1d3'),
+    component: ComponentCreator('/en/blog','ec3'),
     exact: true
   },
   {
@@ -26,6 +26,11 @@ export default [
   {
     path: '/en/blog/courage',
     component: ComponentCreator('/en/blog/courage','8cf'),
+    exact: true
+  },
+  {
+    path: '/en/blog/law_of_inertia',
+    component: ComponentCreator('/en/blog/law_of_inertia','6c2'),
     exact: true
   },
   {
@@ -45,7 +50,7 @@ export default [
   },
   {
     path: '/en/blog/tags/diary',
-    component: ComponentCreator('/en/blog/tags/diary','2ac'),
+    component: ComponentCreator('/en/blog/tags/diary','0d4'),
     exact: true
   },
   {

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkshixincube=self.webpackChunkshixincube||[]).push([[753],{2162:function(a){a.exports=JSON.parse('{"allTagsPath":"/en/blog/tags","slug":"/en/blog/tags/diary","name":"Diary","count":5,"permalink":"/en/blog/tags/diary"}')}}]);

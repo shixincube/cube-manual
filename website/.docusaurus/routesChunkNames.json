@@ -3,10 +3,13 @@
     "component": "c4f5d8e4",
     "config": "5e9f5e1a"
   },
-  "/en/blog-1d3": {
+  "/en/blog-ec3": {
     "component": "a6aa9e1f",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "1d984666"
+      },
       {
         "content": "742c180c"
       },
@@ -39,6 +42,11 @@
     "sidebar": "814f3328",
     "content": "fc0770ac"
   },
+  "/en/blog/law_of_inertia-6c2": {
+    "component": "ccc49370",
+    "sidebar": "814f3328",
+    "content": "30692d7d"
+  },
   "/en/blog/on-my-road-7fc": {
     "component": "ccc49370",
     "sidebar": "814f3328",
@@ -54,10 +62,13 @@
     "sidebar": "814f3328",
     "tags": "9bdd22eb"
   },
-  "/en/blog/tags/diary-2ac": {
+  "/en/blog/tags/diary-0d4": {
     "component": "6875c492",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "1d984666"
+      },
       {
         "content": "742c180c"
       },

@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shixincube.com/en/blog</id>
     <title>时信魔方 Blog</title>
-    <updated>2023-07-05T00:00:00.000Z</updated>
+    <updated>2023-09-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shixincube.com/en/blog"/>
     <subtitle>时信魔方 Blog</subtitle>
     <icon>https://shixincube.com/en/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[缓慢进化的人性：惯性定律，人生成就高度的永恒密码]]></title>
+        <id>law_of_inertia</id>
+        <link href="https://shixincube.com/en/blog/law_of_inertia"/>
+        <updated>2023-09-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[为什么你总是相信弯道才能超车？为什么你总是相信人生有辟邪剑谱般练了就能迅速开挂的秘籍？为什么你在努力与奋斗的过程中会那么的焦虑？无论是后来者想扳倒老大，还是底层人想成为人上人都有需要遵守的客观规律。]]></summary>
+        <author>
+            <name>Xu Jiangwei (Ambrose Xu)</name>
+            <uri>https://github.com/xujiangwei</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[浅谈 AIGC 生产力]]></title>
         <id>aigc_production_force</id>

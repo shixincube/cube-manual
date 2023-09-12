@@ -1,0 +1,30 @@
+{
+  "permalink": "/en/blog/law_of_inertia",
+  "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2023-09-12-law_of_inertia.md",
+  "source": "@site/blog/2023-09-12-law_of_inertia.md",
+  "title": "缓慢进化的人性：惯性定律，人生成就高度的永恒密码",
+  "description": "为什么你总是相信弯道才能超车？为什么你总是相信人生有辟邪剑谱般练了就能迅速开挂的秘籍？为什么你在努力与奋斗的过程中会那么的焦虑？无论是后来者想扳倒老大，还是底层人想成为人上人都有需要遵守的客观规律。",
+  "date": "2023-09-12T00:00:00.000Z",
+  "formattedDate": "September 12, 2023",
+  "tags": [
+    {
+      "label": "Diary",
+      "permalink": "/en/blog/tags/diary"
+    }
+  ],
+  "readingTime": 32.28,
+  "truncated": true,
+  "authors": [
+    {
+      "name": "Xu Jiangwei (Ambrose Xu)",
+      "title": "Leader of Cube",
+      "url": "https://github.com/xujiangwei",
+      "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+      "key": "ambrose"
+    }
+  ],
+  "nextItem": {
+    "title": "浅谈 AIGC 生产力",
+    "permalink": "/en/blog/aigc_production_force"
+  }
+}
