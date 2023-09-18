@@ -23,6 +23,10 @@
       "key": "ambrose"
     }
   ],
+  "prevItem": {
+    "title": "四条重要认知",
+    "permalink": "/en/blog/four_laws"
+  },
   "nextItem": {
     "title": "浅谈 AIGC 生产力",
     "permalink": "/en/blog/aigc_production_force"

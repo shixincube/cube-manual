@@ -1,6 +1,39 @@
 {
   "blogPosts": [
     {
+      "id": "four_laws",
+      "metadata": {
+        "permalink": "/blog/four_laws",
+        "editUrl": "https://github.com/shixincube/cube-manual/website/blog/2023-09-18-four_laws.md",
+        "source": "@site/blog/2023-09-18-four_laws.md",
+        "title": "四条重要认知",
+        "description": "极有价值的四个认知。",
+        "date": "2023-09-18T00:00:00.000Z",
+        "formattedDate": "2023年9月18日",
+        "tags": [
+          {
+            "label": "Diary",
+            "permalink": "/blog/tags/diary"
+          }
+        ],
+        "readingTime": 2.395,
+        "truncated": true,
+        "authors": [
+          {
+            "name": "Xu Jiangwei (Ambrose Xu)",
+            "title": "Leader of Cube",
+            "url": "https://github.com/xujiangwei",
+            "imageURL": "https://static.shixincube.com/cube/assets/images/avatar/ambrose.png",
+            "key": "ambrose"
+          }
+        ],
+        "nextItem": {
+          "title": "缓慢进化的人性：惯性定律，人生成就高度的永恒密码",
+          "permalink": "/blog/law_of_inertia"
+        }
+      }
+    },
+    {
       "id": "law_of_inertia",
       "metadata": {
         "permalink": "/blog/law_of_inertia",
@@ -27,6 +60,10 @@
             "key": "ambrose"
           }
         ],
+        "prevItem": {
+          "title": "四条重要认知",
+          "permalink": "/blog/four_laws"
+        },
         "nextItem": {
           "title": "浅谈 AIGC 生产力",
           "permalink": "/blog/aigc_production_force"

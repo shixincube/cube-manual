@@ -2,6 +2,10 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "四条重要认知",
+      "permalink": "/en/blog/four_laws"
+    },
+    {
       "title": "缓慢进化的人性：惯性定律，人生成就高度的永恒密码",
       "permalink": "/en/blog/law_of_inertia"
     },
@@ -16,10 +20,6 @@
     {
       "title": "勇气",
       "permalink": "/en/blog/courage"
-    },
-    {
-      "title": "在路上 - 一个程序员的创业总结",
-      "permalink": "/en/blog/on-my-road"
     }
   ]
 }

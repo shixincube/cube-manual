@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://shixincube.com/en/blog</id>
     <title>时信魔方 Blog</title>
-    <updated>2023-09-12T00:00:00.000Z</updated>
+    <updated>2023-09-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://shixincube.com/en/blog"/>
     <subtitle>时信魔方 Blog</subtitle>
     <icon>https://shixincube.com/en/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[四条重要认知]]></title>
+        <id>four_laws</id>
+        <link href="https://shixincube.com/en/blog/four_laws"/>
+        <updated>2023-09-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[极有价值的四个认知。]]></summary>
+        <author>
+            <name>Xu Jiangwei (Ambrose Xu)</name>
+            <uri>https://github.com/xujiangwei</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[缓慢进化的人性：惯性定律，人生成就高度的永恒密码]]></title>
         <id>law_of_inertia</id>

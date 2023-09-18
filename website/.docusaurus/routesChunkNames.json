@@ -3,10 +3,13 @@
     "component": "c4f5d8e4",
     "config": "5e9f5e1a"
   },
-  "/en/blog-ec3": {
+  "/en/blog-0ca": {
     "component": "a6aa9e1f",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "6672ea9d"
+      },
       {
         "content": "1d984666"
       },
@@ -42,6 +45,11 @@
     "sidebar": "814f3328",
     "content": "fc0770ac"
   },
+  "/en/blog/four_laws-267": {
+    "component": "ccc49370",
+    "sidebar": "814f3328",
+    "content": "821fc181"
+  },
   "/en/blog/law_of_inertia-6c2": {
     "component": "ccc49370",
     "sidebar": "814f3328",
@@ -62,10 +70,13 @@
     "sidebar": "814f3328",
     "tags": "9bdd22eb"
   },
-  "/en/blog/tags/diary-0d4": {
+  "/en/blog/tags/diary-dc8": {
     "component": "6875c492",
     "sidebar": "814f3328",
     "items": [
+      {
+        "content": "6672ea9d"
+      },
       {
         "content": "1d984666"
       },

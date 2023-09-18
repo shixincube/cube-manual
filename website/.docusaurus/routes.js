@@ -10,7 +10,7 @@ export default [
   },
   {
     path: '/en/blog',
-    component: ComponentCreator('/en/blog','ec3'),
+    component: ComponentCreator('/en/blog','0ca'),
     exact: true
   },
   {
@@ -26,6 +26,11 @@ export default [
   {
     path: '/en/blog/courage',
     component: ComponentCreator('/en/blog/courage','8cf'),
+    exact: true
+  },
+  {
+    path: '/en/blog/four_laws',
+    component: ComponentCreator('/en/blog/four_laws','267'),
     exact: true
   },
   {
@@ -50,7 +55,7 @@ export default [
   },
   {
     path: '/en/blog/tags/diary',
-    component: ComponentCreator('/en/blog/tags/diary','0d4'),
+    component: ComponentCreator('/en/blog/tags/diary','dc8'),
     exact: true
   },
   {
